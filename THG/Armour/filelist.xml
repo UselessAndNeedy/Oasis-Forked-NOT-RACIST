@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="THG Armory - 'Vanilla' Armor Pack" modversion="1.12" corepackage="False" steamworkshopid="2967303974" gameversion="1.1.13.0" expectedhash="2A8EC988F4ABD6C4E6A5124E376F1E1D">
+  <Item file="%ModDir%/armor_thog.xml" />
+</contentpackage>
