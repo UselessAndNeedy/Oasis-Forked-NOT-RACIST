@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Override>
+    <Item name="Journal" identifier="journal_common" aliases="" spritecolor="255,223,153,255" inventoryiconcolor="255,223,153,255" category="Equipment" Tags="smallitem" maxstacksize="1" useinhealthinterface="true" cargocontaineridentifier="metalcrate" description="A collection of unremarkable momentos from the life of someone you've never met. Some benign, some discomforting. It's all quaintly humanizing." scale="0.5" impactsoundtag="impact_soft" allowasextracargo="true">
+      <PreferredContainer primary="crewcab" minamount="1" maxamount="1" spawnprobability="0.05" />
+      <PreferredContainer primary="outpostcrewcabinet" minamount="1" maxamount="1" spawnprobability="0.05" />
+      <PreferredContainer primary="outposttrashcan" minamount="1" maxamount="1" spawnprobability="0.05" />
+      <PreferredContainer primary="abandonedcrewcabinet" minamount="1" maxamount="1" spawnprobability="0.5" />
+      <PreferredContainer primary="wreckmedcab" minamount="1" maxamount="1" spawnprobability="0.25" />
+      <PreferredContainer primary="wreckstoragecab" minamount="1" maxamount="1" spawnprobability="0.25" />
+      <PreferredContainer primary="supplycab" minamount="1" maxamount="1" spawnprobability="0.1" />
+      <InventoryIcon texture="journal.png" sourcerect="0,0,100,70" origin="0.5,0.5" />
+      <Sprite texture="journal_world.png" sourcerect="0,0,92,34" depth="0.6" origin="0.5,0.5" />
+      <Body width="25" height="20" density="11" />
+      <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-5,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="This" Condition="-100" />
+        <StatusEffect type="OnSecondaryUse" target="This" Condition="-100" />
+        <!-- Give 0.1 more than we need, because otherwise the affliction expires before it registers the final tick -->
+        <StatusEffect type="OnBroken" target="This,NearbyCharacters" range="100">
+          <Affliction identifier="journalxp" amount="1.1" setvalue="true" />
+          <Sound file="%ModDir%/Squidd/journal.ogg" type="OnUse" range="500" volume="1" />
+          <Remove />
+        </StatusEffect>
+      </MeleeWeapon>
+      <Quality>
+        <QualityStat stattype="Condition" value="0.1" />
+      </Quality>
+    </Item>
+  </Override>
+  <Override>
+    <Item name="Mariner's Journal" identifier="journal_uncommon" aliases="" spritecolor="204,255,239,255" inventoryiconcolor="204,255,239,255" category="Equipment" Tags="smallitem" maxstacksize="1" useinhealthinterface="true" cargocontaineridentifier="metalcrate" description="A waterlogged book of deep-sea stories. The life of a crewman aboard a Europan submarine, filled with the insights of adventure, peril and tragedy. You could take a little bit of resolve away from this." scale="0.5" impactsoundtag="impact_soft" allowasextracargo="true">
+      <PreferredContainer primary="crewcab" minamount="1" maxamount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="outpostcrewcabinet" minamount="1" maxamount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="abandonedcrewcabinet" minamount="1" maxamount="1" spawnprobability="0.1" />
+      <PreferredContainer primary="wreckmedcab" minamount="1" maxamount="1" spawnprobability="0.05" />
+      <PreferredContainer primary="wreckstoragecab" minamount="1" maxamount="1" spawnprobability="0.05" />
+      <PreferredContainer primary="supplycab" minamount="1" maxamount="1" spawnprobability="0.02" />
+      <InventoryIcon texture="journal.png" sourcerect="0,0,100,70" origin="0.5,0.5" />
+      <Sprite texture="journal_world.png" sourcerect="0,0,92,34" depth="0.6" origin="0.5,0.5" />
+      <Body width="25" height="20" density="11" />
+      <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-5,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="This" Condition="-100" />
+        <StatusEffect type="OnSecondaryUse" target="This" Condition="-100" />
+        <StatusEffect type="OnBroken" target="This,NearbyCharacters" range="100">
+          <Affliction identifier="journalxp" amount="2.6" setvalue="true" />
+          <Sound file="%ModDir%/Squidd/journal.ogg" type="OnUse" range="500" volume="1" />
+          <Remove />
+        </StatusEffect>
+      </MeleeWeapon>
+      <Quality>
+        <QualityStat stattype="Condition" value="0.1" />
+      </Quality>
+    </Item>
+  </Override>
+  <Override>
+    <Item name="Researcher's Journal" identifier="journal_rare" aliases="" spritecolor="215,209,255,255" inventoryiconcolor="215,209,255,255" category="Equipment" Tags="smallitem" maxstacksize="1" useinhealthinterface="true" cargocontaineridentifier="metalcrate" description="A well-documented catalogue of a multi-faceted research on Europan ecology. The eloquent verbage and well-rounded scholarship lends itself to an insightful study on the inner-workings of the world around you, even despite the difficult jargon." scale="0.5" impactsoundtag="impact_soft" allowasextracargo="true">
+      <PreferredContainer primary="abandonedcrewcabinet" minamount="1" maxamount="1" spawnprobability="0.05" />
+      <PreferredContainer primary="wreckmedcab" minamount="1" maxamount="1" spawnprobability="0.05" />
+      <PreferredContainer primary="wreckstoragecab" minamount="1" maxamount="1" spawnprobability="0.05" />
+      <PreferredContainer primary="medcab" minamount="1" maxamount="1" spawnprobability="0.1" />
+      <PreferredContainer primary="wrecksecurearmcab" minamount="1" maxamount="1" spawnprobability="0.12" />
+      <PreferredContainer primary="wreckshuttlecrate" minamount="1" maxamount="1" spawnprobability="0.12" />
+      <InventoryIcon texture="journal.png" sourcerect="0,0,100,70" origin="0.5,0.5" />
+      <Sprite texture="journal_world.png" sourcerect="0,0,92,34" depth="0.6" origin="0.5,0.5" />
+      <Body width="25" height="20" density="11" />
+      <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-5,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="This" Condition="-100" />
+        <StatusEffect type="OnSecondaryUse" target="This" Condition="-100" />
+        <StatusEffect type="OnBroken" target="This,NearbyCharacters" range="100">
+          <Affliction identifier="journalxp" amount="5.1" setvalue="true" />
+          <Sound file="%ModDir%/Squidd/journal.ogg" type="OnUse" range="500" volume="1" />
+          <Remove />
+        </StatusEffect>
+      </MeleeWeapon>
+      <Quality>
+        <QualityStat stattype="Condition" value="0.1" />
+      </Quality>
+    </Item>
+  </Override>
+  <Override>
+    <Item name="Revolutionary's Journal" identifier="journal_ultrarare" aliases="" spritecolor="255,179,179,255" inventoryiconcolor="255,179,179,255" category="Equipment" Tags="smallitem" maxstacksize="1" useinhealthinterface="true" cargocontaineridentifier="metalcrate" description="A profound compilation on the storied life of a separatist veteran. Secrets, loss, victory, and unwavering resolve are poured out on the waterlogged pages - and hidden between them, an extensive anatomy of the revolution." scale="0.5" impactsoundtag="impact_soft" allowasextracargo="true">
+      <PreferredContainer primary="abandonedcrewcabinet" minamount="1" maxamount="1" spawnprobability="0.02" />
+      <PreferredContainer primary="wreckmedcab" minamount="1" maxamount="1" spawnprobability="0.02" />
+      <PreferredContainer primary="wreckstoragecab" minamount="1" maxamount="1" spawnprobability="0.02" />
+      <PreferredContainer primary="medcab" minamount="1" maxamount="1" spawnprobability="0.02" />
+      <PreferredContainer primary="wreckreactorcab" minamount="1" maxamount="1" spawnprobability="0.02" />
+      <InventoryIcon texture="journal.png" sourcerect="0,0,100,70" origin="0.5,0.5" />
+      <Sprite texture="journal_world.png" sourcerect="0,0,92,34" depth="0.6" origin="0.5,0.5" />
+      <Body width="25" height="20" density="11" />
+      <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-5,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="This" Condition="-100" />
+        <StatusEffect type="OnSecondaryUse" target="This" Condition="-100" />
+        <StatusEffect type="OnBroken" target="This,NearbyCharacters" range="100">
+          <Affliction identifier="journalxp" amount="7.6" setvalue="true" />
+          <Sound file="%ModDir%/Squidd/journal.ogg" type="OnUse" range="500" volume="1" />
+          <Remove />
+        </StatusEffect>
+      </MeleeWeapon>
+      <Quality>
+        <QualityStat stattype="Condition" value="0.1" />
+      </Quality>
+    </Item>
+  </Override>
+  <Override>
+    <Item name="Stargazer Journal" identifier="journal_cheat" aliases="" spritecolor="146,103,255,255" hideinmenus="true" inventoryiconcolor="146,103,255,255" category="Equipment" Tags="smallitem" maxstacksize="1" useinhealthinterface="true" cargocontaineridentifier="metalcrate" description="I have gazed upon the water and the stars, one and the same. All what can be revealed to me has been, and with my curiosity departs my soul." scale="0.5" impactsoundtag="impact_soft">
+      <PreferredContainer primary="abandonedcrewcabinet" minamount="1" maxamount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="wreckstoragecab" minamount="1" maxamount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="wreckreactorcab" minamount="1" maxamount="1" spawnprobability="0.01" />
+      <InventoryIcon texture="journal.png" sourcerect="0,0,100,70" origin="0.5,0.5" />
+      <Sprite texture="journal_world.png" sourcerect="0,0,92,34" depth="0.6" origin="0.5,0.5" />
+      <Body width="25" height="20" density="11" />
+      <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-5,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="This" Condition="-100" />
+        <StatusEffect type="OnSecondaryUse" target="This" Condition="-100" />
+        <StatusEffect type="OnBroken" target="This,NearbyCharacters" range="100">
+          <Affliction identifier="journalxp" amount="100" setvalue="true" />
+          <Sound file="%ModDir%/Squidd/journal.ogg" type="OnUse" range="500" volume="1" />
+          <Remove />
+        </StatusEffect>
+      </MeleeWeapon>
+    </Item>
+  </Override>
+</Items>

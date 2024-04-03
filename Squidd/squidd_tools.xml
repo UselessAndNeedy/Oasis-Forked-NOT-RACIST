@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <!-- generic tools -->
+  <!-- jetpack_basic -->
+  <Override>
+    <Item name="Oxygen Jetpack" identifier="squidd_jetpack_basic" category="Equipment" tags="mediumitem,tool,toolbelt" interactthroughwalls="true" cargocontaineridentifier="metalcrate" showcontentsintooltip="true" Scale="0.5" fireproof="true" description="A basic refillable underwater jetpack. Uses pressurized oxygen for propulsion." impactsoundtag="impact_metal_heavy">
+      <Price baseprice="150">
+        <Price locationtype="outpost" multiplier="1.2" minavailable="0" maxavailable="2" />
+        <Price locationtype="city" multiplier="0.9" minavailable="0" maxavailable="2" />
+        <Price locationtype="research" multiplier="1.1" minavailable="0" maxavailable="2" />
+        <Price locationtype="military" multiplier="0.9" minavailable="0" maxavailable="2" />
+        <Price locationtype="mine" multiplier="0.9" minavailable="0" maxavailable="2" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="aluminium" amount="2" />
+        <Item identifier="steel" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="25">
+        <RequiredSkill identifier="mechanical" level="50" />
+        <RequiredItem identifier="oxygentank" mincondition="0" />
+        <RequiredItem identifier="oxygentank" mincondition="0" />
+        <RequiredItem identifier="steel" />
+      </Fabricate>
+      <InventoryIcon texture="basic_jetpack.png" sourcerect="0,0,61,121" origin="0.5,0.5" />
+      <Sprite texture="basic_jetpack.png" sourcerect="0,0,61,121" depth="0.6" />
+      <Body width="100" height="100" density="10" />
+      <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+        <sprite name="Jetpack" texture="basic_jetpack.png" sourcerect="0,0,61,121" canbehiddenbyotherwearables="false" inheritlimbdepth="true" limb="Torso" depth="0.6" scale="0.5" origin="1.3,0.5" />
+      </Wearable>
+      <LightComponent LightColor="0,0,0,0" range="0" powerconsumption="10" blinkfrequency="0" IsOn="True" canbeselected="false">
+        <StatusEffect type="OnWearing" comparison="And" target="This,Character">
+          <RequiredItem items="oxygensource" type="Contained" />
+          <Conditional Voltage="gt 0.5" targetitemcomponent="LightComponent" />
+          <Conditional InWater="true" />
+          <Affliction identifier="squidd_jetpack_affliction" strength="600" />
+          <ParticleEmitter particle="FlareBubbles" particlespersecond="10" anglemin="360" anglemax="0" velocitymin="0" velocitymax="10" scalemin="0.6" scalemax="0.8" />
+          <sound file="Content/Items/Engine/Engine.ogg" type="OnUse" volume="1.5" range="1000.0" loop="true" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" targettype="Contained" Condition="-0.5">
+          <RequiredItem items="oxygentank" type="Contained" />
+          <Conditional InWater="true" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" targettype="Contained" Condition="-0.25">
+          <RequiredItem items="oxygenitetank" type="Contained" />
+          <Conditional InWater="true" />
+        </StatusEffect>
+      </LightComponent>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+        <GuiFrame relativesize="0.07,0.05" anchor="BottomCenter" pivot="BottomRight" relativeoffset="-0.145,0.14" style="ItemUI" />
+        <!-- -0.145,0.023 -->
+        <TickBox text="Jetpack">
+          <StatusEffect type="OnUse" targettype="This" IsOn="true" Voltage="1.0" setvalue="true" />
+          <StatusEffect type="OnSecondaryUse" targettype="This" IsOn="false" Voltage="0.0" setvalue="true" />
+        </TickBox>
+      </CustomInterface>
+      <Holdable slots="RightHand+LeftHand" canBeCombined="true" holdpos="15,-70" handle1="-5,0" handle2="10,-20" holdangle="0" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Use" allowswappingwhenpicked="false" />
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="tank">
+        <Containable items="oxygensource" />
+      </ItemContainer>
+      <Quality>
+        <QualityStat stattype="Condition" value="0.1" />
+      </Quality>
+    </Item>
+  </Override>
+  <!-- nuclearjetpack -->
+  <Override>
+    <Item name="Nuclear Jetpack" identifier="squidd_jetpack_nuclear" category="Equipment" tags="mediumitem,tool,toolbelt" interactthroughwalls="true" cargocontaineridentifier="metalcrate" showcontentsintooltip="true" Scale="0.5" fireproof="true" description="A cyclical fission-powered boiling and pumping system for long-term underwater propulsion. Must be loaded with a nuclear fuel rod to operate." impactsoundtag="impact_metal_heavy">
+      <Deconstruct time="10">
+        <Item identifier="fpgacircuit" />
+        <Item identifier="titaniumaluminiumalloy" />
+        <Item identifier="fulguriumbatterycell" />
+        <Item identifier="dementonite" />
+        <Item identifier="physicorium" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="45">
+        <RequiredSkill identifier="mechanical" level="50" />
+        <RequiredSkill identifier="electrical" level="50" />
+        <RequiredItem identifier="fpgacircuit" />
+        <RequiredItem identifier="titaniumaluminiumalloy" />
+        <RequiredItem identifier="fulguriumbatterycell" />
+        <RequiredItem identifier="physicorium" />
+      </Fabricate>
+      <InventoryIcon texture="nuclear_jetpack.png" sourcerect="0,0,61,121" origin="0.5,0.5" />
+      <Sprite texture="nuclear_jetpack.png" sourcerect="0,0,61,121" depth="0.6" />
+      <Body width="100" height="100" density="10" />
+      <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+        <sprite name="Jetpack" texture="nuclear_jetpack.png" sourcerect="0,0,61,121" canbehiddenbyotherwearables="false" inheritlimbdepth="true" limb="Torso" depth="0.6" scale="0.5" origin="1.3,0.5" />
+      </Wearable>
+      <LightComponent LightColor="1,1,1,1" range="0" powerconsumption="10" blinkfrequency="0" IsOn="true" canbeselected="false">
+        <StatusEffect type="OnWearing" comparison="And" target="This,Character">
+          <RequiredItem items="reactorfuel" type="Contained" />
+          <Conditional Voltage="gt 0.5" targetitemcomponent="LightComponent" />
+          <Conditional InWater="true" />
+          <Affliction identifier="squidd_jetpack_affliction" strength="600" />
+          <ParticleEmitter particle="FlareBubbles" particlespersecond="10" anglemin="360" anglemax="0" velocitymin="0" velocitymax="10" scalemin="0.6" scalemax="0.8" />
+          <sound file="Content/Items/Engine/Engine.ogg" type="OnUse" volume="1.5" range="1000.0" loop="true" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" targettype="Contained" Condition="-0.3">
+          <RequiredItem items="fuelrod" type="Contained" />
+          <Conditional InWater="true" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" targettype="Contained" Condition="-0.2">
+          <RequiredItem items="thoriumfuelrod" type="Contained" />
+          <Conditional InWater="true" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" targettype="Contained" Condition="-0.2">
+          <RequiredItem items="squidd_laserfuelrod" type="Contained" />
+          <Conditional InWater="true" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" targettype="Contained" Condition="-0.15">
+          <RequiredItem items="fulguriumfuelrod" type="Contained" />
+          <Conditional InWater="true" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" targettype="Contained" Condition="-0.1">
+          <RequiredItem items="fulguriumfuelrodvolatile" type="Contained" />
+          <Conditional InWater="true" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" targettype="Contained" Condition="-0.3">
+          <RequiredItem excludedidentifiers="fuelrod,thoriumfuelrod,fulguriumfuelrod,fulguriumfuelrodvolatile,squidd_laserfuelrod" type="Contained" />
+          <Conditional InWater="true" />
+        </StatusEffect>
+      </LightComponent>
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <Containable items="reactorfuel" />
+      </ItemContainer>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+        <GuiFrame relativesize="0.07,0.05" anchor="BottomCenter" pivot="BottomRight" relativeoffset="-0.145,0.14" style="ItemUI" />
+        <!-- -0.145,0.023 -->
+        <TickBox text="Jetpack">
+          <StatusEffect type="OnUse" targettype="This" Voltage="1.0" setvalue="true" />
+          <StatusEffect type="OnSecondaryUse" targettype="This" Voltage="0.0" setvalue="true" />
+        </TickBox>
+      </CustomInterface>
+      <Holdable slots="RightHand+LeftHand" canBeCombined="true" holdpos="15,-70" handle1="-5,0" handle2="10,-20" holdangle="0" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Use" allowswappingwhenpicked="false" />
+    </Item>
+  </Override>
+  <!-- headsetflash -->
+  <Override>
+    <Item name="Flashlight Headset" identifier="headsetflash" scale="0.5" category="Equipment" tags="smallitem,mobileradio" description="A headset with a mounted low-intensity headlamp. It requires no power to operate as a radio." InventoryIconColor="50,125,125,255" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light">
+      <InventoryIcon texture="Content/Items/JobGear/TalentGear.png" sourcerect="113,264,58,45" origin="0.5,0.5" />
+      <Sprite name="Headset" texture="Content/Items/JobGear/TalentGear.png" depth="0.6" sourcerect="253,301,76,64" origin="0.35,0.5" />
+      <Body radius="20" height="20" density="30" />
+      <Deconstruct time="10">
+        <Item identifier="headset" />
+        <Item identifier="flashlight" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="10">
+        <RequiredSkill identifier="electrical" level="30" />
+        <RequiredItem identifier="headset" />
+        <RequiredItem identifier="flashlight" />
+      </Fabricate>
+      <WifiComponent range="35000.0" LinkToChat="true" MinChatMessageInterval="0.0" />
+      <Wearable limbtype="Head" slots="Any,Headset" msg="ItemMsgPickUpSelect" displaycontainedstatus="true">
+        <sprite name="Headset Wearable" texture="Content/Items/JobGear/TalentGear.png" sourcerect="253,305,76,58" limb="Head" hidelimb="false" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.7" hideotherwearables="false" origin="0.5,0.5">
+          <LightComponent range="200.0" lightcolor="250,224,165,125" powerconsumption="10" IsOn="true" allowingameediting="false">
+            <Upgrade gameversion="0.1300.0.3" allowingameediting="false" />
+            <StatusEffect type="OnWearing" target="This,Character" Voltage="1.0" setvalue="true">
+              <Conditional IsDead="false" />
+              <RequiredItem items="batterycell,fulguriumbatterycell" type="Contained" matchonempty="false" />
+            </StatusEffect>
+            <LightTexture texture="Content/Lights/divinghelmetlight.png" origin="0.05, 0.5" size="1.5,1.25" />
+          </LightComponent>
+        </sprite>
+        <StatusEffect type="OnWearing" target="Contained,Character" Condition="-0.1" comparison="Or">
+          <Conditional IsDead="false" />
+          <RequiredItem items="batterycell" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" target="Contained,Character" Condition="-0.03" comparison="Or">
+          <Conditional IsDead="false" />
+          <RequiredItem items="fulguriumbatterycell" type="Contained" />
+        </StatusEffect>
+      </Wearable>
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <Containable items="batterycell,fulguriumbatterycell" />
+      </ItemContainer>
+    </Item>
+  </Override>
+  <!-- diving suitcase -->
+  <Override>
+    <Item name="Diving Suitcase" identifier="squidd_divingsuitcase" category="Equipment" tags="smallitem,mobilecontainer,tool,toolbox" cargocontaineridentifier="" scale="0.2" showcontentsintooltip="true" fireproof="true" description="A compact diving suit storage container." impactsoundtag="impact_metal_heavy" RequireAimToUse="True">
+      <PreferredContainer primary="engcab" />
+      <PreferredContainer secondary="wreckstoragecab" spawnprobability="0.05" />
+      <PreferredContainer primary="outpostcrewcabinet" minamount="0" maxamount="1" spawnprobability="0.1" />
+      <Deconstruct time="10">
+        <Item identifier="titanium" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20">
+        <RequiredSkill identifier="mechanical" level="20" />
+        <Item identifier="titanium" />
+      </Fabricate>
+      <InventoryIcon texture="divingsuitcase.png" sourcerect="0,0,335,240" origin="0.5,0.5" />
+      <Sprite texture="divingsuitcase.png" sourcerect="0,0,335,240" origin="0.5,0.5" depth="0.6" />
+      <!--<Sprite texture="Content/Items/Containers/crates.png" depth="0.54" sourcerect="1,0,68,39">-->
+      <Body width="180" height="180" density="10" />
+      <MeleeWeapon slots="Any,RightHand,LeftHand" controlpose="true" aimpos="45,10" handle1="-3,18" holdangle="90" reload="1" range="50" combatpriority="6" msg="ItemMsgPickUpSelect">
+        <Attack structuredamage="10" itemdamage="5" targetimpulse="2">
+          <Affliction identifier="blunttrauma" strength="2" />
+          <Affliction identifier="stun" strength="0.6" />
+          <Sound file="Content/Items/Weapons/Smack2.ogg" range="800" />
+        </Attack>
+      </MeleeWeapon>
+      <ItemContainer capacity="1" maxstacksize="1" keepopenwhenequipped="true" movableframe="true">
+        <Containable items="diving,deepdiving,clothing" excludeditems="toolbelt,toolbox" />
+      </ItemContainer>
+      <aitarget sightrange="1000" soundrange="1000" fadeouttime="2" />
+      <Upgrade gameversion="0.10.0.0" scale="0.2" />
+    </Item>
+  </Override>
+  <!-- utilitybelt -->
+  <Override>
+    <Item name="Utility Belt" identifier="squiddbelt2" category="Equipment" tags="smallitem,mobilecontainer,tool,toolbelt" interactthroughwalls="true" cargocontaineridentifier="metalcrate" showcontentsintooltip="true" Scale="0.5" fireproof="true" description="An understated utility belt with extra space." impactsoundtag="impact_soft">
+      <Deconstruct time="40">
+        <Item identifier="ballisticfiber" />
+        <Item identifier="ballisticfiber" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="30">
+        <RequiredSkill identifier="mechanical" level="40" />
+        <RequiredItem identifier="ballisticfiber" />
+        <RequiredItem identifier="ballisticfiber" />
+      </Fabricate>
+      <Price baseprice="300">
+        <Price locationtype="outpost" multiplier="1" minavailable="4" />
+        <Price locationtype="city" multiplier="0.9" minavailable="6" />
+        <Price locationtype="research" multiplier="1.25" minavailable="1" />
+        <Price locationtype="military" multiplier="1.25" minavailable="1" />
+        <Price locationtype="mine" multiplier="1.25" minavailable="8" />
+      </Price>
+      <InventoryIcon texture="belt1.png" sourcerect="256,102,112,54" origin="0.5,0.5" />
+      <Sprite texture="belt1.png" sourcerect="256,102,112,54" depth="0.6" />
+      <Body width="100" height="50" density="13" />
+      <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+        <sprite name="ToolBelt" texture="belt1.png" sourcerect="256,102,112,54" limb="Torso" inherittexturescale="true" origin="0.5,-0.2" />
+      </Wearable>
+      <Holdable slots="RightHand+LeftHand" holdpos="0,-70" handle1="-5,0" handle2="10,-20" holdangle="0" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Use" allowswappingwhenpicked="false" />
+      <ItemContainer capacity="10" slotsperrow="2" depth="0.5">
+        <Containable items="smallitem" excludeditems="toolbelt,toolbox,bandolier" />
+      </ItemContainer>
+      <Upgrade gameversion="0.10.0.0" scale="0.2" />
+    </Item>
+  </Override>
+  <!-- DEPRECATED -->
+  <Override>
+    <Item name="," identifier="divingsuitcase" category="Equipment" tags="smallitem,mobilecontainer,tool,toolbox" cargocontaineridentifier="" hideinmenus="true" showcontentsintooltip="true" Scale="0.5" fireproof="true" description="A compact diving suit storage container. This item should no longer be obtainable." impactsoundtag="impact_metal_heavy" RequireAimToUse="True">
+      <InventoryIcon texture="deprecated.png" sourcerect="0,0,100,100" origin="0.5,0.5" />
+      <Sprite texture="divingsuitcase_old.png" sourcerect="314,1,94,74" origin="0.5,0.5" depth="0.6" />
+      <!--<Sprite texture="Content/Items/Containers/crates.png" depth="0.54" sourcerect="1,0,68,39">-->
+      <Body width="90" height="60" density="20" />
+      <MeleeWeapon slots="Any,RightHand,LeftHand" controlpose="true" aimpos="45,10" handle1="0,18" holdangle="90" reload="1" range="50" combatpriority="6" msg="ItemMsgPickUpSelect">
+        <Attack structuredamage="10" itemdamage="5" targetimpulse="2">
+          <Affliction identifier="blunttrauma" strength="2" />
+          <Affliction identifier="stun" strength="0.6" />
+          <Sound file="Content/Items/Weapons/Smack2.ogg" range="800" />
+        </Attack>
+      </MeleeWeapon>
+      <ItemContainer capacity="1" maxstacksize="1" keepopenwhenequipped="true" movableframe="true">
+        <Containable items="diving,deepdiving,clothing" excludeditems="toolbelt,toolbox" />
+      </ItemContainer>
+      <aitarget sightrange="1000" soundrange="1000" fadeouttime="2" />
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+  </Override>
+</Items>

@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="English" nowhitespace="false" translatedname="English">
+  <override>
+    <jobname.securityofficer>High Officer</jobname.securityofficer>
+    <jobdescription.securityofficer>A high ranking security officer whos second in command. Answers to the captain (or else) and gives orders to Peacekeepers.</jobdescription.securityofficer>
+  </override>
+  <loadingscreentip>[Oasis Forked] Many food items can be crafted using pomegrenades. Start a farm.</loadingscreentip>
+  <loadingscreentip>[Oasis Forked] Ghosts show up on thermal scanners and health HUDs.</loadingscreentip>
+  <loadingscreentip>[Oasis Forked] Ghosts can cause heavy distortion on your sonar monitor.</loadingscreentip>
+  <loadingscreentip>[Oasis Forked] Keep your distance from large hardsuit husks when attacking them.</loadingscreentip>
+  <loadingscreentip>[Leanna] Stop gooning to mudraptor porn and get back to work cadet!</loadingscreentip>
+  <loadingscreentip>[Leanna] The difference between reduceaffliction and affliction is a matter of uber cancer.</loadingscreentip>
+  <loadingscreentip>[Leanna] Racism before hoes.</loadingscreentip>
+  <loadingscreentip>[Leanna] There is no lore reason the IRA is on Europa.</loadingscreentip>
+  <loadingscreentip>[TONY] Kissing your fellow crewmates can encourage teamwork and boost morale.</loadingscreentip>
+  <loadingscreentip>[Oasis Forked] Gas grenades have a short range, but can have very potent lingering effects.</loadingscreentip>
+  <loadingscreentip>[Oasis Forked] Create Pomegrenade Aerosol Grenades to heal a group of people.</loadingscreentip>
+  <loadingscreentip>[Oasis Forked] Sulphuric Acid Aerosol Grenades are devastating against crowds.</loadingscreentip>
+  <loadingscreentip>[Oasis Forked] Riot Grenades are excellent for non-lethally breaking up a group.</loadingscreentip>
+  <loadingscreentip>[Oasis Forked] Genetic Flaying is a cheap but risky way to get permanent genetic effects.</loadingscreentip>
+  <loadingscreentip>[Oasis Forked] Unwanted mutations? Radiation sickness? Craft a Genetic Stabilizer.</loadingscreentip>
+  <loadingscreentip>[Oasis Forked] Calyxanide Aerosol Grenades are an excellent option for containing Husk outbreaks.</loadingscreentip>
+  <loadingscreentip>[Oasis Forked] If you like this mod, consider staring at Mr. Oasis, menacingly.</loadingscreentip>
+  <loadingscreentip>[Oasis Forked] If you want to give feedback and suggestions, consider joining the official Oasis Forked Discord. https://discord.gg/jCXsxqGhvr</loadingscreentip>
+  <loadingscreentip>[Oasis Forked] Administrator? Fuck you! I'M CRAZY!!!</loadingscreentip>
+  <loadingscreentip>[Oasis Forked] The death of clowns may lead to the creation of powerful artifacts.</loadingscreentip>
+  <loadingscreentip>[Oasis Forked] Bennit Donnacrypt is a quirked up white boy goated with the disney sauce.</loadingscreentip>
+  <loadingscreentip>[Oasis Forked] Never take the C. Tenance seriously. Except when he wants you to not take him seriously. uhhh... I think this is meant to be a joke. plz laugh</loadingscreentip>
+  <loadingscreentip>[Oasis Forked] Juggernaut Suits are an excellent way to resist gunfire, but they are useless against almost everything else.</loadingscreentip>
+  <loadingscreentip>[Oasis Forked] Trap, trap, trap, trap, trap, trap, trap, metal, uhh</loadingscreentip>
+  <loadingscreentip>[Oasis Forked] Neptune V's no place to settle, shitsec come to meddle, uhh</loadingscreentip>
+  <loadingscreentip>[Oasis Forked] Headshots with my Samorodok, never accidental.</loadingscreentip>
+  <loadingscreentip>[Oasis Forked] Admin Abuse will guide me even though they call me mental uhh</loadingscreentip>
+  <loadingscreentip>[Oasis Forked] Honk, honk, honk, honk, honk, honk, honk, bikehorn, uhh</loadingscreentip>
+  <loadingscreentip>[Oasis Forked] Europa's no place to settle, Mr. Oasis comes to meddle, uhh</loadingscreentip>
+  <loadingscreentip>[Oasis Forked] Implosions with my Toy Hammer, never accidental.</loadingscreentip>
+  <loadingscreentip>[Oasis Forked] Honk of Honks will guide me even though they call me honker.</loadingscreentip>
+  <loadingscreentip>[Oasis Forked] The Swarmfeeder Queen can easily stunlock those who stray too close.</loadingscreentip>
+  <loadingscreentip>[Oasis Forked] The swarmfeeders are under your skin. Get them out. Rip off your skin.</loadingscreentip>
+  <loadingscreentip>[Oasis Forked] Dr. Katz has connections to the IRA. Beware.</loadingscreentip>
+  <loadingscreentip>[Dr. Katz] I like killing people.</loadingscreentip>
+  <loadingscreentip>[Oasis Forked] Remote Detonators can be an excellent tool for any occasion. Especially weddings.</loadingscreentip>
+  <loadingscreentip>[Oasis Forked] The guards trying to contain those... things.</loadingscreentip>
+  <talentname.encroachingterror>Encroaching Terror</talentname.encroachingterror>
+  <talentname.cleanliness>Cleanliness is next to Godliness</talentname.cleanliness>
+  <talentname.slaughter>Slaughter</talentname.slaughter>
+  <talentdescription.encroachingterror>You like to play with your victims and give them a chance to escape. Those who refuse to play your game will meet your blade, and you attack [maxattackspeed]% faster with melee weapons. While your identity is concealed by a suit, you move much faster, but you attack much slower with all weapons. The downside to all of this is that you dislike ranged weapons and refuse to use them to their full potential.</talentdescription.encroachingterror>
+  <talentdescription.slaughter>Like cattle, they will come for you. You are the butcher. Show no mercy, have no remorse.</talentdescription.slaughter>
+  <talentdescription.lightningwizardoasis> If you have not been attacked for [seconds] seconds, the next attack you suffer has [powerreduction]% less power and your attacker receives a moderate amount of Incremental Stun. </talentdescription.lightningwizardoasis>
+  <talentname.youarenothing>You are Nothing</talentname.youarenothing>
+  <talentdescription.youarenothing> If you have not been attacked for [seconds] seconds, the next attack you suffer has [powerreduction]% less power and your attacker receives a moderate amount of Penance. </talentdescription.youarenothing>
+  <talentname.counter>Counter</talentname.counter>
+  <talentdescription.counter> If you have not been attacked for [seconds] seconds, the next attack you suffer has [powerreduction]% less power and your attacker receives a small amount of damage. </talentdescription.counter>
+  <talentname.whistles>Whistles</talentname.whistles>
+  <talentdescription.whistles>Inquisitors within [meters] meters gain [fanatic] Fanatic.</talentdescription.whistles>
+  <talentname.inquisition>Inquisition</talentname.inquisition>
+  <talentdescription.inquisition>In the name of the One Who Grips.</talentdescription.inquisition>
+  <talentdescription.oasischonkyhonks>Honking your horn will have a [chance]% temporarily improve ally firepower and physical damage resistance by [power]% for [duration]. It will also stun nearby enemies for [duration2] second.</talentdescription.oasischonkyhonks>
+  <talenttree.killer>Serial Killer</talenttree.killer>
+  <talenttree.janitor>Janitor</talenttree.janitor>
+  <talenttree.abysscultist>Abyssal Cultist</talenttree.abysscultist>
+  <talenttree.beneficiary>Beneficiary</talenttree.beneficiary>
+  <talentname.truebeliever>True Believer</talentname.truebeliever>
+  <talentdescription.truebeliever>While wearing Cultist Robes and a Cultist Hood, you will be invisible to demonic entities and gain immunity to most of their powers. You recover from Penance, Condemned, and Hollow quicker.</talentdescription.truebeliever>
+  <talentname.vip>Very Important Person</talentname.vip>
+  <talentdescription.vip>On death causes all security personnel to take 50% more damage for a minute and a half.</talentdescription.vip>
+  <afflictionname.schizophrenia>Schizophrenia</afflictionname.schizophrenia>
+  <afflictiondescription.penance.low>It doesn't seem to be possible to shake this lingering sense of dread.</afflictiondescription.penance.low>
+  <afflictiondescription.penance>It feels like something is being taken..</afflictiondescription.penance>
+  <afflictiondescription.hollow.low>Apathy is setting in, affecting the patient's ability to work.</afflictiondescription.hollow.low>
+  <afflictiondescription.hollow>The patient seems to be suffering more drastic injuries and their greatest skills are rapidly deteriorating. Despite this, there are no signs of tangible damage or illness.</afflictiondescription.hollow>
+  <afflictiondescription.hollow.high>The patient's eyes no longer shine and everything feels dull to them. Whatever is done cannot be undone.</afflictiondescription.hollow.high>
+  <afflictiondescription.temphollow.low>You've been exposed to cursed energy, but it is not much of a threat.</afflictiondescription.temphollow.low>
+  <afflictiondescription.temphollow>You should avoid rituals and demons until you recover.</afflictiondescription.temphollow>
+  <afflictiondescription.temphollow.high>Too late.</afflictiondescription.temphollow.high>
+  <afflictionname.crippledmorale>Crippled Morale</afflictionname.crippledmorale>
+  <afflictiondescription.crippledmorale>The captain is dead. The subject takes 50% more damage.</afflictiondescription.crippledmorale>
+  <afflictiondescription.condemned.low>A burning sensation has begun to replace the patient's apathy, but sensors do not report a fever.</afflictiondescription.condemned.low>
+  <afflictiondescription.condemned>The patient is beginning to suffer a fever that is growing more and more hazardous.</afflictiondescription.condemned>
+  <afflictiondescription.frozen.low>A sensation similar to pins and needles can be felt in the affected area.</afflictiondescription.frozen.low>
+  <afflictiondescription.frozen>The affected area has gone completely numb and even moving it is a challenge.</afflictiondescription.frozen>
+  <afflictiondescription.whisper.self>You should put a blank page into a summoning circle. Read the paper that comes out, then use it in your health interface. Eat it.</afflictiondescription.whisper.self>
+  <afflictiondescription.whisper>...</afflictiondescription.whisper>
+  <afflictiondescription.thrallcurse.mild>You shall drift.</afflictiondescription.thrallcurse.mild>
+  <afflictiondescription.thrallcurse.severe>There is no light here.</afflictiondescription.thrallcurse.severe>
+  <afflictiondescription.thrallcurse.critical>You shall drown in the Deep.</afflictiondescription.thrallcurse.critical>
+  <afflictiondescription.high.self>You feel a considerable buzz and an alleviation from all that ails you.</afflictiondescription.high.self>
+  <afflictiondescription.high.severe.self>You're high as a kite!</afflictiondescription.high.severe.self>
+  <afflictiondescription.high>The patient seems a little distant and erratic.</afflictiondescription.high>
+  <afflictiondescription.high.severe>The patient is high as a kite!</afflictiondescription.high.severe>
+  <afflictiondescription.stabledecay.self>The rot has subsided, and it seems like you can finally rest easy.</afflictiondescription.stabledecay.self>
+  <afflictiondescription.stabledecay>The patient's Abyssal Decay is no longer advancing.</afflictiondescription.stabledecay>
+  <afflictiondescription.flammable.self>Your clothes are saturated with a significant amount of flammable material. Stay away from flames.</afflictiondescription.flammable.self>
+  <afflictiondescription.flammable>The patient's clothes are saturated with flammable material. Keep them away from flames!</afflictiondescription.flammable>
+  <afflictiondescription.burning.self>AAAAAAAAAAAAAAA</afflictiondescription.burning.self>
+  <afflictiondescription.burning>Extinguish the flames!</afflictiondescription.burning>
+  <entityname.om_juggernautsuit>Juggernaut Suit</entityname.om_juggernautsuit>
+  <entityname.helltorch>Helltorch</entityname.helltorch>
+  <entityname.om_passport>Coalition Passport</entityname.om_passport>
+  <entityname.hellspanner>Hellspanner</entityname.hellspanner>
+  <jobdescription.prisoner>Regardless of the crime you were convicted of, you're in the brig now. It might pay to cooperate if you want your freedom quicker.</jobdescription.prisoner>
+  <jobname.slasher>Slasher</jobname.slasher>
+  <jobdescription.slasher>...</jobdescription.slasher>
+  <jobname.santa>Santa</jobname.santa>
+  <jobdescription.santa>Santa Claus himself, bringer of joy.</jobdescription.santa>
+  <jobname.ventdweller>Ventdweller</jobname.ventdweller>
+  <jobname.elf>Elf</jobname.elf>
+  <jobdescription.elf>One of Santa's many helpers.</jobdescription.elf>
+  <jobname.oasisjovianbasic>Jovian Recruit</jobname.oasisjovianbasic>
+  <jobdescription.oasisjovianbasic>A typical Jovian footsoldier.</jobdescription.oasisjovianbasic>
+  <jobname.oasisjovianstandard>Standard Jovian</jobname.oasisjovianstandard>
+  <jobdescription.oasisjovianstandard>A Jovian who has enough experience to have acquired better gear for himself.</jobdescription.oasisjovianstandard>
+  <jobname.oasisjovianelite>Elite Jovian</jobname.oasisjovianelite>
+  <jobdescription.oasisjovianelite>A Jovian who has seen his fair share of raids and overthrown authorities.</jobdescription.oasisjovianelite>
+  <jobname.oasiscoalitionbasic>Coalition Recruit</jobname.oasiscoalitionbasic>
+  <jobdescription.oasiscoalitionbasic>A typical Coalition footsoldier.</jobdescription.oasiscoalitionbasic>
+  <jobname.oasiscoalitionstandard>Standard Coalition</jobname.oasiscoalitionstandard>
+  <jobdescription.oasiscoalitionstandard>A Coalition conscript who has enough experience to have acquired better gear for himself.</jobdescription.oasiscoalitionstandard>
+  <jobname.oasiscoalitionelite>Elite Coalition</jobname.oasiscoalitionelite>
+  <jobname.oasiscoalitioncaptain>Coalition Captain</jobname.oasiscoalitioncaptain>
+  <jobname.oasisjoviancaptain>Jovian Captain</jobname.oasisjoviancaptain>
+  <jobdescription.oasiscoalitionelite>A Coalition conscript who has seen his fair share of dead monster swarms and crushed uprisings.</jobdescription.oasiscoalitionelite>
+  <jobname.subjugator>Subjugator</jobname.subjugator>
+  <jobdescription.subjugator>A Coalition officer specialized in riot control.</jobdescription.subjugator>
+  <jobname.cleaner>Cleaner</jobname.cleaner>
+  <jobdescription.cleaner>A Coalition officer specialized in elimination.</jobdescription.cleaner>
+  <jobname.marine>Marine</jobname.marine>
+  <jobdescription.marine>A Coalition officer often deployed as reinforcements.</jobdescription.marine>
+  <jobname.maid>Maid</jobname.maid>
+  <jobdescription.maid>Loyal cleaning slave.</jobdescription.maid>
+  <jobname.deputy>Peacekeeper</jobname.deputy>
+  <jobdescription.deputy>Peacekeepers are low level security officers that are tasked with the job of ensuring the peace through nonlethal means. Answers to the high officer.</jobdescription.deputy>
+  <jobname.purifier>Inquisitor</jobname.purifier>
+  <jobdescription.purifier>One who works in service of the One who Grips.</jobdescription.purifier>
+  <jobname.oasisabyssalcultist>Abyssal Cultist</jobname.oasisabyssalcultist>
+  <jobdescription.oasisabyssalcultist>A true believer.</jobdescription.oasisabyssalcultist>
+  <jobname.oasisabyssalharbinger>Abyssal Harbinger</jobname.oasisabyssalharbinger>
+  <jobdescription.oasisabyssalharbinger>A true harbinger.</jobdescription.oasisabyssalharbinger>
+  <jobname.oasiseldercultist>Elder Cultist</jobname.oasiseldercultist>
+  <jobdescription.oasiseldercultist>A herald of the Old Ones.</jobdescription.oasiseldercultist>
+  <jobname.guntercool>Guntercool</jobname.guntercool>
+  <jobdescription.guntercool>GUNTERSWEEP</jobdescription.guntercool>
+  <jobname.oasishuskmissionary>Husk Missionary</jobname.oasishuskmissionary>
+  <jobdescription.oasishuskmissionary>Husk Missionary</jobdescription.oasishuskmissionary>
+  <jobname.oasishuskzealot>Husk Zealot</jobname.oasishuskzealot>
+  <jobdescription.oasishuskzealot>Husk Zealot</jobdescription.oasishuskzealot>
+  <jobname.kromer>Kromer</jobname.kromer>
+  <jobdescription.kromer>The One Who Grips.</jobdescription.kromer>
+  <cultitemmsgopen>[[select]] Invoke Providence</cultitemmsgopen>
+  <oasis.concoct>Concoct</oasis.concoct>
+  <afflictiontype.fn_reanimation>Zombification</afflictiontype.fn_reanimation>
+  <afflictiontype.recentlybitten>Bites</afflictiontype.recentlybitten>
+  <afflictiontype.pzinsanity>Insanity</afflictiontype.pzinsanity>
+  <afflictiontype.fn_functionalnecrosis>Necrosis</afflictiontype.fn_functionalnecrosis>
+  <afflictiontype.fn_decay>Decay</afflictiontype.fn_decay>
+  <afflictiontype.fn_knoxfever>Fever</afflictiontype.fn_knoxfever>
+  <afflictiontype.fn_knoxoldbite>Bites</afflictiontype.fn_knoxoldbite>
+  <afflictiontype.fn_placeholder>Necrosis</afflictiontype.fn_placeholder>
+  <afflictiontype.acoustictrauma>Acoustic Trauma</afflictiontype.acoustictrauma>
+  <afflictiontype.sonardamage>Sonar Damage</afflictiontype.sonardamage>
+  <jobname.blackglove>IRA Member</jobname.blackglove>
+  <jobdescription.blackglove>Don't ask how they got here. They don't know either.</jobdescription.blackglove>
+  <talentname.supersoldier>Supersoldier</talentname.supersoldier>
+  <talentname.superdupersoldier>SuperDuperSoldier</talentname.superdupersoldier>
+  <talentname.unkillable>Unkillable</talentname.unkillable>
+  <talentdescription.unkillable>You can't die naturally, but you're [slowdown%] slower. Don't ask questions. Have fun.</talentdescription.unkillable>
+  <!-- jerry stuff -->
+  <entityname.jerroids>Jerroid</entityname.jerroids>
+  <entitydescription.jerroids>Capable of treating people from the Frost and other generic health issues, at the cost of addiction and an unknown side-effect.</entitydescription.jerroids>
+  <entityname.jerry_cigar>Jerry Joint</entityname.jerry_cigar>
+  <entitydescription.jerry_cigar>Living is mentally taxing, and this carefully crafted cigar is the only way to cope.</entitydescription.jerry_cigar>
+  <entityname.jerrystimulantsyringe>Jerry Stimulant</entityname.jerrystimulantsyringe>
+  <entitydescription.jerrystimulantsyringe>A recreational stimulant that makes the user not rapidly recover from physical injuries and causes insanity.</entitydescription.jerrystimulantsyringe>
+  <!-- no more jerry stuff -->
+  <override>
+    <talentdescription.tandemfire>As long as you are manning a turret alongside another allied crewmember, both of your attacks are [amount]% more powerful and you gain immunity to stun and waterflow. Only the closest allied crewmember gains this effect.</talentdescription.tandemfire>
+  </override>
+  <Override>
+    <male>Bad</male>
+  </Override>
+  <Override>
+    <female>Good</female>
+  </Override>
+  <talenttree.experimentalist>Experimentalist</talenttree.experimentalist>
+  <talentname.prototyping>Prototyping</talentname.prototyping>
+  <talentdescription.prototyping>After all these years you finally thought of something to settle that affinity for fire of yours. Gain more [burnresist%] burn resistance and deal [burndam%] more burn damage.</talentdescription.prototyping>
+  <talentname.plasisteelhands>Hands of Plasisteel</talentname.plasisteelhands>
+  <talentdescription.plasisteelhands>After all these years of electrical accidents you barely have any skin left, and perhaps that’s for the best… Gain [burnresist%] more burn resistance.</talentdescription.plasisteelhands>
+  <talentname.rubbernerves>Nerves of Rubber</talentname.rubbernerves>
+  <talentdescription.rubbernerves>Of everyone on the station you’ve got the most fucked up nerves. Is this a good thing? The doctor sure doesn’t think so… Gain a [stunresist%] resistance against all stun afflictions.</talentdescription.rubbernerves>
+  <talentname.experimentalwelder>Experimental Tools</talentname.experimentalwelder>
+  <talentdescription.experimentalwelder>People hate having to refill their tank. Why not just have it make its own fuel? And turn those safeties off while we’re at it, eh? Gain an additional [fixspeed%] hull fixing speed.</talentdescription.experimentalwelder>
+  <talentname.experimentaltools>Material Solutions</talentname.experimentaltools>
+  <talentdescription.experimentaltools>Agh! Another tool broke… Wait! Why don’t we make these things out of pure titanium? Gain [fixspeed%] more repair speed.</talentdescription.experimentaltools>
+  <talentname.gloryanddiscipline>Glory and Discipline!</talentname.gloryanddiscipline>
+  <talentdescription.gloryanddiscipline>All crew gain [repairspeed%] more repair speed, [percent%] more vitality and speed.</talentdescription.gloryanddiscipline>
+  <talentname.capcrewmedtraining>Medical Training</talentname.capcrewmedtraining>
+  <talentdescription.capcrewmedtraining>You have put forth your personal funds towards training the crew on medical care. All non-medical personnel gain [medskill] and [cprtext]</talentdescription.capcrewmedtraining>
+  <talentname.capcrewweaptraining>Weapon Subsidies</talentname.capcrewweaptraining>
+  <talentdescription.capcrewweaptraining>The Coalition is offering giant sums for weapon production. You, of course, accept this money. [skillbonusnonsec]</talentdescription.capcrewweaptraining>
+  <jobname.wiseman>Janitor</jobname.wiseman>
+  <talentdescription.alchemy>Aquire the troubling ability to transmute Lead into Ethanol via a fabricator.</talentdescription.alchemy>
+  <talenttree.wise_man_cleaner>Cleaner</talenttree.wise_man_cleaner>
+  <talenttree.wise_man_steadfast>Steadfast Veteran</talenttree.wise_man_steadfast>
+  <talentdescription.VeteranOfTheOldWar>The old war made you who you are today. A resistant yet feeble man.</talentdescription.VeteranOfTheOldWar>
+  <talent.fastdiver>Fast Diver</talent.fastdiver>
+  <talent.olddiver>Old Diver</talent.olddiver>
+  <talent.ElusiveMan>Elusive Man</talent.ElusiveMan>
+  <talent.VeteranOfTheOldWar>Veteran of the Old War</talent.VeteranOfTheOldWar>
+  <talentdescription.dday>Back in the war it was just you and your rifle.</talentdescription.dday>
+  <talent.dday>The Twelve Day Siege</talent.dday>
+  <talent.wakeup>WAKE UP!</talent.wakeup>
+</infotexts>

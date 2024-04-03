@@ -1,0 +1,460 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<prefabs>
+  <visageblood color="0,0,0,200" lifetime="5" fadeouttime="5">
+    <sprite texture="Content/Map/Outposts/AbandonedOutpost/HumanEnemyA.png" sourcerect="373,348,140,150" />
+    <sprite texture="Content/Map/Outposts/AbandonedOutpost/HumanEnemyA.png" sourcerect="534,320,121,153" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="5,16,143,165" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="160,0,147,153" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="18,187,143,158" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="176,171,141,147" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="187,330,121,154" />
+    <!-- blood splats -->
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="888,2,160,339" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1066,4,89,339" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1181,8,210,316" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1661,1,70,398" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="884,362,185,331" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="746,538,77,332" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1077,360,288,335" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1377,360,197,326" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1608,375,150,297" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1434,9,177,313" />
+    <!-- laceration splats -->
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="2,531,167,166" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="177,536,165,164" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="358,541,165,150" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="530,537,168,159" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1,711,163,147" />
+    <!-- gun splats -->
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="10,11,165,163" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="193,17,159,154" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="366,15,160,156" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="543,16,160,159" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="721,17,159,154" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="11,186,163,164" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="192,192,160,160" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="368,192,160,160" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="544,192,161,160" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="721,192,159,160" />
+    <!-- shared -->
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="39,354,589,164" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="3,875,595,158" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="236,729,404,122" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="8,1046,403,120" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1062,707,335,169" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1062,878,337,169" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1405,746,353,97" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1405,892,352,97" />
+    <!-- vanilla -->
+    <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="256,128,128,128" />
+    <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="256,254,128,128" />
+    <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="384,128,128,128" />
+  </visageblood>
+  <oasisblood color="102,0,0,200" lifetime="6000" fadeouttime="20">
+    <sprite texture="Content/Map/Outposts/AbandonedOutpost/HumanEnemyA.png" sourcerect="373,348,140,150" />
+    <sprite texture="Content/Map/Outposts/AbandonedOutpost/HumanEnemyA.png" sourcerect="534,320,121,153" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="5,16,143,165" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="160,0,147,153" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="18,187,143,158" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="176,171,141,147" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="187,330,121,154" />
+    <!-- blood splats -->
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="888,2,160,339" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1066,4,89,339" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1181,8,210,316" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1661,1,70,398" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="884,362,185,331" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="746,538,77,332" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1077,360,288,335" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1377,360,197,326" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1608,375,150,297" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1434,9,177,313" />
+    <!-- laceration splats -->
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="2,531,167,166" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="177,536,165,164" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="358,541,165,150" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="530,537,168,159" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1,711,163,147" />
+    <!-- gun splats -->
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="10,11,165,163" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="193,17,159,154" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="366,15,160,156" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="543,16,160,159" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="721,17,159,154" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="11,186,163,164" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="192,192,160,160" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="368,192,160,160" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="544,192,161,160" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="721,192,159,160" />
+    <!-- shared -->
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="39,354,589,164" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="3,875,595,158" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="236,729,404,122" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="8,1046,403,120" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1062,707,335,169" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1062,878,337,169" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1405,746,353,97" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1405,892,352,97" />
+    <!-- vanilla -->
+    <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="256,128,128,128" />
+    <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="256,254,128,128" />
+    <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="384,128,128,128" />
+  </oasisblood>
+  <!-- Typically used by humans but may also be used by other creatures -->
+  <Override>
+    <blood color="102,0,0,200" lifetime="6000" fadeouttime="20">
+      <sprite texture="Content/Map/Outposts/AbandonedOutpost/HumanEnemyA.png" sourcerect="373,348,140,150" />
+      <sprite texture="Content/Map/Outposts/AbandonedOutpost/HumanEnemyA.png" sourcerect="534,320,121,153" />
+      <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="5,16,143,165" />
+      <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="160,0,147,153" />
+      <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="18,187,143,158" />
+      <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="176,171,141,147" />
+      <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="187,330,121,154" />
+      <!-- blood splats -->
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="888,2,160,339" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1066,4,89,339" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1181,8,210,316" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1661,1,70,398" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="884,362,185,331" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="746,538,77,332" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1077,360,288,335" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1377,360,197,326" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1608,375,150,297" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1434,9,177,313" />
+      <!-- laceration splats -->
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="2,531,167,166" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="177,536,165,164" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="358,541,165,150" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="530,537,168,159" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1,711,163,147" />
+      <!-- gun splats -->
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="10,11,165,163" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="193,17,159,154" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="366,15,160,156" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="543,16,160,159" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="721,17,159,154" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="11,186,163,164" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="192,192,160,160" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="368,192,160,160" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="544,192,161,160" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="721,192,159,160" />
+      <!-- shared -->
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="39,354,589,164" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="3,875,595,158" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="236,729,404,122" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="8,1046,403,120" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1062,707,335,169" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1062,878,337,169" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1405,746,353,97" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1405,892,352,97" />
+      <!-- vanilla -->
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="256,128,128,128" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="256,254,128,128" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="384,128,128,128" />
+    </blood>
+  </Override>
+  <!-- Used by husks, primarily -->
+  <Override>
+    <blackblood color="0,0,0,200" lifetime="6000" fadeouttime="20">
+      <sprite texture="Content/Map/Outposts/AbandonedOutpost/HumanEnemyA.png" sourcerect="373,348,140,150" />
+      <sprite texture="Content/Map/Outposts/AbandonedOutpost/HumanEnemyA.png" sourcerect="534,320,121,153" />
+      <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="5,16,143,165" />
+      <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="160,0,147,153" />
+      <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="18,187,143,158" />
+      <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="176,171,141,147" />
+      <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="187,330,121,154" />
+      <!-- blood splats -->
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="888,2,160,339" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1066,4,89,339" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1181,8,210,316" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1661,1,70,398" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="884,362,185,331" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="746,538,77,332" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1077,360,288,335" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1377,360,197,326" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1608,375,150,297" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1434,9,177,313" />
+      <!-- laceration splats -->
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="2,531,167,166" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="177,536,165,164" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="358,541,165,150" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="530,537,168,159" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1,711,163,147" />
+      <!-- gun splats -->
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="10,11,165,163" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="193,17,159,154" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="366,15,160,156" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="543,16,160,159" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="721,17,159,154" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="11,186,163,164" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="192,192,160,160" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="368,192,160,160" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="544,192,161,160" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="721,192,159,160" />
+      <!-- shared -->
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="39,354,589,164" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="3,875,595,158" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="236,729,404,122" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="8,1046,403,120" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1062,707,335,169" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1062,878,337,169" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1405,746,353,97" />
+      <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1405,892,352,97" />
+      <!-- vanilla -->
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="256,128,128,128" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="256,254,128,128" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="384,128,128,128" />
+    </blackblood>
+  </Override>
+  <bloodlacegunsplatbig color="102,0,0,200" lifetime="6000" fadeouttime="20">
+    <sprite texture="Content/Map/Outposts/AbandonedOutpost/HumanEnemyA.png" sourcerect="373,348,140,150" />
+    <sprite texture="Content/Map/Outposts/AbandonedOutpost/HumanEnemyA.png" sourcerect="534,320,121,153" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="5,16,143,165" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="160,0,147,153" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="18,187,143,158" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="176,171,141,147" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="187,330,121,154" />
+    <!-- blood splats -->
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="888,2,160,339" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1066,4,89,339" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1181,8,210,316" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1661,1,70,398" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="884,362,185,331" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="746,538,77,332" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1077,360,288,335" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1377,360,197,326" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1608,375,150,297" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1434,9,177,313" />
+    <!-- laceration splats -->
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="2,531,167,166" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="177,536,165,164" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="358,541,165,150" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="530,537,168,159" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1,711,163,147" />
+    <!-- gun splats -->
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="10,11,165,163" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="193,17,159,154" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="366,15,160,156" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="543,16,160,159" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="721,17,159,154" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="11,186,163,164" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="192,192,160,160" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="368,192,160,160" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="544,192,161,160" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="721,192,159,160" />
+    <!-- shared -->
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="39,354,589,164" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="3,875,595,158" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="236,729,404,122" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="8,1046,403,120" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1062,707,335,169" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1062,878,337,169" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1405,746,353,97" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1405,892,352,97" />
+    <!-- vanilla -->
+    <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="256,128,128,128" />
+    <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="256,254,128,128" />
+    <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="384,128,128,128" />
+  </bloodlacegunsplatbig>
+  <bloodsplatbig color="102,0,0,200" lifetime="6000" fadeouttime="20">
+    <sprite texture="Content/Map/Outposts/AbandonedOutpost/HumanEnemyA.png" sourcerect="373,348,140,150" />
+    <sprite texture="Content/Map/Outposts/AbandonedOutpost/HumanEnemyA.png" sourcerect="534,320,121,153" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="5,16,143,165" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="160,0,147,153" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="18,187,143,158" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="176,171,141,147" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="187,330,121,154" />
+    <!-- unique -->
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="888,2,160,339" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1066,4,89,339" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1181,8,210,316" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1661,1,70,398" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="884,362,185,331" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="746,538,77,332" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1077,360,288,335" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1377,360,197,326" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1608,375,150,297" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1434,9,177,313" />
+    <!-- shared -->
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="39,354,589,164" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="3,875,595,158" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="236,729,404,122" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="8,1046,403,120" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1062,707,335,169" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1062,878,337,169" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1405,746,353,97" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1405,892,352,97" />
+  </bloodsplatbig>
+  <bloodlacesplatbig color="102,0,0,200" lifetime="6000" fadeouttime="20">
+    <sprite texture="Content/Map/Outposts/AbandonedOutpost/HumanEnemyA.png" sourcerect="373,348,140,150" />
+    <sprite texture="Content/Map/Outposts/AbandonedOutpost/HumanEnemyA.png" sourcerect="534,320,121,153" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="5,16,143,165" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="160,0,147,153" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="18,187,143,158" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="176,171,141,147" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="187,330,121,154" />
+    <!-- unique -->
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="888,2,160,339" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1066,4,89,339" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1181,8,210,316" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1661,1,70,398" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="884,362,185,331" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="746,538,77,332" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1077,360,288,335" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1377,360,197,326" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1608,375,150,297" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1434,9,177,313" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="2,531,167,166" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="177,536,165,164" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="358,541,165,150" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="530,537,168,159" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1,711,163,147" />
+    <!-- shared -->
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="39,354,589,164" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="3,875,595,158" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="236,729,404,122" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="8,1046,403,120" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1062,707,335,169" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1062,878,337,169" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1405,746,353,97" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1405,892,352,97" />
+  </bloodlacesplatbig>
+  <lacesplatbig color="102,0,0,200" lifetime="6000" fadeouttime="20">
+    <sprite texture="Content/Map/Outposts/AbandonedOutpost/HumanEnemyA.png" sourcerect="373,348,140,150" />
+    <sprite texture="Content/Map/Outposts/AbandonedOutpost/HumanEnemyA.png" sourcerect="534,320,121,153" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="5,16,143,165" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="160,0,147,153" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="18,187,143,158" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="176,171,141,147" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="187,330,121,154" />
+    <!-- unique -->
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="2,531,167,166" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="177,536,165,164" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="358,541,165,150" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="530,537,168,159" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1,711,163,147" />
+    <!-- shared -->
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="39,354,589,164" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="3,875,595,158" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="236,729,404,122" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="8,1046,403,120" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1062,707,335,169" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1062,878,337,169" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1405,746,353,97" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1405,892,352,97" />
+  </lacesplatbig>
+  <gunlacesplatbig color="102,0,0,200" lifetime="6000" fadeouttime="20">
+    <sprite texture="Content/Map/Outposts/AbandonedOutpost/HumanEnemyA.png" sourcerect="373,348,140,150" />
+    <sprite texture="Content/Map/Outposts/AbandonedOutpost/HumanEnemyA.png" sourcerect="534,320,121,153" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="5,16,143,165" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="160,0,147,153" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="18,187,143,158" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="176,171,141,147" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="187,330,121,154" />
+    <!-- unique -->
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="2,531,167,166" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="177,536,165,164" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="358,541,165,150" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="530,537,168,159" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1,711,163,147" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="10,11,165,163" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="193,17,159,154" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="366,15,160,156" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="543,16,160,159" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="721,17,159,154" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="11,186,163,164" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="192,192,160,160" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="368,192,160,160" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="544,192,161,160" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="721,192,159,160" />
+    <!-- shared -->
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="39,354,589,164" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="3,875,595,158" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="236,729,404,122" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="8,1046,403,120" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1062,707,335,169" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1062,878,337,169" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1405,746,353,97" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1405,892,352,97" />
+  </gunlacesplatbig>
+  <gunsplatbig color="102,0,0,200" lifetime="6000" fadeouttime="20">
+    <sprite texture="Content/Map/Outposts/AbandonedOutpost/HumanEnemyA.png" sourcerect="373,348,140,150" />
+    <sprite texture="Content/Map/Outposts/AbandonedOutpost/HumanEnemyA.png" sourcerect="534,320,121,153" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="5,16,143,165" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="160,0,147,153" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="18,187,143,158" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="176,171,141,147" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="187,330,121,154" />
+    <!-- unique -->
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="10,11,165,163" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="193,17,159,154" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="366,15,160,156" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="543,16,160,159" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="721,17,159,154" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="11,186,163,164" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="192,192,160,160" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="368,192,160,160" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="544,192,161,160" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="721,192,159,160" />
+    <!-- shared -->
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="39,354,589,164" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="3,875,595,158" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="236,729,404,122" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="8,1046,403,120" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1062,707,335,169" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1062,878,337,169" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1405,746,353,97" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1405,892,352,97" />
+  </gunsplatbig>
+  <gunbloodsplatbig color="102,0,0,200" lifetime="6000" fadeouttime="20">
+    <sprite texture="Content/Map/Outposts/AbandonedOutpost/HumanEnemyA.png" sourcerect="373,348,140,150" />
+    <sprite texture="Content/Map/Outposts/AbandonedOutpost/HumanEnemyA.png" sourcerect="534,320,121,153" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="5,16,143,165" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="160,0,147,153" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="18,187,143,158" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="176,171,141,147" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="187,330,121,154" />
+    <!-- unique -->
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="10,11,165,163" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="193,17,159,154" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="366,15,160,156" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="543,16,160,159" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="721,17,159,154" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="11,186,163,164" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="192,192,160,160" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="368,192,160,160" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="544,192,161,160" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="721,192,159,160" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="888,2,160,339" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1066,4,89,339" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1181,8,210,316" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1661,1,70,398" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="884,362,185,331" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="746,538,77,332" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1077,360,288,335" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1377,360,197,326" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1608,375,150,297" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1434,9,177,313" />
+    <!-- shared -->
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="39,354,589,164" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="3,875,595,158" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="236,729,404,122" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="8,1046,403,120" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1062,707,335,169" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1062,878,337,169" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1405,746,353,97" />
+    <sprite texture="%ModDir%/Images/dNg blood.png" sourcerect="1405,892,352,97" />
+  </gunbloodsplatbig>
+  <huskbloodsplatbig color="10,10,10,255" lifetime="6000" fadeouttime="20">
+    <sprite texture="Content/Map/Outposts/AbandonedOutpost/HumanEnemyA.png" sourcerect="373,348,140,150" />
+    <sprite texture="Content/Map/Outposts/AbandonedOutpost/HumanEnemyA.png" sourcerect="534,320,121,153" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="5,16,143,165" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="160,0,147,153" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="18,187,143,158" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="176,171,141,147" />
+    <sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="187,330,121,154" />
+  </huskbloodsplatbig>
+  <cultmural color="1.0, 1.0, 1.0, 1.0" lifetime="6000" fadeouttime="20">
+    <sprite name="mural" texture="%ModDir%/Images/walldraw.png" sourcerect="0,0,858,590" origin="0.50213677,0.55497175" />
+  </cultmural>
+</prefabs>

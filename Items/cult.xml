@@ -1,0 +1,1992 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="Cultist Document" identifier="cultdoc" maxstacksize="32" maxstacksizecharacterinventory="10" description="Enlightenment." useinhealthinterface="true" category="Misc" Tags="smallitem,logic,oasisdocument" cargocontaineridentifier="folder" scale="0.25" impactsoundtag="impact_soft">
+    <PreferredContainer secondary="folder" minamount="1" maxamount="1" spawnprobability="0.1" />
+    <PreferredContainer secondary="wreckmedcab,abandonedmedcab" minamount="1" maxamount="1" spawnprobability="0.1" />
+    <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="2" spawnprobability="0.15" />
+    <Price baseprice="100" soldeverywhere="false" />
+    <Fabricate suitablefabricators="cultfabricator" requiredtime="1" requiresrecipe="true">
+      <Item identifier="blankpaper" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Images/documenticon.png" sourcerect="0,0,64,90" />
+    <Sprite texture="%ModDir%/Images/documenticon.png" sourcerect="0,0,64,90" depth="0.55" origin="0.5,0.5" scale="10.5" />
+    <Body width="52" height="64" density="10" />
+    <Holdable slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="90" reload="1.0" msg="ItemMsgPickUpSelect">
+      <StatusEffect tags="medical" type="OnUse" target="Character,This">
+        <GiveTalentInfo giverandom="true" talentidentifiers="truebeliever" />
+        <GiveExperience amount="1000" />
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+    <Terminal canbeselected="true" msg="ItemMsgInteractSelect" AllowInGameEditing="false" drawhudwhenequipped="true" allowuioverlap="true" TextColor="50,10,10,255">
+      <GuiFrame relativesize="0.5,0.5" anchor="Center" minsize="414,583" maxsize="414,583" style="cultdoc" />
+    </Terminal>
+  </Item>
+  <!-- This tank will consume the holder's soul. -->
+  <Item name="Empty Soul Tank" identifier="emptysoultank" description="A tank used to contain spiritual essence, disguised as a nitrogen tank to evade detection by nonbelievers." category="Material" cargocontaineridentifier="chemicalcrate" Tags="smallitem,chem,medical,syringe" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
+    <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.01" />
+    <PreferredContainer secondary="abandonedcrewcab" amount="1" spawnprobability="0.01" />
+    <PreferredContainer primary="crewcab" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="30">
+      <RequiredItem identifier="aluminium" amount="2" />
+      <RequiredItem identifier="alienblood" />
+    </Fabricate>
+    <Fabricate suitablefabricators="cultfabricator" requiredtime="15">
+      <RequiredItem identifier="aluminium" amount="1" />
+      <RequiredItem identifier="alienblood" />
+    </Fabricate>
+    <Deconstruct time="5">
+      <Item identifier="aluminium" />
+      <Item identifier="alienblood" />
+    </Deconstruct>
+    <Price baseprice="650" sold="false"></Price>
+    <InventoryIcon texture="%ModDir%/Images/canteen3.png" sourcerect="896,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/canteen3s.png" sourcerect="410,71,24,66" depth="0.55" origin="0.5,0.5" />
+    <Body width="30" height="55" density="20" />
+    <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-5,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect">
+      <StatusEffect tags="Medical" type="OnUse" target="This,UseTarget" condition="-20" duration="5" disabledeltatime="true">
+        <Conditional isdead="false" targetself="false" />
+        <Affliction identifier="penance" amount="5" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <Spawnitem identifier="soultank" />
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+  </Item>
+  <!-- This tank will restore the holder's soul. -->
+  <Item name="Soul Tank" identifier="soultank" description="A tank used to contain spiritual essence, disguised as a nitrogen tank to evade detection by nonbelievers." category="Material" cargocontaineridentifier="chemicalcrate" Tags="smallitem,chem,medical,syringe" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
+    <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.01" />
+    <PreferredContainer secondary="abandonedcrewcab" amount="1" spawnprobability="0.01" />
+    <PreferredContainer primary="crewcab" />
+    <Deconstruct time="5">
+      <Item identifier="aluminium" />
+      <Item identifier="alienblood" />
+    </Deconstruct>
+    <Price baseprice="650" sold="false"></Price>
+    <InventoryIcon texture="%ModDir%/Images/canteen3.png" sourcerect="896,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/canteen3s.png" sourcerect="410,71,24,66" depth="0.55" origin="0.5,0.5" />
+    <SuitableTreatment identifier="penance" suitability="20" />
+    <SuitableTreatment identifier="hollow" suitability="40" />
+    <SuitableTreatment identifier="condemned" suitability="20" />
+    <Body width="30" height="55" density="20" />
+    <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-5,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect">
+      <StatusEffect tags="Medical" type="OnUse" target="This,UseTarget" condition="-20" duration="5">
+        <Conditional condition="eq 100" />
+        <Affliction identifier="blessed" amount="4" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <Spawnitem identifier="emptysoultank" />
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+  </Item>
+  <!-- This paintbrush is how you place down a pentagram to begin with. Unlike Thalassophobia, you can craft it. -->
+  <Item name="Ritual Paintbrush" identifier="oasis_paintbrush" description="Used to create ritualistic pentagrams. Pentagrams can easily be destroyed, but cannot be removed, so you should place them wisely." category="Misc" Tags="smallitem" scale="0.3" impactsoundtag="impact_metal_light" isshootable="true">
+    <PreferredContainer primary="crewcab,wreckstoragecab" spawnprobability="0.01" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="30">
+      <RequiredItem identifier="alienblood" />
+      <RequiredItem identifier="soultank" mincondition="1.0" usecondition="true" />
+      <RequiredItem identifier="carbon" />
+    </Fabricate>
+    <Fabricate suitablefabricators="cultfabricator" requiredtime="15">
+      <RequiredItem identifier="alienblood" />
+      <RequiredItem identifier="soultank" mincondition="1.0" usecondition="true" />
+    </Fabricate>
+    <Sprite name="paintbrush" texture="%ModDir%/Images/cult.png" sourcerect="714,1013,126,131" depth="0.6" origin="0.5,0.5" />
+    <Body width="80" height="27" />
+    <Holdable slots="Any,RightHand,LeftHand" aimable="false" aimpos="35,23" handle1="15,0" swingamount="0,0" swingspeed="0.5" swingwhenusing="false" msg="ItemMsgPickUpSelect"></Holdable>
+    <RangedWeapon reload="2">
+      <StatusEffect type="OnUse" target="This" IsOn="true">
+        <SpawnItem identifier="oasis_pentagram" />
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" delay="0.8" IsOn="false" />
+    </RangedWeapon>
+  </Item>
+  <!-- The summoning pentagram is used for summoning rituals. Put item in, effect comes out. Each ritual has a cost, though. 10 Penance = 20 Hollow and 10 Condemned. Hollow maxes out at 100 and is a general debuff. Condemned will kill you pretty quickly. -->
+  <Item name="Summoning Pentagram" description="A summoning pentagram for the usage of bringing living entities into the world. Cannot be safely removed once it is placed." identifier="oasis_pentagram" category="Equipment" cargocontaineridentifier="metalcrate" tags="smallitem" impactsoundtag="impact_soft" scale="0.45" interactdistance="50" hideconditionbar="true" damagedbyexplosions="true" damagedbyprojectiles="true" damagedbyrepairtools="true" damagedbymeleeweapons="true" isshootable="true">
+    <InventoryIcon name="pentagram Inv" texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" depth="0.6" origin="0.5,0.5" />
+    <Sprite name="pentagram Sprite" texture="%ModDir%/Images/cult.png" sourcerect="4,404,374,368" depth="0.6" origin="0.5,0.5" />
+    <Body width="50" height="50" density="400" bodytype="Kinematic" />
+    <LightComponent range="900.0" lightcolor="255,0,0,100" IsOn="false" powerconsumption="0" blinkFrequency="10" allowingameediting="false" castshadows="true">
+      <StatusEffect delay="0.1" type="OnBroken" target="This" Condition="-100.0">
+        <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="explosion" decalsize="0.5" camerashake="5.0">
+          <Affliction identifier="penance" strength="20" />
+        </Explosion>
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This" Voltage="1.0" setvalue="true">
+        <Conditional IsActive="true" targetitemcomponent="Fabricator" />
+      </StatusEffect>
+      <Sprite name="pentagram light Sprite" texture="%ModDir%/Images/cult.png" sourcerect="4,780,374,368" depth="0.6" origin="0.5,0.5" />
+      <sound file="%ModDir%/Sounds/uboa.ogg" type="OnActive" range="1000.0" loop="true" volume="1.5" />
+      <StatusEffect type="OnActive" target="This" stackable="false" disabledeltatime="true">
+        <ParticleEmitter particle="cult_rune" particlespersecond="4" particleburstinterval="2" particleburstamount="5" velocitymin="190" velocitymax="250" anglemin="0" anglemax="360" scalemin="0.7" scalemax="1.0" />
+        <ParticleEmitter particle="oasis_pentacircle" burstamount="3" particlespersecond="2" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" scalemin="1.0" scalemax="1.0" />
+      </StatusEffect>
+    </LightComponent>
+    <ItemContainer capacity="1" maxstacksize="1" canbeselected="true" hideitems="true" msg="cultitemmsgopen" drawinventory="false">
+      <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="CultItemUI" />
+      <Containable items="smallitem,mediumitem" />
+      <StatusEffect type="Always" target="This" condition="1" setvalue="true" drawinventory="true">
+        <Conditional drawinventory="false" />
+      </StatusEffect>
+    </ItemContainer>
+    <CustomInterface canbeselected="true" IsOn="true">
+      <GuiFrame relativesize="0.2,0.1" anchor="Center" absoluteoffset="0,90" style="CultItemUI" />
+      <Button text="Initiate Ritual">
+        <!-- 
+        XX
+        Crawler gaming: Spawns a couple crawlers and some materials.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="rawcrawlermeat" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained,This" delay="15" IsOn="false" canbeselected="true">
+          <SpawnCharacter speciesname="crawler" count="2" />
+          <SpawnItem identifier="carbon" />
+          <SpawnItem identifier="carbon" />
+          <SpawnItem identifier="aluminium" />
+          <SpawnItem identifier="aluminium" />
+          <SpawnItem identifier="alienblood" />
+          <RequiredItem identifier="rawcrawlermeat" type="Contained" />
+          <Conditional condition="gt 50" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="rawcrawlermeat" type="Contained" />
+          <Conditional condition="gt 50" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="20" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-20">
+          <RequiredItem identifier="rawcrawlermeat" type="Contained" />
+          <Remove />
+          <Conditional condition="gt 50" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Mudraptor gaming: Spawns 2 raptors, some steel, some blood, and an egg.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="rawmudraptormeat" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained,This" delay="20" IsOn="false" canbeselected="true">
+          <SpawnCharacter speciesname="mudraptor" count="2" />
+          <SpawnItem identifier="steel" />
+          <SpawnItem identifier="steel" />
+          <SpawnItem identifier="rubber" />
+          <SpawnItem identifier="rubber" />
+          <SpawnItem identifier="alienblood" />
+          <RequiredItem identifier="rawmudraptormeat" type="Contained" />
+          <Conditional condition="gt 40" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="rawmudraptormeat" type="Contained" />
+          <Conditional condition="gt 40" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="20" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-40">
+          <RequiredItem identifier="rawmudraptormeat" type="Contained" />
+          <Remove />
+          <Conditional condition="gt 40" />
+        </StatusEffect>
+        <!-- 
+        XX
+        husk gaming: Spawns 2 husks and some Calyxanide.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="huskstinger" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="15" IsOn="false" canbeselected="true">
+          <SpawnCharacter speciesname="husk" count="2" />
+          <SpawnItem identifier="huskeggs" />
+          <SpawnItem identifier="huskeggs" />
+          <Conditional condition="gt 30" />
+          <RequiredItem identifier="huskstinger" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="huskstinger" type="Contained" />
+          <Conditional condition="gt 30" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="20" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-30">
+          <RequiredItem identifier="huskstinger" type="Contained" />
+          <Remove />
+          <Conditional condition="gt 30" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Airborne Husk Infection: Infects the air with Airborne Husk.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="unstablehuskstinger" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="30" IsOn="false" canbeselected="true">
+          <SpawnCharacter speciesname="husk" count="4" />
+          <Conditional condition="gt 50" />
+          <RequiredItem identifier="unstablehuskstinger" type="Contained" />
+        </StatusEffect>
+        <!-- Delayed smoke effect, ensuring the husks have a chance to be mutated -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="26" IsOn="false" canbeselected="true">
+          <SpawnItem identifier="superhusksmoke10k" />
+          <SpawnItem identifier="husktitansmoke" />
+          <Conditional condition="gt 50" />
+          <RequiredItem identifier="unstablehuskstinger" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="unstablehuskstinger" type="Contained" />
+          <Conditional condition="gt 50" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="20" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-50">
+          <RequiredItem identifier="unstablehuskstinger" type="Contained" />
+          <Remove />
+          <Conditional condition="gte 50" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Geneflay Burst: Causes a burst that can cause genetic buffs and debuffs.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="healthscanner" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="10" IsOn="false" canbeselected="true">
+          <SpawnItem identifier="genesmoke2" />
+          <Conditional condition="gt 20" />
+          <RequiredItem identifier="healthscanner" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="healthscanner" type="Contained" />
+          <Conditional condition="gt 20" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="20" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-40">
+          <RequiredItem identifier="healthscanner" type="Contained" />
+          <Remove />
+          <Conditional condition="gte 40" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Healing Burst: Causes a burst that heals nearby players.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="creepingorange" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="10" IsOn="false" canbeselected="true">
+          <SpawnItem identifier="healsmoke" />
+          <Conditional condition="gt 30" />
+          <RequiredItem identifier="creepingorange" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="creepingorange" type="Contained" />
+          <Conditional condition="gt 30" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="20" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-30">
+          <RequiredItem identifier="creepingorange" type="Contained" />
+          <Remove />
+          <Conditional condition="gte 30" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Summons an evil blue horn..
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="bikehorn" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="30" IsOn="false" canbeselected="true">
+          <SpawnItem identifier="scp_memehorn" />
+          <Conditional condition="gt 20" />
+          <RequiredItem identifier="bikehorn" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="bikehorn" type="Contained" />
+          <Conditional condition="gt 20" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="25" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-50">
+          <RequiredItem identifier="bikehorn" type="Contained" />
+          <Remove />
+          <Conditional condition="gte 50" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Summons a medium black hole.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="scp_memehorn" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="30" IsOn="false" canbeselected="true">
+          <SpawnItem identifier="singulomedium" />
+          <Conditional condition="gt 20" />
+          <RequiredItem identifier="scp_memehorn" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="scp_memehorn" type="Contained" />
+          <Conditional condition="gt 20" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="20" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-90">
+          <RequiredItem identifier="scp_memehorn" type="Contained" />
+          <Remove />
+          <Conditional condition="gte 90" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Grants wealth, but at what cost?
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="200markbill" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="30" IsOn="false" canbeselected="true">
+          <SpawnItem identifier="200markbill" />
+          <SpawnItem identifier="200markbill" />
+          <Conditional condition="gt 20" />
+          <RequiredItem identifier="200markbill" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="200markbill" type="Contained" />
+          <Conditional condition="gt 20" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="20" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-50">
+          <RequiredItem identifier="200markbill" type="Contained" />
+          <Remove />
+          <Conditional condition="gte 50" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Turns steel into dementonite.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="steel" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="30" IsOn="false" canbeselected="true">
+          <SpawnItem identifier="dementonite" />
+          <Conditional condition="gt 20" />
+          <RequiredItem identifier="steel" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="steel" type="Contained" />
+          <Conditional condition="gt 20" />
+          <Explosion range="450.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="20" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+            <Affliction identifier="phantompsychosis" strength="100" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-50">
+          <RequiredItem identifier="steel" type="Contained" />
+          <Remove />
+          <Conditional condition="gte 50" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Turns titanium-aluminium alloy into physicorium.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="titaniumaluminiumalloy" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="30" IsOn="false" canbeselected="true">
+          <SpawnItem identifier="physicorium" />
+          <Conditional condition="gt 20" />
+          <RequiredItem identifier="titaniumaluminiumalloy" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="titaniumaluminiumalloy" type="Contained" />
+          <Conditional condition="gt 20" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="30" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-50">
+          <RequiredItem identifier="titaniumaluminiumalloy" type="Contained" />
+          <Remove />
+          <Conditional condition="gte 50" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Turns copper into fulgurium.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="copper" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="30" IsOn="false" canbeselected="true">
+          <SpawnItem identifier="fulgurium" />
+          <Conditional condition="gt 20" />
+          <RequiredItem identifier="copper" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="copper" type="Contained" />
+          <Conditional condition="gt 20" />
+          <Explosion range="300.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="true" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="20" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+            <Affliction identifier="incrementalstun" strength="100" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-50">
+          <RequiredItem identifier="copper" type="Contained" />
+          <Remove />
+          <Conditional condition="gte 50" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Turns carbon into sulphurite.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="carbon" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="30" IsOn="false" canbeselected="true">
+          <SpawnItem identifier="sulphuriteshard" />
+          <Conditional condition="gt 20" />
+          <RequiredItem identifier="carbon" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="carbon" type="Contained" />
+          <Conditional condition="gt 20" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="20" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+            <Affliction identifier="flammable" strength="50" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-50">
+          <RequiredItem identifier="carbon" type="Contained" />
+          <Remove />
+          <Conditional condition="gte 50" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Creates the Father's Deterrence variant of the Clown Costume.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="clowncostume" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="20" IsOn="false" canbeselected="true">
+          <SpawnItem identifier="fathersuit" />
+          <Conditional condition="gt 20" />
+          <RequiredItem identifier="clowncostume" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="clowncostume" type="Contained" />
+          <Conditional condition="gt 20" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="20" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-50">
+          <RequiredItem identifier="clowncostume" type="Contained" />
+          <Remove />
+          <Conditional condition="gte 50" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Creates the Father's Gaze variant of the Clown Mask.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="clownmask" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="20" IsOn="false" canbeselected="true">
+          <SpawnItem identifier="fathermask" />
+          <Conditional condition="gt 20" />
+          <RequiredItem identifier="clownmask" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="clownmask" type="Contained" />
+          <Conditional condition="gt 20" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="20" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-50">
+          <RequiredItem identifier="clownmask" type="Contained" />
+          <Remove />
+          <Conditional condition="gte 50" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Creates the Father's Retribution variant of the Diving Knife.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="divingknife" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="20" IsOn="false" canbeselected="true">
+          <SpawnItem identifier="fatherretribution" />
+          <Conditional condition="gt 20" />
+          <RequiredItem identifier="divingknife" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="divingknife" type="Contained" />
+          <Conditional condition="gt 20" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="20" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-50">
+          <RequiredItem identifier="divingknife" type="Contained" />
+          <Remove />
+          <Conditional condition="gte 50" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Spawns a Swarmfeeder Egg, which grows into a Queen if not destroyed.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="alienblood" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="20" IsOn="false" canbeselected="true">
+          <SpawnItem identifier="swarmegg" />
+          <Conditional condition="gt 20" />
+          <RequiredItem identifier="alienblood" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="alienblood" type="Contained" />
+          <Conditional condition="gt 20" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="20" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-50">
+          <RequiredItem identifier="alienblood" type="Contained" />
+          <Remove />
+          <Conditional condition="gte 50" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Immolates every living thing on the map.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="bombimplant" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="30" IsOn="false" canbeselected="true">
+          <SpawnItem identifier="immolationburst" />
+          <Conditional condition="gt 20" />
+          <RequiredItem identifier="bombimplant" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="bombimplant" type="Contained" />
+          <Conditional condition="gt 20" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="20" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-50">
+          <RequiredItem identifier="bombimplant" type="Contained" />
+          <Remove />
+          <Conditional condition="gte 50" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Irradiates every living thing on the map.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="hiddenlocker" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="30" IsOn="false" canbeselected="true">
+          <SpawnItem identifier="irradiationburst" />
+          <Conditional condition="gt 20" />
+          <RequiredItem identifier="hiddenlocker" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="hiddenlocker" type="Contained" />
+          <Conditional condition="gt 20" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="20" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-50">
+          <RequiredItem identifier="hiddenlocker" type="Contained" />
+          <Remove />
+          <Conditional condition="gte 50" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Blackholes every living thing on the map.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="phoenixidcard" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="30" IsOn="false" canbeselected="true">
+          <SpawnItem identifier="blackholeburst" />
+          <Conditional condition="gt 20" />
+          <RequiredItem identifier="phoenixidcard" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="phoenixidcard" type="Contained" />
+          <Conditional condition="gt 20" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="20" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-50">
+          <RequiredItem identifier="phoenixidcard" type="Contained" />
+          <Remove />
+          <Conditional condition="gte 50" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Converts a Blood Pack into an Enchanted Blood Pack.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="antibloodloss2" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="20" IsOn="false" canbeselected="true">
+          <SpawnItem identifier="magicbloodpackplaceholder" />
+          <Conditional condition="gt 20" />
+          <RequiredItem identifier="antibloodloss2" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="antibloodloss2" type="Contained" />
+          <Conditional condition="gt 20" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="20" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+            <Affliction identifier="bloodloss" strength="30" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-50">
+          <RequiredItem identifier="antibloodloss2" type="Contained" />
+          <Remove />
+          <Conditional condition="gte 50" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Converts Fentanyl into Cursed Fentanyl.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="antidama2" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="20" IsOn="false" canbeselected="true">
+          <SpawnItem identifier="cursedfentanylplaceholder" />
+          <Conditional condition="gt 20" />
+          <RequiredItem identifier="antidama2" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="antidama2" type="Contained" />
+          <Conditional condition="gt 20" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="20" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+            <Affliction identifier="opiateaddiction" strength="30" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-50">
+          <RequiredItem identifier="antidama2" type="Contained" />
+          <Remove />
+          <Conditional condition="gte 50" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Converts Phosphorus into Cursed Powder.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="phosphorus" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="20" IsOn="false" canbeselected="true">
+          <SpawnItem identifier="cursedgrenade" />
+          <Conditional condition="gt 20" />
+          <RequiredItem identifier="phosphorus" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="phosphorus" type="Contained" />
+          <Conditional condition="gt 20" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="30" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-50">
+          <RequiredItem identifier="phosphorus" type="Contained" />
+          <Remove />
+          <Conditional condition="gte 50" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Converts Sodium into Blessed Salt.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="sodium" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="20" IsOn="false" canbeselected="true">
+          <SpawnItem identifier="saltgrenade" />
+          <Conditional condition="gt 20" />
+          <RequiredItem identifier="sodium" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="sodium" type="Contained" />
+          <Conditional condition="gt 20" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="30" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-50">
+          <RequiredItem identifier="sodium" type="Contained" />
+          <Remove />
+          <Conditional condition="gte 50" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Turns organic fiber into blessed fiber.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="organicfiber" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="15" IsOn="false" canbeselected="true">
+          <SpawnItem identifier="blessedfiber" />
+          <Conditional condition="gt 20" />
+          <RequiredItem identifier="organicfiber" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="organicfiber" type="Contained" />
+          <Conditional condition="gt 20" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="5" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-50">
+          <RequiredItem identifier="organicfiber" type="Contained" />
+          <Remove />
+          <Conditional condition="gte 50" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Turns a blank page into a cultist document.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="blankpaper" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="15" IsOn="false" canbeselected="true">
+          <SpawnItem identifier="cultdoc" />
+          <Conditional condition="gt 20" />
+          <RequiredItem identifier="blankpaper" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="blankpaper" type="Contained" />
+          <Conditional condition="gt 20" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="5" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-50">
+          <RequiredItem identifier="blankpaper" type="Contained" />
+          <Remove />
+          <Conditional condition="gte 50" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Turns a flamethrower into an immolation spell.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="flamer" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="30" IsOn="false" canbeselected="true">
+          <SpawnItem identifier="immolatorspell" />
+          <Conditional condition="gt 20" />
+          <RequiredItem identifier="flamer" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="flamer" type="Contained" />
+          <Conditional condition="gt 20" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="5" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+            <Affliction identifier="flammable" strength="25" />
+            <Affliction identifier="burn" strength="5" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-50">
+          <RequiredItem identifier="flamer" type="Contained" />
+          <Remove />
+          <Conditional condition="gte 50" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Turns a stun gun into a telekinesis spell.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="stungun" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="30" IsOn="false" canbeselected="true">
+          <SpawnItem identifier="telekinesis" />
+          <Conditional condition="gt 20" />
+          <RequiredItem identifier="stungun" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="stungun" type="Contained" />
+          <Conditional condition="gt 20" />
+          <Explosion range="300.0" structuredamage="0" itemdamage="0" force="15.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="5" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+            <Affliction identifier="stun" strength="1" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-50">
+          <RequiredItem identifier="stungun" type="Contained" />
+          <Remove />
+          <Conditional condition="gte 50" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Turns a revolver into a demonspike spell.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="revolver" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="30" IsOn="false" canbeselected="true">
+          <SpawnItem identifier="spikespell" />
+          <Conditional condition="gt 20" />
+          <RequiredItem identifier="revolver" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="revolver" type="Contained" />
+          <Conditional condition="gt 20" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="5" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-50">
+          <RequiredItem identifier="revolver" type="Contained" />
+          <Remove />
+          <Conditional condition="gte 50" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Turns deusizine into an elixir of resurrection.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="deusizine" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="30" IsOn="false" canbeselected="true">
+          <SpawnItem identifier="resurrectionelixirplaceholder" />
+          <Conditional condition="gt 20" />
+          <RequiredItem identifier="deusizine" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="deusizine" type="Contained" />
+          <Conditional condition="gt 20" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="25" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+            <Affliction identifier="temphollow" strength="50" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-50">
+          <RequiredItem identifier="deusizine" type="Contained" />
+          <Remove />
+          <Conditional condition="gte 50" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Summons a phantom.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="summonspellphantom" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="15" IsOn="false" canbeselected="true">
+          <SpawnCharacter speciesname="phantom" count="1" />
+          <Conditional condition="gt 30" />
+          <RequiredItem identifier="summonspellphantom" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="summonspellphantom" type="Contained" />
+          <Conditional condition="gt 30" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="20" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-30">
+          <RequiredItem identifier="summonspellphantom" type="Contained" />
+          <Remove />
+          <Conditional condition="gt 30" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Summons a static.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="summonspellstatic" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="15" IsOn="false" canbeselected="true">
+          <SpawnCharacter speciesname="static" count="1" />
+          <Conditional condition="gt 30" />
+          <RequiredItem identifier="summonspellstatic" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="summonspellstatic" type="Contained" />
+          <Conditional condition="gt 30" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="20" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-30">
+          <RequiredItem identifier="summonspellstatic" type="Contained" />
+          <Remove />
+          <Conditional condition="gt 30" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Summons a Malevolence.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="summonspellmalevolence" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="15" IsOn="false" canbeselected="true">
+          <SpawnCharacter speciesname="malevolence" count="1" />
+          <Conditional condition="gt 30" />
+          <RequiredItem identifier="summonspellmalevolence" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="summonspellmalevolence" type="Contained" />
+          <Conditional condition="gt 30" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="20" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-30">
+          <RequiredItem identifier="summonspellmalevolence" type="Contained" />
+          <Remove />
+          <Conditional condition="gt 30" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Summons a Demon.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="summonspelldemon" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="15" IsOn="false" canbeselected="true">
+          <SpawnCharacter speciesname="demon" count="1" />
+          <Conditional condition="gt 30" />
+          <RequiredItem identifier="summonspelldemon" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="summonspelldemon" type="Contained" />
+          <Conditional condition="gt 30" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="20" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-30">
+          <RequiredItem identifier="summonspelldemon" type="Contained" />
+          <Remove />
+          <Conditional condition="gt 30" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Summons a Thrall.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="summonspellthrall" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="15" IsOn="false" canbeselected="true">
+          <SpawnCharacter speciesname="abyssalthrall" count="1" />
+          <Conditional condition="gt 30" />
+          <RequiredItem identifier="summonspellthrall" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="summonspellthrall" type="Contained" />
+          <Conditional condition="gt 30" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="20" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-30">
+          <RequiredItem identifier="summonspellthrall" type="Contained" />
+          <Remove />
+          <Conditional condition="gt 30" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Summons an Aerosolizer.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="summonspellaerosolizer" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="15" IsOn="false" canbeselected="true">
+          <SpawnCharacter speciesname="abyssalaerosolizer" count="1" />
+          <Conditional condition="gt 30" />
+          <RequiredItem identifier="summonspellaerosolizer" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="summonspellaerosolizer" type="Contained" />
+          <Conditional condition="gt 30" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="20" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-30">
+          <RequiredItem identifier="summonspellaerosolizer" type="Contained" />
+          <Remove />
+          <Conditional condition="gt 30" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Summons a Mimic.
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="summonspellmimic" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="15" IsOn="false" canbeselected="true">
+          <SpawnCharacter speciesname="abyssalmimic" count="1" />
+          <Conditional condition="gt 30" />
+          <RequiredItem identifier="summonspellmimic" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="summonspellmimic" type="Contained" />
+          <Conditional condition="gt 30" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="20" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-30">
+          <RequiredItem identifier="summonspellmimic" type="Contained" />
+          <Remove />
+          <Conditional condition="gt 30" />
+        </StatusEffect>
+        <!-- 
+        XX
+        Summons a Cultist Workstation
+        XX
+        -->
+        <StatusEffect type="OnUse" target="This">
+          <RequiredItem identifier="summonspellcultworkstation" type="Contained" />
+        </StatusEffect>
+        <!-- successful completion, reward -->
+        <StatusEffect type="OnUse" target="Contained, This" delay="15" IsOn="false">
+          <SpawnItem identifier="cultistworkstation" count="1" />
+          <Conditional condition="gt 30" />
+          <RequiredItem identifier="summonspellcultworkstation" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Contained, This" delay="16">
+          <Remove />
+          <Conditional condition="gt 30" />
+          <RequiredItem identifier="summonspellcultworkstation" type="Contained" />
+        </StatusEffect>
+        <!-- successful initiation, set to on -->
+        <StatusEffect type="OnUse" target="Contained, This" IsOn="true" canbeselected="false">
+          <RequiredItem identifier="summonspellcultworkstation" type="Contained" />
+          <Conditional condition="gt 30" />
+          <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0">
+            <Affliction identifier="penance" strength="20" />
+            <Affliction identifier="demonspawnmanager" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- item target effects (drain, remove, etc) -->
+        <StatusEffect type="OnUse" target="Contained" IsOn="true" condition="-30">
+          <RequiredItem identifier="summonspellcultworkstation" type="Contained" />
+          <Remove />
+          <Conditional condition="gt 30" />
+        </StatusEffect>
+      </Button>
+      <Button text="Destroy Pentagram">
+        <StatusEffect type="OnUse" target="This" setvalue="true" condition="0" />
+      </Button>
+    </CustomInterface>
+  </Item>
+  <!-- This is a more advanced pentagram with quite a few benefits over the rudimentary, basic one. -->
+  <Item name="Advanced Summoning Pentagram" description="A summoning pentagram used to bring entities into the world. Cannot be removed once it is placed." identifier="cultistworkstation" category="Equipment" cargocontaineridentifier="metalcrate" tags="smallitem,cultfabricator" impactsoundtag="impact_soft" scale="0.45" interactdistance="50" hideconditionbar="true">
+    <InventoryIcon name="pentagram Inv" texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" depth="0.6" origin="0.5,0.5" />
+    <Sprite name="pentagram Sprite" texture="%ModDir%/Images/cult.png" sourcerect="4,404,374,368" depth="0.6" origin="0.5,0.5" />
+    <Body width="50" height="50" density="400" bodytype="kinematic" />
+    <LightComponent range="900.0" lightcolor="255,0,0,100" IsOn="false" powerconsumption="0" blinkFrequency="10" allowingameediting="false" castshadows="true">
+      <StatusEffect delay="0.1" type="OnBroken" target="This" Condition="-100.0">
+        <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="explosion" decalsize="0.5" camerashake="5.0">
+          <Affliction identifier="penance" strength="20" />
+        </Explosion>
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This" Voltage="1.0" setvalue="true">
+        <Conditional IsActive="true" targetitemcomponent="Fabricator" />
+      </StatusEffect>
+      <Sprite name="pentagram light Sprite" texture="%ModDir%/Images/cult.png" sourcerect="4,780,374,368" depth="0.6" origin="0.5,0.5" />
+      <sound file="%ModDir%/Sounds/uboa.ogg" type="OnActive" range="1000.0" loop="true" volume="1.2" />
+      <StatusEffect type="OnActive" target="This" stackable="false" disabledeltatime="true">
+        <ParticleEmitter particle="cult_rune" particlespersecond="4" particleburstinterval="2" particleburstamount="5" velocitymin="190" velocitymax="250" anglemin="0" anglemax="360" scalemin="0.7" scalemax="1.0" />
+        <ParticleEmitter particle="oasis_pentacircle" burstamount="3" particlespersecond="2" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" scalemin="1.0" scalemax="1.0" />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="This">
+        <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="5.0" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="This" delay="10" stackable="false">
+        <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" fire="false" sparks="false" flames="false" shockwave="false" underwaterbubbles="false" severlimbsprobability="0.0" decal="cultmural" decalsize="0.5" camerashake="0.0" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="This" interval="1">
+        <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.0" showeffects="false" severlimbsprobability="0.0">
+          <Affliction identifier="penance" strength="2.5" />
+        </Explosion>
+      </StatusEffect>
+    </LightComponent>
+    <Fabricator canbeselected="true" powerconsumption="500.0" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.4,0.45" style="CultItemUI" anchor="Center" />
+      <sound file="Content/Items/Fabricators/Fabricator.ogg" type="OnActive" range="1000.0" volumeproperty="RelativeVoltage" loop="true" />
+      <poweronsound file="Content/Items/PowerOnLight1.ogg" range="600" loop="false" />
+    </Fabricator>
+    <ItemContainer capacity="5" canbeselected="true" hideitems="true" slotsperrow="5" uilabel="" allowuioverlap="true" />
+    <ItemContainer capacity="1" canbeselected="true" hideitems="true" slotsperrow="1" uilabel="" allowuioverlap="true" />
+  </Item>
+  <!-- A spell used to summon a Phantom. -->
+  <Item name="Summoning Spell (Phantom)" description="A dark incantation that summons a Phantom, a ghost which can consume souls." identifier="summonspellphantom" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.25" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Deconstruct time="5">
+      <Item identifier="blessedfiber" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="cultfabricator" requiredtime="15">
+      <RequiredItem identifier="blessedfiber" />
+      <RequiredItem identifier="soultank" mincondition="1.0" usecondition="true" />
+    </Fabricate>
+    <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.07,0.05" anchor="BottomCenter" pivot="BottomRight" relativeoffset="-0.145,0.14" style="CultItemUI" />
+      <!-- -0.145,0.023 -->
+      <Button text="Summon">
+        <StatusEffect type="OnUse" targettype="This" duration="5" stackable="false">
+          <Sound file="%ModDir%/Sounds/fiendattackrev.ogg" range="1500" loop="false" />
+          <ParticleEmitter particle="cult_rune" particlespersecond="4" particleburstinterval="2" particleburstamount="5" velocitymin="190" velocitymax="250" anglemin="0" anglemax="360" scalemin="0.7" scalemax="1.0" />
+          <ParticleEmitter particle="oasis_pentacircle" burstamount="3" particlespersecond="2" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" scalemin="0.25" scalemax="0.25" />
+          <DropItem />
+        </StatusEffect>
+        <StatusEffect type="OnUse" targettype="This" delay="5" stackable="false">
+          <Sound file="%ModDir%/Sounds/fiendattackhit.ogg" range="1500" />
+          <SpawnCharacter speciesname="phantom" />
+          <Remove />
+        </StatusEffect>
+      </Button>
+    </CustomInterface>
+    <Body width="72" height="40" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="70,5" handle1="-25,-7" msg="ItemMsgPickUpSelect" />
+    <aitarget sightrange="500" soundrange="500" fadeouttime="5" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <!-- A spell used to summon a Static. -->
+  <Item name="Summoning Spell (Static)" description="A dark incantation that summons a Static, a ghost which can damage electronics and blind victims." identifier="summonspellstatic" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.25" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Deconstruct time="5">
+      <Item identifier="blessedfiber" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="cultfabricator" requiredtime="15">
+      <RequiredItem identifier="blessedfiber" />
+      <RequiredItem identifier="soultank" mincondition="1.0" usecondition="true" />
+      <RequiredItem identifier="fulgurium" />
+    </Fabricate>
+    <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.07,0.05" anchor="BottomCenter" pivot="BottomRight" relativeoffset="-0.145,0.14" style="CultItemUI" />
+      <!-- -0.145,0.023 -->
+      <Button text="Summon">
+        <StatusEffect type="OnUse" targettype="This" duration="5" stackable="false">
+          <Sound file="%ModDir%/Sounds/fiendattackrev.ogg" range="1500" loop="false" />
+          <ParticleEmitter particle="cult_rune" particlespersecond="4" particleburstinterval="2" particleburstamount="5" velocitymin="190" velocitymax="250" anglemin="0" anglemax="360" scalemin="0.7" scalemax="1.0" />
+          <ParticleEmitter particle="oasis_pentacircle" burstamount="3" particlespersecond="2" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" scalemin="0.25" scalemax="0.25" />
+          <DropItem />
+        </StatusEffect>
+        <StatusEffect type="OnUse" targettype="This" delay="5" stackable="false">
+          <Sound file="%ModDir%/Sounds/fiendattackhit.ogg" range="1500" />
+          <SpawnCharacter speciesname="static" />
+          <Remove />
+        </StatusEffect>
+      </Button>
+    </CustomInterface>
+    <Body width="72" height="40" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="70,5" handle1="-25,-7" msg="ItemMsgPickUpSelect" />
+    <aitarget sightrange="500" soundrange="500" fadeouttime="5" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <!-- A spell used to summon a Malevolence. -->
+  <Item name="Summoning Spell (Malevolence)" description="A dark incantation which summons a Malevolence, a weak ghost which freezes its victims." identifier="summonspellmalevolence" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.25" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Deconstruct time="5">
+      <Item identifier="blessedfiber" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="cultfabricator" requiredtime="15">
+      <RequiredItem identifier="blessedfiber" amount="2" />
+      <RequiredItem identifier="soultank" mincondition="1.0" usecondition="true" />
+      <RequiredItem identifier="nitrogentank" />
+    </Fabricate>
+    <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.07,0.05" anchor="BottomCenter" pivot="BottomRight" relativeoffset="-0.145,0.14" style="CultItemUI" />
+      <!-- -0.145,0.023 -->
+      <Button text="Summon">
+        <StatusEffect type="OnUse" targettype="This" duration="5" stackable="false">
+          <Sound file="%ModDir%/Sounds/fiendattackrev.ogg" range="1500" loop="false" />
+          <ParticleEmitter particle="cult_rune" particlespersecond="4" particleburstinterval="2" particleburstamount="5" velocitymin="190" velocitymax="250" anglemin="0" anglemax="360" scalemin="0.7" scalemax="1.0" />
+          <ParticleEmitter particle="oasis_pentacircle" burstamount="3" particlespersecond="2" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" scalemin="0.25" scalemax="0.25" />
+          <DropItem />
+        </StatusEffect>
+        <StatusEffect type="OnUse" targettype="This" delay="5" stackable="false">
+          <Sound file="%ModDir%/Sounds/fiendattackhit.ogg" range="1500" />
+          <SpawnCharacter speciesname="malevolence" />
+          <Remove />
+        </StatusEffect>
+      </Button>
+    </CustomInterface>
+    <Body width="72" height="40" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="70,5" handle1="-25,-7" msg="ItemMsgPickUpSelect" />
+    <aitarget sightrange="500" soundrange="500" fadeouttime="5" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <!-- A spell used to summon a Demon. -->
+  <Item name="Summoning Spell (Demon)" description="A dark offering which summons a Demon, a powerful ghost which burns its victims and has many spells." identifier="summonspelldemon" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.25" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Deconstruct time="5">
+      <Item identifier="blessedfiber" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="cultfabricator" requiredtime="30">
+      <RequiredItem identifier="blessedfiber" amount="2" />
+      <RequiredItem identifier="soultank" amount="2" />
+      <RequiredItem identifier="cursedgrenade" />
+    </Fabricate>
+    <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.07,0.05" anchor="BottomCenter" pivot="BottomRight" relativeoffset="-0.145,0.14" style="CultItemUI" />
+      <!-- -0.145,0.023 -->
+      <Button text="Summon">
+        <StatusEffect type="OnUse" targettype="This" duration="5" stackable="false">
+          <Sound file="%ModDir%/Sounds/fiendattackrev.ogg" range="1500" loop="false" />
+          <ParticleEmitter particle="cult_rune" particlespersecond="4" particleburstinterval="2" particleburstamount="5" velocitymin="190" velocitymax="250" anglemin="0" anglemax="360" scalemin="0.7" scalemax="1.0" />
+          <ParticleEmitter particle="oasis_pentacircle" burstamount="3" particlespersecond="2" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" scalemin="0.25" scalemax="0.25" />
+          <DropItem />
+        </StatusEffect>
+        <StatusEffect type="OnUse" targettype="This" delay="5" stackable="false">
+          <Sound file="%ModDir%/Sounds/fiendattackhit.ogg" range="1500" />
+          <SpawnCharacter speciesname="demon" />
+          <Remove />
+        </StatusEffect>
+      </Button>
+    </CustomInterface>
+    <Body width="72" height="40" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="70,5" handle1="-25,-7" msg="ItemMsgPickUpSelect" />
+    <aitarget sightrange="500" soundrange="500" fadeouttime="5" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <!-- A spell used to summon an Abyssal Thrall -->
+  <Item name="Summoning Spell (Abyssal Thrall)" description="A dark offering which summons an Abyssal Thrall, an entity from the surface layers of the Abyss." identifier="summonspellthrall" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.25" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Deconstruct time="5">
+      <Item identifier="blessedfiber" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="cultfabricator" requiredtime="15">
+      <RequiredItem identifier="blessedfiber" />
+      <RequiredItem identifier="soultank" />
+      <RequiredItem identifier="abyssalsyringe" />
+    </Fabricate>
+    <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.07,0.05" anchor="BottomCenter" pivot="BottomRight" relativeoffset="-0.145,0.14" style="CultItemUI" />
+      <!-- -0.145,0.023 -->
+      <Button text="Summon">
+        <StatusEffect type="OnUse" targettype="This" duration="5" stackable="false">
+          <Sound file="%ModDir%/Sounds/fiendattackrev.ogg" range="1500" loop="false" />
+          <ParticleEmitter particle="cult_rune" particlespersecond="4" particleburstinterval="2" particleburstamount="5" velocitymin="190" velocitymax="250" anglemin="0" anglemax="360" scalemin="0.7" scalemax="1.0" />
+          <ParticleEmitter particle="oasis_pentacircle" burstamount="3" particlespersecond="2" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" scalemin="0.25" scalemax="0.25" />
+          <DropItem />
+        </StatusEffect>
+        <StatusEffect type="OnUse" targettype="This" delay="5" stackable="false">
+          <Sound file="%ModDir%/Sounds/fiendattackhit.ogg" range="1500" />
+          <SpawnCharacter speciesname="abyssalthrall" />
+          <Remove />
+        </StatusEffect>
+      </Button>
+    </CustomInterface>
+    <Body width="72" height="40" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="70,5" handle1="-25,-7" msg="ItemMsgPickUpSelect" />
+    <aitarget sightrange="500" soundrange="500" fadeouttime="5" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <!-- A spell used to summon an Abyssal Aerosolizer -->
+  <Item name="Summoning Spell (Abyssal Aerosolizer)" description="A dark offering which summons an Abyssal Aerosolizer, a surface layer abyssal entity that brings a choking fog with it." identifier="summonspellaerosolizer" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.25" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Deconstruct time="5">
+      <Item identifier="blessedfiber" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="cultfabricator" requiredtime="25">
+      <RequiredItem identifier="blessedfiber" />
+      <RequiredItem identifier="soultank" />
+      <RequiredItem identifier="abyssalsyringe" amount="2" />
+      <RequiredItem identifier="coughsmokegrenade" />
+    </Fabricate>
+    <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.07,0.05" anchor="BottomCenter" pivot="BottomRight" relativeoffset="-0.145,0.14" style="CultItemUI" />
+      <!-- -0.145,0.023 -->
+      <Button text="Summon">
+        <StatusEffect type="OnUse" targettype="This" duration="5" stackable="false">
+          <Sound file="%ModDir%/Sounds/fiendattackrev.ogg" range="1500" loop="false" />
+          <ParticleEmitter particle="cult_rune" particlespersecond="4" particleburstinterval="2" particleburstamount="5" velocitymin="190" velocitymax="250" anglemin="0" anglemax="360" scalemin="0.7" scalemax="1.0" />
+          <ParticleEmitter particle="oasis_pentacircle" burstamount="3" particlespersecond="2" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" scalemin="0.25" scalemax="0.25" />
+          <DropItem />
+        </StatusEffect>
+        <StatusEffect type="OnUse" targettype="This" delay="5" stackable="false">
+          <Sound file="%ModDir%/Sounds/fiendattackhit.ogg" range="1500" />
+          <SpawnCharacter speciesname="abyssalaerosolizer" />
+          <Remove />
+        </StatusEffect>
+      </Button>
+    </CustomInterface>
+    <Body width="72" height="40" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="70,5" handle1="-25,-7" msg="ItemMsgPickUpSelect" />
+    <aitarget sightrange="500" soundrange="500" fadeouttime="5" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <!-- Summons an Abyssal Mimic -->
+  <Item name="Summoning Spell (Abyssal Mimic)" description="A dark offering which summons an Abyssal Mimic, a surface layer abyssal entity skilled in misdirection and infiltration." identifier="summonspellmimic" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.25" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Deconstruct time="5">
+      <Item identifier="blessedfiber" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="cultfabricator" requiredtime="25">
+      <RequiredItem identifier="blessedfiber" />
+      <RequiredItem identifier="soultank" />
+      <RequiredItem identifier="abyssalsyringe" />
+      <RequiredItem identifier="geneflaysyringe" />
+    </Fabricate>
+    <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.07,0.05" anchor="BottomCenter" pivot="BottomRight" relativeoffset="-0.145,0.14" style="CultItemUI" />
+      <!-- -0.145,0.023 -->
+      <Button text="Summon">
+        <StatusEffect type="OnUse" targettype="This" duration="5" stackable="false">
+          <Sound file="%ModDir%/Sounds/fiendattackrev.ogg" range="1500" loop="false" />
+          <ParticleEmitter particle="cult_rune" particlespersecond="4" particleburstinterval="2" particleburstamount="5" velocitymin="190" velocitymax="250" anglemin="0" anglemax="360" scalemin="0.7" scalemax="1.0" />
+          <ParticleEmitter particle="oasis_pentacircle" burstamount="3" particlespersecond="2" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" scalemin="0.25" scalemax="0.25" />
+          <DropItem />
+        </StatusEffect>
+        <StatusEffect type="OnUse" targettype="This" delay="5" stackable="false">
+          <Sound file="%ModDir%/Sounds/fiendattackhit.ogg" range="1500" />
+          <SpawnCharacter speciesname="abyssalmimic" />
+          <Remove />
+        </StatusEffect>
+      </Button>
+    </CustomInterface>
+    <Body width="72" height="40" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="70,5" handle1="-25,-7" msg="ItemMsgPickUpSelect" />
+    <aitarget sightrange="500" soundrange="500" fadeouttime="5" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <!-- Summons a Crawler -->
+  <Item name="Summoning Spell (Crawler)" description="A dark offering which summons a Crawler." identifier="summonspellcrawler" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.25" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Deconstruct time="5">
+      <Item identifier="blessedfiber" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="cultfabricator" requiredtime="20">
+      <RequiredItem identifier="rawcrawlermeat" amount="2" mincondition="0.0" />
+    </Fabricate>
+    <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.07,0.05" anchor="BottomCenter" pivot="BottomRight" relativeoffset="-0.145,0.14" style="CultItemUI" />
+      <!-- -0.145,0.023 -->
+      <Button text="Summon">
+        <StatusEffect type="OnUse" targettype="This" duration="5" stackable="false">
+          <Sound file="%ModDir%/Sounds/fiendattackrev.ogg" range="1500" loop="false" />
+          <ParticleEmitter particle="cult_rune" particlespersecond="4" particleburstinterval="2" particleburstamount="5" velocitymin="190" velocitymax="250" anglemin="0" anglemax="360" scalemin="0.7" scalemax="1.0" />
+          <ParticleEmitter particle="oasis_pentacircle" burstamount="3" particlespersecond="2" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" scalemin="0.25" scalemax="0.25" />
+          <DropItem />
+        </StatusEffect>
+        <StatusEffect type="OnUse" targettype="This" delay="5" stackable="false">
+          <Sound file="%ModDir%/Sounds/fiendattackhit.ogg" range="1500" />
+          <SpawnCharacter speciesname="crawler" />
+          <Remove />
+        </StatusEffect>
+      </Button>
+    </CustomInterface>
+    <Body width="72" height="40" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="70,5" handle1="-25,-7" msg="ItemMsgPickUpSelect" />
+    <aitarget sightrange="500" soundrange="500" fadeouttime="5" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <!-- Summons a Mudraptor -->
+  <Item name="Summoning Spell (Mudraptor)" description="A dark offering which summons a Mudraptor." identifier="summonspellmudraptor" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.25" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Deconstruct time="5">
+      <Item identifier="blessedfiber" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="cultfabricator" requiredtime="30">
+      <RequiredItem identifier="rawmudraptormeat" amount="2" mincondition="0.0" />
+    </Fabricate>
+    <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.07,0.05" anchor="BottomCenter" pivot="BottomRight" relativeoffset="-0.145,0.14" style="CultItemUI" />
+      <!-- -0.145,0.023 -->
+      <Button text="Summon">
+        <StatusEffect type="OnUse" targettype="This" duration="5" stackable="false">
+          <Sound file="%ModDir%/Sounds/fiendattackrev.ogg" range="1500" loop="false" />
+          <ParticleEmitter particle="cult_rune" particlespersecond="4" particleburstinterval="2" particleburstamount="5" velocitymin="190" velocitymax="250" anglemin="0" anglemax="360" scalemin="0.7" scalemax="1.0" />
+          <ParticleEmitter particle="oasis_pentacircle" burstamount="3" particlespersecond="2" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" scalemin="0.25" scalemax="0.25" />
+          <DropItem />
+        </StatusEffect>
+        <StatusEffect type="OnUse" targettype="This" delay="5" stackable="false">
+          <Sound file="%ModDir%/Sounds/fiendattackhit.ogg" range="1500" />
+          <SpawnCharacter speciesname="mudraptor" />
+          <Remove />
+        </StatusEffect>
+      </Button>
+    </CustomInterface>
+    <Body width="72" height="40" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="70,5" handle1="-25,-7" msg="ItemMsgPickUpSelect" />
+    <aitarget sightrange="500" soundrange="500" fadeouttime="5" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <!-- Summons a Mudraptor Veteran -->
+  <Item name="Summoning Spell (Mudraptor Veteran)" description="A dark offering which summons a Mudraptor Veteran." identifier="summonspellmudraptorveteran" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.25" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Deconstruct time="5">
+      <Item identifier="blessedfiber" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="cultfabricator" requiredtime="30">
+      <RequiredItem identifier="rawmudraptormeat" amount="4" mincondition="0.0" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+    </Fabricate>
+    <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.07,0.05" anchor="BottomCenter" pivot="BottomRight" relativeoffset="-0.145,0.14" style="CultItemUI" />
+      <!-- -0.145,0.023 -->
+      <Button text="Summon">
+        <StatusEffect type="OnUse" targettype="This" duration="5" stackable="false">
+          <Sound file="%ModDir%/Sounds/fiendattackrev.ogg" range="1500" loop="false" />
+          <ParticleEmitter particle="cult_rune" particlespersecond="4" particleburstinterval="2" particleburstamount="5" velocitymin="190" velocitymax="250" anglemin="0" anglemax="360" scalemin="0.7" scalemax="1.0" />
+          <ParticleEmitter particle="oasis_pentacircle" burstamount="3" particlespersecond="2" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" scalemin="0.25" scalemax="0.25" />
+          <DropItem />
+        </StatusEffect>
+        <StatusEffect type="OnUse" targettype="This" delay="5" stackable="false">
+          <Sound file="%ModDir%/Sounds/fiendattackhit.ogg" range="1500" />
+          <SpawnCharacter speciesname="mudraptor" />
+          <Remove />
+        </StatusEffect>
+      </Button>
+    </CustomInterface>
+    <Body width="72" height="40" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="70,5" handle1="-25,-7" msg="ItemMsgPickUpSelect" />
+    <aitarget sightrange="500" soundrange="500" fadeouttime="5" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <!-- Summons a Husk Hardsuit -->
+  <Item name="Summoning Spell (Husk Hardsuit)" description="A dark offering which summons a special armored husk." identifier="summonspellhuskhardsuit" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.25" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Deconstruct time="5">
+      <Item identifier="blessedfiber" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="cultfabricator" requiredtime="30">
+      <RequiredItem identifier="huskeggsbasic" amount="3" mincondition="0.0" />
+      <RequiredItem identifier="unstablehuskstinger" amount="1" />
+      <RequiredItem identifier="unstablehuskeggs" amount="1" />
+    </Fabricate>
+    <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.07,0.05" anchor="BottomCenter" pivot="BottomRight" relativeoffset="-0.145,0.14" style="CultItemUI" />
+      <!-- -0.145,0.023 -->
+      <Button text="Summon">
+        <StatusEffect type="OnUse" targettype="This" duration="5" stackable="false">
+          <Sound file="%ModDir%/Sounds/fiendattackrev.ogg" range="1500" loop="false" />
+          <ParticleEmitter particle="cult_rune" particlespersecond="4" particleburstinterval="2" particleburstamount="5" velocitymin="190" velocitymax="250" anglemin="0" anglemax="360" scalemin="0.7" scalemax="1.0" />
+          <ParticleEmitter particle="oasis_pentacircle" burstamount="3" particlespersecond="2" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" scalemin="0.25" scalemax="0.25" />
+          <DropItem />
+        </StatusEffect>
+        <StatusEffect type="OnUse" targettype="This" delay="5" stackable="false">
+          <Sound file="%ModDir%/Sounds/fiendattackhit.ogg" range="1500" />
+          <SpawnCharacter speciesname="huskhardsuit" />
+          <Remove />
+        </StatusEffect>
+      </Button>
+    </CustomInterface>
+    <Body width="72" height="40" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="70,5" handle1="-25,-7" msg="ItemMsgPickUpSelect" />
+    <aitarget sightrange="500" soundrange="500" fadeouttime="5" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <!-- Summons a Husk Caustic -->
+  <Item name="Summoning Spell (Husk Caustic)" description="A dark offering which summons a special acidic husk." identifier="summonspellhuskcaustic" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.25" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Deconstruct time="5">
+      <Item identifier="blessedfiber" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="cultfabricator" requiredtime="30">
+      <RequiredItem identifier="summonspellhuskhardsuit" amount="1" />
+      <RequiredItem identifier="sacidgrenade" amount="2" />
+    </Fabricate>
+    <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.07,0.05" anchor="BottomCenter" pivot="BottomRight" relativeoffset="-0.145,0.14" style="CultItemUI" />
+      <!-- -0.145,0.023 -->
+      <Button text="Summon">
+        <StatusEffect type="OnUse" targettype="This" duration="5" stackable="false">
+          <Sound file="%ModDir%/Sounds/fiendattackrev.ogg" range="1500" loop="false" />
+          <ParticleEmitter particle="cult_rune" particlespersecond="4" particleburstinterval="2" particleburstamount="5" velocitymin="190" velocitymax="250" anglemin="0" anglemax="360" scalemin="0.7" scalemax="1.0" />
+          <ParticleEmitter particle="oasis_pentacircle" burstamount="3" particlespersecond="2" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" scalemin="0.25" scalemax="0.25" />
+          <DropItem />
+        </StatusEffect>
+        <StatusEffect type="OnUse" targettype="This" delay="5" stackable="false">
+          <Sound file="%ModDir%/Sounds/fiendattackhit.ogg" range="1500" />
+          <SpawnCharacter speciesname="huskcaustic" />
+          <Remove />
+        </StatusEffect>
+      </Button>
+    </CustomInterface>
+    <Body width="72" height="40" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="70,5" handle1="-25,-7" msg="ItemMsgPickUpSelect" />
+    <aitarget sightrange="500" soundrange="500" fadeouttime="5" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <!-- Summons a Husk Caustic -->
+  <Item name="Summoning Spell (Husk TITAN)" description="A dark offering which summons a special TITANic husk." identifier="summonspellhusktitan" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.25" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Deconstruct time="5">
+      <Item identifier="blessedfiber" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="cultfabricator" requiredtime="30">
+      <RequiredItem identifier="summonspellhuskhardsuit" amount="3" />
+      <RequiredItem identifier="physicorium" amount="8" />
+      <RequiredItem identifier="huskgrenade" amount="8" />
+    </Fabricate>
+    <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.07,0.05" anchor="BottomCenter" pivot="BottomRight" relativeoffset="-0.145,0.14" style="CultItemUI" />
+      <!-- -0.145,0.023 -->
+      <Button text="Summon">
+        <StatusEffect type="OnUse" targettype="This" duration="5" stackable="false">
+          <Sound file="%ModDir%/Sounds/fiendattackrev.ogg" range="1500" loop="false" />
+          <ParticleEmitter particle="cult_rune" particlespersecond="4" particleburstinterval="2" particleburstamount="5" velocitymin="190" velocitymax="250" anglemin="0" anglemax="360" scalemin="0.7" scalemax="1.0" />
+          <ParticleEmitter particle="oasis_pentacircle" burstamount="3" particlespersecond="2" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" scalemin="0.25" scalemax="0.25" />
+          <DropItem />
+        </StatusEffect>
+        <StatusEffect type="OnUse" targettype="This" delay="5" stackable="false">
+          <Sound file="%ModDir%/Sounds/fiendattackhit.ogg" range="1500" />
+          <SpawnCharacter speciesname="husktitan" />
+          <Remove />
+        </StatusEffect>
+      </Button>
+    </CustomInterface>
+    <Body width="72" height="40" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="70,5" handle1="-25,-7" msg="ItemMsgPickUpSelect" />
+    <aitarget sightrange="500" soundrange="500" fadeouttime="5" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="Summoning Spell (Cultist Workstation)" description="A dark offering which solidifies a summoning circle's roots in this world, making it more powerful and impossible to destroy." identifier="summonspellcultworkstation" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.25" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Deconstruct time="5">
+      <Item identifier="blessedfiber" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="30">
+      <RequiredItem identifier="blessedfiber" />
+      <RequiredItem identifier="soultank" />
+      <RequiredItem identifier="dementonite" amount="2" />
+      <RequiredItem identifier="magicbloodpack" />
+      <RequiredItem identifier="oasis_paintbrush" />
+    </Fabricate>
+    <Body width="72" height="40" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="70,5" handle1="-25,-7" msg="ItemMsgPickUpSelect" />
+    <aitarget sightrange="500" soundrange="500" fadeouttime="5" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <!-- HUSKS -->
+  <Item name="Occult Incubator" description="A tank filled with biofluids necessary for the gestation of Husk-type occult items." identifier="occultincubator" tags="huskfab,donttakeitems,dontsellitems" texturescale="1.0,1.0" scale="0.3" category="Decorative">
+    <sprite texture="Content/Map/Outposts/Art/HuskDistrict.png" sourcerect="394,673,159,331" depth="0.95" premultiplyalpha="false" origin="0.5,0.5" />
+    <!-- <DecorativeSprite texture="Content/Map/Outposts/Art/HuskDistrict.png" sourcerect="193,724,171,254" depth="0.96" origin="0.5,0.5" offset="0,5" offsetanim="Sine" offsetanimspeed="2" /> -->
+    <DecorativeSprite texture="Content/Map/Outposts/Art/HuskDistrict.png" sourcerect="557,638,131,316" depth="0.97" />
+    <LightComponent range="130" lightcolor="255,0,100,120" pulsefrequency="0.5" pulseamount="0.2" powerconsumption="0" IsOn="true" castshadows="false" allowingameediting="false" />
+    <UpgradePreviewSprite texture="Content/UI/WeaponUI.png" sourcerect="99,961,28,32" origin="0.5,0.45" />
+    <Body width="159" height="331" density="25" />
+    <!-- It's that easy -->
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <Item identifier="steel" />
+      <Item identifier="plastic" />
+      <Item identifier="rubber" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="60">
+      <RequiredSkill identifier="Medical" level="50" />
+      <RequiredSkill identifier="Mechanical" level="50" />
+      <RequiredItem identifier="steel" amount="3" />
+      <RequiredItem identifier="plastic" amount="2" />
+      <RequiredItem identifier="rubber" />
+      <RequiredItem identifier="antibloodloss2" amount="2" />
+    </Fabricate>
+    <Fabricator canbeselected="true" powerconsumption="0.0" msg="ItemMsgInteractSelect" createbuttontext="oasis.concoct">
+      <GuiFrame relativesize="0.4,0.45" style="ItemUI" anchor="Center" />
+      <sound file="Content/Characters/Latcher/ABYSSM_movingLoop.ogg" type="OnActive" volume="0.75" range="1000.0" loop="true" />
+      <poweronsound file="Content/Items/PowerOnLight1.ogg" range="600" loop="false" />
+      <StatusEffect type="InWater" target="This" condition="-0.5" />
+      <StatusEffect type="OnContained" target="This" setvalue="true" canbeselected="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" canbeselected="true" />
+    </Fabricator>
+    <ItemContainer capacity="5" canbeselected="true" hideitems="true" slotsperrow="5" uilabel="" allowuioverlap="true" />
+    <ItemContainer capacity="1" canbeselected="true" hideitems="true" slotsperrow="1" uilabel="" allowuioverlap="true" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" holdpos="50,-30" handle1="-15,15" handle2="-15,15" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.7" setvalue="true" />
+    </Holdable>
+    <ConnectionPanel selectkey="Action" canbeselected="true" hudpriority="10" msg="ItemMsgRewireScrewdriver">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <output name="condition_out" displayname="connection.conditionout" />
+    </ConnectionPanel>
+    <Repairable selectkey="Select" header="mechanicalrepairsheader" deteriorationspeed="0.40" mindeteriorationdelay="120" maxdeteriorationdelay="240" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.1,0.27" style="ItemUI" />
+      <RequiredSkill identifier="medical" level="55" />
+      <RequiredItem items="wrench" type="Equipped" />
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
+      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+        <Affliction identifier="bloodloss" strength="5" />
+        <Affliction identifier="stun" strength="5" />
+      </StatusEffect>
+    </Repairable>
+  </Item>
+  <Item name="Husk Container Pet" identifier="huskcontainerspawnegg" Tags="smallitem" description="Insert Calyx Extract to awaken the dormant husk within." hideinmenus="true" health="100" damagedbyexplosions="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" damagedbyrepairtools="true" category="Misc" scale="0.5" impactsoundtag="impact_soft">
+    <PreferredContainer primary="crewcab" />
+    <PreferredContainer secondary="abandonedstoragecab,wreckstoragecab" amount="1" spawnprobability="0.05" />
+    <Sprite texture="Content/Characters/Pets/pets.png" depth="0.7" sourcerect="265,5,43,55" origin="0.5,0.5" />
+    <Fabricate suitablefabricators="huskfab" requiredtime="45">
+      <RequiredSkill identifier="Medical" level="45" />
+      <RequiredItem identifier="toolbox" />
+      <RequiredItem identifier="huskeggs" />
+      <RequiredItem identifier="calyxanide" />
+      <RequiredItem identifier="antibloodloss2" amount="2" />
+    </Fabricate>
+    <Deconstruct time="10">
+      <Item identifier="toolbox" />
+      <Item identifier="huskeggs" />
+      <Item identifier="antibloodloss2" />
+    </Deconstruct>
+    <!-- rectangular body to prevent the egg from rolling -->
+    <Body width="43" height="55" friction="1.0" restitution="0.01" angulardamping="0.8" density="11" />
+    <Holdable slots="RightHand,LeftHand,Any" holdpos="0,-70" handle1="0,10" handle2="0,-10">
+      <StatusEffect type="OnBroken" target="This">
+        <particleemitter particle="whitegoosplash" particleamount="20" velocitymin="0" velocitymax="300" anglemin="0" anglemax="360" scalemin="0.5" scalemax="1.0" emitinterval="0" particlespersecond="0" highqualitycollisiondetection="False" copyentityangle="False" />
+        <particleemitter particle="brownchunks" particleamount="50" velocitymin="0" velocitymax="700" anglemin="0" anglemax="360" scalemin="0.2" scalemax="0.5" />
+        <Sound file="Content/Sounds/Damage/Gore6.ogg" range="500" />
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnFire" target="This" Condition="-5.0" />
+    </Holdable>
+    <ItemContainer capacity="1" hideitems="true" showcontainedstateindicator="false" maxstacksize="1">
+      <Containable items="huskeggs">
+        <StatusEffect type="OnContaining" target="Contained" Condition="-1" />
+        <StatusEffect type="OnContaining" target="This" Condition="0" setvalue="true">
+          <SpawnCharacter speciesname="huskcontainer" />
+          <Remove />
+        </StatusEffect>
+      </Containable>
+    </ItemContainer>
+  </Item>
+  <Override>
+    <Item name="" identifier="cultistrobes" category="Equipment" tags="smallitem,clothing,huskcult" fireproof="false" cargocontaineridentifier="metalcrate" description="" scale="0.5" impactsoundtag="impact_soft">
+      <PreferredContainer primary="crewcab" />
+      <Price baseprice="150" canbespecial="false" sold="false">
+        <Price storeidentifier="merchanthusk" minavailable="1" maxavailable="4" sold="true">
+          <Reputation faction="huskcult" min="70" />
+        </Price>
+      </Price>
+      <Fabricate suitablefabricators="huskfab" requiredtime="45">
+        <RequiredSkill identifier="Medical" level="75" />
+        <RequiredItem identifier="organicfiber" amount="2" />
+        <RequiredItem identifier="huskeggs" />
+        <RequiredItem identifier="calyxanide" />
+        <RequiredItem identifier="alienblood" amount="2" />
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="organicfiber" />
+      </Deconstruct>
+      <InventoryIcon texture="Content/Map/Outposts/Art/FactionItems.png" sourcerect="340,54,62,48" />
+      <Sprite texture="Content/Items/Jobgear/MiscJobGear.png" sourcerect="254,359,117,65" depth="0.6" origin="0.5,0.5" />
+      <Body width="100" height="50" density="30" friction="0.8" restitution="0.01" />
+      <Wearable slots="Any,InnerClothes" variants="1" msg="ItemMsgPickUpSelect">
+        <sprite name="Cultist Torso" texture="Content/Items/Jobgear/Cultist/cultist.png" limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Cultist Right Hand" texture="Content/Items/Jobgear/Cultist/cultist.png" limb="RightHand" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Cultist Left Hand" texture="Content/Items/Jobgear/Cultist/cultist.png" limb="LeftHand" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Cultist Right Lower Arm" texture="Content/Items/Jobgear/Cultist/cultist.png" limb="RightArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Cultist Left Lower Arm" texture="Content/Items/Jobgear/Cultist/cultist.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Cultist Right Upper Arm" texture="Content/Items/Jobgear/Cultist/cultist.png" limb="RightForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Cultist Left Upper Arm" texture="Content/Items/Jobgear/Cultist/cultist.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Cultist Waist" texture="Content/Items/Jobgear/Cultist/cultist.png" limb="Waist" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Cultist Right Thigh" texture="Content/Items/Jobgear/Cultist/cultist.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Cultist Left Thigh" texture="Content/Items/Jobgear/Cultist/cultist.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Cultist Right Leg" texture="Content/Items/Jobgear/Cultist/cultist.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Cultist Left Leg" texture="Content/Items/Jobgear/Cultist/cultist.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Cultist Left Shoe" texture="Content/Items/Jobgear/Cultist/cultist.png" limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Cultist Right Shoe" texture="Content/Items/Jobgear/Cultist/cultist.png" limb="RightFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Cultist Head" texture="Content/Items/Jobgear/headgears.png" limb="Head" hidelimb="true" inheritlimbdepth="true" sourcerect="394,537,118,130" inherittexturescale="true" origin="0.55,0.6" />
+        <StatusEffect type="OnWearing" target="Character" interval="0.5" disabledeltatime="true">
+          <Affliction identifier="disguisedashusk" amount="1.0" />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" target="Character" HideFace="true" />
+      </Wearable>
+    </Item>
+    <Item name="" identifier="zealotrobes" category="Equipment" tags="smallitem,clothing,huskcult" fireproof="false" cargocontaineridentifier="metalcrate" description="" scale="0.5" impactsoundtag="impact_soft">
+      <PreferredContainer primary="crewcab" />
+      <Price baseprice="150" canbespecial="false" sold="false">
+        <Price storeidentifier="merchanthusk" minavailable="1" maxavailable="4" sold="true">
+          <Reputation faction="huskcult" min="70" />
+        </Price>
+      </Price>
+      <Fabricate suitablefabricators="huskfab" requiredtime="60">
+        <RequiredSkill identifier="Medical" level="100" />
+        <RequiredItem identifier="cultistrobes" />
+        <RequiredItem identifier="geneticmaterialhusk" />
+        <RequiredItem identifier="alienblood" amount="2" />
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="organicfiber" />
+      </Deconstruct>
+      <InventoryIcon texture="Content/Map/Outposts/Art/FactionItems.png" sourcerect="409,2,63,45" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Jobgear/MiscJobGear.png" sourcerect="383,359,117,65" depth="0.6" origin="0.5,0.5" />
+      <Body width="100" height="50" density="30" friction="0.8" restitution="0.01" />
+      <Wearable slots="Any,InnerClothes" variants="1" msg="ItemMsgPickUpSelect">
+        <sprite name="Cultist Torso" texture="Content/Items/Jobgear/Cultist/cultist2.png" limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Cultist Right Hand" texture="Content/Items/Jobgear/Cultist/cultist2.png" limb="RightHand" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Cultist Left Hand" texture="Content/Items/Jobgear/Cultist/cultist2.png" limb="LeftHand" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Cultist Right Lower Arm" texture="Content/Items/Jobgear/Cultist/cultist2.png" limb="RightArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Cultist Left Lower Arm" texture="Content/Items/Jobgear/Cultist/cultist2.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Cultist Right Upper Arm" texture="Content/Items/Jobgear/Cultist/cultist2.png" limb="RightForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Cultist Left Upper Arm" texture="Content/Items/Jobgear/Cultist/cultist2.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Cultist Waist" texture="Content/Items/Jobgear/Cultist/cultist2.png" limb="Waist" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Cultist Right Thigh" texture="Content/Items/Jobgear/Cultist/cultist2.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Cultist Left Thigh" texture="Content/Items/Jobgear/Cultist/cultist2.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Cultist Right Leg" texture="Content/Items/Jobgear/Cultist/cultist2.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Cultist Left Leg" texture="Content/Items/Jobgear/Cultist/cultist2.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Cultist Left Shoe" texture="Content/Items/Jobgear/Cultist/cultist2.png" limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Cultist Right Shoe" texture="Content/Items/Jobgear/Cultist/cultist2.png" limb="RightFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Cultist Head" texture="Content/Items/Jobgear/headgears.png" limb="Head" hidelimb="true" inheritlimbdepth="true" sourcerect="394,537,118,130" inherittexturescale="true" origin="0.55,0.6" />
+        <StatusEffect type="OnWearing" target="Character" interval="0.5" disabledeltatime="true">
+          <Affliction identifier="disguisedashusk" amount="1.0" />
+        </StatusEffect>
+        <StatusEffect target="Character" type="OnWearing" HideFace="true" setvalue="true">
+          <Affliction identifier="husktransformimmunitytemporary" amount="100" />
+        </StatusEffect>
+        <StatusEffect target="Character" type="OnWearing">
+          <Conditional huskinfection="gt 0" />
+          <ReduceAffliction type="damage" amount="0.25" />
+          <ReduceAffliction type="bleeding" amount="0.1" />
+        </StatusEffect>
+      </Wearable>
+    </Item>
+    <Item name="" identifier="bookofchalices1" category="Misc" hideinmenus="true" Tags="smallitem,huskcult" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft">
+      <Price baseprice="20" canbespecial="false" sold="false">
+        <Price storeidentifier="merchanthusk" minavailable="1" maxavailable="2" sold="true">
+          <Reputation faction="huskcult" min="30" />
+        </Price>
+      </Price>
+      <Fabricate suitablefabricators="huskfab" requiredtime="15">
+        <RequiredSkill identifier="Medical" level="30" />
+        <RequiredItem identifier="blankpaper" />
+        <RequiredItem identifier="huskeggs" />
+        <RequiredItem identifier="alienblood" amount="2" />
+      </Fabricate>
+      <PreferredContainer primary="crewcab" secondary="locker" />
+      <InventoryIcon texture="Content/Map/Outposts/Art/FactionItems.png" sourcerect="59,110,51,65" origin="0.5,0.5" />
+      <Sprite texture="Content/Map/Outposts/Art/FactionItems.png" sourcerect="114,165,41,51" depth="0.8" origin="0.5,0.5" />
+      <Body width="40" height="50" density="8" />
+      <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-10,0" msg="ItemMsgPickUpSelect" />
+      <Terminal canbeselected="true" msg="ItemMsgInteractSelect" AllowInGameEditing="false" readonly="true" autoscrolltobottom="false" AutoHideScrollbar="true" linestartsymbol="" marginmultiplier="1.5" drawhudwhenequipped="true" welcomemessage="threemetamorphoses" textcolor="50,50,50,255">
+        <GuiFrame relativesize="0.3,0.5" anchor="Center" style="Parchment" hidedragicons="true" />
+      </Terminal>
+    </Item>
+    <Item name="" identifier="bookofchalices2" variantof="bookofchalices1">
+      <Price baseprice="20" canbespecial="false" sold="false">
+        <Price storeidentifier="merchanthusk" minavailable="0" maxavailable="1" sold="true">
+          <Reputation faction="huskcult" min="30" />
+        </Price>
+      </Price>
+      <Terminal welcomemessage="heraldofthetide" />
+    </Item>
+  </Override>
+</Items>

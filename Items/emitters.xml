@@ -1,0 +1,2179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <!--custom crate to spawn rewards-->
+  <Item name="Reward Crate" identifier="oasisrewardcrate" tags="crate,allowcleanup" scale="0.5" linkable="true" pickdistance="150" showcontentsintooltip="true" impactsoundtag="impact_metal_heavy" hideinmenus="true">
+    <Deconstruct time="0.5" />
+    <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="561,377,151,86" origin="0.5,0.5" />
+    <Body width="150" height="80" density="25" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer capacity="20" maxstacksize="1" slotsperrow="4" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="true">
+      <Containable items="smallitem,mediumitem" excludeditems="toolbelt,toolbox,bandolier,cargoscooter" />
+    </ItemContainer>
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnSpawn" target="This" stackable="false">
+        <SpawnItem identifier="scp_vodka" SpawnPosition="ThisInventory" count="4" />
+        <SpawnItem identifier="50markbill" SpawnPosition="ThisInventory" count="4" />
+        <SpawnItem identifier="cookedabyssalmeat" SpawnPosition="ThisInventory" count="4" />
+        <SpawnItem identifier="meth" SpawnPosition="ThisInventory" count="4" />
+        <SpawnItem identifier="wintercoatcoalition" SpawnPosition="ThisInventory" count="4" />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Basilisk Equipment Crate" identifier="basiliskcrate" tags="crate,allowcleanup" scale="0.5" linkable="true" pickdistance="150" showcontentsintooltip="true" impactsoundtag="impact_metal_heavy" hideinmenus="true">
+    <Deconstruct time="0.5" />
+    <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="561,377,151,86" origin="0.5,0.5" />
+    <Body width="150" height="80" density="25" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer capacity="12" maxstacksize="4" slotsperrow="4" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="true">
+      <Containable items="smallitem,mediumitem" />
+    </ItemContainer>
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnSpawn" target="This" stackable="false">
+        <SpawnItem identifier="scp_ak74apmag" SpawnPosition="ThisInventory" count="3" />
+        <SpawnItem identifier="scp_ak74m" SpawnPosition="ThisInventory" count="1" />
+        <SpawnItem identifier="scp_p226" SpawnPosition="ThisInventory" count="1" />
+        <SpawnItem identifier="scp_9mmmag" SpawnPosition="ThisInventory" count="4" />
+        <SpawnItem identifier="scp_adrenaline" SpawnPosition="ThisInventory" count="1" />
+        <SpawnItem identifier="scp_armykit" SpawnPosition="ThisInventory" count="1" />
+        <SpawnItem identifier="scp_m9bayonet" SpawnPosition="ThisInventory" count="1" />
+        <SpawnItem identifier="antidama1" SpawnPosition="ThisInventory" count="4" />
+        <SpawnItem identifier="scp_tacpack" SpawnPosition="ThisInventory" count="1" />
+        <SpawnItem identifier="scp_renegadevest" SpawnPosition="ThisInventory" count="1" />
+        <SpawnItem identifier="ek_merc_armor_uniform" SpawnPosition="ThisInventory" count="1" />
+        <SpawnItem identifier="ek_merc_helmet" SpawnPosition="ThisInventory" count="1" />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Security Resupply Crate" identifier="securityammoresupplybox" tags="crate,allowcleanup" scale="0.5" linkable="true" pickdistance="150" showcontentsintooltip="true" impactsoundtag="impact_metal_heavy" hideinmenus="true">
+    <Deconstruct time="0.5" />
+    <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="561,377,151,86" origin="0.5,0.5" />
+    <Body width="150" height="80" density="25" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer capacity="16" slotsperrow="4" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="true">
+      <RequiredItems items="sec,id_security" type="Picked" msg="ItemMsgUnauthorizedAccess" ignoreineditor="true" />
+      <Containable items="smallitem,medical,shotgunammo,ehaammo,smgammo" />
+    </ItemContainer>
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnSpawn" target="This" stackable="false">
+        <SpawnItem identifier="shotgunshell" SpawnPosition="ThisInventory" count="40" />
+        <SpawnItem identifier="oasisrubbershell" SpawnPosition="ThisInventory" count="32" />
+        <SpawnItem identifier="scp_556apmag" SpawnPosition="ThisInventory" count="8" />
+        <SpawnItem identifier="scp_45mag" SpawnPosition="ThisInventory" count="8" />
+        <SpawnItem identifier="scp_357round" SpawnPosition="ThisInventory" count="24" />
+        <SpawnItem identifier="scp_armykit" SpawnPosition="ThisInventory" count="2" />
+        <SpawnItem identifier="smgapmagazine" SpawnPosition="ThisInventory" count="8" />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Medical Resupply Crate" identifier="medicalresupplybox" tags="crate,allowcleanup" scale="0.5" linkable="true" pickdistance="150" showcontentsintooltip="true" impactsoundtag="impact_metal_heavy" hideinmenus="true">
+    <Deconstruct time="0.5" />
+    <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="561,377,151,86" origin="0.5,0.5" />
+    <Body width="150" height="80" density="25" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer capacity="16" maxstacksize="32" slotsperrow="4" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="true">
+      <Containable items="smallitem,medical" />
+    </ItemContainer>
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnSpawn" target="This" stackable="false">
+        <SpawnItem identifier="antidama1" SpawnPosition="ThisInventory" count="32" />
+        <SpawnItem identifier="antibloodloss2" SpawnPosition="ThisInventory" count="32" />
+        <SpawnItem identifier="antibleeding2" SpawnPosition="ThisInventory" count="16" />
+        <SpawnItem identifier="stabilozine" SpawnPosition="ThisInventory" count="8" />
+        <SpawnItem identifier="antibiotics" SpawnPosition="ThisInventory" count="8" />
+        <SpawnItem identifier="scp_largecivkit" SpawnPosition="ThisInventory" count="2" />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <!-- Injector shell effects -->
+  <Item name="Activated Injector Riot Gas" identifier="injectorcoughsmoke" category="Weapon" subcategory="OASIS" tags="" scale="0.5" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5185185" />
+    <Body width="100" height="100" density="10" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="Always" target="This" Condition="-5" />
+      <StatusEffect type="Always" target="This">
+        <ParticleEmitter particle="fixfoam" anglemin="0" anglemax="360" particlespersecond="15" velocitymin="80" velocitymax="1000" scalemin="2" scalemax="3" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" disabledeltatime="true" stackable="false" delay="0.25">
+        <Explosion range="1000.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="smoke" amount="100" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Activated Injector Acid Gas" identifier="injectoracidsmoke" category="Weapon" subcategory="OASIS" tags="" scale="0.5" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5185185" />
+    <Body width="100" height="100" density="10" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="Always" target="This" Condition="-5" />
+      <StatusEffect type="Always" target="This">
+        <ParticleEmitter particle="sacidfoam" anglemin="0" anglemax="360" particlespersecond="15" velocitymin="80" velocitymax="1000" scalemin="2" scalemax="3" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" disabledeltatime="true" stackable="false" delay="0.25">
+        <Explosion range="1000.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="melting" amount="100" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Activated Injector Hyperius Asperivirus Gas" identifier="injectorvirussmoke" category="Weapon" subcategory="OASIS" tags="" scale="0.5" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5185185" />
+    <Body width="100" height="100" density="10" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="Always" target="This" Condition="-5" />
+      <StatusEffect type="Always" target="This">
+        <ParticleEmitter particle="hvirusfoam" anglemin="0" anglemax="360" particlespersecond="15" velocitymin="80" velocitymax="1000" scalemin="2" scalemax="3" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" disabledeltatime="true" stackable="false" delay="0.25">
+        <Explosion range="1000.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="hvirusstage1" amount="10" setvalue="true" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Activated Injector Brunhes Lineavirus Gas Small" identifier="lineaviruseffectsmall" category="Weapon" subcategory="OASIS" tags="" scale="0.5" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5185185" />
+    <Body width="100" height="100" density="10" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="Always" target="This" Condition="-5" />
+      <StatusEffect type="Always" target="This">
+        <ParticleEmitter particle="bvirusfoam" anglemin="0" anglemax="360" particlespersecond="15" velocitymin="80" velocitymax="1000" scalemin="2" scalemax="3" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" disabledeltatime="true" stackable="false" delay="0.25">
+        <Explosion range="300.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="scp_lineaviruscontagion" amount="10" setvalue="true" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Activated Injector Brunhes Lineavirus Gas" identifier="injectorlineasmoke" category="Weapon" subcategory="OASIS" tags="" scale="0.5" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5185185" />
+    <Body width="100" height="100" density="10" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="Always" target="This" Condition="-5" />
+      <StatusEffect type="Always" target="This">
+        <ParticleEmitter particle="bvirusfoam" anglemin="0" anglemax="360" particlespersecond="15" velocitymin="80" velocitymax="1000" scalemin="2" scalemax="3" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" disabledeltatime="true" stackable="false" delay="0.25">
+        <Explosion range="1000.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="scp_lineaviruscontagion" amount="10" setvalue="true" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Activated Injector Husk Gas" identifier="injectorhusksmoke" category="Weapon" subcategory="OASIS" tags="" scale="0.5" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5185185" />
+    <Body width="100" height="100" density="10" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="Always" target="This" Condition="-5" />
+      <StatusEffect type="Always" target="This">
+        <ParticleEmitter particle="calyxfoam" anglemin="0" anglemax="360" particlespersecond="15" velocitymin="80" velocitymax="1000" scalemin="2" scalemax="3" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" disabledeltatime="true" stackable="false" delay="0.25">
+        <Explosion range="1000.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="huskgas" amount="15" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Activated Injector Raptorbane Gas" identifier="injectorraptorsmoke" category="Weapon" subcategory="OASIS" tags="" scale="0.5" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5185185" />
+    <Body width="100" height="100" density="10" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="Always" target="This" Condition="-5" />
+      <StatusEffect type="Always" target="This">
+        <ParticleEmitter particle="raptorfoam" anglemin="0" anglemax="360" particlespersecond="15" velocitymin="80" velocitymax="1000" scalemin="2" scalemax="3" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" disabledeltatime="true" stackable="false" delay="0.25">
+        <Explosion range="1500.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="raptorgas" amount="100" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <!-- Basic kits used by a team-setting affliction to spawn loadouts -->
+  <Item name="Coalition Basic Kit A" identifier="coalitionkit1a" tags="crate,allowcleanup" scale="0.5" linkable="true" pickdistance="150" showcontentsintooltip="true" impactsoundtag="impact_metal_heavy" hideinmenus="true">
+    <Deconstruct time="0.5" />
+    <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="561,377,151,86" origin="0.5,0.5" />
+    <Body width="150" height="80" density="25" />
+    <Holdable slots="RightHand+LeftHand,Any" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer capacity="1" maxstacksize="1" slotsperrow="4" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="true">
+      <Containable items="smallitem,mediumitem" />
+    </ItemContainer>
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnSpawn" target="This" delay="1" stackable="false">
+        <SpawnItem identifier="scp_p226" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="scp_9mmmag" SpawnPosition="SameInventory" count="4" />
+        <SpawnItem identifier="scp_armykit" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="screwdriver" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="wrench" SpawnPosition="ThisInventory" count="1" />
+        <SpawnItem identifier="divingknife" SpawnPosition="ThisInventory" count="1" />
+        <SpawnItem identifier="toolbelt" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="headset" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_lightuniform" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_softvest" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_simplehelmet" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="coalitionidcard1" SpawnPosition="SameInventory" count="1" equip="true" />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="This" condition="-100" delay="2" disabledeltatime="true" stackable="false" />
+      <StatusEffect type="OnNotContained" target="This" condition="-2" />
+      <StatusEffect type="OnBroken" target="This,Contained">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Coalition Basic Kit B" identifier="coalitionkit1b" tags="crate,allowcleanup" scale="0.5" linkable="true" pickdistance="150" showcontentsintooltip="true" impactsoundtag="impact_metal_heavy" hideinmenus="true">
+    <Deconstruct time="0.5" />
+    <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="561,377,151,86" origin="0.5,0.5" />
+    <Body width="150" height="80" density="25" />
+    <Holdable slots="RightHand+LeftHand,Any" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer capacity="1" maxstacksize="1" slotsperrow="4" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="true">
+      <Containable items="smallitem,mediumitem" />
+    </ItemContainer>
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnSpawn" target="This" delay="1" stackable="false">
+        <SpawnItem identifier="scp_meusoc" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="scp_45mag" SpawnPosition="SameInventory" count="3" />
+        <SpawnItem identifier="scp_armykit" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="screwdriver" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="wrench" SpawnPosition="ThisInventory" count="1" />
+        <SpawnItem identifier="divingknife" SpawnPosition="ThisInventory" count="1" />
+        <SpawnItem identifier="toolbelt" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="headset" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_lightuniform" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_softvest" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_simplehelmet" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="coalitionidcard1" SpawnPosition="SameInventory" count="1" equip="true" />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="This" condition="-100" delay="2" disabledeltatime="true" stackable="false" />
+      <StatusEffect type="OnNotContained" target="This" condition="-2" />
+      <StatusEffect type="OnBroken" target="This,Contained">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Coalition Standard Kit A" identifier="coalitionkit2a" tags="crate,allowcleanup" scale="0.5" linkable="true" pickdistance="150" showcontentsintooltip="true" impactsoundtag="impact_metal_heavy" hideinmenus="true">
+    <Deconstruct time="0.5" />
+    <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="561,377,151,86" origin="0.5,0.5" />
+    <Body width="150" height="80" density="25" />
+    <Holdable slots="RightHand+LeftHand,Any" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer capacity="1" maxstacksize="1" slotsperrow="4" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="true">
+      <Containable items="smallitem,mediumitem" />
+    </ItemContainer>
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnSpawn" target="This" delay="1" stackable="false">
+        <SpawnItem identifier="scp_smg9" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="scp_9mmsmgmag" SpawnPosition="SameInventory" count="4" />
+        <SpawnItem identifier="scp_armykit" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="screwdriver" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="wrench" SpawnPosition="ThisInventory" count="1" />
+        <SpawnItem identifier="scp_m9bayonet" SpawnPosition="ThisInventory" count="1" />
+        <SpawnItem identifier="toolbelt" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="headset" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_lightuniform" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="bodyarmor" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="ballistichelmet1" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="coalitionidcard2" SpawnPosition="SameInventory" count="1" equip="true" />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="This" condition="-100" delay="2" disabledeltatime="true" stackable="false" />
+      <StatusEffect type="OnNotContained" target="This" condition="-2" />
+      <StatusEffect type="OnBroken" target="This,Contained">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Coalition Standard Kit B" identifier="coalitionkit2b" tags="crate,allowcleanup" scale="0.5" linkable="true" pickdistance="150" showcontentsintooltip="true" impactsoundtag="impact_metal_heavy" hideinmenus="true">
+    <Deconstruct time="0.5" />
+    <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="561,377,151,86" origin="0.5,0.5" />
+    <Body width="150" height="80" density="25" />
+    <Holdable slots="RightHand+LeftHand,Any" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer capacity="1" maxstacksize="1" slotsperrow="4" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="true">
+      <Containable items="smallitem,mediumitem" />
+    </ItemContainer>
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnSpawn" target="This" delay="1" stackable="false">
+        <SpawnItem identifier="scp_ump45" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="scp_umpmag" SpawnPosition="SameInventory" count="3" />
+        <SpawnItem identifier="scp_armykit" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="screwdriver" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="wrench" SpawnPosition="ThisInventory" count="1" />
+        <SpawnItem identifier="scp_m9bayonet" SpawnPosition="ThisInventory" count="1" />
+        <SpawnItem identifier="toolbelt" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="headset" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_lightuniform" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="bodyarmor" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="ballistichelmet1" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="coalitionidcard2" SpawnPosition="SameInventory" count="1" equip="true" />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="This" condition="-100" delay="2" disabledeltatime="true" stackable="false" />
+      <StatusEffect type="OnNotContained" target="This" condition="-2" />
+      <StatusEffect type="OnBroken" target="This,Contained">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Coalition Elite Kit A" identifier="coalitionkit3a" tags="crate,allowcleanup" scale="0.5" linkable="true" pickdistance="150" showcontentsintooltip="true" impactsoundtag="impact_metal_heavy" hideinmenus="true">
+    <Deconstruct time="0.5" />
+    <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="561,377,151,86" origin="0.5,0.5" />
+    <Body width="150" height="80" density="25" />
+    <Holdable slots="RightHand+LeftHand,Any" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer capacity="1" maxstacksize="1" slotsperrow="4" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="true">
+      <Containable items="smallitem,mediumitem" />
+    </ItemContainer>
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnSpawn" target="This" delay="1" stackable="false">
+        <SpawnItem identifier="scp_sg550" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="scp_556mag" SpawnPosition="SameInventory" count="5" />
+        <SpawnItem identifier="scp_armykit" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="scp_m9bayonet" SpawnPosition="ThisInventory" count="1" />
+        <SpawnItem identifier="antidama1" SpawnPosition="ThisInventory" count="2" />
+        <SpawnItem identifier="antibloodloss2" SpawnPosition="ThisInventory" count="2" />
+        <SpawnItem identifier="scp_assaultpack" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="headset" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_lightuniform" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_heavyvest" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_combathelmet" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="coalitionidcard3" SpawnPosition="SameInventory" count="1" equip="true" />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="This" condition="-100" delay="2" disabledeltatime="true" stackable="false" />
+      <StatusEffect type="OnNotContained" target="This" condition="-2" />
+      <StatusEffect type="OnBroken" target="This,Contained">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Coalition Elite Kit B" identifier="coalitionkit3b" tags="crate,allowcleanup" scale="0.5" linkable="true" pickdistance="150" showcontentsintooltip="true" impactsoundtag="impact_metal_heavy" hideinmenus="true">
+    <Deconstruct time="0.5" />
+    <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="561,377,151,86" origin="0.5,0.5" />
+    <Body width="150" height="80" density="25" />
+    <Holdable slots="RightHand+LeftHand,Any" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer capacity="10" maxstacksize="5" slotsperrow="4" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="true">
+      <Containable items="smallitem,mediumitem" />
+    </ItemContainer>
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnSpawn" target="This" delay="1" stackable="false">
+        <SpawnItem identifier="scp_mxa1" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="scp_65mag" SpawnPosition="SameInventory" count="4" />
+        <SpawnItem identifier="scp_armykit" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="scp_m9bayonet" SpawnPosition="ThisInventory" count="1" />
+        <SpawnItem identifier="antidama1" SpawnPosition="ThisInventory" count="2" />
+        <SpawnItem identifier="antibloodloss2" SpawnPosition="ThisInventory" count="2" />
+        <SpawnItem identifier="scp_assaultpack" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="headset" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_lightuniform" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_heavyvest" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_combathelmet" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="coalitionidcard3" SpawnPosition="SameInventory" count="1" equip="true" />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="This" condition="-100" delay="2" disabledeltatime="true" stackable="false" />
+      <StatusEffect type="OnNotContained" target="This" condition="-2" />
+      <StatusEffect type="OnBroken" target="This,Contained">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Coalition Elite Kit C" identifier="coalitionkit3c" tags="crate,allowcleanup" scale="0.5" linkable="true" pickdistance="150" showcontentsintooltip="true" impactsoundtag="impact_metal_heavy" hideinmenus="true">
+    <Deconstruct time="0.5" />
+    <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="561,377,151,86" origin="0.5,0.5" />
+    <Body width="150" height="80" density="25" />
+    <Holdable slots="RightHand+LeftHand,Any" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer capacity="1" maxstacksize="1" slotsperrow="4" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="true">
+      <Containable items="smallitem,mediumitem" />
+    </ItemContainer>
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnSpawn" target="This" delay="1" stackable="false">
+        <SpawnItem identifier="scp_m590" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="shotgunshell" SpawnPosition="SameInventory" count="20" />
+        <SpawnItem identifier="scp_armykit" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="scp_m9bayonet" SpawnPosition="ThisInventory" count="1" />
+        <SpawnItem identifier="antidama1" SpawnPosition="ThisInventory" count="2" />
+        <SpawnItem identifier="antibloodloss2" SpawnPosition="ThisInventory" count="2" />
+        <SpawnItem identifier="scp_assaultpack" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="headset" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_lightuniform" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_heavyvest" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_combathelmet" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="coalitionidcard3" SpawnPosition="SameInventory" count="1" equip="true" />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="This" condition="-100" delay="2" disabledeltatime="true" stackable="false" />
+      <StatusEffect type="OnNotContained" target="This" condition="-2" />
+      <StatusEffect type="OnBroken" target="This,Contained">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Coalition Captain Kit" identifier="coalitionkit4" tags="crate,allowcleanup" scale="0.5" linkable="true" pickdistance="150" showcontentsintooltip="true" impactsoundtag="impact_metal_heavy" hideinmenus="true">
+    <Deconstruct time="0.5" />
+    <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="561,377,151,86" origin="0.5,0.5" />
+    <Body width="150" height="80" density="25" />
+    <Holdable slots="RightHand+LeftHand,Any" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer capacity="1" maxstacksize="1" slotsperrow="4" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="true">
+      <Containable items="smallitem,mediumitem" />
+    </ItemContainer>
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnSpawn" target="This" delay="1" stackable="false">
+        <SpawnItem identifier="scp_python" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="scp_357apround" SpawnPosition="SameInventory" count="12" />
+        <SpawnItem identifier="scp_armykit" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="antidama1" SpawnPosition="ThisInventory" count="2" />
+        <SpawnItem identifier="antibloodloss2" SpawnPosition="ThisInventory" count="2" />
+        <SpawnItem identifier="scp_assaultpack" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="headset" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_heavyuniform" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_heavyvest" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="captainscap3" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="coalitionidcard4" SpawnPosition="SameInventory" count="1" equip="true" />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="This" condition="-100" delay="2" disabledeltatime="true" stackable="false" />
+      <StatusEffect type="OnNotContained" target="This" condition="-2" />
+      <StatusEffect type="OnBroken" target="This,Contained">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <!-- Jovian standard kits -->
+  <Item name="Jovian Basic Kit A" identifier="joviankit1a" tags="crate,allowcleanup" scale="0.5" linkable="true" pickdistance="150" showcontentsintooltip="true" impactsoundtag="impact_metal_heavy" hideinmenus="true">
+    <Deconstruct time="0.5" />
+    <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="561,377,151,86" origin="0.5,0.5" />
+    <Body width="150" height="80" density="25" />
+    <Holdable slots="RightHand+LeftHand,Any" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer capacity="1" maxstacksize="1" slotsperrow="4" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="true">
+      <Containable items="smallitem,mediumitem" />
+    </ItemContainer>
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnSpawn" target="This" delay="1" stackable="false">
+        <SpawnItem identifier="scp_mp443" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="scp_9mmmag" SpawnPosition="SameInventory" count="4" />
+        <SpawnItem identifier="scp_armykit" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="screwdriver" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="wrench" SpawnPosition="ThisInventory" count="1" />
+        <SpawnItem identifier="divingknife" SpawnPosition="ThisInventory" count="1" />
+        <SpawnItem identifier="toolbelt" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="headset" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_renegadeuniform" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_renegadevest" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_simplehelmet" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="jovianidcard1" SpawnPosition="SameInventory" count="1" equip="true" />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="This" condition="-100" delay="2" disabledeltatime="true" stackable="false" />
+      <StatusEffect type="OnNotContained" target="This" condition="-2" />
+      <StatusEffect type="OnBroken" target="This,Contained">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Jovian Basic Kit B" identifier="joviankit1b" tags="crate,allowcleanup" scale="0.5" linkable="true" pickdistance="150" showcontentsintooltip="true" impactsoundtag="impact_metal_heavy" hideinmenus="true">
+    <Deconstruct time="0.5" />
+    <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="561,377,151,86" origin="0.5,0.5" />
+    <Body width="150" height="80" density="25" />
+    <Holdable slots="RightHand+LeftHand,Any" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer capacity="1" maxstacksize="1" slotsperrow="4" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="true">
+      <Containable items="smallitem,mediumitem" />
+    </ItemContainer>
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnSpawn" target="This" delay="1" stackable="false">
+        <SpawnItem identifier="scp_sr1" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="scp_45mag" SpawnPosition="SameInventory" count="3" />
+        <SpawnItem identifier="scp_armykit" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="screwdriver" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="wrench" SpawnPosition="ThisInventory" count="1" />
+        <SpawnItem identifier="divingknife" SpawnPosition="ThisInventory" count="1" />
+        <SpawnItem identifier="toolbelt" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="headset" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_renegadeuniform" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_renegadevest" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_simplehelmet" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="jovianidcard1" SpawnPosition="SameInventory" count="1" equip="true" />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="This" condition="-100" delay="2" disabledeltatime="true" stackable="false" />
+      <StatusEffect type="OnNotContained" target="This" condition="-2" />
+      <StatusEffect type="OnBroken" target="This,Contained">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Jovian Standard Kit A" identifier="joviankit2a" tags="crate,allowcleanup" scale="0.5" linkable="true" pickdistance="150" showcontentsintooltip="true" impactsoundtag="impact_metal_heavy" hideinmenus="true">
+    <Deconstruct time="0.5" />
+    <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="561,377,151,86" origin="0.5,0.5" />
+    <Body width="150" height="80" density="25" />
+    <Holdable slots="RightHand+LeftHand,Any" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer capacity="1" maxstacksize="1" slotsperrow="4" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="true">
+      <Containable items="smallitem,mediumitem" />
+    </ItemContainer>
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnSpawn" target="This" delay="1" stackable="false">
+        <SpawnItem identifier="scp_uzi" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="scp_9mmsmgmag" SpawnPosition="SameInventory" count="4" />
+        <SpawnItem identifier="scp_armykit" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="screwdriver" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="wrench" SpawnPosition="ThisInventory" count="1" />
+        <SpawnItem identifier="scp_m9bayonet" SpawnPosition="ThisInventory" count="1" />
+        <SpawnItem identifier="toolbelt" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="headset" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_lightuniform" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="bodyarmor" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_renegadehelmet" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="jovianidcard2" SpawnPosition="SameInventory" count="1" equip="true" />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="This" condition="-100" delay="2" disabledeltatime="true" stackable="false" />
+      <StatusEffect type="OnNotContained" target="This" condition="-2" />
+      <StatusEffect type="OnBroken" target="This,Contained">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Jovian Standard Kit B" identifier="joviankit2b" tags="crate,allowcleanup" scale="0.5" linkable="true" pickdistance="150" showcontentsintooltip="true" impactsoundtag="impact_metal_heavy" hideinmenus="true">
+    <Deconstruct time="0.5" />
+    <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="561,377,151,86" origin="0.5,0.5" />
+    <Body width="150" height="80" density="25" />
+    <Holdable slots="RightHand+LeftHand,Any" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer capacity="1" maxstacksize="1" slotsperrow="4" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="true">
+      <Containable items="smallitem,mediumitem" />
+    </ItemContainer>
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnSpawn" target="This" delay="1" stackable="false">
+        <SpawnItem identifier="scp_sr2" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="scp_umpmag" SpawnPosition="SameInventory" count="3" />
+        <SpawnItem identifier="scp_armykit" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="screwdriver" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="wrench" SpawnPosition="ThisInventory" count="1" />
+        <SpawnItem identifier="scp_m9bayonet" SpawnPosition="ThisInventory" count="1" />
+        <SpawnItem identifier="toolbelt" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="headset" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_lightuniform" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="bodyarmor" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_renegadehelmet" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="jovianidcard2" SpawnPosition="SameInventory" count="1" equip="true" />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="This" condition="-100" delay="2" disabledeltatime="true" stackable="false" />
+      <StatusEffect type="OnNotContained" target="This" condition="-2" />
+      <StatusEffect type="OnBroken" target="This,Contained">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Jovian Elite Kit A" identifier="joviankit3a" tags="crate,allowcleanup" scale="0.5" linkable="true" pickdistance="150" showcontentsintooltip="true" impactsoundtag="impact_metal_heavy" hideinmenus="true">
+    <Deconstruct time="0.5" />
+    <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="561,377,151,86" origin="0.5,0.5" />
+    <Body width="150" height="80" density="25" />
+    <Holdable slots="RightHand+LeftHand,Any" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer capacity="1" maxstacksize="1" slotsperrow="4" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="true">
+      <Containable items="smallitem,mediumitem" />
+    </ItemContainer>
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnSpawn" target="This" delay="1" stackable="false">
+        <SpawnItem identifier="scp_ak74m" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="scp_ak74apmag" SpawnPosition="SameInventory" count="5" />
+        <SpawnItem identifier="scp_armykit" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="scp_m9bayonet" SpawnPosition="ThisInventory" count="1" />
+        <SpawnItem identifier="antidama1" SpawnPosition="ThisInventory" count="2" />
+        <SpawnItem identifier="antibloodloss2" SpawnPosition="ThisInventory" count="2" />
+        <SpawnItem identifier="scp_assaultpack" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="headset" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_heavyrenuniform" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_renegadeplatecarrier" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_renegadeheavyhelmet" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="jovianidcard3" SpawnPosition="SameInventory" count="1" equip="true" />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="This" condition="-100" delay="2" disabledeltatime="true" stackable="false" />
+      <StatusEffect type="OnNotContained" target="This" condition="-2" />
+      <StatusEffect type="OnBroken" target="This,Contained">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Jovian Elite Kit B" identifier="joviankit3b" tags="crate,allowcleanup" scale="0.5" linkable="true" pickdistance="150" showcontentsintooltip="true" impactsoundtag="impact_metal_heavy" hideinmenus="true">
+    <Deconstruct time="0.5" />
+    <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="561,377,151,86" origin="0.5,0.5" />
+    <Body width="150" height="80" density="25" />
+    <Holdable slots="RightHand+LeftHand,Any" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer capacity="10" maxstacksize="5" slotsperrow="4" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="true">
+      <Containable items="smallitem,mediumitem" />
+    </ItemContainer>
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnSpawn" target="This" delay="1" stackable="false">
+        <SpawnItem identifier="scp_ak103" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="scp_akapmag" SpawnPosition="SameInventory" count="4" />
+        <SpawnItem identifier="scp_armykit" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="scp_m9bayonet" SpawnPosition="ThisInventory" count="1" />
+        <SpawnItem identifier="antidama1" SpawnPosition="ThisInventory" count="2" />
+        <SpawnItem identifier="antibloodloss2" SpawnPosition="ThisInventory" count="2" />
+        <SpawnItem identifier="scp_assaultpack" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="headset" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_heavyrenuniform" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_renegadeplatecarrier" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_renegadeheavyhelmet" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="jovianidcard3" SpawnPosition="SameInventory" count="1" equip="true" />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="This" condition="-100" delay="2" disabledeltatime="true" stackable="false" />
+      <StatusEffect type="OnNotContained" target="This" condition="-2" />
+      <StatusEffect type="OnBroken" target="This,Contained">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Jovian Elite Kit C" identifier="joviankit3c" tags="crate,allowcleanup" scale="0.5" linkable="true" pickdistance="150" showcontentsintooltip="true" impactsoundtag="impact_metal_heavy" hideinmenus="true">
+    <Deconstruct time="0.5" />
+    <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="561,377,151,86" origin="0.5,0.5" />
+    <Body width="150" height="80" density="25" />
+    <Holdable slots="RightHand+LeftHand,Any" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer capacity="1" maxstacksize="1" slotsperrow="4" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="true">
+      <Containable items="smallitem,mediumitem" />
+    </ItemContainer>
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnSpawn" target="This" delay="1" stackable="false">
+        <SpawnItem identifier="scp_saiga12" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="scp_saigaextmag" SpawnPosition="SameInventory" count="3" />
+        <SpawnItem identifier="scp_armykit" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="scp_m9bayonet" SpawnPosition="ThisInventory" count="1" />
+        <SpawnItem identifier="antidama1" SpawnPosition="ThisInventory" count="2" />
+        <SpawnItem identifier="antibloodloss2" SpawnPosition="ThisInventory" count="2" />
+        <SpawnItem identifier="scp_assaultpack" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="headset" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_heavyrenuniform" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_renegadeplatecarrier" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_renegadeheavyhelmet" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="jovianidcard3" SpawnPosition="SameInventory" count="1" equip="true" />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="This" condition="-100" delay="2" disabledeltatime="true" stackable="false" />
+      <StatusEffect type="OnNotContained" target="This" condition="-2" />
+      <StatusEffect type="OnBroken" target="This,Contained">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Jovian Captain Kit" identifier="joviankit4" tags="crate,allowcleanup" scale="0.5" linkable="true" pickdistance="150" showcontentsintooltip="true" impactsoundtag="impact_metal_heavy" hideinmenus="true">
+    <Deconstruct time="0.5" />
+    <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="561,377,151,86" origin="0.5,0.5" />
+    <Body width="150" height="80" density="25" />
+    <Holdable slots="RightHand+LeftHand,Any" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer capacity="1" maxstacksize="1" slotsperrow="4" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="true">
+      <Containable items="smallitem,mediumitem" />
+    </ItemContainer>
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnSpawn" target="This" delay="1" stackable="false">
+        <SpawnItem identifier="scp_rhino" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="scp_357apround" SpawnPosition="SameInventory" count="12" />
+        <SpawnItem identifier="scp_armykit" SpawnPosition="SameInventory" count="1" />
+        <SpawnItem identifier="antidama1" SpawnPosition="ThisInventory" count="2" />
+        <SpawnItem identifier="antibloodloss2" SpawnPosition="ThisInventory" count="2" />
+        <SpawnItem identifier="scp_assaultpack" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="headset" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_renegadecaptainuniform" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_renegadeplatecarrier" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="scp_renegadecaptainhat" SpawnPosition="SameInventory" count="1" equip="true" />
+        <SpawnItem identifier="jovianidcard4" SpawnPosition="SameInventory" count="1" equip="true" />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="This" condition="-100" delay="2" disabledeltatime="true" stackable="false" />
+      <StatusEffect type="OnNotContained" target="This" condition="-2" />
+      <StatusEffect type="OnBroken" target="This,Contained">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <!-- Blood splatters -->
+  <Item name="Blood Splatter (Small)" description="Place or spawn this item to instantly generate a random blood splatter that can be washed away. Beware decal limits." identifier="smallblood_effect" category="Misc" tags="" scale="0.4" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="5,16,143,165" depth="0.55" origin="0.5,0.5" />
+    <Body width="100" height="100" density="0" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="Always" target="This" Condition="-1000" />
+      <StatusEffect type="OnBroken" target="This" stackable="false">
+        <Explosion range="0.1" ballastfloradamage="0" smoke="false" flames="false" sparks="false" shockwave="false" underwaterbubble="false" structuredamage="0" levelwalldamage="0" itemdamage="0" stun="0" force="0.1" severlimbsprobability="0.0" decal="bloodsplatbig" decalsize="0.4" />
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Blood Splatter (Medium)" description="Place or spawn this item to instantly generate a random blood splatter that can be washed away. Beware decal limits." identifier="mediumblood_effect" category="Misc" tags="" scale="0.6" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="5,16,143,165" depth="0.55" origin="0.5,0.5" />
+    <Body width="100" height="100" density="0" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="Always" target="This" Condition="0" setvalue="true" disabledeltatime="true" />
+      <StatusEffect type="OnBroken" target="This" stackable="false">
+        <Explosion range="0.1" ballastfloradamage="0" smoke="false" flames="false" sparks="false" shockwave="false" underwaterbubble="false" structuredamage="0" levelwalldamage="0" itemdamage="0" stun="0" force="0.1" severlimbsprobability="0.0" decal="bloodsplatbig" decalsize="0.6" />
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Blood Splatter (Large)" description="Place or spawn this item to instantly generate a random blood splatter that can be washed away. Beware decal limits." identifier="bigblood_effect" category="Misc" tags="" scale="0.8" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="5,16,143,165" depth="0.55" origin="0.5,0.5" />
+    <Body width="100" height="100" density="0" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="Always" target="This" Condition="-1000" />
+      <StatusEffect type="OnBroken" target="This" stackable="false">
+        <Explosion range="0.1" ballastfloradamage="0" smoke="false" flames="false" sparks="false" shockwave="false" underwaterbubble="false" structuredamage="0" levelwalldamage="0" itemdamage="0" stun="0" force="0.1" severlimbsprobability="0.0" decal="bloodsplatbig" decalsize="0.8" />
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Blood Splatter (Huge)" description="Place or spawn this item to instantly generate a random blood splatter that can be washed away. Beware decal limits." identifier="hugeblood_effect" category="Misc" tags="" scale="1.0" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="5,16,143,165" depth="0.55" origin="0.5,0.5" />
+    <Body width="100" height="100" density="0" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="Always" target="This" Condition="-1000" />
+      <StatusEffect type="OnBroken" target="This" stackable="false">
+        <Explosion range="0.1" ballastfloradamage="0" smoke="false" flames="false" sparks="false" shockwave="false" underwaterbubble="false" structuredamage="0" levelwalldamage="0" itemdamage="0" stun="0" force="0.1" severlimbsprobability="0.0" decal="bloodsplatbig" decalsize="1.0" />
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Demonic Spike" identifier="demonspike" category="Misc" scale="0.5" sonarsize="2" hideinmenus="true" spritecolor="150,0,200,20">
+    <Sprite texture="Content/Characters/Spineling/Spineling.png" sourcerect="0,215,180,18" depth="0.55" />
+    <Body width="160" height="10" density="20" />
+    <Projectile characterusable="false" launchimpulse="30" maxtargetstohit="5" sticktocharacters="true" sticktoitems="false" sticktodoors="false" sticktostructures="true" penetration="0.25" friendlyfire="false" damagedoors="true">
+      <Attack structuredamage="20" itemdamage="20" severlimbsprobability="0.5" penetration="0.25">
+        <!--Hits up to 3 limbs, so the actual damage can be 3x-->
+        <Affliction identifier="lacerations" strength="10" />
+        <Affliction identifier="bleeding" strength="10" />
+        <Affliction identifier="stun" strength="0.25" />
+      </Attack>
+      <StatusEffect type="InWater" target="This" lifetime="0.5">
+        <ParticleEmitter particle="ammotrailwater" copyentityangle="true" anglemin="0" anglemax="0" particleamount="10" velocitymin="-10" velocitymax="-100" scalemin="0.5" scalemax="1" />
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This" stackable="false" delay="1">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="This" condition="-20" />
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <Conditional entitytype="eq Structure" />
+        <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="5" velocitymin="100" velocitymax="2000" scalemin="0.1" scalemax="0.2" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <Conditional entitytype="eq Structure" />
+        <Conditional hastag="eq door" />
+        <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+    <LightComponent range="200" castshadows="False" drawbehindsubs="False" ison="True" blinkfrequency="0" lightcolor="150,0,200,20" isactive="True" minvoltage="0" powerconsumption="0" vulnerabletoemp="False" pickingtime="0" canbepicked="False" allowingameediting="False" msg="">
+      <Sprite texture="Content/Characters/Spineling/Spineling.png" sourcerect="0,230,180,23" origin="0.5,0.6" alpha="0.5" />
+    </LightComponent>
+  </Item>
+  <!--"traits" autofill into the generator to function as a kind of ghetto RNG.-->
+  <Item name="Trait Generator" identifier="traitcontainer" tags="trait_container" scale="0.5" hiddeningame="true">
+    <Sprite texture="%ModDir%/Images/trait_items.png" depth="0.1" sourcerect="265,520,240,240" origin="0.5,0.5" />
+    <ItemContainer capacity="3" slotsperrow="1" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.18,0.25" anchor="Center" style="ItemUI" />
+      <Containable items="traititem" />
+    </ItemContainer>
+  </Item>
+  <!-- !!TRAITS!! -->
+  <!--Template with examples of how to create a new trait.-->
+  <Item name="Trait Template" identifier="traittemplate" tags="traititem" scale="0.5" hiddeningame="true" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/trait_items.png" depth="0.1" sourcerect="8,520,240,240" origin="0.5,0.5" />
+    <PreferredContainer primary="trait_container" minamount="1" maxamount="1" spawnprobability="0" />
+    <!--Chance for the trait to appear, maximum times it can do so. -->
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnSpawn" target="NearbyItems" range="50000" targettags="trait_nonexistent">
+        <!--Use the designated trait spawner if you want to spawn items or characters.-->
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="NearbyCharacters" range="50000" disabledeltatime="true">
+        <!--Apply an affliction to every character.-->
+        <Affliction identifier="drunk" strength="60" probability="0.6" />
+        <!--Afflictions apply double if you remove the probability part, keep that in mind.-->
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="This" delay="0.1">
+        <!--Remove itself after 0.1 seconds to let trait effects kick in.-->
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <!--Mudraptors.-->
+  <Item name="Monster Trait" identifier="trait_monster" tags="traititem" scale="0.5" hiddeningame="true" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/trait_items.png" depth="0.1" sourcerect="8,520,240,240" origin="0.5,0.5" />
+    <PreferredContainer primary="trait_container" minamount="1" maxamount="1" spawnprobability="0.7" />
+    <ItemComponent>
+      <StatusEffect type="OnSpawn" target="NearbyItems" range="50000" targettags="trait_monster_spawn">
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="NearbyItems" range="50000" targettags="trait_monster_egg">
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="This" delay="0.1">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Husk Trait" identifier="trait_husk" tags="traititem" scale="0.5" hiddeningame="true" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/trait_items.png" depth="0.1" sourcerect="8,520,240,240" origin="0.5,0.5" />
+    <PreferredContainer primary="trait_container" minamount="1" maxamount="1" spawnprobability="0.5" />
+    <ItemComponent>
+      <StatusEffect type="OnSpawn" target="NearbyItems" range="50000" targettags="trait_monster_husk">
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="NearbyCharacters" range="50000">
+        <Affliction identifier="huskinfection" strength="1" probability="0.1" />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="This" delay="0.1">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <!--Drunkard trait. Some people are drunk, the bins have ethanol.-->
+  <Item name="Drunkard Trait" identifier="trait_crew_drunk" tags="traititem" scale="0.5" hiddeningame="true" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/trait_items.png" depth="0.1" sourcerect="8,520,240,240" origin="0.5,0.5" />
+    <PreferredContainer primary="trait_container" minamount="1" maxamount="1" spawnprobability="0.6" />
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnSpawn" target="NearbyItems" range="50000" targettags="outposttrashcan">
+        <Spawnitem identifier="ethanol" SpawnPosition="This" />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="NearbyCharacters" range="50000" disabledeltatime="true">
+        <Affliction identifier="drunk" strength="40" probability="0.6" />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="This" delay="0.1">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <!--!SURPLUS TRAITS!-->
+  <Item name="Generic Surplus Trait" identifier="trait_surplus" tags="traititem" scale="0.5" hiddeningame="true" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/trait_items.png" depth="0.1" sourcerect="8,520,240,240" origin="0.5,0.5" />
+    <PreferredContainer primary="trait_container" minamount="1" maxamount="1" spawnprobability="0" />
+    <ItemComponent>
+      <StatusEffect type="OnSpawn" target="NearbyItems" range="50000" targettags="trait_surplus_generic">
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="This" delay="0.1">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Security Surplus Trait" identifier="trait_surplus_security" tags="traititem" scale="0.5" hiddeningame="true" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/trait_items.png" depth="0.1" sourcerect="8,520,240,240" origin="0.5,0.5" />
+    <PreferredContainer primary="trait_container" minamount="1" maxamount="1" spawnprobability="0.5" />
+    <ItemComponent>
+      <StatusEffect type="OnSpawn" target="NearbyItems" range="50000" targettags="trait_surplus_security">
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="This" delay="0.1">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Medical Surplus Trait" identifier="trait_surplus_medical" tags="traititem" scale="0.5" hiddeningame="true" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/trait_items.png" depth="0.1" sourcerect="8,520,240,240" origin="0.5,0.5" />
+    <PreferredContainer primary="trait_container" minamount="1" maxamount="1" spawnprobability="0.3" />
+    <ItemComponent>
+      <StatusEffect type="OnSpawn" target="NearbyItems" range="50000" targettags="trait_surplus_medical">
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="This" delay="0.1">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Engineering Surplus Trait" identifier="trait_surplus_engineering" tags="traititem" scale="0.5" hiddeningame="true" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/trait_items.png" depth="0.1" sourcerect="8,520,240,240" origin="0.5,0.5" />
+    <PreferredContainer primary="trait_container" minamount="1" maxamount="1" spawnprobability="0.3" />
+    <ItemComponent>
+      <StatusEffect type="OnSpawn" target="NearbyItems" range="50000" targettags="trait_surplus_engineering">
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="This" delay="0.1">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Renegade Surplus Trait" identifier="trait_surplus_renegade" tags="traititem" scale="0.5" hiddeningame="true" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/trait_items.png" depth="0.1" sourcerect="8,520,240,240" origin="0.5,0.5" />
+    <PreferredContainer primary="trait_container" minamount="1" maxamount="1" spawnprobability="0.1" />
+    <ItemComponent>
+      <StatusEffect type="OnSpawn" target="NearbyItems" range="50000" targettags="trait_surplus_renegade">
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="This" delay="0.1">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <!--!!SPAWNERS!!-->
+  <!--Spawners for monster traits.-->
+  <Item name="Monster Spawner (Trait)" identifier="trait_monster_spawner" tags="trait_monster_spawn" scale="0.25" spritecolor="0,50,180,255" hiddeningame="true">
+    <!--normal monsters-->
+    <Sprite texture="%ModDir%/Images/trait_items.png" depth="0.1" sourcerect="264,264,240,240" origin="0.5,0.5" />
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnUse" target="This" Condition="0" setvalue="true">
+        <!--Unless the spawner item has its condition set to 0 it'll spawn 2 of everything. I have no clue why.-->
+        <SpawnCharacter speciesname="Mudraptor" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" delay="0.2" Condition="100" setvalue="true" />
+      <!--Since aforementioned bug requires us to set condition to 0, it needs to be undone if we want to use the item again, for some reason.-->
+    </ItemComponent>
+  </Item>
+  <Item name="Monster Egg Spawner (Trait)" identifier="trait_egg_spawner" tags="trait_monster_egg" scale="0.25" spritecolor="0,50,180,255" hiddeningame="true">
+    <!--eggs-->
+    <Sprite texture="%ModDir%/Images/trait_items.png" depth="0.1" sourcerect="8,264,240,240" origin="0.5,0.5" />
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnUse" target="This" Condition="0" setvalue="true">
+        <SpawnItem identifier="largemudraptoregg" SpawnPosition="This" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" delay="0.2" Condition="100" setvalue="true" />
+    </ItemComponent>
+  </Item>
+  <Item name="Husk Spawner (Trait)" identifier="trait_husk_spawner" tags="trait_monster_husk" scale="0.25" spritecolor="0,50,180,255" hiddeningame="true">
+    <!--spawns generic husk, if huskmod is enabled it'll be auto-converted into a random husk-->
+    <Sprite texture="%ModDir%/Images/trait_items.png" depth="0.1" sourcerect="776,264,240,240" origin="0.5,0.5" />
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnUse" target="This" Condition="0" setvalue="true">
+        <SpawnCharacter speciesname="husk" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" delay="0.2" Condition="100" setvalue="true" />
+    </ItemComponent>
+  </Item>
+  <!--Monster Spawner end.-->
+  <!--!SURPLUS SPAWNERS & CRATES!-->
+  <Item name="Generic Surplus Spawner (Trait" description="DOES NOT SPAWN ANYTHING, DO NOT USE" identifier="trait_cargo_generic" tags="trait_surplus_generic" scale="0.25" hiddeningame="true">
+    <!--generic, unused, essentially an item template-->
+    <Sprite texture="%ModDir%/Images/trait_items.png" depth="0.1" sourcerect="520,264,240,240" origin="0.5,0.5" />
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnUse" target="This" Condition="0" setvalue="true">
+        <SpawnItem identifier="metalcrate" SpawnPosition="This" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" delay="0.2" Condition="100" setvalue="true" />
+    </ItemComponent>
+  </Item>
+  <!--security surplus spawner-->
+  <Item name="Security Cargo Spawner (Trait)" identifier="trait_cargo_security" tags="trait_surplus_security" spritecolor="145,122,109,255" scale="0.25" hiddeningame="true">
+    <!--security-->
+    <Sprite texture="%ModDir%/Images/trait_items.png" depth="0.1" sourcerect="520,264,240,240" origin="0.5,0.5" />
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnUse" target="This" Condition="0" setvalue="true">
+        <SpawnItem identifier="surpluscrate_security" SpawnPosition="This" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" delay="0.2" Condition="100" setvalue="true" />
+    </ItemComponent>
+  </Item>
+  <!--custom crate to spawn all surplus items on spawn-->
+  <Item name="Surplus Security Crate" identifier="surpluscrate_security" tags="crate,allowcleanup" scale="0.5" linkable="true" pickdistance="150" showcontentsintooltip="true" impactsoundtag="impact_metal_heavy" hideinmenus="true">
+    <Deconstruct time="0.5" />
+    <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="561,377,151,86" origin="0.5,0.5" />
+    <Body width="150" height="80" density="25" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer capacity="9" slotsperrow="3" maxstacksize="2" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="true">
+      <RequiredItems items="sec" type="Picked" msg="ItemMsgUnauthorizedAccess" ignoreineditor="true" />
+      <Containable items="smallitem,mediumitem" excludeditems="toolbelt,toolbox,bandolier,cargoscooter" />
+    </ItemContainer>
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnSpawn" target="This" Condition="0" setvalue="true">
+        <SpawnItem identifier="stunbaton" SpawnPosition="ThisInventory" count="3" />
+        <SpawnItem identifier="batterycell" SpawnPosition="ThisInventory" count="6" />
+        <!--3 Heavy riot shields-->
+        <SpawnItem identifier="gm_riotshield" SpawnPosition="ThisInventory" count="3" />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="This" delay="0.2" Condition="100" setvalue="true" />
+    </ItemComponent>
+  </Item>
+  <Item name="Medical Cargo Spawner (Trait)" identifier="trait_cargo_medical" tags="trait_surplus_medical" spritecolor="186,75,75,255" scale="0.25" hiddeningame="true">
+    <!--medical-->
+    <Sprite texture="%ModDir%/Images/trait_items.png" depth="0.1" sourcerect="520,264,240,240" origin="0.5,0.5" />
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnUse" target="This" Condition="0" setvalue="true">
+        <SpawnItem identifier="surpluscrate_medical" SpawnPosition="This" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" delay="0.2" Condition="100" setvalue="true" />
+    </ItemComponent>
+  </Item>
+  <Item name="Surplus Medical Crate" identifier="surpluscrate_medical" tags="crate,allowcleanup" scale="0.5" linkable="true" pickdistance="150" showcontentsintooltip="true" impactsoundtag="impact_metal_heavy" hideinmenus="true">
+    <Deconstruct time="0.5" />
+    <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="407,376,152,89" origin="0.5,0.5" />
+    <Body width="150" height="80" density="25" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer capacity="15" slotsperrow="3" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="true">
+      <Containable items="smallitem,mediumitem" excludeditems="toolbelt,toolbox,bandolier,cargoscooter" />
+    </ItemContainer>
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnSpawn" target="This" Condition="0" setvalue="true">
+        <!--6 stacks of plastiseal-->
+        <SpawnItem identifier="antibleeding2" SpawnPosition="ThisInventory" count="48" />
+        <!--6 stacks of morphine-->
+        <SpawnItem identifier="antidama1" SpawnPosition="ThisInventory" count="48" />
+        <!--3 stacks of blood packs-->
+        <SpawnItem identifier="antibloodloss2" SpawnPosition="ThisInventory" count="24" />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="This" delay="0.2" Condition="100" setvalue="true" />
+    </ItemComponent>
+  </Item>
+  <Item name="Engineering Cargo Spawner (Trait)" identifier="trait_cargo_engineering" tags="trait_surplus_engineering" spritecolor="224,188,109,255" scale="0.25" hiddeningame="true">
+    <!--engineering-->
+    <Sprite texture="%ModDir%/Images/trait_items.png" depth="0.1" sourcerect="520,264,240,240" origin="0.5,0.5" />
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnUse" target="This" Condition="0" setvalue="true">
+        <SpawnItem identifier="surpluscrate_engineering" SpawnPosition="This" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" delay="0.2" Condition="100" setvalue="true" />
+    </ItemComponent>
+  </Item>
+  <Item name="Surplus Engineering Crate" identifier="surpluscrate_engineering" tags="crate,allowcleanup" scale="0.5" linkable="true" pickdistance="150" showcontentsintooltip="true" impactsoundtag="impact_metal_heavy" hideinmenus="true">
+    <Deconstruct time="0.5" />
+    <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="407,376,152,89" origin="0.5,0.5" />
+    <Body width="150" height="80" density="25" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer capacity="18" slotsperrow="3" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="true">
+      <Containable items="smallitem,mediumitem" excludeditems="toolbelt,toolbox,bandolier,cargoscooter" />
+    </ItemContainer>
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnSpawn" target="This" Condition="0" setvalue="true">
+        <!--3 stacks of fixfoam grenades-->
+        <SpawnItem identifier="fixfoamgrenade" SpawnPosition="ThisInventory" count="24" />
+        <!--3 metal foam guns-->
+        <SpawnItem identifier="ekutility_metalfoam_gun" SpawnPosition="ThisInventory" count="3" />
+        <!--6 stacks of metal foam fuel-->
+        <SpawnItem identifier="ekutility_metalfoam_tank" SpawnPosition="ThisInventory" count="12" />
+        <!--6 Crowbars-->
+        <SpawnItem identifier="crowbar" SpawnPosition="ThisInventory" count="6" />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="This" delay="0.2" Condition="100" setvalue="true" />
+    </ItemComponent>
+  </Item>
+  <Item name="Renegade Cargo Spawner (Trait)" identifier="trait_cargo_renegade" tags="trait_surplus_renegade" spritecolor="75,0,0,255" scale="0.5" hiddeningame="true">
+    <!--renegade-->
+    <Sprite texture="%ModDir%/Images/trait_items.png" depth="0.1" sourcerect="520,264,240,240" origin="0.5,0.5" />
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnUse" target="This" Condition="0" setvalue="true">
+        <SpawnItem identifier="surpluscrate_engineering" SpawnPosition="This" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" delay="0.2" Condition="100" setvalue="true" />
+    </ItemComponent>
+  </Item>
+  <Item name="Surplus Renegade Crate" identifier="surpluscrate_renegade" tags="crate,allowcleanup" scale="0.25" linkable="true" pickdistance="150" showcontentsintooltip="true" impactsoundtag="impact_metal_heavy" hideinmenus="true">
+    <Deconstruct time="0.5" />
+    <Sprite texture="Content/Items/Containers/containers.png" depth="0.54" sourcerect="407,376,152,89" origin="0.5,0.5" />
+    <Body width="150" height="80" density="25" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer capacity="15" slotsperrow="3" canbeselected="false" hideitems="true" keepopenwhenequipped="true" movableframe="true">
+      <Containable items="smallitem,mediumitem" excludeditems="toolbelt,toolbox,bandolier,cargoscooter" />
+    </ItemContainer>
+    <ItemComponent characterusable="False">
+      <StatusEffect type="OnSpawn" target="This" Condition="0" setvalue="true">
+        <!--3 hardened diving masks-->
+        <SpawnItem identifier="scp_hardeneddivingmask" SpawnPosition="ThisInventory" count="3" />
+        <!--3 renegade uniforms-->
+        <SpawnItem identifier="scp_renegadeuniform" SpawnPosition="ThisInventory" count="3" />
+        <!--3 stacks of SMG magazines-->
+        <SpawnItem identifier="scp_9mmsmgmag" SpawnPosition="ThisInventory" count="18" />
+        <!--3 renegade SMGs-->
+        <SpawnItem identifier="scp_uzi" SpawnPosition="ThisInventory" count="3" />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" target="This" delay="0.2" Condition="100" setvalue="true" />
+    </ItemComponent>
+  </Item>
+  <!-- 40mm SAA special grenade effects -->
+  <Item name="SAA Burst" identifier="meltsmoke" category="Misc" tags="" scale="0.5" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+    <Body width="100" height="100" density="10" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="Always" target="This" Condition="-50" />
+      <StatusEffect type="Always" target="This,Hull">
+        <ParticleEmitter particle="sacidfoam" anglemin="0" anglemax="360" particlespersecond="5" velocitymin="80" velocitymax="160" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" disabledeltatime="true" stackable="false">
+        <Explosion range="150.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="melting" amount="25" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <!-- Literally burns everyone alive -->
+  <Item name="Global Immolation" identifier="immolationburst" category="Misc" tags="" scale="0.5" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+    <Body width="100" height="100" density="10" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="Always" target="This" Condition="-100" />
+      <StatusEffect type="Always" target="This">
+        <ParticleEmitter particle="sacidfoam" anglemin="0" anglemax="360" particlespersecond="5" velocitymin="80" velocitymax="160" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Explosion range="20000.0" structuredamage="0" itemdamage="0" ballastfloradamage="0" force="0.0" severlimbsprobability="1" decal="explosion" decalsize="1.0" flashrange="10000" flashduration="5.0" screencolor="255,0,0,255" screencolorrange="20000" screencolorduration="5.0" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This,NearbyCharacters" disabledeltatime="true" stackable="false" range="20000">
+        <Affliction identifier="immolation" amount="1" />
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <!-- Irradiates everyone -->
+  <Item name="Irradiation Spell" identifier="irradiationburst" category="Misc" tags="" scale="0.5" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+    <Body width="100" height="100" density="10" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="Always" target="This" Condition="-100" />
+      <StatusEffect type="Always" target="This">
+        <ParticleEmitter particle="sacidfoam" anglemin="0" anglemax="360" particlespersecond="5" velocitymin="80" velocitymax="160" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Explosion range="20000.0" structuredamage="0" itemdamage="0" ballastfloradamage="0" force="0.0" severlimbsprobability="1" decal="explosion" decalsize="1.0" flashrange="10000" flashduration="5.0" screencolor="0,255,0,255" screencolorrange="20000" screencolorduration="5.0" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This,NearbyCharacters" disabledeltatime="true" stackable="false" range="20000">
+        <Affliction identifier="irradiation" amount="1" />
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Global Blackholinization" identifier="blackholeburst" category="Misc" tags="" scale="0.5" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+    <Body width="100" height="100" density="10" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="Always" target="This" Condition="-100" />
+      <StatusEffect type="Always" target="This">
+        <ParticleEmitter particle="sacidfoam" anglemin="0" anglemax="360" particlespersecond="5" velocitymin="80" velocitymax="160" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Explosion range="20000.0" structuredamage="0" itemdamage="0" ballastfloradamage="0" force="0.0" severlimbsprobability="1" decal="explosion" decalsize="1.0" flashrange="10000" flashduration="5.0" screencolor="255,0,0,255" screencolorrange="20000" screencolorduration="5.0" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="NearbyCharacters" disabledeltatime="true" stackable="false" range="20000">
+        <SpawnItem identifier="singulosmall" spawnposition="this" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true" stackable="false" delay="1">
+        <SpawnItem identifier="superroundendersingulo" spawnposition="this" />
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <!-- 40mm GFA special grenade effects -->
+  <Item name="GFA Burst" identifier="genesmoke" category="Misc" tags="" scale="0.5" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+    <Body width="100" height="100" density="10" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="Always" target="This" Condition="-50" />
+      <StatusEffect type="Always" target="This,Hull">
+        <ParticleEmitter particle="genefoam" anglemin="0" anglemax="360" particlespersecond="5" velocitymin="100" velocitymax="200" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" disabledeltatime="true" stackable="false" delay="0.25">
+        <Explosion range="150.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="geneflay" amount="25" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <!-- 40mm GFA special grenade effects -->
+  <Item name="GFA Burst (Large)" identifier="genesmoke2" category="Misc" tags="" scale="0.5" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+    <Body width="100" height="100" density="10" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="Always" target="This" Condition="-50" />
+      <StatusEffect type="Always" target="This,Hull">
+        <ParticleEmitter particle="genefoam" anglemin="0" anglemax="360" particlespersecond="5" velocitymin="100" velocitymax="200" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" disabledeltatime="true" stackable="false" delay="0.25">
+        <Explosion range="500.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="geneflay" amount="25" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <!-- PEA special effects -->
+  <Item name="PEA Burst" identifier="healsmoke" category="Misc" tags="" scale="0.5" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+    <Body width="100" height="100" density="10" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="Always" target="This" Condition="-50" />
+      <StatusEffect type="Always" target="This,Hull">
+        <ParticleEmitter particle="pomefoam" anglemin="0" anglemax="360" particlespersecond="5" velocitymin="100" velocitymax="200" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" disabledeltatime="true" stackable="false" delay="0.25">
+        <Explosion range="500.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="healgas" amount="25" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <!-- This is created by Contagious Armored Husks when they're injured. It infects nearby humans, can quickly turn weak husk swarms into huge threats. -->
+  <Item name="Husk Burst" identifier="husksmoke" category="Misc" tags="" scale="0.5" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+    <Body width="100" height="100" density="10" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="Always" target="This" Condition="-50" />
+      <StatusEffect type="Always" target="This,Hull">
+        <ParticleEmitter particle="calyxfoam" anglemin="0" anglemax="360" particlespersecond="5" velocitymin="100" velocitymax="200" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" disabledeltatime="true" stackable="false" delay="0.25">
+        <Explosion range="250.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="huskcontagionprecursor" amount="25" />
+        </Explosion>
+      </StatusEffect>
+      <!-- Converts husks into mutant cocoons after 10 bursts -->
+      <!--<StatusEffect type="Always" target="NearbyCharacters" range="500" disabledeltatime="true" stackable="false" delay="0.25">
+	    <Conditional ishuman="false" />
+		<Affliction identifier="huskgas3" amount="10" />
+	  </StatusEffect>-->
+      <StatusEffect type="Always" target="NearbyCharacters" range="300" disabledeltatime="true" stackable="false" delay="0.25">
+        <Conditional ishuman="false" />
+        <Affliction identifier="huskgas4" amount="25" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <!-- This is created by Husk Titans when they're injured. It's overall superior to the regular Husk Burst, and also applies a small amount of Husk Fortified to nearby husks. -->
+  <Item name="Titan Husk Burst" identifier="husktitansmoke" category="Misc" tags="" scale="0.5" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+    <Body width="100" height="100" density="10" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="Always" target="This" Condition="-50" />
+      <StatusEffect type="Always" target="This,Hull">
+        <ParticleEmitter particle="calyxfoam" anglemin="0" anglemax="360" particlespersecond="5" velocitymin="100" velocitymax="200" />
+      </StatusEffect>
+      <!--<StatusEffect type="Always" target="This" disabledeltatime="true" stackable="false" delay="0.25">
+        <Explosion range="500.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="huskgas" amount="25" />
+        </Explosion>
+      </StatusEffect>-->
+      <!-- Turns normal husks into the mutant counterparts in 5 bursts and fortifies them -->
+      <!--<StatusEffect type="Always" target="NearbyCharacters" range="1000" disabledeltatime="true" stackable="false" delay="0.25">
+	    <Conditional ishuman="false" />
+		<Affliction identifier="huskgas3" amount="20" />
+	  </StatusEffect>-->
+      <StatusEffect type="Always" target="NearbyCharacters" range="750" disabledeltatime="true" stackable="false" delay="1">
+        <Conditional speciesgroup="husk" />
+        <Affliction identifier="huskgas4" amount="25" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <!-- Husk Global Gas effects -->
+  <Item name="Global Airborne Husk Infection 100m" identifier="superhusksmoke10k" category="Misc" tags="" scale="0.5" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+    <Body width="100" height="100" density="10" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="Always" target="This" Condition="-0.33" />
+      <StatusEffect type="Always" target="This,Hull">
+        <ParticleEmitter particle="calyxfoam" anglemin="0" anglemax="360" particlespersecond="1" velocitymin="100" velocitymax="200" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="NearbyCharacters" range="10000" delay="1">
+        <Affliction identifier="huskgas2" strength="5" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <!-- Husk Global Gas effects -->
+  <Item name="Global Airborne Husk Infection 250m" identifier="superhusksmoke25k" category="Misc" tags="" scale="0.5" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+    <Body width="100" height="100" density="10" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="Always" target="This" Condition="-0.33" />
+      <StatusEffect type="Always" target="This,Hull">
+        <ParticleEmitter particle="calyxfoam" anglemin="0" anglemax="360" particlespersecond="1" velocitymin="100" velocitymax="200" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="NearbyCharacters" range="25000" delay="1">
+        <Affliction identifier="huskgas2" strength="5" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <!-- Husk Global Gas effects -->
+  <Item name="Global Airborne Husk Infection 500m" identifier="superhusksmoke50k" category="Misc" tags="" scale="0.5" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+    <Body width="100" height="100" density="10" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="Always" target="This" Condition="-0.33" />
+      <StatusEffect type="Always" target="This,Hull">
+        <ParticleEmitter particle="calyxfoam" anglemin="0" anglemax="360" particlespersecond="1" velocitymin="100" velocitymax="200" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="NearbyCharacters" range="50000" delay="1">
+        <Affliction identifier="huskgas2" strength="5" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <!-- Husk Global Gas thrown grenade -->
+  <Item name="100m Airborne Husk Grenade" identifier="100mairgrenade" description="A modified smoke grenade, it emits a cloud of crawler blood laced with husk eggs." category="Equipment,Weapon" cargocontaineridentifier="explosivecrate" tags="smallitem,weapon,explosive" scale="0.5" impactsoundtag="impact_metal_light" maxstacksize="8">
+    <InventoryIcon texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="452,322,55,59" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="654,886,36,53" depth="0.55" origin="0.5,0.5" />
+    <Body width="26" height="50" density="30" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="OnUse" target="This" Condition="-15.0" disabledeltatime="true">
+        <Conditional Condition="eq 100" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" Condition="-0.3">
+        <Conditional DisplaySideBySideWhenLinked="eq true" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This,Hull">
+        <Conditional Condition="lt 85" />
+        <ParticleEmitter particle="calyxfoam" anglemin="0" anglemax="360" particlespersecond="1" velocitymin="80" velocitymax="160" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="NearbyCharacters" disabledeltatime="true" stackable="false" delay="1" range="10000">
+        <Conditional Condition="lt 85" />
+        <Affliction identifier="huskgas2" strength="5" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" RequireAimToUse="true" />
+      <StatusEffect type="Always" target="This" RequireAimToUse="false">
+        <RequiredItems items="detonator" type="Container" />
+      </StatusEffect>
+    </ItemComponent>
+    <RepairTool>
+      <StatusEffect type="OnUse" target="This" stackable="false" delay="0.1">
+        <Conditional DisplaySideBySideWhenLinked="ne true" />
+        <Sound file="%ModDir%/Sounds/ek_grenadepin.ogg" type="OnUse" range="300" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" DisplaySideBySideWhenLinked="true" />
+    </RepairTool>
+    <Throwable slots="Any,RightHand,LeftHand" holdpos="0,0" handle1="0,0" throwforce="4.0" msg="ItemMsgPickUpSelect"></Throwable>
+  </Item>
+  <!-- Husk Global Gas thrown grenade -->
+  <Item name="250m Airborne Husk Grenade" identifier="250mairgrenade" description="A modified smoke grenade, it emits a cloud of crawler blood laced with husk eggs." category="Equipment,Weapon" cargocontaineridentifier="explosivecrate" tags="smallitem,weapon,explosive" scale="0.5" impactsoundtag="impact_metal_light" maxstacksize="8">
+    <InventoryIcon texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="452,322,55,59" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="654,886,36,53" depth="0.55" origin="0.5,0.5" />
+    <Body width="26" height="50" density="30" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="OnUse" target="This" Condition="-15.0" disabledeltatime="true">
+        <Conditional Condition="eq 100" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" Condition="-0.3">
+        <Conditional DisplaySideBySideWhenLinked="eq true" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This,Hull">
+        <Conditional Condition="lt 85" />
+        <ParticleEmitter particle="calyxfoam" anglemin="0" anglemax="360" particlespersecond="1" velocitymin="80" velocitymax="160" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="NearbyCharacters" disabledeltatime="true" stackable="false" delay="1" range="25000">
+        <Conditional Condition="lt 85" />
+        <Affliction identifier="huskgas2" strength="5" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" RequireAimToUse="true" />
+      <StatusEffect type="Always" target="This" RequireAimToUse="false">
+        <RequiredItems items="detonator" type="Container" />
+      </StatusEffect>
+    </ItemComponent>
+    <RepairTool>
+      <StatusEffect type="OnUse" target="This" stackable="false" delay="0.1">
+        <Conditional DisplaySideBySideWhenLinked="ne true" />
+        <Sound file="%ModDir%/Sounds/ek_grenadepin.ogg" type="OnUse" range="300" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" DisplaySideBySideWhenLinked="true" />
+    </RepairTool>
+    <Throwable slots="Any,RightHand,LeftHand" holdpos="0,0" handle1="0,0" throwforce="4.0" msg="ItemMsgPickUpSelect"></Throwable>
+  </Item>
+  <!-- Husk Global Gas thrown grenade -->
+  <Item name="500m Airborne Husk Grenade" identifier="500mairgrenade" description="A modified smoke grenade, it emits a cloud of crawler blood laced with husk eggs." category="Equipment,Weapon" cargocontaineridentifier="explosivecrate" tags="smallitem,weapon,explosive" scale="0.5" impactsoundtag="impact_metal_light" maxstacksize="8">
+    <InventoryIcon texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="452,322,55,59" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="654,886,36,53" depth="0.55" origin="0.5,0.5" />
+    <Body width="26" height="50" density="30" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="OnUse" target="This" Condition="-15.0" disabledeltatime="true">
+        <Conditional Condition="eq 100" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" Condition="-0.3">
+        <Conditional DisplaySideBySideWhenLinked="eq true" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This,Hull">
+        <Conditional Condition="lt 85" />
+        <ParticleEmitter particle="calyxfoam" anglemin="0" anglemax="360" particlespersecond="1" velocitymin="80" velocitymax="160" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="NearbyCharacters" disabledeltatime="true" stackable="false" delay="1" range="50000">
+        <Conditional Condition="lt 85" />
+        <Affliction identifier="huskgas2" strength="5" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" RequireAimToUse="true" />
+      <StatusEffect type="Always" target="This" RequireAimToUse="false">
+        <RequiredItems items="detonator" type="Container" />
+      </StatusEffect>
+    </ItemComponent>
+    <RepairTool>
+      <StatusEffect type="OnUse" target="This" stackable="false" delay="0.1">
+        <Conditional DisplaySideBySideWhenLinked="ne true" />
+        <Sound file="%ModDir%/Sounds/ek_grenadepin.ogg" type="OnUse" range="300" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" DisplaySideBySideWhenLinked="true" />
+    </RepairTool>
+    <Throwable slots="Any,RightHand,LeftHand" holdpos="0,0" handle1="0,0" throwforce="4.0" msg="ItemMsgPickUpSelect"></Throwable>
+  </Item>
+  <!-- Husk Limited Gas effects -->
+  <Item name="250m Limited Airborne Husk Emitter" identifier="airbornehusksmoke" description="Spreads airborne husk for a little over 5 minutes." hideinmenus="true" category="Equipment,Weapon" maxstacksize="1" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,grenade,40mmgrenade" Scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="710,383,53,53" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="524,1248,38,17" depth="0.55" origin="0.5,0.5" />
+    <Body width="100" height="100" density="10" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="Always" target="This" Condition="-0.3" />
+      <StatusEffect type="Always" target="This,Hull">
+        <ParticleEmitter particle="calyxfoam" anglemin="0" anglemax="360" particlespersecond="1" velocitymin="100" velocitymax="200" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" disabledeltatime="true" stackable="false" delay="1">
+        <Explosion range="25000.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="huskgas2" amount="5" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <!-- 40mm AHS grenade -->
+  <Item name="100m Airborne Husk Spawner" description="Spreads airborne husk for a little over 5 minutes." identifier="airbornehuskspawner10k" hideinmenus="true" category="Equipment,Weapon" maxstacksize="1" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,grenade,40mmgrenade" Scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="710,383,53,53" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="524,1248,38,17" depth="0.55" origin="0.5,0.5" />
+    <Body width="42" height="17" density="30" />
+    <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" launchimpulse="20.0" sticktocharacters="false">
+      <Attack structuredamage="2">
+        <Affliction identifier="blunttrauma" strength="5" />
+        <Affliction identifier="stun" strength="0.5" />
+      </Attack>
+      <sound file="Content/Items/Weapons/FragGrenade40mmShot1.ogg" type="OnImpact" range="500" selectionmode="Random" />
+      <sound file="Content/Items/Weapons/FragGrenade40mmShot2.ogg" type="OnImpact" range="500" />
+      <!--Grenade launcher ammo explodes on impact-->
+      <StatusEffect type="OnImpact" Condition="-100.0" disabledeltatime="true">
+        <ParticleEmitter particle="calyxfoam" anglemin="0" anglemax="360" particlespersecond="10" velocitymin="80" velocitymax="160" />
+        <sound file="Content/Items/Weapons/StunGrenade.ogg" />
+        <SpawnItem identifiers="superhusksmoke10k" spawnposition="This" />
+      </StatusEffect>
+      <!--Destroy this after exploding-->
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" disabledeltatime="true" delay="0.01">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <!-- 40mm AHS grenade -->
+  <Item name="250m Airborne Husk Spawner" description="Spreads airborne husk for a little over 5 minutes." identifier="airbornehuskspawner25k" hideinmenus="true" category="Equipment,Weapon" maxstacksize="1" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,grenade,40mmgrenade" Scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="710,383,53,53" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="524,1248,38,17" depth="0.55" origin="0.5,0.5" />
+    <Body width="42" height="17" density="30" />
+    <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" launchimpulse="20.0" sticktocharacters="false">
+      <Attack structuredamage="2">
+        <Affliction identifier="blunttrauma" strength="5" />
+        <Affliction identifier="stun" strength="0.5" />
+      </Attack>
+      <sound file="Content/Items/Weapons/FragGrenade40mmShot1.ogg" type="OnImpact" range="500" selectionmode="Random" />
+      <sound file="Content/Items/Weapons/FragGrenade40mmShot2.ogg" type="OnImpact" range="500" />
+      <!--Grenade launcher ammo explodes on impact-->
+      <StatusEffect type="OnImpact" Condition="-100.0" disabledeltatime="true">
+        <ParticleEmitter particle="calyxfoam" anglemin="0" anglemax="360" particlespersecond="10" velocitymin="80" velocitymax="160" />
+        <sound file="Content/Items/Weapons/StunGrenade.ogg" />
+        <SpawnItem identifiers="superhusksmoke25k" spawnposition="This" />
+      </StatusEffect>
+      <!--Destroy this after exploding-->
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" disabledeltatime="true" delay="0.01">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <!-- 40mm AHS grenade -->
+  <Item name="500m Airborne Husk Spawner" description="Spreads airborne husk for a little over 5 minutes." identifier="airbornehuskspawner50k" hideinmenus="true" category="Equipment,Weapon" maxstacksize="1" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,grenade,40mmgrenade" Scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="710,383,53,53" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="524,1248,38,17" depth="0.55" origin="0.5,0.5" />
+    <Body width="42" height="17" density="30" />
+    <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" launchimpulse="20.0" sticktocharacters="false">
+      <Attack structuredamage="2">
+        <Affliction identifier="blunttrauma" strength="5" />
+        <Affliction identifier="stun" strength="0.5" />
+      </Attack>
+      <sound file="Content/Items/Weapons/FragGrenade40mmShot1.ogg" type="OnImpact" range="500" selectionmode="Random" />
+      <sound file="Content/Items/Weapons/FragGrenade40mmShot2.ogg" type="OnImpact" range="500" />
+      <!--Grenade launcher ammo explodes on impact-->
+      <StatusEffect type="OnImpact" Condition="-100.0" disabledeltatime="true">
+        <ParticleEmitter particle="calyxfoam" anglemin="0" anglemax="360" particlespersecond="10" velocitymin="80" velocitymax="160" />
+        <sound file="Content/Items/Weapons/StunGrenade.ogg" />
+        <SpawnItem identifiers="superhusksmoke50k" spawnposition="This" />
+      </StatusEffect>
+      <!--Destroy this after exploding-->
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" disabledeltatime="true" delay="0.01">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <!-- 40mm LHS grenade -->
+  <Item name="40mm Limited Husk Spawner" description="Spreads airborne husk for a little over 5 minutes." identifier="limitedhuskspawner" hideinmenus="true" category="Equipment,Weapon" maxstacksize="1" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,grenade,40mmgrenade" Scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="710,383,53,53" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="524,1248,38,17" depth="0.55" origin="0.5,0.5" />
+    <Body width="42" height="17" density="30" />
+    <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" launchimpulse="20.0" sticktocharacters="false">
+      <Attack structuredamage="2">
+        <Affliction identifier="blunttrauma" strength="5" />
+        <Affliction identifier="stun" strength="0.5" />
+      </Attack>
+      <sound file="Content/Items/Weapons/FragGrenade40mmShot1.ogg" type="OnImpact" range="500" selectionmode="Random" />
+      <sound file="Content/Items/Weapons/FragGrenade40mmShot2.ogg" type="OnImpact" range="500" />
+      <!--Grenade launcher ammo explodes on impact-->
+      <StatusEffect type="OnImpact" Condition="-100.0" disabledeltatime="true">
+        <ParticleEmitter particle="calyxfoam" anglemin="0" anglemax="360" particlespersecond="10" velocitymin="80" velocitymax="160" />
+        <sound file="Content/Items/Weapons/StunGrenade.ogg" />
+        <SpawnItem identifiers="airbornehusksmoke" spawnposition="This" />
+      </StatusEffect>
+      <!--Destroy this after exploding-->
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" disabledeltatime="true" delay="0.01">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <!-- 40mm Airborne Zombie Infection -->
+  <Item name="40mm Zombie Spore Grenade (5 Minutes)" description="Spreads airborne zombie gas that lasts 5 minutes. ADMIN ONLY." identifier="40mmzombiespawnertemporary5min" hideinmenus="true" category="Equipment,Weapon" maxstacksize="1" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,grenade,40mmgrenade" Scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="710,383,53,53" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="524,1248,38,17" depth="0.55" origin="0.5,0.5" />
+    <Body width="42" height="17" density="30" />
+    <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" launchimpulse="20.0" sticktocharacters="false">
+      <Attack structuredamage="2">
+        <Affliction identifier="blunttrauma" strength="5" />
+        <Affliction identifier="stun" strength="0.5" />
+      </Attack>
+      <sound file="Content/Items/Weapons/FragGrenade40mmShot1.ogg" type="OnImpact" range="500" selectionmode="Random" />
+      <sound file="Content/Items/Weapons/FragGrenade40mmShot2.ogg" type="OnImpact" range="500" />
+      <!--Grenade launcher ammo explodes on impact-->
+      <StatusEffect type="OnImpact" Condition="-100.0" disabledeltatime="true">
+        <ParticleEmitter particle="calyxfoam" anglemin="0" anglemax="360" particlespersecond="10" velocitymin="80" velocitymax="160" />
+        <sound file="Content/Items/Weapons/StunGrenade.ogg" />
+        <SpawnItem identifiers="airbornezombiesmoketemp5small" spawnposition="This" />
+      </StatusEffect>
+      <!--Destroy this after exploding-->
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" disabledeltatime="true" delay="0.01">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <Item name="Airborne Zombie Emitter (5 Minutes, Wide-Area)" identifier="airbornezombiesmoketemp5" category="Misc" tags="" scale="0.5" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5185185" />
+    <Body width="100" height="100" density="10" bodytype="static" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="Always" target="This" Condition="-0.3" />
+      <StatusEffect type="Always" target="This" disabledeltatime="true" stackable="false" delay="1">
+        <SpawnItem identifier="viralshrapnel" spawnposition="This" aimspread="360" count="7" rotationtype="Fixed" rotation="0" />
+        <!--<Explosion range="5000.0" interactthroughwalls="False" structuredamage="0.0001" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false" ignorecover="false">
+          <Affliction identifier="fn_dormantparticles" amount="5" />
+        </Explosion>-->
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Airborne Zombie Emitter (5 Minutes, Small-Area)" identifier="airbornezombiesmoketemp5small" category="Misc" tags="" scale="0.5" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5185185" />
+    <Body width="100" height="100" density="10" bodytype="static" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="Always" target="This" Condition="-0.3" />
+      <StatusEffect type="Always" target="This" disabledeltatime="true" stackable="false" delay="1">
+        <SpawnItem identifier="viralshrapnel" spawnposition="This" aimspread="360" count="2" rotationtype="Fixed" rotation="0" />
+        <!--<Explosion range="5000.0" interactthroughwalls="False" structuredamage="0.0001" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false" ignorecover="false">
+          <Affliction identifier="fn_dormantparticles" amount="5" />
+        </Explosion>-->
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Airborne Zombie Emitter (10 Minutes, Small-Area)" identifier="airbornezombiesmoketemp10small" category="Misc" tags="" scale="0.5" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5185185" />
+    <Body width="100" height="100" density="10" bodytype="static" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="Always" target="This" Condition="-0.15" />
+      <StatusEffect type="Always" target="This" disabledeltatime="true" stackable="false" delay="1">
+        <SpawnItem identifier="viralshrapnel" spawnposition="This" aimspread="360" count="2" rotationtype="Fixed" rotation="0" />
+        <!--<Explosion range="5000.0" interactthroughwalls="False" structuredamage="0.0001" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false" ignorecover="false">
+          <Affliction identifier="fn_dormantparticles" amount="5" />
+        </Explosion>-->
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Airborne Zombie Emitter (PERMANENT, Small-Area)" identifier="airbornezombiesmokepermanentsmall" category="Misc" tags="" scale="0.5" hideinmenus="true">
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5185185" />
+    <Body width="100" height="100" density="10" bodytype="static" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="Always" target="This" disabledeltatime="true" stackable="false" delay="1">
+        <SpawnItem identifier="viralshrapnel" spawnposition="This" aimspread="360" count="2" rotationtype="Fixed" rotation="0" />
+        <!--<Explosion range="5000.0" interactthroughwalls="False" structuredamage="0.0001" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false" ignorecover="false">
+          <Affliction identifier="fn_dormantparticles" amount="5" />
+        </Explosion>-->
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <!-- 40mm Airborne Zombie Infection -->
+  <Item name="40mm Zombie Spore Grenade (10 Minutes)" description="Spreads airborne zombie gas that lasts 10 minutes. ADMIN ONLY." identifier="40mmzombiespawnertemporary10min" hideinmenus="true" category="Equipment,Weapon" maxstacksize="1" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,grenade,40mmgrenade" Scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="710,383,53,53" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="524,1248,38,17" depth="0.55" origin="0.5,0.5" />
+    <Body width="42" height="17" density="30" />
+    <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" launchimpulse="20.0" sticktocharacters="false">
+      <Attack structuredamage="2">
+        <Affliction identifier="blunttrauma" strength="5" />
+        <Affliction identifier="stun" strength="0.5" />
+      </Attack>
+      <sound file="Content/Items/Weapons/FragGrenade40mmShot1.ogg" type="OnImpact" range="500" selectionmode="Random" />
+      <sound file="Content/Items/Weapons/FragGrenade40mmShot2.ogg" type="OnImpact" range="500" />
+      <!--Grenade launcher ammo explodes on impact-->
+      <StatusEffect type="OnImpact" Condition="-100.0" disabledeltatime="true">
+        <ParticleEmitter particle="calyxfoam" anglemin="0" anglemax="360" particlespersecond="10" velocitymin="80" velocitymax="160" />
+        <sound file="Content/Items/Weapons/StunGrenade.ogg" />
+        <SpawnItem identifiers="airbornezombiesmoketemp10small" spawnposition="This" />
+      </StatusEffect>
+      <!--Destroy this after exploding-->
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" disabledeltatime="true" delay="0.01">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <Item name="Airborne Zombie Emitter (10 Minutes, Wide-Area)" identifier="airbornezombiesmoketemp10" spritecolor="0,0,0,0" description="Spreads airborne husk for a little over 5 minutes." hideinmenus="true" category="Equipment,Weapon" maxstacksize="1" interactthroughwalls="false" cargocontaineridentifier="metalcrate" tags="smallitem,grenade,40mmgrenade" Scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="710,383,53,53" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="524,1248,38,17" depth="0.55" origin="0.5,0.5" />
+    <Body width="100" height="100" density="10" bodytype="static" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="Always" target="This" Condition="-0.15" />
+      <StatusEffect type="Always" target="This" disabledeltatime="true" stackable="false" delay="1">
+        <SpawnItem identifier="viralshrapnel" spawnposition="This" aimspread="360" count="7" rotationtype="Fixed" rotation="0" />
+        <!--<Explosion range="5000.0" interactthroughwalls="False" structuredamage="0.0001" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false" ignorecover="false">
+          <Affliction identifier="fn_dormantparticles" amount="5" />
+        </Explosion>-->
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <!-- 40mm Airborne Zombie Infection -->
+  <Item name="40mm Zombie Spore Grenade (Permanent)" description="Spreads airborne zombie gas that lasts FOREVER. ADMIN ONLY. USE WITH EXTREME CAUTION." identifier="40mmzombiespawnerpermanent" hideinmenus="true" category="Equipment,Weapon" maxstacksize="1" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,grenade,40mmgrenade" Scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="710,383,53,53" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="524,1248,38,17" depth="0.55" origin="0.5,0.5" />
+    <Body width="42" height="17" density="30" />
+    <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" launchimpulse="20.0" sticktocharacters="false">
+      <Attack structuredamage="2">
+        <Affliction identifier="blunttrauma" strength="5" />
+        <Affliction identifier="stun" strength="0.5" />
+      </Attack>
+      <sound file="Content/Items/Weapons/FragGrenade40mmShot1.ogg" type="OnImpact" range="500" selectionmode="Random" />
+      <sound file="Content/Items/Weapons/FragGrenade40mmShot2.ogg" type="OnImpact" range="500" />
+      <!--Grenade launcher ammo explodes on impact-->
+      <StatusEffect type="OnImpact" Condition="-100.0" disabledeltatime="true">
+        <ParticleEmitter particle="calyxfoam" anglemin="0" anglemax="360" particlespersecond="10" velocitymin="80" velocitymax="160" />
+        <sound file="Content/Items/Weapons/StunGrenade.ogg" />
+        <SpawnItem identifiers="airbornezombiesmokepermanentsmall" spawnposition="This" />
+      </StatusEffect>
+      <!--Destroy this after exploding-->
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" disabledeltatime="true" delay="0.01">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <Item name="Airborne Zombie Emitter (PERMANENT, Wide-Area)" identifier="airbornezombiesmokepermanent" spritecolor="0,0,0,0" description="Spreads airborne husk forever." hideinmenus="true" category="Equipment,Weapon" maxstacksize="1" interactthroughwalls="false" cargocontaineridentifier="metalcrate" tags="smallitem,grenade,40mmgrenade" Scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/Images/InventoryIcons1.png" sourcerect="710,383,53,53" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/weapons_ek.png" sourcerect="524,1248,38,17" depth="0.55" origin="0.5,0.5" />
+    <Body width="100" height="100" density="10" bodytype="static" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="Always" target="This" disabledeltatime="true" stackable="false" delay="1">
+        <SpawnItem identifier="viralshrapnel" spawnposition="This" aimspread="360" count="7" rotationtype="Fixed" rotation="0" />
+        <!--<Explosion range="5000.0" interactthroughwalls="False" structuredamage="0.0001" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false" ignorecover="false">
+          <Affliction identifier="fn_dormantparticles" amount="5" />
+        </Explosion>-->
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Viral Projectile" identifier="viralshrapnel" spritecolor="0,0,0,0" category="Weapon" scale="0.3" sonarsize="1" hideinmenus="true">
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="143,414,113,9" depth="0.55" />
+    <Body width="170" height="10" density="20" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
+    <Projectile characterusable="false" hitscan="true" removeonhit="true">
+      <Attack structuredamage="0" itemdamage="0" severlimbsprobability="0.0" penetration="0.0">
+        <Affliction identifier="fn_dormantparticles" amount="5" />
+      </Attack>
+    </Projectile>
+  </Item>
+  <!-- Frostbite emitter -->
+  <Item name="Env Frostbite Source (50m)" identifier="frostbiteemitter50" category="Misc" description="Ambient Frostbite Emitter (50m Range)" Tags="" scale="0.25" isshootable="false" spritecolor="255,125,0,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Images/environmentemitters_afflictions.png" sourcerect="512,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Images/environmentemitters_afflictions.png" sourcerect="256,64,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" delay="0.5">
+        <Explosion range="5000.0" interactthroughwalls="False" structuredamage="0" itemdamage="0" delay="1" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="frostbite2" amount="3" />
+        </Explosion>
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <Explosion range="5000.0" interactthroughwalls="False" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+            <Affliction identifier="frostbite2" amount="3" />
+          </Explosion>
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <!-- Frostbite emitter -->
+  <Item name="Env Frostbite Source (25m)" identifier="frostbiteemitter25" category="Misc" description="Ambient Frostbite Emitter (25m Range)" Tags="" scale="0.25" isshootable="false" spritecolor="255,125,0,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Images/environmentemitters_afflictions.png" sourcerect="512,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Images/environmentemitters_afflictions.png" sourcerect="256,64,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" delay="0.5">
+        <Explosion range="2500.0" interactthroughwalls="False" structuredamage="0" itemdamage="0" delay="1" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="frostbite2" amount="3" />
+        </Explosion>
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <Explosion range="2500.0" interactthroughwalls="False" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+            <Affliction identifier="frostbite2" amount="3" />
+          </Explosion>
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <!-- Frostbite emitter -->
+  <Item name="Env Frostbite Source (10m)" identifier="frostbiteemitter" category="Misc" description="Ambient Frostbite Emitter (10m Range)" Tags="" scale="0.25" isshootable="false" spritecolor="255,125,0,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Images/environmentemitters_afflictions.png" sourcerect="512,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Images/environmentemitters_afflictions.png" sourcerect="256,64,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" delay="0.5">
+        <Explosion range="1000.0" interactthroughwalls="False" structuredamage="0" itemdamage="0" delay="1" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="frostbite2" amount="3" />
+        </Explosion>
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <Explosion range="1000.0" interactthroughwalls="False" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+            <Affliction identifier="frostbite2" amount="3" />
+          </Explosion>
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <!-- Freezing Water emitter -->
+  <Item name="Env Cold Water Source (50m)" identifier="coldwateremitter50" category="Misc" description="Causes anyone within water to gain Frostbite very rapidly." Tags="" scale="0.25" isshootable="false" spritecolor="255,125,0,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Images/environmentemitters_afflictions.png" sourcerect="512,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Images/environmentemitters_afflictions.png" sourcerect="256,64,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="NearbyCharacters" range="5000" disabledeltatime="true" stackable="false" delay="0.5">
+        <Affliction identifier="frostbite3" amount="3" />
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="NearbyCharacters" range="5000" disabledeltatime="true">
+          <Affliction identifier="frostbite3" amount="3" />
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <!-- Freezing Water emitter -->
+  <Item name="Env Cold Water Source (100m)" identifier="coldwateremitter100" category="Misc" description="Causes anyone within water to gain Frostbite very rapidly." Tags="" scale="0.25" isshootable="false" spritecolor="255,125,0,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Images/environmentemitters_afflictions.png" sourcerect="512,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Images/environmentemitters_afflictions.png" sourcerect="256,64,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="NearbyCharacters" range="10000" disabledeltatime="true" stackable="false" delay="0.5">
+        <Affliction identifier="frostbite3" amount="3" />
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="NearbyCharacters" range="10000" disabledeltatime="true">
+          <Affliction identifier="frostbite3" amount="3" />
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <!-- Airborne Husk emitter -->
+  <Item name="Env Airborne Husk Source" identifier="airbornehuskemitter1" category="Misc" description="Ambient Husk Emitter (100m Range)" Tags="" scale="0.25" isshootable="false" spritecolor="255,125,0,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Images/environmentemitters_afflictions.png" sourcerect="512,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Images/environmentemitters_afflictions.png" sourcerect="256,64,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="NearbyCharacters" disabledeltatime="true" stackable="false" delay="2" range="10000">
+        <Affliction identifier="huskgas2" strength="5" />
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <Explosion range="1000.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+            <Affliction identifier="huskgas2" amount="2" />
+          </Explosion>
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <!-- Airborne Husk Limited emitter -->
+  <Item name="Env Limited Airborne Husk Source" identifier="airbornehuskemitter2" category="Misc" description="Ambient Limited Husk Emitter (100m Range)" Tags="" scale="0.25" isshootable="false" spritecolor="255,125,0,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Images/environmentemitters_afflictions.png" sourcerect="512,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Images/environmentemitters_afflictions.png" sourcerect="256,64,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" delay="2">
+        <Explosion range="10000.0" interactthroughwalls="false" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="huskgas2" amount="2" />
+        </Explosion>
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <Explosion range="10000.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+            <Affliction identifier="huskgas" amount="20" />
+          </Explosion>
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <!-- Wind SFX -->
+  <Item name="Env Sound Wind" identifier="wind" category="Alien" description="100 meter range, creates a cold wind sound effect." Tags="" scale="0.25" isshootable="false" spritecolor="175,175,200,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Images/environmentemitters_afflictions.png" sourcerect="512,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Images/environmentemitters_afflictions.png" sourcerect="0,0,256,64" offset="0,152" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <sound file="%ModDir%/Sounds/wind.ogg" type="OnActive" range="10000.0" loop="true" volume="2.5" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <!-- EXP Emitter -->
+  <Item name="EXP Generator" identifier="xpemitter" category="Electrical" Tags="logic,smallitem" maxstacksize="1" linkable="false" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="833,900,63,54" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="32,0,32,32" origin="0.5,0.5" canflipx="false" />
+    <Body width="31" height="25" density="30" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" PickingTime="30.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
+      <requireditem items="wrench" type="Equipped" />
+    </Holdable>
+    <ItemComponent>
+      <StatusEffect type="Always" target="NearbyCharacters" range="25000" comparison="And" delay="60" stackable="false">
+        <Affliction identifier="expstarter" strength="10" disabledeltatime="true" />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <!-- Hunger Emitter -->
+  <Item name="Hunger Enabler" identifier="hungeremitter" category="Electrical" Tags="logic,smallitem" description="Place this down to activate the hunger system. Has a 250 meter range." maxstacksize="1" linkable="false" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="833,900,63,54" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="32,0,32,32" origin="0.5,0.5" canflipx="false" />
+    <Body width="31" height="25" density="30" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" PickingTime="30.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
+      <requireditem items="wrench" type="Equipped" />
+    </Holdable>
+    <ItemComponent>
+      <StatusEffect type="Always" target="NearbyCharacters" range="25000" comparison="And" delay="60" stackable="false">
+        <Affliction identifier="hungerstarter" strength="10" disabledeltatime="true" />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  <Item name="Husk TITAN" description="Summons an extremely dangerous and durable giant husk clad in TITAN armor." identifier="shopsummon_husktitan" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.25" impactsoundtag="impact_metal_light" nonplayerteaminteractable="true">
+    <Sprite texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Fabricate suitablefabricators="monstershop" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="200markbill" amount="5" />
+    </Fabricate>
+    <Body width="72" height="40" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="70,5" handle1="-25,-7" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnSpawn" targettype="This">
+        <DropItem />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" targettype="This" delay="0.5" stackable="false">
+        <Sound file="%ModDir%/Sounds/fiendattackhit.ogg" range="1500" />
+        <SpawnCharacter speciesname="husktitan" />
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+    <aitarget sightrange="500" soundrange="500" fadeouttime="5" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="Husk Hardsuit (Caustic)" description="Summons a large armored husk that spreads an acid gas when hurt." identifier="shopsummon_huskcaustic" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.25" impactsoundtag="impact_metal_light" nonplayerteaminteractable="true">
+    <Sprite texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Fabricate suitablefabricators="monstershop" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="200markbill" amount="4" />
+    </Fabricate>
+    <Body width="72" height="40" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="70,5" handle1="-25,-7" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnSpawn" targettype="This">
+        <DropItem />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" targettype="This" delay="0.5" stackable="false">
+        <Sound file="%ModDir%/Sounds/fiendattackhit.ogg" range="1500" />
+        <SpawnCharacter speciesname="huskcaustic" />
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+    <aitarget sightrange="500" soundrange="500" fadeouttime="5" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="Husk Hardsuit (Contagious)" description="Summons a large armored husk that can spread a contagious husk gas." identifier="shopsummon_huskcontagious" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.25" impactsoundtag="impact_metal_light" nonplayerteaminteractable="true">
+    <Sprite texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Fabricate suitablefabricators="monstershop" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="200markbill" amount="3" />
+    </Fabricate>
+    <Body width="72" height="40" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="70,5" handle1="-25,-7" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnSpawn" targettype="This">
+        <DropItem />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" targettype="This" delay="0.5" stackable="false">
+        <Sound file="%ModDir%/Sounds/fiendattackhit.ogg" range="1500" />
+        <SpawnCharacter speciesname="huskhardsuit" />
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+    <aitarget sightrange="500" soundrange="500" fadeouttime="5" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="Husk" description="Summons two husks." identifier="shopsummon_husk" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.25" impactsoundtag="impact_metal_light" nonplayerteaminteractable="true">
+    <Sprite texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Fabricate suitablefabricators="monstershop" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="100markbill" amount="1" />
+    </Fabricate>
+    <Body width="72" height="40" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="70,5" handle1="-25,-7" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnSpawn" targettype="This">
+        <DropItem />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" targettype="This" delay="0.5" stackable="false">
+        <Sound file="%ModDir%/Sounds/fiendattackhit.ogg" range="1500" />
+        <SpawnCharacter speciesname="husk" count="2" />
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+    <aitarget sightrange="500" soundrange="500" fadeouttime="5" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="Crawler" description="Summons two crawlers." identifier="shopsummon_crawler" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.25" impactsoundtag="impact_metal_light" nonplayerteaminteractable="true">
+    <Sprite texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Fabricate suitablefabricators="monstershop" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="50markbill" amount="1" />
+    </Fabricate>
+    <Body width="72" height="40" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="70,5" handle1="-25,-7" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnSpawn" targettype="This">
+        <DropItem />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" targettype="This" delay="0.5" stackable="false">
+        <Sound file="%ModDir%/Sounds/fiendattackhit.ogg" range="1500" />
+        <SpawnCharacter speciesname="husk" count="2" />
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+    <aitarget sightrange="500" soundrange="500" fadeouttime="5" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="Mudraptor" description="Summons a mudraptor." identifier="shopsummon_mudraptor" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.25" impactsoundtag="impact_metal_light" nonplayerteaminteractable="true">
+    <Sprite texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Fabricate suitablefabricators="monstershop" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="25markbill" amount="3" />
+    </Fabricate>
+    <Body width="72" height="40" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="70,5" handle1="-25,-7" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnSpawn" targettype="This">
+        <DropItem />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" targettype="This" delay="0.5" stackable="false">
+        <Sound file="%ModDir%/Sounds/fiendattackhit.ogg" range="1500" />
+        <SpawnCharacter speciesname="mudraptor" count="1" />
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+    <aitarget sightrange="500" soundrange="500" fadeouttime="5" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="Mudraptor Veteran" description="Summons a veteran mudraptor." identifier="shopsummon_mudraptorveteran" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.25" impactsoundtag="impact_metal_light" nonplayerteaminteractable="true">
+    <Sprite texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Fabricate suitablefabricators="monstershop" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="200markbill" amount="1" />
+    </Fabricate>
+    <Body width="72" height="40" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="70,5" handle1="-25,-7" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnSpawn" targettype="This">
+        <DropItem />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" targettype="This" delay="0.5" stackable="false">
+        <Sound file="%ModDir%/Sounds/fiendattackhit.ogg" range="1500" />
+        <SpawnCharacter speciesname="mudraptor_veteran" count="1" />
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+    <aitarget sightrange="500" soundrange="500" fadeouttime="5" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="Nascent Human" description="Summons a Nascent Human, a person who was infected by the Mycor fungus." identifier="shopsummon_nascent" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.25" impactsoundtag="impact_metal_light" nonplayerteaminteractable="true">
+    <Sprite texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Fabricate suitablefabricators="monstershop" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="100markbill" />
+    </Fabricate>
+    <Body width="72" height="40" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="70,5" handle1="-25,-7" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnSpawn" targettype="This">
+        <DropItem />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" targettype="This" delay="0.5" stackable="false">
+        <Sound file="%ModDir%/Sounds/fiendattackhit.ogg" range="1500" />
+        <SpawnCharacter speciesname="nascenthumannatural" count="1" />
+        <SpawnItem identifier="25markbill" count="5" />
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+    <aitarget sightrange="500" soundrange="500" fadeouttime="5" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="Abyssal Aerosolizer" description="Summons an Abyssal Aerosolizer, a monster that constantly emits a cursed fog." identifier="shopsummon_abyssalaerosolizer" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.25" impactsoundtag="impact_metal_light" nonplayerteaminteractable="true">
+    <Sprite texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Fabricate suitablefabricators="monstershop" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="200markbill" />
+    </Fabricate>
+    <Body width="72" height="40" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="70,5" handle1="-25,-7" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnSpawn" targettype="This">
+        <DropItem />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" targettype="This" delay="0.5" stackable="false">
+        <Sound file="%ModDir%/Sounds/fiendattackhit.ogg" range="1500" />
+        <SpawnCharacter speciesname="ancientaerosolizer" count="1" />
+        <SpawnItem identifier="50markbill" count="5" />
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+    <aitarget sightrange="500" soundrange="500" fadeouttime="5" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="Abyssal Mimic" description="Summons an Abyssal Mimic, an elusive and transparent monster." identifier="shopsummon_abyssalmimic" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.25" impactsoundtag="impact_metal_light" nonplayerteaminteractable="true">
+    <Sprite texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Fabricate suitablefabricators="monstershop" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="200markbill" />
+    </Fabricate>
+    <Body width="72" height="40" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="70,5" handle1="-25,-7" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnSpawn" targettype="This">
+        <DropItem />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" targettype="This" delay="0.5" stackable="false">
+        <Sound file="%ModDir%/Sounds/fiendattackhit.ogg" range="1500" />
+        <SpawnCharacter speciesname="ancientmimic" count="1" />
+        <SpawnItem identifier="50markbill" count="5" />
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+    <aitarget sightrange="500" soundrange="500" fadeouttime="5" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="Abyssal Savage" description="Summons an Abyssal Savage, a much stronger Nascent." identifier="shopsummon_abyssalsavage" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.25" impactsoundtag="impact_metal_light" nonplayerteaminteractable="true">
+    <Sprite texture="%ModDir%/Images/cult.png" sourcerect="732,-2,132,126" origin="0.5,0.5" />
+    <Fabricate suitablefabricators="monstershop" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="200markbill" />
+    </Fabricate>
+    <Body width="72" height="40" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="70,5" handle1="-25,-7" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnSpawn" targettype="This">
+        <DropItem />
+      </StatusEffect>
+      <StatusEffect type="OnSpawn" targettype="This" delay="0.5" stackable="false">
+        <Sound file="%ModDir%/Sounds/fiendattackhit.ogg" range="1500" />
+        <SpawnCharacter speciesname="ancientsavage" count="1" />
+        <SpawnItem identifier="50markbill" count="5" />
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+    <aitarget sightrange="500" soundrange="500" fadeouttime="5" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+</Items>

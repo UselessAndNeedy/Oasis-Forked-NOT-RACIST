@@ -1,0 +1,1298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Afflictions>
+  <Affliction name="Abyssal Blessing" identifier="abyssalblessing" description="..." type="abyssalcurse" limbspecific="false" maxstrength="60" showiconthreshold="1000">
+    <Effect minstrength="0" maxstrength="60" strengthchange="-1" resistancefor="noresurrection" minresistance="0.0" maxresistance="0.75" />
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,896,128,128" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+  <Affliction name="Stabilized Decay" identifier="thrallvaccine" description="..." type="abyssalcurse" isbuff="true" limbspecific="false" maxstrength="100">
+    <Description textidentifier="afflictiondescription.stabledecay.self" target="Self" minstrength="0" maxstrength="100" />
+    <Description textidentifier="afflictiondescription.stabledecay" target="OtherCharacter" minstrength="0" maxstrength="100" />
+    <Effect minstrength="0" maxstrength="100" strengthchange="-0.33" minresistance="0.0" maxresistance="0.5" resistancefor="thrallcurse">
+      <StatusEffect target="Character">
+        <Conditional thrallcurse="gt 15" />
+        <ReduceAffliction identifier="thrallcurse" amount="0.075" />
+      </StatusEffect>
+      <StatusEffect target="Character">
+        <Conditional thrallcurse="eq 0" />
+        <Affliction identifier="organdamage" amount="1" />
+        <ReduceAffliction identifier="thrallvaccine" amount="1" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,896,128,128" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+  <Affliction name="Antagonized Decay" identifier="thrallvaccine2" description="..." type="abyssalcurse" isbuff="true" limbspecific="false" maxstrength="100">
+    <Description textidentifier="afflictiondescription.stabledecay.self" target="Self" minstrength="0" maxstrength="100" />
+    <Description textidentifier="afflictiondescription.stabledecay" target="OtherCharacter" minstrength="0" maxstrength="100" />
+    <Effect minstrength="0" maxstrength="100" strengthchange="-0.33" minresistance="0.0" maxresistance="0.5" resistancefor="thrallcurse">
+      <StatusEffect target="Character" comparison="and">
+        <Conditional thrallcurse="gt 15" />
+        <Conditional thrallvaccine="gt 0" />
+        <ReduceAffliction identifier="thrallcurse" amount="0.075" />
+      </StatusEffect>
+      <StatusEffect target="Character">
+        <Conditional thrallvaccine="eq 0" />
+        <Affliction identifier="organdamage" amount="1" />
+        <ReduceAffliction identifier="thrallvaccine2" amount="1" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,896,128,128" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+  <Affliction name="Antithesized Decay" identifier="thrallvaccine3" description="..." type="abyssalcurse" isbuff="true" limbspecific="false" maxstrength="100">
+    <Description textidentifier="afflictiondescription.stabledecay.self" target="Self" minstrength="0" maxstrength="100" />
+    <Description textidentifier="afflictiondescription.stabledecay" target="OtherCharacter" minstrength="0" maxstrength="100" />
+    <Effect minstrength="0" maxstrength="100" strengthchange="-0.33" minresistance="0.0" maxresistance="0.5" resistancefor="thrallcurse">
+      <StatusEffect target="Character" comparison="and">
+        <Conditional thrallcurse="lt 16" />
+        <ReduceAffliction identifier="thrallcurse" amount="0.15" />
+      </StatusEffect>
+      <StatusEffect target="Character" comparison="and">
+        <Conditional thrallvaccine2="eq 0" />
+        <Affliction identifier="organdamage" amount="1" />
+        <ReduceAffliction identifier="thrallvaccine3" amount="1" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,896,128,128" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+  <Affliction name="Beckoning" identifier="beckoning" description="Do not be afraid." type="abyssalcurse" limbspecific="false" activationthreshold="1" interval="1" maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="-5" minskillmultiplier="1.0" maxskillmultiplier="0.5" minscreendistort="0.0" minscreenblur="1.5" maxscreenblur="2.0" minchromaticaberration="0.0" maxchromaticaberration="1.0" minspeedmultiplier="1.0" maxspeedmultiplier="0.5" minafflictionoverlayalphamultiplier="0.0" maxafflictionoverlayalphamultiplier="0.5">
+      <StatusEffect target="Character" targetlimb="Head" ObstructVision="true" setvalue="true">
+        <ParticleEmitter particle="gazerage" particlespersecond="10" scalemin="0.3" scalemax="0.4" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" copyentityangle="false" />
+      </StatusEffect>
+      <StatusEffect target="Character" speedmultiplier="0.1" comparison="and">
+        <Conditional beckoning="gt 90" />
+        <Conditional speciesgroup="!eq human" />
+        <Conditional speciesgroup="!eq demonic" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/CommandUIAtlas.png" sourcerect="768,896,128,128" origin="0,0" />
+    <AfflictionOverlay texture="%ModDir%/Images/stunblind.png" sourcerect="0,0,1024,680" origin="0,0" />
+  </Affliction>
+  <Affliction name="Creature Mimicry" identifier="mimicinvisibility" description="..." type="mimicry" isbuff="true" limbspecific="false" maxstrength="60" activationthreshold="0" transformthresholdondeath="0" controlhusk="False" showiconthreshold="0" treatableinmedicalclinic="false">
+    <Effect minstrength="0" maxstrength="59" strengthchange="0.5">
+      <StatusEffect target="Character" type="OnDamaged" delay="0.1" stackable="false">
+        <RequiredAffliction type="Damage" minamount="1" />
+        <ReduceAffliction identifier="mimicinvisibility" strength="100" disabledeltatime="true" />
+      </StatusEffect>
+      <StatusEffect target="Character" comparison="or">
+        <Conditional noresurrection="gt 0" />
+        <Conditional isdead="true" />
+        <ReduceAffliction identifier="mimicinvisibility" amount="5" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="59" maxstrength="60">
+      <StatusEffect target="Character" delay="1" stackable="false" comparison="and">
+        <Conditional isdead="False" />
+        <Conditional noresurrection="eq 0" />
+        <SpawnCharacter speciesname="Human" Stun="0.1" RemovePreviousCharacter="True" transfercontrol="true" TransferInventory="True" AfflictionOnSpawn="abyssalfacade" AfflictionStrength="5" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/CommandUIAtlas.png" sourcerect="514,770,128,128" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+  <Affliction name="Detroit Become Torso" identifier="nascenthumantorsospawn" description="..." type="mimicry" isbuff="true" limbspecific="false" maxstrength="10" activationthreshold="0" transformthresholdondeath="0" controlhusk="false" showiconthreshold="0" treatableinmedicalclinic="false">
+    <Effect minstrength="0" maxstrength="10">
+      <StatusEffect type="Always" target="Character">
+        <Affliction identifier="stun" strength="5" setvalue="True" />
+      </StatusEffect>
+      <StatusEffect type="OnDeath" target="Character" comparison="and" delay="0.25" stackable="false">
+        <SpawnCharacter speciesname="NascentHumanTorso" Stun="1.5" RemovePreviousCharacter="True" TransferInventory="True" TransferControl="True" AfflictionStrength="60" afflictiononspawn="strengthen" />
+        <RemoveCharacter />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/CommandUIAtlas.png" sourcerect="514,770,128,128" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+  <Affliction name="Facade" identifier="abyssalfacade" description="..." type="mimicry" isbuff="true" limbspecific="false" activationthreshold="0" transformthresholdondeath="0" controlhusk="False" maxstrength="5" showiconthreshold="0" showicontoothersthreshold="10" hideiconafterdelay="true" showinhealthscannerthreshold="0" treatableinmedicalclinic="false">
+    <Effect minstrength="0" maxstrength="5" tag="demonic">
+      <StatusEffect target="Character" delay="1" stackable="false">
+        <Conditional health="lte 0" />
+        <SpawnCharacter speciesname="ancientmimic" Stun="0.1" RemovePreviousCharacter="True" transfercontrol="true" TransferInventory="True" AfflictionOnSpawn="noresurrection" AfflictionStrength="60" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/CommandUIAtlas.png" sourcerect="514,770,128,128" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+  <!-- No Resurrection: Prevents someone from getting back up. -->
+  <Affliction name="Resurrection Inhibited" description="The subject's ability to resurrect has been temporarily halted." identifier="noresurrection" type="noresurrection" limbspecific="false" showiconthreshold="0" showinhealthscannerthreshold="0" maxstrength="60" treatmentthreshold="1000" interval="1" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+    <Effect minstrength="0" maxstrength="60" strengthchange="-0.75" resistancefor="gaze,paralysis,incrementalstun,progressivestun,poison,geneticmaterialdebuff,damage,alieninfection,bleeding,burn,gunshotwound,huskinfection,huskmutation,huskinfectionresistance,calyxanideinjection" minresistance="0.0" maxresistance="0.5">
+      <StatusEffect target="Character" comparison="and">
+        <Conditional stun="gt 0" />
+        <Conditional isdead="false" />
+        <Affliction identifier="noresurrection" amount="0.5" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="512,0,128,128" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+  <!-- Revives someone as long as the affliction persists. -->
+  <Affliction name="Abyssal Mark" description="For a brief time, you may defy death." identifier="resurrection" type="buff" isbuff="true" limbspecific="false" showiconthreshold="0" showinhealthscannerthreshold="0" maxstrength="60" treatmentthreshold="1000" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+    <Effect minstrength="0" maxstrength="60" strengthchange="-1" resistancefor="stun,incrementalstun,progressivestun,paralysis" minresistance="0.0" maxresistance="1.0">
+      <!-- Prevents negative interaction with husk infection -->
+      <StatusEffect type="Always" target="Character">
+        <Conditional huskinfection="gte 49" />
+        <Affliction identifier="huskinfection" strength="49" setvalue="true" />
+      </StatusEffect>
+      <!-- Upon death, resurrect the host and heal their wounds, but stun them for 3 seconds. -->
+      <StatusEffect type="OnDeath" target="Character" setvalue="True" comparison="And" isdead="False" duration="1" stackable="False" hidden="true">
+        <Conditional noresurrection="eq 0" />
+        <Conditional blessed="eq 0" />
+        <Conditional huskinfection="lt 50" />
+        <ReduceAffliction type="damage" amount="5000" />
+        <ReduceAffliction identifier="poison" amount="5000" />
+        <ReduceAffliction identifier="bleeding" amount="5000" />
+        <ReduceAffliction identifier="bloodloss" amount="5000" />
+        <ReduceAffliction type="burn" amount="5000" />
+        <reduceaffliction type="alieninfection" strength="5000" />
+        <reduceaffliction type="badfood" strength="5000" />
+        <reduceaffliction identifier="nausea" strength="5000" />
+        <reduceaffliction identifier="opiatewithdrawal" strength="5000" />
+        <reduceaffliction identifier="opiateaddiction" strength="5000" />
+        <reduceaffliction identifier="drunk" strength="5000" />
+        <reduceaffliction identifier="huskinfection" strength="5000" />
+        <Affliction identifier="stun" amount="2" setvalue="true" />
+        <Affliction identifier="noresurrection" amount="5" setvalue="true" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="%ModDir%/Images/afflictions.png" sourcerect="648,0,128,128" color="143,111,160,255" origin="0,0" />
+  </Affliction>
+  <!-- You might not want to die. -->
+  <!--<Affliction
+    name="Call of the Abyss"
+	description="An unholy power festers within you. Death is not the end."
+	identifier="thrallreanimation"
+    type="abyssalcurse"
+    limbspecific="false"
+	showiconthreshold="0"
+	showinhealthscannerthreshold="0"
+    maxstrength="60"
+	activationthreshold="0"
+	transformthresholdondeath="0"
+	controlhusk="False"
+    treatableinmedicalclinic="false"
+    iconcolors="143,141,160,255;143,121,160,255;143,101,160,255">
+    <Effect minstrength="0" maxstrength="60" strengthchange="-0.5">-->
+  <!-- Prevents negative interaction with husk infection -->
+  <!--<StatusEffect type="Always" target="Character">
+	    <Conditional huskinfection="gte 45" />
+		<Affliction identifier="huskinfection" strength="45" setvalue="true" />
+	  </StatusEffect>-->
+  <!-- Pauses the affliction if you're in crit -->
+  <!--<StatusEffect type="Always" comparison="And" target="Character" interval="1">
+	    <Conditional health="lte 0" />
+		<Conditional speciesname="eq human" />
+		<Affliction identifier="thrallreanimation" strength="0.5" />
+	  </StatusEffect>-->
+  <!-- Prevents Abyssal Redemption from being applied. -->
+  <!--<StatusEffect type="Always" target="Character" comparison="And">
+	    <Conditional isdead="false" />
+		<Conditional noredemption="lt 1" />
+		<Conditional thrallreanimation="gt 1" />
+		<Affliction identifier="noredemption" strength="1" setvalue="true" />
+	  </StatusEffect>-->
+  <!-- If the target has no special (de)buffs, spawn a basic Thrall -->
+  <!--<StatusEffect type="OnDeath" target="Character" comparison="And" setvalue="true" checkconditionalalways="False" delay="3.5" stackable="False">
+		<Conditional haste="eq 0" />
+		<Conditional strengthen="eq 0" />
+		<Conditional morbusinepoisoning="eq 0" />
+		<Conditional cyanidepoisoning="eq 0" />
+		<Conditional deliriuminepoisoning="eq 0" />
+		<Conditional paralysis="eq 0" />
+		<Conditional radiationsickness="eq 0" />
+		<Conditional sufforinpoisoning="eq 0" />
+		<Conditional scp_presolatexinfection="eq 0"/>
+		<Conditional scp_devilpoisoning="eq 0" />
+		<Conditional scp_wastingdisease="eq 0" />
+		<Conditional scp_lineavirus="eq 0" />
+		<Conditional oneurotoxin="eq 0" />
+		<Conditional naturalrangedweapon="eq 0" />
+		<Conditional increasedswimmingspeed="eq 0" />
+		<Conditional increasedmeleedamage="eq 0" />
+		<Conditional increasedwalkingspeed="eq 0" />
+		<Conditional damageresistance="eq 0" />
+		<Conditional decreasedoxygenconsumption="eq 0" />
+		<Conditional healdamage="eq 0"/>
+		<Conditional hyperactivityondamage="eq 0" />
+		<Conditional vigorondamage="eq 0" />
+		<Conditional naturalmeleeweapon="eq 0" />
+        <SpawnCharacter speciesname="ancientthrall" Stun="1.5" RemovePreviousCharacter="True" TransferInventory="True" AfflictionStrength="10" />
+      </StatusEffect>-->
+  <!-- If the target used meth or steroids, spawn a Savage. -->
+  <!--<StatusEffect type="OnDeath" target="Character" comparison="And" setvalue="true" checkconditionalalways="False" delay="4" stackable="False">
+		<Conditional haste="gt 0" />
+		<Conditional strengthen="gt 0" />
+        <SpawnCharacter speciesname="ancientsavage" Stun="1.5" RemovePreviousCharacter="True" TransferInventory="True" AfflictionStrength="10" />
+      </StatusEffect>-->
+  <!-- If the target has genes, spawn a Mimic. -->
+  <!--<StatusEffect type="OnDeath" target="Character" comparison="Or" setvalue="true" checkconditionalalways="False" delay="4.5" stackable="False">
+		<Conditional naturalrangedweapon="gt 0" />
+		<Conditional increasedswimmingspeed="gt 0" />
+		<Conditional increasedmeleedamage="gt 0" />
+		<Conditional increasedwalkingspeed="gt 0" />
+		<Conditional damageresistance="gt 0" />
+		<Conditional decreasedoxygenconsumption="gt 0" />
+		<Conditional healdamage="gt 0"/>
+		<Conditional hyperactivityondamage="gt 0" />
+		<Conditional vigorondamage="gt 0" />
+		<Conditional naturalmeleeweapon="gt 0" />
+		<Conditional radiationsickness="gt 0" />
+        <SpawnCharacter speciesname="ancientmimic" Stun="1.5" RemovePreviousCharacter="True" TransferInventory="True" AfflictionOnSpawn="mimiclottery" AfflictionStrength="10" />
+      </StatusEffect>-->
+  <!-- If the target is poisoned, spawn an Aerosolizer. -->
+  <!--<StatusEffect type="OnDeath" target="Character" comparison="Or" setvalue="true" checkconditionalalways="False" delay="5" stackable="False">
+		<Conditional morbusinepoisoning="gt 0" />
+		<Conditional cyanidepoisoning="gt 0" />
+		<Conditional deliriuminepoisoning="gt 0" />
+		<Conditional paralysis="gt 0" />
+		<Conditional sufforinpoisoning="gt 0" />
+		<Conditional scp_presolatexinfection="gt 0"/>
+		<Conditional scp_devilpoisoning="gt 0" />
+		<Conditional scp_wastingdisease="gt 0" />
+		<Conditional scp_lineavirus="gt 0" />
+		<Conditional oneurotoxin="gt 0" />
+        <SpawnCharacter speciesname="ancientaerosolizer" Stun="1.5" RemovePreviousCharacter="True" TransferInventory="True" AfflictionStrength="10" />
+      </StatusEffect>
+	  <StatusEffect type="OnDeath" target="Character" comparison="And" setvalue="true" duration="5" stackable="False">
+	    <Conditional SpeciesName="eq human" />
+		<Conditional blessed="eq 0" />
+		<sound file="%ModDir%/Sounds/bonebreak1.ogg" range="1000.0" volume="1.0" selectionmode="Random"/>
+		<sound file="%ModDir%/Sounds/bonebreak2.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/bonebreak3.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/bonebreak4.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/slash1.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/slash2.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/slash3.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/squelch1.ogg" range="1000.0" volume="1.0"/>
+	  </StatusEffect>
+	  <StatusEffect type="OnDeath" target="Character" comparison="And" setvalue="true" duration="5" stackable="False">
+	    <Conditional SpeciesName="eq husk" />
+		<Conditional blessed="eq 0" />
+		<sound file="%ModDir%/Sounds/bonebreak1.ogg" range="1000.0" volume="1.0" selectionmode="Random"/>
+		<sound file="%ModDir%/Sounds/bonebreak2.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/bonebreak3.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/bonebreak4.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/slash1.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/slash2.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/slash3.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/squelch1.ogg" range="1000.0" volume="1.0"/>
+	  </StatusEffect>
+	</Effect>
+    <icon texture="%ModDir%/Images/afflictions.png" sourcerect="256,0,128,128" color="143,111,160,255" origin="0,0"/>
+  </Affliction>-->
+  <Affliction name="Mycor Infection" description="A temporary fungal infection has taken root in your body. Antibiotics should flush it out." identifier="thrallreanimation" type="alieninfection" limbspecific="false" showiconthreshold="101" showinhealthscannerthreshold="10" maxstrength="100" activationthreshold="0" transformthresholdondeath="0" controlhusk="False" treatableinmedicalclinic="false" iconcolors="143,141,160,255;143,121,160,255;143,101,160,255">
+    <Effect minstrength="0" maxstrength="100" strengthchange="-0.05">
+      <!-- Prevents negative interaction with husk infection -->
+      <StatusEffect type="Always" target="Character">
+        <Conditional huskinfection="gte 45" />
+        <Affliction identifier="huskinfection" strength="45" setvalue="true" />
+      </StatusEffect>
+      <!-- Pauses the affliction if you're in crit -->
+      <StatusEffect type="Always" comparison="And" target="Character" interval="1">
+        <Conditional health="lte 0" />
+        <Conditional speciesname="eq human" />
+        <Affliction identifier="thrallreanimation" strength="0.05" />
+      </StatusEffect>
+      <!-- Removes the affliction from demonic beings and thralls -->
+      <StatusEffect type="Always" comparison="And" target="Character" interval="1">
+        <Conditional speciesgroup="eq demonic" />
+        <ReduceAffliction identifier="thrallreanimation" strength="100" />
+      </StatusEffect>
+      <!-- Prevents Abyssal Redemption from being applied. -->
+      <StatusEffect type="Always" target="Character" comparison="And">
+        <Conditional isdead="false" />
+        <Conditional noredemption="lt 1" />
+        <Conditional thrallreanimation="gt 1" />
+        <Affliction identifier="noredemption" strength="1" setvalue="true" />
+      </StatusEffect>
+      <!-- Antibiotics help get rid of the infection. -->
+      <StatusEffect target="Character" comparison="And">
+        <Conditional huskinfectionresistance="gt 0" />
+        <ReduceAffliction identifier="thrallreanimation" amount="1" />
+      </StatusEffect>
+      <StatusEffect target="Character" comparison="And">
+        <Conditional isdead="false" />
+        <Conditional thrallreanimation="gt 10" />
+        <Affliction identifier="oasisfever" amount="0.2" />
+      </StatusEffect>
+      <!-- If the target has no special (de)buffs, spawn a basic Thrall -->
+      <StatusEffect type="OnDeath" target="Character" comparison="And" setvalue="true" checkconditionalalways="False" delay="3.5" stackable="False">
+        <Conditional haste="eq 0" />
+        <Conditional strengthen="eq 0" />
+        <Conditional morbusinepoisoning="eq 0" />
+        <Conditional cyanidepoisoning="eq 0" />
+        <Conditional deliriuminepoisoning="eq 0" />
+        <Conditional paralysis="eq 0" />
+        <Conditional radiationsickness="eq 0" />
+        <Conditional sufforinpoisoning="eq 0" />
+        <Conditional scp_presolatexinfection="eq 0" />
+        <Conditional scp_devilpoisoning="eq 0" />
+        <Conditional scp_wastingdisease="eq 0" />
+        <Conditional scp_lineavirus="eq 0" />
+        <Conditional oneurotoxin="eq 0" />
+        <Conditional naturalrangedweapon="eq 0" />
+        <Conditional increasedswimmingspeed="eq 0" />
+        <Conditional increasedmeleedamage="eq 0" />
+        <Conditional increasedwalkingspeed="eq 0" />
+        <Conditional damageresistance="eq 0" />
+        <Conditional decreasedoxygenconsumption="eq 0" />
+        <Conditional healdamage="eq 0" />
+        <Conditional hyperactivityondamage="eq 0" />
+        <Conditional vigorondamage="eq 0" />
+        <Conditional naturalmeleeweapon="eq 0" />
+        <Conditional speciesname="eq human" />
+        <SpawnCharacter speciesname="nascenthuman" Stun="1.5" RemovePreviousCharacter="True" TransferInventory="True" AfflictionStrength="1" afflictiononspawn="ancientthralltransformation" />
+      </StatusEffect>
+      <StatusEffect type="OnDeath" target="Character" comparison="And" setvalue="true" checkconditionalalways="False" delay="3.5" stackable="False">
+        <Conditional haste="eq 0" />
+        <Conditional strengthen="eq 0" />
+        <Conditional morbusinepoisoning="eq 0" />
+        <Conditional cyanidepoisoning="eq 0" />
+        <Conditional deliriuminepoisoning="eq 0" />
+        <Conditional paralysis="eq 0" />
+        <Conditional radiationsickness="eq 0" />
+        <Conditional sufforinpoisoning="eq 0" />
+        <Conditional scp_presolatexinfection="eq 0" />
+        <Conditional scp_devilpoisoning="eq 0" />
+        <Conditional scp_wastingdisease="eq 0" />
+        <Conditional scp_lineavirus="eq 0" />
+        <Conditional oneurotoxin="eq 0" />
+        <Conditional naturalrangedweapon="eq 0" />
+        <Conditional increasedswimmingspeed="eq 0" />
+        <Conditional increasedmeleedamage="eq 0" />
+        <Conditional increasedwalkingspeed="eq 0" />
+        <Conditional damageresistance="eq 0" />
+        <Conditional decreasedoxygenconsumption="eq 0" />
+        <Conditional healdamage="eq 0" />
+        <Conditional hyperactivityondamage="eq 0" />
+        <Conditional vigorondamage="eq 0" />
+        <Conditional naturalmeleeweapon="eq 0" />
+        <Conditional speciesgroup="eq husk" />
+        <SpawnCharacter speciesname="nascenthuman" Stun="1.5" RemovePreviousCharacter="True" TransferInventory="True" AfflictionStrength="1" afflictiononspawn="ancientthralltransformation" />
+      </StatusEffect>
+      <!-- If the target used meth or steroids, spawn a Savage. -->
+      <StatusEffect type="OnDeath" target="Character" comparison="And" setvalue="true" checkconditionalalways="False" delay="4" stackable="False">
+        <Conditional haste="gt 0" />
+        <Conditional strengthen="gt 0" />
+        <SpawnCharacter speciesname="nascenthuman" Stun="1.5" RemovePreviousCharacter="True" TransferInventory="True" AfflictionStrength="10" afflictiononspawn="ancientsavagetransformation" />
+      </StatusEffect>
+      <!-- If the target has genes, spawn a Mimic. -->
+      <StatusEffect type="OnDeath" target="Character" comparison="Or" setvalue="true" checkconditionalalways="False" delay="4.5" stackable="False">
+        <Conditional naturalrangedweapon="gt 0" />
+        <Conditional increasedswimmingspeed="gt 0" />
+        <Conditional increasedmeleedamage="gt 0" />
+        <Conditional increasedwalkingspeed="gt 0" />
+        <Conditional damageresistance="gt 0" />
+        <Conditional decreasedoxygenconsumption="gt 0" />
+        <Conditional healdamage="gt 0" />
+        <Conditional hyperactivityondamage="gt 0" />
+        <Conditional vigorondamage="gt 0" />
+        <Conditional naturalmeleeweapon="gt 0" />
+        <Conditional radiationsickness="gt 0" />
+        <SpawnCharacter speciesname="nascenthuman" Stun="1.5" RemovePreviousCharacter="True" TransferInventory="True" AfflictionStrength="1" afflictiononspawn="ancientmimictransformation" />
+      </StatusEffect>
+      <!-- If the target is poisoned, spawn an Aerosolizer. -->
+      <StatusEffect type="OnDeath" target="Character" comparison="Or" setvalue="true" checkconditionalalways="False" delay="5" stackable="False">
+        <Conditional morbusinepoisoning="gt 0" />
+        <Conditional cyanidepoisoning="gt 0" />
+        <Conditional deliriuminepoisoning="gt 0" />
+        <Conditional paralysis="gt 0" />
+        <Conditional sufforinpoisoning="gt 0" />
+        <Conditional scp_presolatexinfection="gt 0" />
+        <Conditional scp_devilpoisoning="gt 0" />
+        <Conditional scp_wastingdisease="gt 0" />
+        <Conditional scp_lineavirus="gt 0" />
+        <Conditional oneurotoxin="gt 0" />
+        <SpawnCharacter speciesname="nascenthuman" Stun="1.5" RemovePreviousCharacter="True" TransferInventory="True" AfflictionStrength="1" afflictiononspawn="ancientaerosolizertransformation" />
+      </StatusEffect>
+      <StatusEffect type="OnDeath" target="Character" comparison="And" setvalue="true" duration="5" stackable="False">
+        <Conditional SpeciesName="eq human" />
+        <Conditional blessed="eq 0" />
+        <sound file="%ModDir%/Sounds/bonebreak1.ogg" range="1000.0" volume="1.0" selectionmode="Random" />
+        <sound file="%ModDir%/Sounds/bonebreak2.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/bonebreak3.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/bonebreak4.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/slash1.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/slash2.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/slash3.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/squelch1.ogg" range="1000.0" volume="1.0" />
+      </StatusEffect>
+      <StatusEffect type="OnDeath" target="Character" comparison="And" setvalue="true" duration="5" stackable="False">
+        <Conditional SpeciesName="eq husk" />
+        <Conditional blessed="eq 0" />
+        <sound file="%ModDir%/Sounds/bonebreak1.ogg" range="1000.0" volume="1.0" selectionmode="Random" />
+        <sound file="%ModDir%/Sounds/bonebreak2.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/bonebreak3.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/bonebreak4.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/slash1.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/slash2.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/slash3.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/squelch1.ogg" range="1000.0" volume="1.0" />
+      </StatusEffect>
+    </Effect>
+    <PeriodicEffect mininterval="10" maxinterval="30">
+      <StatusEffect target="Character">
+        <Conditional thrallreanimation="gt 50" />
+        <Sound file="%ModDir%/Sounds/lightcough2.ogg" volume="1" range="750" selectionmode="Random" />
+        <Sound file="%ModDir%/Sounds/heavycough2.ogg" volume="1" range="750" />
+        <Sound file="%ModDir%/Sounds/cough1.ogg" volume="0.5" range="750" />
+        <Sound file="%ModDir%/Sounds/cough2.ogg" volume="0.5" range="750" />
+        <Sound file="%ModDir%/Sounds/cough3.ogg" volume="0.5" range="750" />
+        <Affliction identifier="stun" amount="0.1" />
+        <Explosion range="600.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="thrallreanimationmanager" amount="5" setvalue="True" />
+        </Explosion>
+      </StatusEffect>
+      <!--<StatusEffect target="Character" comparison="And" duration="3">
+	    <Conditional thrallreanimation="gte 50" />
+		<Conditional thrallreanimation="lt 60" />
+		<Affliction identifier="organdamage" amount="1.5"/>
+	  </StatusEffect>
+	  <StatusEffect target="Character" comparison="And" duration="3">
+	    <Conditional thrallreanimation="gte 60" />
+		<Conditional thrallreanimation="lt 70" />
+		<Affliction identifier="organdamage" amount="3"/>
+	  </StatusEffect>
+	  <StatusEffect target="Character" comparison="And" duration="3">
+	    <Conditional thrallreanimation="gte 70" />
+		<Conditional thrallreanimation="lt 80" />
+		<Affliction identifier="organdamage" amount="4.5"/>
+	  </StatusEffect>
+	  <StatusEffect target="Character" comparison="And" duration="3">
+	    <Conditional thrallreanimation="gte 80" />
+		<Conditional thrallreanimation="lt 90" />
+		<Affliction identifier="organdamage" amount="6"/>
+	  </StatusEffect>-->
+      <StatusEffect target="Character" comparison="And" duration="3">
+        <Conditional thrallreanimation="gte 75" />
+        <Affliction identifier="organdamage" amount="10" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <!-- <icon texture="%ModDir%/Images/afflictions.png" sourcerect="256,0,128,128" color="143,111,160,255" origin="0,0"/> -->
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="0,384,128,128" color="193,162,122,255" origin="0,0" />
+  </Affliction>
+  <Affliction name="Abyssal Contamination Precursor" identifier="thrallreanimationmanager" description="An affliction for handling the infection." type="airborneinfection" interval="1" limbspecific="false" indicatorlimb="Head" showinhealthscannerthreshold="20" showiconthreshold="75" karmachangeonapplied="-100" maxstrength="300">
+    <Effect minstrength="0" maxstrength="5" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-1">
+      <StatusEffect target="Character" comparison="and">
+        <Conditional PressureProtection="lt 4000" />
+        <Conditional HasStatusTag="!equals cbrnsuit" />
+        <Conditional huskinfectionresistance="eq 0" />
+        <Affliction identifier="thrallreanimation" amount="1" probability="0.5" />
+      </StatusEffect>
+    </Effect>
+  </Affliction>
+  <Affliction name="Fever" identifier="oasisfever" description="You feel feverish." type="damage" interval="1" limbspecific="false" indicatorlimb="Head" showinhealthscannerthreshold="0" showiconthreshold="5" karmachangeonapplied="-100" maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" minvitalitydecrease="0" maxvitalitydecrease="1" multiplybymaxvitality="true" resistancefor="oasisfever" minresistance="0.25" maxresistance="0.0">
+      <StatusEffect target="Character" comparison="And">
+        <Conditional thrallreanimation="lt 25" />
+        <Conditional hvirusstage2="lt 50" />
+        <ReduceAffliction identifier="oasisfever" amount="0.5" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="%ModDir%/Images/afflictions.png" sourcerect="1161,0,128,128" color="143,111,160,255" origin="0,0" />
+  </Affliction>
+  <Affliction name="Abyssal Transformation (Thrall)" description="." identifier="ancientthralltransformation" type="transformation" limbspecific="false" showiconthreshold="59" maxstrength="60" activationthreshold="0" transformthresholdondeath="0" controlhusk="False" treatableinmedicalclinic="false" iconcolors="143,141,160,255;143,121,160,255;143,101,160,255">
+    <!-- After 10 minutes, mutate -->
+    <Effect minstrength="0" maxstrength="59" strengthchange="0.1" />
+    <Effect minstrength="59" maxstrength="60" strengthchange="1">
+      <StatusEffect target="Character" delay="5" stackable="False">
+        <SpawnCharacter speciesname="ancientthrall" Stun="1.5" RemovePreviousCharacter="True" TransferInventory="True" transfercontrol="True" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="%ModDir%/Images/afflictions.png" sourcerect="256,0,128,128" color="143,111,160,255" origin="0,0" />
+  </Affliction>
+  <Affliction name="Abyssal Transformation (Savage)" description="." identifier="ancientsavagetransformation" type="transformation" limbspecific="false" showiconthreshold="59" maxstrength="60" activationthreshold="0" transformthresholdondeath="0" controlhusk="False" treatableinmedicalclinic="false" iconcolors="143,141,160,255;143,121,160,255;143,101,160,255">
+    <!-- After 10 minutes, mutate -->
+    <Effect minstrength="0" maxstrength="59" strengthchange="0.1" />
+    <Effect minstrength="59" maxstrength="60" strengthchange="1">
+      <StatusEffect target="Character" delay="5" stackable="False">
+        <SpawnCharacter speciesname="ancientsavage" Stun="1.5" RemovePreviousCharacter="True" TransferInventory="True" transfercontrol="True" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="%ModDir%/Images/afflictions.png" sourcerect="256,0,128,128" color="143,111,160,255" origin="0,0" />
+  </Affliction>
+  <Affliction name="Abyssal Transformation (Mimic)" description="." identifier="ancientmimictransformation" type="transformation" limbspecific="false" showiconthreshold="59" maxstrength="60" activationthreshold="0" transformthresholdondeath="0" controlhusk="False" treatableinmedicalclinic="false" iconcolors="143,141,160,255;143,121,160,255;143,101,160,255">
+    <!-- After 10 minutes, mutate -->
+    <Effect minstrength="0" maxstrength="59" strengthchange="0.1" />
+    <Effect minstrength="59" maxstrength="60" strengthchange="1">
+      <StatusEffect target="Character" delay="5" stackable="False">
+        <SpawnCharacter speciesname="ancientmimic" Stun="1.5" RemovePreviousCharacter="True" TransferInventory="True" transfercontrol="True" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="%ModDir%/Images/afflictions.png" sourcerect="256,0,128,128" color="143,111,160,255" origin="0,0" />
+  </Affliction>
+  <Affliction name="Abyssal Transformation (Aerosolizer)" description="." identifier="ancientaerosolizertransformation" type="transformation" limbspecific="false" showiconthreshold="59" maxstrength="60" activationthreshold="0" transformthresholdondeath="0" controlhusk="False" treatableinmedicalclinic="false" iconcolors="143,141,160,255;143,121,160,255;143,101,160,255">
+    <!-- After 10 minutes, mutate -->
+    <Effect minstrength="0" maxstrength="59" strengthchange="0.1" />
+    <Effect minstrength="59" maxstrength="60" strengthchange="1">
+      <StatusEffect target="Character" delay="5" stackable="False">
+        <SpawnCharacter speciesname="ancientaerosolizer" Stun="1.5" RemovePreviousCharacter="True" TransferInventory="True" transfercontrol="True" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="%ModDir%/Images/afflictions.png" sourcerect="256,0,128,128" color="143,111,160,255" origin="0,0" />
+  </Affliction>
+  <!-- Random chance to apply genes. -->
+  <Affliction identifier="mimiclottery" type="mimic" limbspecific="false" showiconthreshold="10" showinhealthscannerthreshold="10" maxstrength="1" treatmentthreshold="1000" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+    <!-- RNG. -->
+    <Effect minstrength="0" maxstrength="1" strengthchange="0">
+      <StatusEffect target="Character" disabledeltatime="true" stackable="false" interval="1" comparison="And">
+        <Conditional naturalrangedweapon="eq 0" />
+        <Conditional increasedswimmingspeed="eq 0" />
+        <Conditional increasedmeleedamage="eq 0" />
+        <Conditional increasedwalkingspeed="eq 0" />
+        <Conditional damageresistance="eq 0" />
+        <Conditional decreasedoxygenconsumption="eq 0" />
+        <Conditional healdamage="eq 0" />
+        <Conditional hyperactivityondamage="eq 0" />
+        <Conditional vigorondamage="eq 0" />
+        <Conditional naturalmeleeweapon="eq 0" />
+        <Affliction identifier="husktransformimmunity" amount="100" probability="0.1" setvalue="true" disabledeltatime="True" />
+        <Affliction identifier="naturalrangedweapon" amount="100" probability="0.1" setvalue="true" disabledeltatime="True" />
+        <Affliction identifier="increasedswimmingspeed" amount="100" probability="0.1" setvalue="true" disabledeltatime="True" />
+        <Affliction identifier="increasedmeleedamage" amount="100" probability="0.1" setvalue="true" disabledeltatime="True" />
+        <Affliction identifier="increasedwalkingspeed" amount="100" probability="0.1" setvalue="true" disabledeltatime="True" />
+        <Affliction identifier="damageresistance" amount="100" probability="0.1" setvalue="true" disabledeltatime="True" />
+        <Affliction identifier="decreasedoxygenconsumption" amount="100" probability="0.1" setvalue="true" disabledeltatime="True" />
+        <Affliction identifier="healdamage" amount="100" probability="0.1" setvalue="true" disabledeltatime="True" />
+        <Affliction identifier="hyperactivityondamage" amount="100" probability="0.1" setvalue="true" disabledeltatime="True" />
+        <Affliction identifier="vigorondamage" amount="100" probability="0.1" setvalue="true" disabledeltatime="True" />
+        <Affliction identifier="naturalmeleeweapon" strength="100" probability="0.1" setvalue="true" disabledeltatime="True" />
+      </StatusEffect>
+      <StatusEffect target="Character">
+        <Conditional ancientmimicry="eq 0" />
+        <Affliction identifier="ancientmimicry" strength="1" setvalue="true" disabledeltatime="true" />
+      </StatusEffect>
+      <StatusEffect target="Character">
+        <Conditional increasedswimmingspeed="gt 0" />
+        <Conditional increasedmeleedamage="gt 0" />
+        <Conditional increasedwalkingspeed="gt 0" />
+        <Conditional damageresistance="gt 0" />
+        <Conditional healdamage="gt 0" />
+        <Conditional hyperactivityondamage="gt 0" />
+        <Conditional vigorondamage="gt 0" />
+        <ReduceAffliction identifier="mimiclottery" strength="1" disabledeltatime="True" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="%ModDir%/Images/afflictions.png" sourcerect="648,0,128,128" color="143,111,160,255" origin="0,0" />
+  </Affliction>
+  <!-- Allows mimics to make noises. -->
+  <Affliction identifier="ancientmimicry" type="mimic" limbspecific="false" showiconthreshold="10" showinhealthscannerthreshold="10" maxstrength="1" treatmentthreshold="1000" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+    <!-- RNG. -->
+    <Effect minstrength="0" maxstrength="1">
+      <StatusEffect target="Character">
+        <Conditional husktransformimmunity="gt 0" />
+        <Affliction identifier="huskmimicry" strength="1" />
+      </StatusEffect>
+    </Effect>
+    <PeriodicEffect mininterval="5" maxinterval="30">
+      <StatusEffect target="Character">
+        <Conditional naturalrangedweapon="gt 0" />
+        <sound file="Content/Characters/Spineling/SPINELING_idle1.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Spineling/SPINELING_idle2.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Spineling/SPINELING_idle3.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Spineling/SPINELING_idle4.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Spineling/SPINELING_damage1.ogg" state="Damage" range="2500" volume="1" />
+        <sound file="Content/Characters/Spineling/SPINELING_damage2.ogg" state="Damage" range="2500" volume="1" />
+        <sound file="Content/Characters/Spineling/SPINELING_damage3.ogg" state="Damage" range="2500" volume="1" />
+        <sound file="Content/Characters/Spineling/SPINELING_damage4.ogg" state="Damage" range="2500" volume="1" />
+        <sound file="Content/Characters/Spineling/SPINELING_damage5.ogg" state="Damage" range="2500" volume="1" />
+        <sound file="Content/Characters/Spineling/SPINELING_damage6.ogg" state="Damage" range="2500" volume="1" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <PeriodicEffect mininterval="5" maxinterval="30">
+      <StatusEffect target="Character">
+        <Conditional increasedswimmingspeed="gt 0" />
+        <sound file="Content/Characters/Crawler/CRAWLER_attack1.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Crawler/CRAWLER_attack2.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Crawler/CRAWLER_attack3.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Crawler/CRAWLER_attack4.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Crawler/CRAWLER_idle1.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Crawler/CRAWLER_idle2.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Crawler/CRAWLER_idle3.ogg" range="2500" volume="1" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <PeriodicEffect mininterval="5" maxinterval="30">
+      <StatusEffect target="Character">
+        <Conditional increasedmeleedamage="gt 0" />
+        <sound file="Content/Characters/Hammerhead/HAMMERHEAD_idle1.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Hammerhead/HAMMERHEAD_idle2.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Hammerhead/HAMMERHEAD_idle3.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Hammerhead/HAMMERHEAD_idle4.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Hammerhead/HAMMERHEAD_idle5.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Hammerhead/HAMMERHEAD_attack1.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Hammerhead/HAMMERHEAD_attack2.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Hammerhead/HAMMERHEAD_attack3.ogg" range="2500" volume="1" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <PeriodicEffect mininterval="5" maxinterval="30">
+      <StatusEffect target="Character">
+        <Conditional increasedwalkingspeed="gt 0" />
+        <sound file="Content/Characters/Mantis/idle1.ogg" range="2500" />
+        <sound file="Content/Characters/Mantis/idle2.ogg" range="2500" />
+        <sound file="Content/Characters/Mantis/idle3.ogg" range="2500" />
+        <sound file="Content/Characters/Mantis/attack1.ogg" range="2500" />
+        <sound file="Content/Characters/Mantis/attack2.ogg" range="2500" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <PeriodicEffect mininterval="5" maxinterval="30">
+      <StatusEffect target="Character">
+        <Conditional damageresistance="gt 0" />
+        <sound file="Content/Characters/Moloch/MOLOCH_idle1.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Moloch/MOLOCH_idle2.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Moloch/MOLOCH_idle3.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Moloch/MOLOCH_idle4.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Moloch/MOLOCH_idle5.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Moloch/MOLOCH_attack1.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Moloch/MOLOCH_attack2.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Moloch/MOLOCH_attack3.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Moloch/MOLOCH_attack4.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Moloch/MOLOCH_attack5.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Moloch/MOLOCH_attack6.ogg" range="2500" volume="1" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <PeriodicEffect mininterval="5" maxinterval="30">
+      <StatusEffect target="Character">
+        <Conditional decreasedoxygenconsumption="gt 0" />
+        <sound file="Content/Characters/Tigerthresher/TIGERTRESHER_attack1.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Tigerthresher/TIGERTRESHER_attack2.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Tigerthresher/TIGERTRESHER_idle1.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Tigerthresher/TIGERTRESHER_idle2.ogg" range="2500" volume="1" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <PeriodicEffect mininterval="5" maxinterval="30">
+      <StatusEffect target="Character">
+        <Conditional healdamage="gt 0" />
+        <sound file="Content/Characters/Hammerheadmatriarch/MHAMMERHEAD_idle1.ogg" state="Idle" range="2500" volume="1" />
+        <sound file="Content/Characters/Hammerheadmatriarch/MHAMMERHEAD_idle2.ogg" state="Idle" range="2500" volume="1" />
+        <sound file="Content/Characters/Hammerheadmatriarch/MHAMMERHEAD_idle3.ogg" state="Idle" range="2500" volume="1" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <PeriodicEffect mininterval="5" maxinterval="30">
+      <StatusEffect target="Character">
+        <Conditional naturalmeleeweapon="gt 0" />
+        <sound file="Content/Characters/Mudraptor/MUDRAPTOR_attack1.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Mudraptor/MUDRAPTOR_attack2.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Mudraptor/MUDRAPTOR_attack3.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Mudraptor/MUDRAPTOR_idle1.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Mudraptor/MUDRAPTOR_idle2.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Mudraptor/MUDRAPTOR_idle3.ogg" range="2500" volume="1" />
+        <sound file="Content/Characters/Mudraptor/MUDRAPTOR_idle4.ogg" range="2500" volume="1" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <PeriodicEffect mininterval="5" maxinterval="30">
+      <StatusEffect target="Character">
+        <Conditional husktransformimmunity="gt 0" />
+        <sound file="Content/Characters/Husk/HUSK_attack1.ogg" state="Attack" range="2500" volume="1" />
+        <sound file="Content/Characters/Husk/HUSK_attack2.ogg" state="Attack" range="2500" volume="1" />
+        <sound file="Content/Characters/Husk/HUSK_attack3.ogg" state="Attack" range="2500" volume="1" />
+        <sound file="Content/Characters/Husk/HUSK_attack4.ogg" state="Attack" range="2500" volume="1" />
+        <sound file="Content/Characters/Husk/HUSK_idle1.ogg" state="Idle" range="2500" volume="1" />
+        <sound file="Content/Characters/Husk/HUSK_idle2.ogg" state="Idle" range="2500" volume="1" />
+        <sound file="Content/Characters/Husk/HUSK_idle3.ogg" state="Idle" range="2500" volume="1" />
+        <sound file="Content/Characters/Husk/HUSK_idle4.ogg" state="Idle" range="2500" volume="1" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/Images/afflictions.png" sourcerect="648,0,128,128" color="143,111,160,255" origin="0,0" />
+  </Affliction>
+  <AfflictionHusk name="Husk Mimicry" identifier="huskmimicry" type="alieninfection" healableinmedicalclinic="false" limbspecific="false" targets="ancientmimic" huskedspeciesname="husk" indicatorlimb="Head" hideiconafterdelay="true" showiconthreshold="10" needsair="false" causespeechimpediment="false" treatmentthreshold="1000" dormantthreshold="0" activethreshold="0" transitionthreshold="1000" transformthresholdondeath="1000" sendmessages="false" maxstrength="1" iconcolors="94,54,95;163,73,164;200,191,231">
+    <icon texture="Content/UI/TalentsIcons3.png" sheetindex="4,0" sheetelementsize="128,128" color="181,230,29,255" origin="0,0" />
+    <Effect minstrength="0" maxstrength="1" tag="huskinfected" />
+  </AfflictionHusk>
+  <!-- You will die. -->
+  <!--<Affliction
+    name="Abyssal Decay"
+	description="..."
+	identifier="thrallcurse"
+	causeofdeathdescription="Rotted away."
+	selfcauseofdeathdescription="You have succumbed to the abyssal rot."
+    type="abyssalcurse"
+    isbuff="true"
+    limbspecific="false"
+	showiconthreshold="30"
+	showicontoothersthreshold="91"
+	showinhealthscannerthreshold="30"
+	activationthreshold="0"
+	transformthresholdondeath="0"
+	controlhusk="False"
+    maxstrength="90"
+    treatmentthreshold="1000"
+    iconcolors="143,141,160,255;143,121,160,255;143,101,160,255">
+	<Description
+      textidentifier="afflictiondescription.thrallcurse.mild"
+      target="Self"
+      minstrength="0"
+      maxstrength="30"/>
+    <Description
+      textidentifier="afflictiondescription.thrallcurse.severe"
+      target="Self"
+      minstrength="30"
+      maxstrength="60"/>
+    <Description
+      textidentifier="afflictiondescription.thrallcurse.critical"
+      target="Self"
+      minstrength="60"
+      maxstrength="90"/>-->
+  <!-- From 0-30 strength, does not harm you, but is indetectable. Still turns you if you happen to die. -->
+  <!-- <Effect minstrength="0" maxstrength="30" strengthchange="0.075" resistancefor="thrallreanimation,huskinfection" minresistance="1.0" maxresistance="1.0"> -->
+  <!-- Prevents negative interaction with husk infection -->
+  <!--<StatusEffect target="Character">
+	    <Conditional huskinfection="gt 0" />
+		<Affliction identifier="huskinfection" strength="0" setvalue="true" disabledeltatime="true" />
+	  </StatusEffect>
+	  <StatusEffect target="Character">
+	    <Conditional thrallreanimation="gt 0" />
+		<Affliction identifier="thrallreanimation" strength="0" setvalue="true" disabledeltatime="True" />
+	  </StatusEffect>-->
+  <!-- If the character is not a human, apply 10x faster -->
+  <!--<StatusEffect target="Character">
+	    <Conditional speciesname="nq Human" />
+		<Affliction identifier="thrallcurse" amount="0.9" />
+	  </StatusEffect>-->
+  <!-- Determines what kind of Abyssal entity you become depending on your status effects prior to your death. -->
+  <!-- If the target has no special (de)buffs, spawn a basic Thrall -->
+  <!--<StatusEffect type="OnDeath" target="Character" comparison="And" setvalue="true" checkconditionalalways="False" delay="3.5" stackable="False">
+		<Conditional haste="eq 0" />
+		<Conditional strengthen="eq 0" />
+		<Conditional morbusinepoisoning="eq 0" />
+		<Conditional cyanidepoisoning="eq 0" />
+		<Conditional deliriuminepoisoning="eq 0" />
+		<Conditional paralysis="eq 0" />
+		<Conditional radiationsickness="eq 0" />
+		<Conditional sufforinpoisoning="eq 0" />
+		<Conditional scp_presolatexinfection="eq 0"/>
+		<Conditional scp_devilpoisoning="eq 0" />
+		<Conditional scp_wastingdisease="eq 0" />
+		<Conditional scp_lineavirus="eq 0" />
+		<Conditional oneurotoxin="eq 0" />
+		<Conditional naturalrangedweapon="eq 0" />
+		<Conditional increasedswimmingspeed="eq 0" />
+		<Conditional increasedmeleedamage="eq 0" />
+		<Conditional increasedwalkingspeed="eq 0" />
+		<Conditional damageresistance="eq 0" />
+		<Conditional decreasedoxygenconsumption="eq 0" />
+		<Conditional healdamage="eq 0"/>
+		<Conditional hyperactivityondamage="eq 0" />
+		<Conditional vigorondamage="eq 0" />
+		<Conditional naturalmeleeweapon="eq 0" />
+        <SpawnCharacter speciesname="ancientthrall" Stun="1.5" RemovePreviousCharacter="True" TransferInventory="True" AfflictionStrength="10" />
+      </StatusEffect>-->
+  <!-- If the target used meth or steroids, spawn a Savage. -->
+  <!--<StatusEffect type="OnDeath" target="Character" comparison="And" setvalue="true" checkconditionalalways="False" delay="4" stackable="False">
+		<Conditional haste="gt 0" />
+		<Conditional strengthen="gt 0" />
+        <SpawnCharacter speciesname="ancientsavage" Stun="1.5" RemovePreviousCharacter="True" TransferInventory="True" AfflictionStrength="10" />
+      </StatusEffect>-->
+  <!-- If the target has genes, spawn a Mimic. -->
+  <!--<StatusEffect type="OnDeath" target="Character" comparison="Or" setvalue="true" checkconditionalalways="False" delay="4.5" stackable="False">
+		<Conditional naturalrangedweapon="gt 0" />
+		<Conditional increasedswimmingspeed="gt 0" />
+		<Conditional increasedmeleedamage="gt 0" />
+		<Conditional increasedwalkingspeed="gt 0" />
+		<Conditional damageresistance="gt 0" />
+		<Conditional decreasedoxygenconsumption="gt 0" />
+		<Conditional healdamage="gt 0"/>
+		<Conditional hyperactivityondamage="gt 0" />
+		<Conditional vigorondamage="gt 0" />
+		<Conditional naturalmeleeweapon="gt 0" />
+		<Conditional radiationsickness="gt 0" />
+        <SpawnCharacter speciesname="ancientmimic" Stun="1.5" RemovePreviousCharacter="True" TransferInventory="True" AfflictionOnSpawn="mimiclottery" AfflictionStrength="10" />
+      </StatusEffect>-->
+  <!-- If the target is poisoned, spawn an Aerosolizer. -->
+  <!--<StatusEffect type="OnDeath" target="Character" comparison="Or" setvalue="true" checkconditionalalways="False" delay="5" stackable="False">
+		<Conditional morbusinepoisoning="gt 0" />
+		<Conditional cyanidepoisoning="gt 0" />
+		<Conditional deliriuminepoisoning="gt 0" />
+		<Conditional paralysis="gt 0" />
+		<Conditional sufforinpoisoning="gt 0" />
+		<Conditional scp_presolatexinfection="gt 0"/>
+		<Conditional scp_devilpoisoning="gt 0" />
+		<Conditional scp_wastingdisease="gt 0" />
+		<Conditional scp_lineavirus="gt 0" />
+		<Conditional oneurotoxin="gt 0" />
+        <SpawnCharacter speciesname="ancientaerosolizer" Stun="1.5" RemovePreviousCharacter="True" TransferInventory="True" AfflictionStrength="10" />
+      </StatusEffect>-->
+  <!--<StatusEffect type="OnDeath" target="Character" comparison="And" setvalue="true" duration="5" stackable="False">
+	    <Conditional SpeciesName="eq human" />
+		<sound file="%ModDir%/Sounds/bonebreak1.ogg" range="1000.0" volume="1.0" selectionmode="Random"/>
+		<sound file="%ModDir%/Sounds/bonebreak2.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/bonebreak3.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/bonebreak4.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/slash1.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/slash2.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/slash3.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/squelch1.ogg" range="1000.0" volume="1.0"/>
+	  </StatusEffect>
+	  <StatusEffect type="OnDeath" target="Character" comparison="And" setvalue="true" duration="5" stackable="False">
+	    <Conditional SpeciesName="eq husk" />
+		<sound file="%ModDir%/Sounds/bonebreak1.ogg" range="1000.0" volume="1.0" selectionmode="Random"/>
+		<sound file="%ModDir%/Sounds/bonebreak2.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/bonebreak3.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/bonebreak4.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/slash1.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/slash2.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/slash3.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/squelch1.ogg" range="1000.0" volume="1.0"/>
+	  </StatusEffect>
+	 <StatusEffect target="Character" comparison="and">
+        <Conditional health="lte 0" />
+        <Conditional SpeciesName="eq human" />
+        <Affliction identifier="organdamage" amount="5" />
+      </StatusEffect>
+	</Effect>
+	<Effect minstrength="30" maxstrength="90" strengthchange="0.075" resistancefor="thrallreanimation,huskinfection" minresistance="1.0" maxresistance="1.0" minvitalitydecrease="0.0" maxvitalitydecrease="1.1" multiplybymaxvitality="true">-->
+  <!-- Prevents negative interaction with husk infection -->
+  <!--<StatusEffect target="Character">
+	    <Conditional huskinfection="gt 0" />
+		<Affliction identifier="huskinfection" strength="0" setvalue="true" disabledeltatime="true" />
+	  </StatusEffect>
+	  <StatusEffect target="Character">
+	    <Conditional thrallreanimation="gt 0" />
+		<Affliction identifier="thrallreanimation" strength="0" setvalue="true" disabledeltatime="True" />
+	  </StatusEffect>-->
+  <!-- If the character is not a human, apply 10x faster -->
+  <!--<StatusEffect target="Character">
+	    <Conditional speciesname="nq Human" />
+		<Affliction identifier="thrallcurse" amount="0.9" />
+	  </StatusEffect>-->
+  <!-- Determines what kind of Abyssal entity you become depending on your status effects prior to your death. -->
+  <!-- If the target has no special (de)buffs, spawn a basic Thrall -->
+  <!--<StatusEffect type="OnDeath" target="Character" comparison="And" setvalue="true" checkconditionalalways="False" delay="3.5" stackable="False">
+		<Conditional haste="eq 0" />
+		<Conditional strengthen="eq 0" />
+		<Conditional morbusinepoisoning="eq 0" />
+		<Conditional cyanidepoisoning="eq 0" />
+		<Conditional deliriuminepoisoning="eq 0" />
+		<Conditional paralysis="eq 0" />
+		<Conditional radiationsickness="eq 0" />
+		<Conditional sufforinpoisoning="eq 0" />
+		<Conditional scp_presolatexinfection="eq 0"/>
+		<Conditional scp_devilpoisoning="eq 0" />
+		<Conditional scp_wastingdisease="eq 0" />
+		<Conditional scp_lineavirus="eq 0" />
+		<Conditional oneurotoxin="eq 0" />
+		<Conditional naturalrangedweapon="eq 0" />
+		<Conditional increasedswimmingspeed="eq 0" />
+		<Conditional increasedmeleedamage="eq 0" />
+		<Conditional increasedwalkingspeed="eq 0" />
+		<Conditional damageresistance="eq 0" />
+		<Conditional decreasedoxygenconsumption="eq 0" />
+		<Conditional healdamage="eq 0"/>
+		<Conditional hyperactivityondamage="eq 0" />
+		<Conditional vigorondamage="eq 0" />
+		<Conditional naturalmeleeweapon="eq 0" />
+        <SpawnCharacter speciesname="ancientthrall" Stun="1.5" RemovePreviousCharacter="True" TransferInventory="True" AfflictionStrength="10" />
+      </StatusEffect>-->
+  <!-- If the target used meth or steroids, spawn a Savage. -->
+  <!--<StatusEffect type="OnDeath" target="Character" comparison="And" setvalue="true" checkconditionalalways="False" delay="4" stackable="False">
+		<Conditional haste="gt 0" />
+		<Conditional strengthen="gt 0" />
+        <SpawnCharacter speciesname="ancientsavage" Stun="1.5" RemovePreviousCharacter="True" TransferInventory="True" AfflictionStrength="10" />
+      </StatusEffect>-->
+  <!-- If the target has genes, spawn a Mimic. -->
+  <!--<StatusEffect type="OnDeath" target="Character" comparison="Or" setvalue="true" checkconditionalalways="False" delay="4.5" stackable="False">
+		<Conditional naturalrangedweapon="gt 0" />
+		<Conditional increasedswimmingspeed="gt 0" />
+		<Conditional increasedmeleedamage="gt 0" />
+		<Conditional increasedwalkingspeed="gt 0" />
+		<Conditional damageresistance="gt 0" />
+		<Conditional decreasedoxygenconsumption="gt 0" />
+		<Conditional healdamage="gt 0"/>
+		<Conditional hyperactivityondamage="gt 0" />
+		<Conditional vigorondamage="gt 0" />
+		<Conditional naturalmeleeweapon="gt 0" />
+		<Conditional radiationsickness="gt 0" />
+        <SpawnCharacter speciesname="ancientmimic" Stun="1.5" RemovePreviousCharacter="True" TransferInventory="True" AfflictionOnSpawn="mimiclottery" AfflictionStrength="10" />
+      </StatusEffect>-->
+  <!-- If the target is poisoned, spawn an Aerosolizer. -->
+  <!--<StatusEffect type="OnDeath" target="Character" comparison="Or" setvalue="true" checkconditionalalways="False" delay="5" stackable="False">
+		<Conditional morbusinepoisoning="gt 0" />
+		<Conditional cyanidepoisoning="gt 0" />
+		<Conditional deliriuminepoisoning="gt 0" />
+		<Conditional paralysis="gt 0" />
+		<Conditional sufforinpoisoning="gt 0" />
+		<Conditional scp_presolatexinfection="gt 0"/>
+		<Conditional scp_devilpoisoning="gt 0" />
+		<Conditional scp_wastingdisease="gt 0" />
+		<Conditional scp_lineavirus="gt 0" />
+		<Conditional oneurotoxin="gt 0" />
+        <SpawnCharacter speciesname="ancientaerosolizer" Stun="1.5" RemovePreviousCharacter="True" TransferInventory="True" AfflictionStrength="10" />
+      </StatusEffect>
+	  <StatusEffect type="OnDeath" target="Character" comparison="And" setvalue="true" duration="5" stackable="False">
+	    <Conditional SpeciesName="eq human" />
+		<sound file="%ModDir%/Sounds/bonebreak1.ogg" range="1000.0" volume="1.0" selectionmode="Random"/>
+		<sound file="%ModDir%/Sounds/bonebreak2.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/bonebreak3.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/bonebreak4.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/slash1.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/slash2.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/slash3.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/squelch1.ogg" range="1000.0" volume="1.0"/>
+	  </StatusEffect>
+	  <StatusEffect type="OnDeath" target="Character" comparison="And" setvalue="true" duration="5" stackable="False">
+	    <Conditional SpeciesName="eq husk" />
+		<sound file="%ModDir%/Sounds/bonebreak1.ogg" range="1000.0" volume="1.0" selectionmode="Random"/>
+		<sound file="%ModDir%/Sounds/bonebreak2.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/bonebreak3.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/bonebreak4.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/slash1.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/slash2.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/slash3.ogg" range="1000.0" volume="1.0"/>
+		<sound file="%ModDir%/Sounds/squelch1.ogg" range="1000.0" volume="1.0"/>
+	  </StatusEffect>
+	 <StatusEffect target="Character" comparison="and">
+        <Conditional health="lte 0" />
+        <Conditional SpeciesName="eq human" />
+        <Affliction identifier="organdamage" amount="5" />
+      </StatusEffect>
+	</Effect>
+	<PeriodicEffect mininterval="5" maxinterval="60">
+      <StatusEffect target="Character" comparison="and">
+		<Conditional thrallcurse="gt 30" />
+		<Conditional thrallcurse="lt 45" />
+		<Affliction identifier="incrementalstun" amount="25" disabledeltatime="true"/>
+        <Sound file="%ModDir%/Sounds/lightcough2.ogg" selectionmode="Random" />
+        <Sound file="%ModDir%/Sounds/heavycough2.ogg" />
+		<Sound file="%ModDir%/Sounds/cough1.ogg" />
+		<Sound file="%ModDir%/Sounds/cough2.ogg" />
+		<Sound file="%ModDir%/Sounds/cough3.ogg" />
+      </StatusEffect>
+	  <StatusEffect target="Character" comparison="and">
+	    <Conditional thrallcurse="gt 45" />
+		<Conditional thrallcurse="lte 60" />
+		<Affliction identifier="incrementalstun" amount="50" disabledeltatime="true"/>
+        <Sound file="%ModDir%/Sounds/lightcough2.ogg" selectionmode="Random" />
+        <Sound file="%ModDir%/Sounds/heavycough2.ogg" />
+		<Sound file="%ModDir%/Sounds/cough1.ogg" />
+		<Sound file="%ModDir%/Sounds/cough2.ogg" />
+		<Sound file="%ModDir%/Sounds/cough3.ogg" />
+      </StatusEffect>
+	  <StatusEffect target="Character" comparison="and">
+	    <Conditional thrallcurse="gt 60" />
+		<Conditional thrallcurse="lte 75" />
+		<Affliction identifier="incrementalstun" amount="75" disabledeltatime="true"/>
+        <Sound file="%ModDir%/Sounds/lightcough2.ogg" selectionmode="Random" />
+        <Sound file="%ModDir%/Sounds/heavycough2.ogg" />
+		<Sound file="%ModDir%/Sounds/cough1.ogg" />
+		<Sound file="%ModDir%/Sounds/cough2.ogg" />
+		<Sound file="%ModDir%/Sounds/cough3.ogg" />
+      </StatusEffect>
+	  <StatusEffect target="Character" comparison="and">
+	    <Conditional thrallcurse="gt 75" />
+		<Affliction identifier="incrementalstun" amount="91" disabledeltatime="true"/>
+        <Sound file="%ModDir%/Sounds/lightcough2.ogg" selectionmode="Random" />
+        <Sound file="%ModDir%/Sounds/heavycough2.ogg" />
+		<Sound file="%ModDir%/Sounds/cough1.ogg" />
+		<Sound file="%ModDir%/Sounds/cough2.ogg" />
+		<Sound file="%ModDir%/Sounds/cough3.ogg" />
+      </StatusEffect>
+  </PeriodicEffect>
+    <icon texture="%ModDir%/Images/darkness.png" sourcerect="0,0,128,128" color="143,111,160,255" origin="0,0"/>
+  </Affliction>-->
+  <Affliction name="Abyssal Decay" description="..." identifier="thrallcurse" causeofdeathdescription="Rotted away." selfcauseofdeathdescription="You have succumbed to the abyssal rot." type="abyssalcurse" isbuff="true" limbspecific="false" showiconthreshold="30" showicontoothersthreshold="91" showinhealthscannerthreshold="30" activationthreshold="0" transformthresholdondeath="0" controlhusk="False" maxstrength="90" treatmentthreshold="1000" iconcolors="143,141,160,255;143,121,160,255;143,101,160,255">
+    <Description textidentifier="afflictiondescription.thrallcurse.mild" target="Self" minstrength="0" maxstrength="30" />
+    <Description textidentifier="afflictiondescription.thrallcurse.severe" target="Self" minstrength="30" maxstrength="60" />
+    <Description textidentifier="afflictiondescription.thrallcurse.critical" target="Self" minstrength="60" maxstrength="90" />
+    <!-- From 0-30 strength, does not harm you, but is indetectable. Still turns you if you happen to die. -->
+    <Effect minstrength="0" maxstrength="30" strengthchange="0.075" resistancefor="thrallreanimation,huskinfection" minresistance="1.0" maxresistance="1.0">
+      <!-- Prevents negative interaction with husk infection -->
+      <StatusEffect target="Character">
+        <Conditional huskinfection="gt 0" />
+        <Affliction identifier="huskinfection" strength="0" setvalue="true" disabledeltatime="true" />
+      </StatusEffect>
+      <StatusEffect target="Character">
+        <Conditional thrallreanimation="gt 0" />
+        <Affliction identifier="thrallreanimation" strength="0" setvalue="true" disabledeltatime="True" />
+      </StatusEffect>
+      <!-- If the character is not a human, apply 10x faster -->
+      <StatusEffect target="Character">
+        <Conditional speciesname="nq Human" />
+        <Affliction identifier="thrallcurse" amount="0.9" />
+      </StatusEffect>
+      <!-- Determines what kind of Abyssal entity you become depending on your status effects prior to your death. -->
+      <!-- Antibiotics help get rid of the infection. -->
+      <StatusEffect target="Character" comparison="And">
+        <Conditional huskinfectionresistance="gt 0" />
+        <ReduceAffliction identifier="thrallcurse" amount="0.1" />
+      </StatusEffect>
+      <!-- If the target has no special (de)buffs, spawn a basic Thrall -->
+      <StatusEffect type="OnDeath" target="Character" comparison="And" setvalue="true" checkconditionalalways="False" delay="3.5" stackable="False">
+        <Conditional haste="eq 0" />
+        <Conditional strengthen="eq 0" />
+        <Conditional morbusinepoisoning="eq 0" />
+        <Conditional cyanidepoisoning="eq 0" />
+        <Conditional deliriuminepoisoning="eq 0" />
+        <Conditional paralysis="eq 0" />
+        <Conditional radiationsickness="eq 0" />
+        <Conditional sufforinpoisoning="eq 0" />
+        <Conditional scp_presolatexinfection="eq 0" />
+        <Conditional scp_devilpoisoning="eq 0" />
+        <Conditional scp_wastingdisease="eq 0" />
+        <Conditional scp_lineavirus="eq 0" />
+        <Conditional oneurotoxin="eq 0" />
+        <Conditional naturalrangedweapon="eq 0" />
+        <Conditional increasedswimmingspeed="eq 0" />
+        <Conditional increasedmeleedamage="eq 0" />
+        <Conditional increasedwalkingspeed="eq 0" />
+        <Conditional damageresistance="eq 0" />
+        <Conditional decreasedoxygenconsumption="eq 0" />
+        <Conditional healdamage="eq 0" />
+        <Conditional hyperactivityondamage="eq 0" />
+        <Conditional vigorondamage="eq 0" />
+        <Conditional naturalmeleeweapon="eq 0" />
+        <SpawnCharacter speciesname="nascenthuman" Stun="1.5" RemovePreviousCharacter="True" TransferInventory="True" AfflictionStrength="10" afflictiononspawn="ancientthralltransformation" />
+      </StatusEffect>
+      <!-- If the target used meth or steroids, spawn a Savage. -->
+      <StatusEffect type="OnDeath" target="Character" comparison="And" setvalue="true" checkconditionalalways="False" delay="4" stackable="False">
+        <Conditional haste="gt 0" />
+        <Conditional strengthen="gt 0" />
+        <SpawnCharacter speciesname="nascenthuman" Stun="1.5" RemovePreviousCharacter="True" TransferInventory="True" AfflictionStrength="10" afflictiononspawn="ancientsavagetransformation" />
+      </StatusEffect>
+      <!-- If the target has genes, spawn a Mimic. -->
+      <StatusEffect type="OnDeath" target="Character" comparison="Or" setvalue="true" checkconditionalalways="False" delay="4.5" stackable="False">
+        <Conditional naturalrangedweapon="gt 0" />
+        <Conditional increasedswimmingspeed="gt 0" />
+        <Conditional increasedmeleedamage="gt 0" />
+        <Conditional increasedwalkingspeed="gt 0" />
+        <Conditional damageresistance="gt 0" />
+        <Conditional decreasedoxygenconsumption="gt 0" />
+        <Conditional healdamage="gt 0" />
+        <Conditional hyperactivityondamage="gt 0" />
+        <Conditional vigorondamage="gt 0" />
+        <Conditional naturalmeleeweapon="gt 0" />
+        <Conditional radiationsickness="gt 0" />
+        <SpawnCharacter speciesname="nascenthuman" Stun="1.5" RemovePreviousCharacter="True" TransferInventory="True" AfflictionStrength="10" afflictiononspawn="ancientmimictransformation" />
+      </StatusEffect>
+      <!-- If the target is poisoned, spawn an Aerosolizer. -->
+      <StatusEffect type="OnDeath" target="Character" comparison="Or" setvalue="true" checkconditionalalways="False" delay="5" stackable="False">
+        <Conditional morbusinepoisoning="gt 0" />
+        <Conditional cyanidepoisoning="gt 0" />
+        <Conditional deliriuminepoisoning="gt 0" />
+        <Conditional paralysis="gt 0" />
+        <Conditional sufforinpoisoning="gt 0" />
+        <Conditional scp_presolatexinfection="gt 0" />
+        <Conditional scp_devilpoisoning="gt 0" />
+        <Conditional scp_wastingdisease="gt 0" />
+        <Conditional scp_lineavirus="gt 0" />
+        <Conditional oneurotoxin="gt 0" />
+        <SpawnCharacter speciesname="nascenthuman" Stun="1.5" RemovePreviousCharacter="True" TransferInventory="True" AfflictionStrength="10" afflictiononspawn="ancientaerosolizertransformation" />
+      </StatusEffect>
+      <StatusEffect type="OnDeath" target="Character" comparison="And" setvalue="true" duration="5" stackable="False">
+        <Conditional SpeciesName="eq human" />
+        <sound file="%ModDir%/Sounds/bonebreak1.ogg" range="1000.0" volume="1.0" selectionmode="Random" />
+        <sound file="%ModDir%/Sounds/bonebreak2.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/bonebreak3.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/bonebreak4.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/slash1.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/slash2.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/slash3.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/squelch1.ogg" range="1000.0" volume="1.0" />
+      </StatusEffect>
+      <StatusEffect type="OnDeath" target="Character" comparison="And" setvalue="true" duration="5" stackable="False">
+        <Conditional SpeciesName="eq husk" />
+        <sound file="%ModDir%/Sounds/bonebreak1.ogg" range="1000.0" volume="1.0" selectionmode="Random" />
+        <sound file="%ModDir%/Sounds/bonebreak2.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/bonebreak3.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/bonebreak4.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/slash1.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/slash2.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/slash3.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/squelch1.ogg" range="1000.0" volume="1.0" />
+      </StatusEffect>
+      <StatusEffect target="Character" comparison="and">
+        <Conditional health="lte 0" />
+        <Conditional SpeciesName="eq human" />
+        <Affliction identifier="organdamage" amount="5" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="30" maxstrength="90" strengthchange="0.075" resistancefor="thrallreanimation,huskinfection" minresistance="1.0" maxresistance="1.0" minvitalitydecrease="0.0" maxvitalitydecrease="1.1" multiplybymaxvitality="true">
+      <!-- Prevents negative interaction with husk infection -->
+      <StatusEffect target="Character">
+        <Conditional huskinfection="gt 0" />
+        <Affliction identifier="huskinfection" strength="0" setvalue="true" disabledeltatime="true" />
+      </StatusEffect>
+      <StatusEffect target="Character">
+        <Conditional thrallreanimation="gt 0" />
+        <Affliction identifier="thrallreanimation" strength="0" setvalue="true" disabledeltatime="True" />
+      </StatusEffect>
+      <!-- If the character is not a human, apply 10x faster -->
+      <StatusEffect target="Character">
+        <Conditional speciesname="nq Human" />
+        <Affliction identifier="thrallcurse" amount="0.9" />
+      </StatusEffect>
+      <!-- Determines what kind of Abyssal entity you become depending on your status effects prior to your death. -->
+      <!-- Antibiotics help get rid of the infection. -->
+      <StatusEffect target="Character" comparison="And">
+        <Conditional huskinfectionresistance="gt 0" />
+        <ReduceAffliction identifier="thrallcurse" amount="0.025" />
+      </StatusEffect>
+      <!-- If the target has no special (de)buffs, spawn a basic Thrall -->
+      <StatusEffect type="OnDeath" target="Character" comparison="And" setvalue="true" checkconditionalalways="False" delay="3.5" stackable="False">
+        <Conditional haste="eq 0" />
+        <Conditional strengthen="eq 0" />
+        <Conditional morbusinepoisoning="eq 0" />
+        <Conditional cyanidepoisoning="eq 0" />
+        <Conditional deliriuminepoisoning="eq 0" />
+        <Conditional paralysis="eq 0" />
+        <Conditional radiationsickness="eq 0" />
+        <Conditional sufforinpoisoning="eq 0" />
+        <Conditional scp_presolatexinfection="eq 0" />
+        <Conditional scp_devilpoisoning="eq 0" />
+        <Conditional scp_wastingdisease="eq 0" />
+        <Conditional scp_lineavirus="eq 0" />
+        <Conditional oneurotoxin="eq 0" />
+        <Conditional naturalrangedweapon="eq 0" />
+        <Conditional increasedswimmingspeed="eq 0" />
+        <Conditional increasedmeleedamage="eq 0" />
+        <Conditional increasedwalkingspeed="eq 0" />
+        <Conditional damageresistance="eq 0" />
+        <Conditional decreasedoxygenconsumption="eq 0" />
+        <Conditional healdamage="eq 0" />
+        <Conditional hyperactivityondamage="eq 0" />
+        <Conditional vigorondamage="eq 0" />
+        <Conditional naturalmeleeweapon="eq 0" />
+        <SpawnCharacter speciesname="nascenthuman" Stun="1.5" RemovePreviousCharacter="True" TransferInventory="True" AfflictionStrength="10" afflictiononspawn="ancientthralltransformation" />
+      </StatusEffect>
+      <!-- If the target used meth or steroids, spawn a Savage. -->
+      <StatusEffect type="OnDeath" target="Character" comparison="And" setvalue="true" checkconditionalalways="False" delay="4" stackable="False">
+        <Conditional haste="gt 0" />
+        <Conditional strengthen="gt 0" />
+        <SpawnCharacter speciesname="nascenthuman" Stun="1.5" RemovePreviousCharacter="True" TransferInventory="True" AfflictionStrength="10" afflictiononspawn="ancientsavagetransformation" />
+      </StatusEffect>
+      <!-- If the target has genes, spawn a Mimic. -->
+      <StatusEffect type="OnDeath" target="Character" comparison="Or" setvalue="true" checkconditionalalways="False" delay="4.5" stackable="False">
+        <Conditional naturalrangedweapon="gt 0" />
+        <Conditional increasedswimmingspeed="gt 0" />
+        <Conditional increasedmeleedamage="gt 0" />
+        <Conditional increasedwalkingspeed="gt 0" />
+        <Conditional damageresistance="gt 0" />
+        <Conditional decreasedoxygenconsumption="gt 0" />
+        <Conditional healdamage="gt 0" />
+        <Conditional hyperactivityondamage="gt 0" />
+        <Conditional vigorondamage="gt 0" />
+        <Conditional naturalmeleeweapon="gt 0" />
+        <Conditional radiationsickness="gt 0" />
+        <SpawnCharacter speciesname="nascenthuman" Stun="1.5" RemovePreviousCharacter="True" TransferInventory="True" AfflictionStrength="10" afflictiononspawn="ancientmimictransformation" />
+      </StatusEffect>
+      <!-- If the target is poisoned, spawn an Aerosolizer. -->
+      <StatusEffect type="OnDeath" target="Character" comparison="Or" setvalue="true" checkconditionalalways="False" delay="5" stackable="False">
+        <Conditional morbusinepoisoning="gt 0" />
+        <Conditional cyanidepoisoning="gt 0" />
+        <Conditional deliriuminepoisoning="gt 0" />
+        <Conditional paralysis="gt 0" />
+        <Conditional sufforinpoisoning="gt 0" />
+        <Conditional scp_presolatexinfection="gt 0" />
+        <Conditional scp_devilpoisoning="gt 0" />
+        <Conditional scp_wastingdisease="gt 0" />
+        <Conditional scp_lineavirus="gt 0" />
+        <Conditional oneurotoxin="gt 0" />
+        <SpawnCharacter speciesname="nascenthuman" Stun="1.5" RemovePreviousCharacter="True" TransferInventory="True" AfflictionStrength="10" afflictiononspawn="ancientaerosolizertransformation" />
+      </StatusEffect>
+      <StatusEffect type="OnDeath" target="Character" comparison="And" setvalue="true" duration="5" stackable="False">
+        <Conditional SpeciesName="eq human" />
+        <sound file="%ModDir%/Sounds/bonebreak1.ogg" range="1000.0" volume="1.0" selectionmode="Random" />
+        <sound file="%ModDir%/Sounds/bonebreak2.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/bonebreak3.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/bonebreak4.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/slash1.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/slash2.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/slash3.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/squelch1.ogg" range="1000.0" volume="1.0" />
+      </StatusEffect>
+      <StatusEffect type="OnDeath" target="Character" comparison="And" setvalue="true" duration="5" stackable="False">
+        <Conditional SpeciesName="eq husk" />
+        <sound file="%ModDir%/Sounds/bonebreak1.ogg" range="1000.0" volume="1.0" selectionmode="Random" />
+        <sound file="%ModDir%/Sounds/bonebreak2.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/bonebreak3.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/bonebreak4.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/slash1.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/slash2.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/slash3.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/squelch1.ogg" range="1000.0" volume="1.0" />
+      </StatusEffect>
+      <StatusEffect target="Character" comparison="and">
+        <Conditional health="lte 0" />
+        <Conditional SpeciesName="eq human" />
+        <Affliction identifier="organdamage" amount="5" />
+      </StatusEffect>
+    </Effect>
+    <PeriodicEffect mininterval="5" maxinterval="60">
+      <StatusEffect target="Character" comparison="and">
+        <Conditional thrallcurse="gt 30" />
+        <Conditional thrallcurse="lt 45" />
+        <Affliction identifier="incrementalstun" amount="25" disabledeltatime="true" />
+        <Sound file="%ModDir%/Sounds/lightcough2.ogg" selectionmode="Random" />
+        <Sound file="%ModDir%/Sounds/heavycough2.ogg" />
+        <Sound file="%ModDir%/Sounds/cough1.ogg" />
+        <Sound file="%ModDir%/Sounds/cough2.ogg" />
+        <Sound file="%ModDir%/Sounds/cough3.ogg" />
+      </StatusEffect>
+      <StatusEffect target="Character" comparison="and">
+        <Conditional thrallcurse="gt 45" />
+        <Conditional thrallcurse="lte 60" />
+        <Affliction identifier="incrementalstun" amount="50" disabledeltatime="true" />
+        <Sound file="%ModDir%/Sounds/lightcough2.ogg" selectionmode="Random" />
+        <Sound file="%ModDir%/Sounds/heavycough2.ogg" />
+        <Sound file="%ModDir%/Sounds/cough1.ogg" />
+        <Sound file="%ModDir%/Sounds/cough2.ogg" />
+        <Sound file="%ModDir%/Sounds/cough3.ogg" />
+      </StatusEffect>
+      <StatusEffect target="Character" comparison="and">
+        <Conditional thrallcurse="gt 60" />
+        <Conditional thrallcurse="lte 75" />
+        <Affliction identifier="incrementalstun" amount="75" disabledeltatime="true" />
+        <Sound file="%ModDir%/Sounds/lightcough2.ogg" selectionmode="Random" />
+        <Sound file="%ModDir%/Sounds/heavycough2.ogg" />
+        <Sound file="%ModDir%/Sounds/cough1.ogg" />
+        <Sound file="%ModDir%/Sounds/cough2.ogg" />
+        <Sound file="%ModDir%/Sounds/cough3.ogg" />
+      </StatusEffect>
+      <StatusEffect target="Character" comparison="and">
+        <Conditional thrallcurse="gt 75" />
+        <Affliction identifier="incrementalstun" amount="91" disabledeltatime="true" />
+        <Sound file="%ModDir%/Sounds/lightcough2.ogg" selectionmode="Random" />
+        <Sound file="%ModDir%/Sounds/heavycough2.ogg" />
+        <Sound file="%ModDir%/Sounds/cough1.ogg" />
+        <Sound file="%ModDir%/Sounds/cough2.ogg" />
+        <Sound file="%ModDir%/Sounds/cough3.ogg" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/Images/darkness.png" sourcerect="0,0,128,128" color="143,111,160,255" origin="0,0" />
+  </Affliction>
+  <!-- the fog is coming -->
+  <Affliction name="Abyssal Fog" identifier="abyssalfog" description="Let the Fog claim you." type="abyssalcurse" causeofdeathdescription="Fog" selfcauseofdeathdescription="You succumbed to the fog." limbspecific="false" activationthreshold="1" interval="1" maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="-5" minscreenblur="0" maxscreenblur="0.5" minscreendistort="0.0" maxscreendistort="0.5" minradialdistort="0" maxradialdistort="0.2" minspeedmultiplier="1.0" MaxSpeedMultiplier="0.7">
+      <StatusEffect target="Character">
+        <Affliction identifier="thrallreanimation" strength="1" />
+      </StatusEffect>
+      <StatValue stattype="MaximumHealthMultiplier" minvalue="0.0" maxvalue="-0.25" />
+    </Effect>
+    <!-- <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="0,384,128,128" color="195,104,60,255" origin="0,0"/> -->
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="0,384,128,128" color="193,162,122,255" origin="0,0" />
+  </Affliction>
+  <!-- Even your corpse isn't safe. -->
+  <Affliction name="Abyssal Redemption" description="Arise, my child." identifier="abyssalredemption" type="abyssalcurse" limbspecific="false" showiconthreshold="20" showinhealthscannerthreshold="20" maxstrength="10" activationthreshold="0" transformthresholdondeath="0" controlhusk="False" treatmentthreshold="1000" iconcolors="143,141,160,255;143,121,160,255;143,101,160,255">
+    <Effect minstrength="0" maxstrength="10" strengthchange="-1">
+      <!-- Not dead? Not your damn problem -->
+      <StatusEffect type="Always" target="Character">
+        <Conditional IsDead="False" />
+        <ReduceAffliction identifier="abyssalredemption" amount="10" />
+      </StatusEffect>
+      <StatusEffect target="Character" isdead="False" setvalue="True">
+        <Conditional isdead="True" />
+        <Affliction identifier="thrallcurse" amount="90" setvalue="True" disabledeltatime="True" />
+      </StatusEffect>
+      <StatusEffect target="Character" comparison="And" setvalue="true" duration="1" stackable="False">
+        <Conditional isdead="True" />
+        <sound file="%ModDir%/Sounds/bonebreak1.ogg" range="1000.0" volume="1.0" selectionmode="Random" />
+        <sound file="%ModDir%/Sounds/bonebreak2.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/bonebreak3.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/bonebreak4.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/slash1.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/slash2.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/slash3.ogg" range="1000.0" volume="1.0" />
+        <sound file="%ModDir%/Sounds/squelch1.ogg" range="1000.0" volume="1.0" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="%ModDir%/Images/afflictions.png" sourcerect="256,0,128,128" color="143,111,160,255" origin="0,0" />
+  </Affliction>
+  <!-- Prevents conflict. -->
+  <Affliction name="No Redemption" description="" identifier="noredemption" causeofdeathdescription="." selfcauseofdeathdescription="." type="resurrection" isbuff="true" limbspecific="false" showiconthreshold="10" showicontoothersthreshold="10" showinhealthscannerthreshold="10" maxstrength="1" treatmentthreshold="1000" interval="1" iconcolors="143,141,160,255;143,121,160,255;143,101,160,255">
+    <!-- Reduces the condition of nearby bluehorns. -->
+    <Effect minstrength="0" maxstrength="1" strengthchange="-1" resistancefor="abyssalredemption" resistance="1" />
+    <icon texture="%ModDir%/Images/afflictions.png" sourcerect="256,0,128,128" color="143,111,160,255" origin="0,0" />
+  </Affliction>
+</Afflictions>

@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <!--Cash-->
+  <Item name="Wallet" identifier="oasiswallet" description="A wallet to store your hard-earned Marks." category="Equipment" cargocontaineridentifier="metalcrate" tags="smallitem,oasismodspecialitem" scale="0.1" impactsoundtag="impact_soft">
+    <Price baseprice="45">
+      <Price storeidentifier="merchantcity" multiplier="1" sold="true" minavailable="8" maxavailable="16" />
+      <Price storeidentifier="merchantresearch" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantmine" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantoutpost" multiplier="1" sold="true" minavailable="8" maxavailable="16" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="organicfiber" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="mechanical" level="10" />
+      <RequiredItem identifier="organicfiber" />
+      <RequiredItem identifier="plastic" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Images/InventoryIconsMisc.png" sourcerect="135,99,209,125" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/InventoryIconsMisc.png" sourcerect="135,99,209,125" depth="0.7" origin="0.5,0.5" />
+    <Body width="90" radius="40" density="50" />
+    <Holdable slots="RightHand,LeftHand,Any" aimpos="30,0" handle1="0,-7" handle2="95, 10" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnContained" targettype="Character" delay="1" stackable="false">
+        <Conditional salary="eq 0" />
+        <Affliction identifier="salary" amount="0.1" />
+      </StatusEffect>
+    </Holdable>
+    <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.09,0.07" anchor="BottomCenter" pivot="BottomRight" relativeoffset="-0.025,0.093" style="ItemUI" />
+      <Button text="Paycheck">
+        <StatusEffect type="OnUse" targettype="Character" stackable="false" duration="1">
+          <ReduceAffliction identifier="salary" amount="500" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" targettype="Character" comparison="and" delay="0.5" stackable="false">
+          <Conditional salary="eq 100" />
+          <Conditional isbasic="eq 0" />
+          <Conditional isstandard="eq 0" />
+          <Conditional iselite="eq 0" />
+          <Conditional iscaptain="eq 0" />
+          <SpawnItem identifier="10markbill" target="ThisInventory" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" targettype="Character" comparison="and" delay="0.5" stackable="false">
+          <Conditional salary="eq 100" />
+          <Conditional isbasic="gt 0" />
+          <SpawnItem identifier="10markbill" target="ThisInventory" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" targettype="Character" comparison="and" delay="0.5" stackable="false">
+          <Conditional salary="eq 100" />
+          <Conditional isstandard="gt 0" />
+          <SpawnItem identifier="25markbill" target="ThisInventory" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" targettype="Character" comparison="and" delay="0.5" stackable="false">
+          <Conditional salary="eq 100" />
+          <Conditional iselite="gt 0" />
+          <SpawnItem identifier="50markbill" target="ThisInventory" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" targettype="Character" comparison="and" delay="0.5" stackable="false">
+          <Conditional salary="eq 100" />
+          <Conditional iscaptain="gt 0" />
+          <SpawnItem identifier="100markbill" target="thisinventory" />
+        </StatusEffect>
+      </Button>
+    </CustomInterface>
+    <ItemContainer capacity="8" maxstacksize="10" itempos="0,10" hideitems="true">
+      <Containable items="bill,ita_coin1,idcard,money,identitycard,walletcontainable" />
+    </ItemContainer>
+  </Item>
+  <Override>
+    <Item name="1 Mark Coin" maxstacksize="32" maxstacksizecharacterinventory="10" identifier="1markcoin" cargocontaineridentifier="metalcrate" tags="smallitem,coin,money,ita_coin1,1markcoin" scale="0.5" linkable="true" pickdistance="150" impactsoundtag="impact_coin" hideinmenus="false">
+      <PreferredContainer primary="crewcab" minamount="2" maxamount="3" spawnprobability="1" />
+      <PreferredContainer secondary="outposttrashcan,outpostcrewcabinet" minamount="0" maxamount="4" spawnprobability="0.4" />
+      <Price baseprice="1">
+        <Price storeidentifier="merchantcity" multiplier="1" sold="true" minavailable="8" maxavailable="16" />
+        <Price storeidentifier="merchantresearch" multiplier="1" sold="true" minavailable="8" maxavailable="16" />
+        <Price storeidentifier="merchantmilitary" multiplier="1" sold="true" minavailable="8" maxavailable="16" />
+        <Price storeidentifier="merchantmine" multiplier="1" sold="true" minavailable="8" maxavailable="16" />
+        <Price storeidentifier="merchantoutpost" multiplier="1" sold="true" minavailable="8" maxavailable="16" />
+      </Price>
+      <Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="1" fabricationlimitmin="10" fabricationlimitmax="30" />
+      <Fabricate suitablefabricators="shop" requiredtime="1" amount="5" fabricationlimitmin="30" fabricationlimitmax="30">
+        <RequiredItem identifier="5markscoin" amount="1" />
+      </Fabricate>
+      <Sprite texture="%ModDir%/Images/InventoryIconsMisc.png" depth="0.54" sourcerect="188,1,53,52" origin="0.5,0.5" />
+      <InventoryIcon name="Coin" texture="%ModDir%/Images/InventoryIconsMisc.png" depth="0.54" sourcerect="188,1,53,52" origin="0.5,0.5" />
+      <Body width="11" height="11" density="20" />
+      <Holdable slots="Any" aimpos="5,0" handle1="-5,0" holdangle="220" msg="ItemMsgPickUpSelect" />
+    </Item>
+    <Item name="5 Mark Coin" maxstacksize="32" maxstacksizecharacterinventory="10" identifier="5markscoin" cargocontaineridentifier="metalcrate" tags="smallitem,coin,money,ita_coin5,5markscoin" scale="0.5" linkable="true" pickdistance="150" impactsoundtag="impact_coin" hideinmenus="false">
+      <PreferredContainer primary="crewcab" minamount="2" maxamount="3" spawnprobability="1" />
+      <PreferredContainer secondary="outposttrashcan,outpostcrewcabinet" minamount="0" maxamount="2" spawnprobability="0.3" />
+      <Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="5" fabricationlimitmin="10" fabricationlimitmax="30" />
+      <Fabricate suitablefabricators="shop" requiredtime="1">
+        <RequiredItem identifier="1markcoin" amount="5" />
+      </Fabricate>
+      <Fabricate suitablefabricators="shop" requiredtime="1" amount="2">
+        <RequiredItem identifier="10markbill" amount="1" />
+      </Fabricate>
+      <Price baseprice="7">
+        <Price storeidentifier="merchantcity" multiplier="0.76" sold="true" minavailable="1" maxavailable="5" />
+        <Price storeidentifier="merchantresearch" multiplier="0.76" sold="true" minavailable="1" maxavailable="5" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.76" sold="true" minavailable="1" maxavailable="5" />
+        <Price storeidentifier="merchantmine" multiplier="0.76" sold="true" minavailable="1" maxavailable="5" />
+        <Price storeidentifier="merchantoutpost" multiplier="0.76" sold="true" minavailable="1" maxavailable="5" />
+      </Price>
+      <Deconstruct time="1">
+        <Item identifier="1markcoin" />
+        <Item identifier="1markcoin" />
+        <Item identifier="1markcoin" />
+        <Item identifier="1markcoin" />
+        <Item identifier="1markcoin" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="shop" requiredtime="1" output="5" fabricationlimitmin="4" fabricationlimitmax="12">
+        <RequiredItem identifier="phosphorus" amount="1" />
+      </Fabricate>
+      <Fabricate suitablefabricators="shop" requiredtime="1" output="5" fabricationlimitmin="4" fabricationlimitmax="12">
+        <RequiredItem identifier="zinc" amount="1" />
+      </Fabricate>
+      <Fabricate suitablefabricators="shop" requiredtime="1" output="3" fabricationlimitmin="4" fabricationlimitmax="12">
+        <RequiredItem identifier="silicon" amount="1" />
+      </Fabricate>
+      <Fabricate suitablefabricators="shop" requiredtime="1" output="9" fabricationlimitmin="4" fabricationlimitmax="12">
+        <RequiredItem identifier="plastic" amount="1" />
+      </Fabricate>
+      <Sprite texture="%ModDir%/Images/InventoryIconsMisc.png" depth="0.54" sourcerect="134,1,52,52" origin="0.5,0.5" />
+      <InventoryIcon name="Coin" texture="%ModDir%/Images/InventoryIconsMisc.png" scale="0.4" depth="0.54" sourcerect="134,1,52,52" origin="0.5,0.5" />
+      <Body width="11" height="11" density="20" />
+      <Holdable slots="Any" aimpos="5,0" handle1="-5,0" holdangle="220" msg="ItemMsgPickUpSelect" />
+    </Item>
+    <Item name="10 Mark Bill" identifier="10markbill" category="Material" Tags="smallitem,bill,money,10markbill,ita_bill10" maxstacksize="32" maxstacksizecharacterinventory="10" canbepicked="true" cargocontaineridentifier="metalcrate" scale="0.1" impactsoundtag="impact_soft">
+      <PreferredContainer primary="crewcab" minamount="2" maxamount="3" spawnprobability="1" />
+      <PreferredContainer secondary="outpostcrewcabinet" minamount="0" maxamount="2" spawnprobability="0.5" />
+      <Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="10" fabricationlimitmin="10" fabricationlimitmax="30" />
+      <Fabricate suitablefabricators="shop" requiredtime="1">
+        <Item identifier="5markscoin" amount="2" />
+      </Fabricate>
+      <Fabricate suitablefabricators="shop" requiredtime="1" fabricationlimitmin="4" fabricationlimitmax="12">
+        <RequiredItem identifier="carbon" amount="2" />
+      </Fabricate>
+      <Fabricate suitablefabricators="shop" requiredtime="1" fabricationlimitmin="4" fabricationlimitmax="12">
+        <RequiredItem identifier="chlorine" amount="2" />
+      </Fabricate>
+      <Fabricate suitablefabricators="shop" requiredtime="1" fabricationlimitmin="4" fabricationlimitmax="12">
+        <RequiredItem identifier="potassium" amount="2" />
+      </Fabricate>
+      <Fabricate suitablefabricators="shop" requiredtime="1" fabricationlimitmin="4" fabricationlimitmax="12">
+        <RequiredItem identifier="iron" amount="2" />
+      </Fabricate>
+      <Fabricate suitablefabricators="shop" requiredtime="1" fabricationlimitmin="4" fabricationlimitmax="12">
+        <RequiredItem identifier="tin" amount="2" />
+      </Fabricate>
+      <Fabricate suitablefabricators="shop" requiredtime="1" fabricationlimitmin="4" fabricationlimitmax="12">
+        <RequiredItem identifier="lead" amount="2" />
+      </Fabricate>
+      <Fabricate suitablefabricators="shop" requiredtime="1" fabricationlimitmin="4" fabricationlimitmax="12">
+        <RequiredItem identifier="copper" amount="2" />
+      </Fabricate>
+      <Fabricate suitablefabricators="shop" requiredtime="1" fabricationlimitmin="4" fabricationlimitmax="12">
+        <RequiredItem identifier="organicfiber" amount="2" />
+      </Fabricate>
+      <Fabricate suitablefabricators="shop" requiredtime="1" fabricationlimitmin="4" fabricationlimitmax="12">
+        <RequiredItem identifier="rubber" amount="2" />
+      </Fabricate>
+      <Fabricate suitablefabricators="shop" requiredtime="1" fabricationlimitmin="4" fabricationlimitmax="12">
+        <RequiredItem identifier="calcium" amount="2" />
+      </Fabricate>
+      <Fabricate suitablefabricators="shop" requiredtime="1" fabricationlimitmin="4" fabricationlimitmax="12">
+        <RequiredItem identifier="steel" amount="2" />
+      </Fabricate>
+      <Fabricate suitablefabricators="shop" requiredtime="1" fabricationlimitmin="4" fabricationlimitmax="12">
+        <RequiredItem identifier="sodium" amount="2" />
+      </Fabricate>
+      <Fabricate suitablefabricators="shop" requiredtime="1" fabricationlimitmin="4" fabricationlimitmax="12">
+        <RequiredItem identifier="aluminium" amount="2" />
+      </Fabricate>
+      <Fabricate suitablefabricators="shop" requiredtime="1" fabricationlimitmin="4" fabricationlimitmax="12">
+        <RequiredItem identifier="titanium" amount="2" />
+      </Fabricate>
+      <Fabricate suitablefabricators="shop" requiredtime="1" fabricationlimitmin="4" fabricationlimitmax="12">
+        <RequiredItem identifier="magnesium" amount="2" />
+      </Fabricate>
+      <Fabricate suitablefabricators="shop" requiredtime="1" fabricationlimitmin="4" fabricationlimitmax="12">
+        <RequiredItem identifier="lithium" amount="2" />
+      </Fabricate>
+      <Fabricate suitablefabricators="shop" requiredtime="1" fabricationlimitmin="4" fabricationlimitmax="12">
+        <RequiredItem identifier="flashpowder" amount="2" />
+      </Fabricate>
+      <Price baseprice="12">
+        <Price storeidentifier="merchantcity" multiplier="0.76" sold="true" minavailable="1" maxavailable="5" />
+        <Price storeidentifier="merchantresearch" multiplier="0.76" sold="true" minavailable="1" maxavailable="5" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.76" sold="true" minavailable="1" maxavailable="5" />
+        <Price storeidentifier="merchantmine" multiplier="0.76" sold="true" minavailable="1" maxavailable="5" />
+        <Price storeidentifier="merchantoutpost" multiplier="0.76" sold="true" minavailable="1" maxavailable="5" />
+      </Price>
+      <Deconstruct time="1">
+        <Item identifier="5markscoin" />
+        <Item identifier="5markscoin" />
+      </Deconstruct>
+      <Sprite texture="%ModDir%/Images/InventoryIconsMisc.png" depth="0.3" sourcerect="891,246,133,81" origin="0.5,0.5" />
+      <Body radius="40" width="20" density="50" />
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgUsePlasmaCutter" handle1="0,0" pickingtime="5.0" attachable="true" reattachable="false" />
+    </Item>
+    <Item name="25 Mark Bill" identifier="25markbill" category="Material" Tags="smallitem,bill,money,25markbill,ita_bill25" maxstacksize="32" maxstacksizecharacterinventory="10" canbepicked="true" cargocontaineridentifier="metalcrate" scale="0.1" impactsoundtag="impact_soft">
+      <Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="25" fabricationlimitmin="10" fabricationlimitmax="30" />
+      <Fabricate suitablefabricators="shop" requiredtime="1">
+        <RequiredItem identifier="10markbill" amount="2" />
+        <RequiredItem identifier="5markscoin" amount="1" />
+      </Fabricate>
+      <Fabricate suitablefabricators="shop" requiredtime="1" amount="2">
+        <RequiredItem identifier="50markbill" amount="1" />
+      </Fabricate>
+      <Fabricate suitablefabricators="monstershop" requiredtime="1">
+        <RequiredItem identifier="alienblood" />
+      </Fabricate>
+      <Fabricate suitablefabricators="monstershop" requiredtime="1">
+        <RequiredItem identifier="huskeggsbasic" />
+      </Fabricate>
+      <Fabricate suitablefabricators="monstershop" requiredtime="1">
+        <RequiredItem identifier="huskstinger" />
+      </Fabricate>
+      <Fabricate suitablefabricators="monstershop" requiredtime="1" amount="3">
+        <RequiredItem identifier="hydroxyapatite" />
+      </Fabricate>
+      <Price baseprice="28">
+        <Price storeidentifier="merchantcity" multiplier="0.76" sold="true" minavailable="1" maxavailable="5" />
+        <Price storeidentifier="merchantresearch" multiplier="0.76" sold="true" minavailable="1" maxavailable="5" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.76" sold="true" minavailable="1" maxavailable="5" />
+        <Price storeidentifier="merchantmine" multiplier="0.76" sold="true" minavailable="1" maxavailable="5" />
+        <Price storeidentifier="merchantoutpost" multiplier="0.76" sold="true" minavailable="1" maxavailable="5" />
+      </Price>
+      <Deconstruct time="1">
+        <Item identifier="5markscoin" />
+        <Item identifier="5markscoin" />
+        <Item identifier="5markscoin" />
+        <Item identifier="5markscoin" />
+        <Item identifier="5markscoin" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="1">
+        <RequiredItem identifier="5markscoin" amount="5" />
+      </Fabricate>
+      <Sprite texture="%ModDir%/Images/InventoryIconsMisc.png" depth="0.3" sourcerect="891,321,133,74" origin="0.5,0.5" />
+      <Body radius="40" width="20" density="50" />
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgUsePlasmaCutter" handle1="0,0" pickingtime="5.0" attachable="true" reattachable="false" />
+    </Item>
+    <Item name="50 Mark Bill" identifier="50markbill" category="Material" Tags="smallitem,bill,money,ita_bill50,oasismodspecialitem,50markbill" maxstacksize="32" maxstacksizecharacterinventory="10" canbepicked="true" cargocontaineridentifier="metalcrate" scale="0.1" impactsoundtag="impact_soft">
+      <PreferredContainer primary="crewcab" minamount="2" maxamount="3" spawnprobability="1" />
+      <PreferredContainer secondary="outpostcrewcabinet" minamount="0" maxamount="2" spawnprobability="0.5" />
+      <Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="50" fabricationlimitmin="10" fabricationlimitmax="30" />
+      <Fabricate suitablefabricators="fabricator" requiredtime="1">
+        <Item identifier="10markbill" amount="5" />
+      </Fabricate>
+      <Fabricate suitablefabricators="shop" requiredtime="1">
+        <RequiredItem identifier="25markbill" amount="2" />
+      </Fabricate>
+      <Fabricate suitablefabricators="shop" requiredtime="1" amount="2">
+        <RequiredItem identifier="100markbill" amount="1" />
+      </Fabricate>
+      <Fabricate suitablefabricators="monstershop" requiredtime="1">
+        <RequiredItem identifier="diversremains" />
+      </Fabricate>
+      <Fabricate suitablefabricators="monstershop" requiredtime="1">
+        <RequiredItem identifier="mudraptorshell" />
+      </Fabricate>
+      <Fabricate suitablefabricators="monstershop" requiredtime="1">
+        <RequiredItem identifier="smallmudraptoregg" />
+      </Fabricate>
+      <Price baseprice="65">
+        <Price storeidentifier="merchantcity" multiplier="0.76" sold="true" minavailable="1" maxavailable="5" />
+        <Price storeidentifier="merchantresearch" multiplier="0.76" sold="true" minavailable="1" maxavailable="5" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.76" sold="true" minavailable="1" maxavailable="5" />
+        <Price storeidentifier="merchantmine" multiplier="0.76" sold="true" minavailable="1" maxavailable="5" />
+        <Price storeidentifier="merchantoutpost" multiplier="0.76" sold="true" minavailable="1" maxavailable="5" />
+      </Price>
+      <Deconstruct time="1">
+        <Item identifier="10markbill" />
+        <Item identifier="10markbill" />
+        <Item identifier="10markbill" />
+        <Item identifier="10markbill" />
+        <Item identifier="10markbill" />
+      </Deconstruct>
+      <Sprite texture="%ModDir%/Images/InventoryIconsMisc.png" depth="0.3" sourcerect="0,0,133,81" origin="0.5,0.5" />
+      <Body radius="40" width="20" density="50" />
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgUsePlasmaCutter" handle1="0,0" pickingtime="5.0" attachable="true" reattachable="false" />
+    </Item>
+    <Item name="100 Mark Bill" identifier="100markbill" category="Material" Tags="smallitem,bill,money,ita_bill100,100markbill" maxstacksize="32" maxstacksizecharacterinventory="10" canbepicked="true" cargocontaineridentifier="metalcrate" scale="0.1" impactsoundtag="impact_soft">
+      <Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="100" fabricationlimitmin="10" fabricationlimitmax="30" />
+      <Fabricate suitablefabricators="shop" requiredtime="1">
+        <RequiredItem identifier="50markbill" amount="2" />
+      </Fabricate>
+      <Fabricate suitablefabricators="shop" requiredtime="1" amount="2">
+        <RequiredItem identifier="200markbill" amount="1" />
+      </Fabricate>
+      <Price baseprice="131">
+        <Price storeidentifier="merchantcity" multiplier="0.76" sold="true" minavailable="1" maxavailable="5" />
+        <Price storeidentifier="merchantresearch" multiplier="0.76" sold="true" minavailable="1" maxavailable="5" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.76" sold="true" minavailable="1" maxavailable="5" />
+        <Price storeidentifier="merchantmine" multiplier="0.76" sold="true" minavailable="1" maxavailable="5" />
+        <Price storeidentifier="merchantoutpost" multiplier="0.76" sold="true" minavailable="1" maxavailable="5" />
+      </Price>
+      <Deconstruct time="1">
+        <Item identifier="50markbill" />
+        <Item identifier="50markbill" />
+      </Deconstruct>
+      <Sprite texture="%ModDir%/Images/InventoryIconsMisc.png" depth="0.3" sourcerect="0,81,133,70" origin="0.5,0.5" />
+      <Body radius="40" width="20" density="50" />
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgUsePlasmaCutter" handle1="0,0" pickingtime="5.0" attachable="true" reattachable="false" />
+    </Item>
+    <Item name="200 Mark Bill" identifier="200markbill" category="Material" Tags="smallitem,bill,money,ita_bill200,200markbill" maxstacksize="32" maxstacksizecharacterinventory="10" canbepicked="true" cargocontaineridentifier="metalcrate" scale="0.1" impactsoundtag="impact_soft">
+      <Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="200" fabricationlimitmin="10" fabricationlimitmax="30" />
+      <Fabricate suitablefabricators="shop" requiredtime="1">
+        <RequiredItem identifier="100markbill" amount="2" />
+      </Fabricate>
+      <Fabricate suitablefabricators="monstershop" requiredtime="1" amount="7">
+        <RequiredItem Identifier="huskeggs" amount="3" />
+        <RequiredItem Identifier="unstablehuskeggs" />
+        <RequiredItem identifier="huskgrenade" />
+        <RequiredItem tag="divinghelmet" />
+      </Fabricate>
+      <Fabricate suitablefabricators="monstershop" requiredtime="1" amount="6">
+        <RequiredItem Identifier="huskeggs" amount="3" />
+        <RequiredItem Identifier="sulphuricacid" />
+        <RequiredItem tag="divinghelmet" />
+      </Fabricate>
+      <Fabricate suitablefabricators="monstershop" requiredtime="1" amount="5">
+        <RequiredItem Identifier="huskeggs" amount="3" />
+        <RequiredItem identifier="huskgrenade" />
+        <RequiredItem tag="divinghelmet" />
+      </Fabricate>
+      <Price baseprice="263">
+        <Price storeidentifier="merchantcity" multiplier="0.76" sold="true" minavailable="1" maxavailable="5" />
+        <Price storeidentifier="merchantresearch" multiplier="0.76" sold="true" minavailable="1" maxavailable="5" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.76" sold="true" minavailable="1" maxavailable="5" />
+        <Price storeidentifier="merchantmine" multiplier="0.76" sold="true" minavailable="1" maxavailable="5" />
+        <Price storeidentifier="merchantoutpost" multiplier="0.76" sold="true" minavailable="1" maxavailable="5" />
+      </Price>
+      <Deconstruct time="1">
+        <Item identifier="100markbill" />
+        <Item identifier="100markbill" />
+      </Deconstruct>
+      <Sprite texture="%ModDir%/Images/InventoryIconsMisc.png" depth="0.3" sourcerect="0,151,133,74" origin="0.5,0.5" />
+      <Body radius="40" width="20" density="50" />
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgUsePlasmaCutter" handle1="0,0" pickingtime="5.0" attachable="true" reattachable="false" />
+    </Item>
+  </Override>
+  <Item name="Monster Lure" description="A terminal that allows for a direct uplink with Coalition Central Command, who can coordinate bait to lure certain monsters to the area - for a price." identifier="monsterspawnshop" tags="monstershop,donttakeitems,dontsellitems" texturescale="1.0,1.0" scale="0.5" category="Decorative">
+    <Sprite texture="%ModDir%/Images/Storage.png" depth="0.7" sourcerect="1544,508,139,146" origin="0.5,0.5" />
+    <Body width="102" height="258" density="25" />
+    <!-- It's that easy -->
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <Item identifier="steel" />
+      <Item identifier="plastic" />
+      <Item identifier="rubber" />
+    </Deconstruct>
+    <!--<Fabricate suitablefabricators="fabricator" requiredtime="60" fabricationlimitmin="1" fabricationlimitmax="1">
+      <RequiredSkill identifier="Electrical" level="50" />
+	  <RequiredSkill identifier="Mechanical" level="50" />
+	  <RequiredItem identifier="steel" amount="3"/>
+      <RequiredItem identifier="plastic" />
+      <RequiredItem identifier="rubber" />
+	  <RequiredItem identifier="fpgacircuit" amount="2" />
+    </Fabricate>-->
+    <Fabricator canbeselected="true" powerconsumption="0.0" msg="ItemMsgInteractSelect" createbuttontext="campaignstoretab.buy">
+      <GuiFrame relativesize="0.4,0.45" style="ItemUI" anchor="Center" />
+      <sound file="Content/Items/AlarmBuzzerLoop.ogg" type="OnActive" range="1500.0" loop="true" volume="0.75" />
+      <poweronsound file="Content/Items/PowerOnLight1.ogg" range="600" loop="false" />
+      <StatusEffect type="InWater" target="This" condition="-0.5" />
+      <StatusEffect type="OnContained" target="This" setvalue="true" canbeselected="false" />
+      <StatusEffect type="OnNotContained" target="This" setvalue="true" canbeselected="true" />
+    </Fabricator>
+    <ItemContainer capacity="5" canbeselected="true" hideitems="true" slotsperrow="5" uilabel="" allowuioverlap="true" />
+    <ItemContainer capacity="1" canbeselected="true" hideitems="true" slotsperrow="1" uilabel="" allowuioverlap="true" />
+    <LightComponent range="0.0" lightcolor="255,50,50,0" powerconsumption="0" IsOn="true" castshadows="false" alphablend="false" allowingameediting="false">
+      <Upgrade gameversion="0.17.15.0" range="0" />
+      <sprite texture="Content/Map/Outposts/Art/Storage.png" depth="0.025" sourcerect="1709,506,142,149" origin="0.5,0.5" alpha="1.0" />
+    </LightComponent>
+    <LightComponent range="0.0" lightcolor="255,255,255,0" powerconsumption="0" IsOn="true" castshadows="false" alphablend="false" allowingameediting="false" blinkfrequency="1">
+      <Upgrade gameversion="0.17.15.0" range="0" />
+      <sprite texture="Content/Map/Outposts/Art/Storage.png" depth="0.025" sourcerect="1869,506,142,149" origin="0.5,0.5" alpha="1.0" />
+    </LightComponent>
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" holdpos="50,-30" handle1="-15,15" handle2="-15,15" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.7" setvalue="true" />
+    </Holdable>
+    <ConnectionPanel selectkey="Action" canbeselected="true" hudpriority="10" msg="ItemMsgRewireScrewdriver">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+        <Affliction identifier="stun" strength="5" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <!-- <input name="power_in" displayname="connection.powerin" /> -->
+      <output name="condition_out" displayname="connection.conditionout" />
+    </ConnectionPanel>
+    <Repairable selectkey="Select" header="mechanicalrepairsheader" deteriorationspeed="0.40" mindeteriorationdelay="120" maxdeteriorationdelay="240" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.1,0.27" style="ItemUI" />
+      <RequiredSkill identifier="mechanical" level="55" />
+      <RequiredItem items="wrench" type="Equipped" />
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
+      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+        <Affliction identifier="lacerations" strength="5" />
+        <Affliction identifier="stun" strength="5" />
+      </StatusEffect>
+    </Repairable>
+  </Item>
+</Items>

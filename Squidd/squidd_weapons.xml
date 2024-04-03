@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <!-- autodet -->
+  <Override>
+    <Item name="Auto-Det" identifier="squidd_autodet" category="Equipment" damagedbyexplosions="true" explosiondamagemultiplier="5" maxstacksize="1" tags="smallitem,weapon" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.5" showcontentsintooltip="true" fireproof="false" description="An improvised auto-detonator. The fuse starts as soon as an explosive is fitted -- you don't have long." impactsoundtag="impact_soft">
+      <PreferredContainer secondary="wreckstoragecab" minamount="1" maxamount="1" spawnprobability="0.05" />
+      <PreferredContainer secondary="wreckarmcab" minamount="1" maxamount="1" spawnprobability="0.1" />
+      <Deconstruct time="7">
+        <Item identifier="detonator" />
+        <Item identifier="fpgacircuit" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="15">
+        <RequiredSkill identifier="weapons" level="30" />
+        <Item identifier="detonator" />
+        <Item identifier="fpgacircuit" />
+      </Fabricate>
+      <Sprite texture="autodet.png" sourcerect="0,0,56,57" origin="0.5,0.5" />
+      <Body width="40" height="40" density="11" />
+      <InventoryIcon texture="autodet.png" sourcerect="0,0,56,57" origin="0.5,0.5" />
+      <Throwable slots="Any,RightHand,LeftHand" holdpos="0,0" handle1="0,0" holdangle="90" throwforce="3.0" aimpos="35,-10" msg="ItemMsgPickUpSelect" canbeselected="false" canbepicked="true" pickkey="Select" allowswappingwhenpicked="false">
+        <StatusEffect type="Always" target="This,Contained" comparison="And" delay="5" stackable="false">
+          <Conditional hastag="explosive" />
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" Condition="0" setvalue="true" delay="0.1" />
+        <StatusEffect type="OnBroken" target="This" delay="1" stackable="false">
+          <Remove />
+          <SpawnItem identifiers="silicon" spawnposition="This" />
+          <SpawnItem identifiers="copper" spawnposition="This" />
+        </StatusEffect>
+      </Throwable>
+      <ItemContainer capacity="1" maxstacksize="1" slotsperrow="1" hideitems="false">
+        <Containable items="explosive" />
+      </ItemContainer>
+    </Item>
+  </Override>
+  <!-- Laserpistol -->
+  <Override>
+    <Item name="Laser Handcannon" identifier="squidd_laserpistol" category="Equipment" tags="smallitem,weapon,pistolitem,gun,gunsmith" Scale="0.5" description="An experimental handheld pulse laser. Notorious for overheating, heat resistant gloves may be prudent. Uses Laser Fuel Cells for ammo." impactsoundtag="impact_metal_light">
+      <Price baseprice="500" soldeverywhere="false">
+        <Price locationtype="outpost" multiplier="0.9" sold="false" />
+        <Price locationtype="city" multiplier="0.9" sold="false" />
+        <Price locationtype="research" multiplier="1.3" sold="false" />
+        <Price locationtype="military" multiplier="1.2" sold="false" />
+        <Price locationtype="mine" multiplier="0.9" sold="false" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="40" amount="1">
+        <RequiredSkill identifier="electrical" level="40" />
+        <RequiredSkill identifier="weapons" level="40" />
+        <RequiredItem identifier="carbon" amount="3" />
+        <RequiredItem identifier="titaniumaluminiumalloy" />
+        <RequiredItem identifier="thorium" amount="2" />
+        <RequiredItem identifier="phosphorus" />
+        <RequiredItem identifier="tin" />
+      </Fabricate>
+      <Deconstruct time="20">
+        <Item identifier="carbon" />
+        <Item identifier="titaniumaluminiumalloy" />
+        <Item identifier="thorium" />
+        <Item identifier="phosphorus" />
+        <Item identifier="tin" />
+      </Deconstruct>
+      <InventoryIcon texture="squidd_laserpistol.png" sourcerect="0,0,91,49" />
+      <Sprite texture="squidd_laserpistol.png" sourcerect="0,0,91,49" depth="0.55" />
+      <Body radius="25" width="40" density="13" />
+      <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="90,10" handle1="-20,-11" handle2="-60,-27" msg="ItemMsgPickUpSelect" />
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" itempos="20,-20" containedstateindicatorstyle="battery">
+        <Containable items="laserfuelcell" />
+      </ItemContainer>
+      <RangedWeapon reload="0.7" barrelpos="34,6" spread="3" unskilledspread="12" drawhudwhenequipped="true" crosshairscale="0.2">
+        <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+        <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+        <sound file="%ModDir%/Sounds/laserprojectile_combined.ogg" type="OnUse" range="1000.0" loop="false" volume="1" />
+        <sound file="%ModDir%/Sounds/laserprojectile_combined_2.ogg" type="OnUse" range="1000.0" loop="false" volume="1" />
+        <sound file="%ModDir%/Sounds/laserprojectile_combined_3.ogg" type="OnUse" range="1000.0" loop="false" volume="1" />
+        <ParticleEmitter particle="muzzleflashpulselaser" anglemin="0" anglemax="360" particleamount="5" velocitymin="0" scalemultiplier="0.2,0.2" colormultiplier="255,0,255,255" />
+        <StatusEffect type="OnUse" target="Contained">
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnUse">
+          <Explosion range="150.0" force="3" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" playtinnitus="false" camerashake="30.0"></Explosion>
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character">
+          <Conditional skillrequirement="true" weapons="lt 20" />
+          <Affliction identifier="burn" amount="6" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character">
+          <Conditional skillrequirement="true" weapons="lt 40" />
+          <Affliction identifier="burn" amount="4" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character">
+          <Conditional skillrequirement="true" weapons="lt 60" />
+          <Affliction identifier="burn" amount="2" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Contained" condition="-12.5" disabledeltatime="true">
+          <RequiredItems identifier="squidd_laserammocell" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Contained" condition="-15" disabledeltatime="true">
+          <RequiredItems identifier="trilaserammocell" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Contained" condition="-10" disabledeltatime="true">
+          <RequiredItems identifier="weldlaserammocell" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Contained" condition="-20" disabledeltatime="true">
+          <RequiredItems identifier="shockwavelaserammocell" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Contained" condition="-20" disabledeltatime="true">
+          <RequiredItems identifier="piercinglaserammocell" type="Contained" />
+        </StatusEffect>
+        <RequiredItems tags="laserfuelcell" type="Contained" msg="ItemMsgAmmoRequired" />
+        <RequiredSkill identifier="weapons" level="60" />
+      </RangedWeapon>
+    </Item>
+  </Override>
+  <!-- LaserAmmoCell -->
+  <Override>
+    <Item name="Laser Fuel Cell" identifier="squidd_laserammocell" category="equipment" maxstacksize="3" Tags="ammo,smallitem,laserfuelcell" scale="0.35" description="An experimental pulse laser fuel cell. The cascading reaction tends to be unstable without extensive casing, so caution is advised when handling these." impactsoundtag="impact_metal_light">
+      <Fabricate suitablefabricators="fabricator" requiredtime="20">
+        <RequiredSkill identifier="medical" level="40" />
+        <RequiredSkill identifier="weapons" level="40" />
+        <RequiredItem identifier="phosphorus" />
+        <RequiredItem identifier="alienblood" />
+        <RequiredItem identifier="lithium" />
+        <RequiredItem identifier="aluminium" />
+      </Fabricate>
+      <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
+        <RequiredSkill identifier="weapons" level="20" />
+        <RequiredSkill identifier="medical" level="30" />
+        <RequiredItem identifier="phosphorus" />
+        <RequiredItem identifier="alienblood" />
+        <RequiredItem identifier="lithium" />
+        <RequiredItem identifier="squidd_laserammocell" mincondition="0.0" maxcondition="0.0" usecondition="false" />
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="aluminium" />
+      </Deconstruct>
+      <Sprite texture="laserfuelcell.png" sourcerect="0,0,59,62" depth="0.7" origin="0.5,0.5" />
+      <InventoryIcon texture="laserfuelcell_inventory.png" sourcerect="0,0,59,62" />
+      <Body radius="10" height="20" width="40" density="11" />
+      <Holdable canbecombined="true" slots="RightHand,LeftHand,Any" msg="ItemMsgPickUpSelect">
+        <!--<StatusEffect type="OnContained" target="Character">
+        <Affliction identifier="burn" strength="0.15" />
+      </StatusEffect>-->
+      </Holdable>
+      <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="squidd_laserprojectile" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="battery">
+        <Containable items="squidd_laserprojectile" />
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <SpawnItem identifiers="squidd_laserprojectile" spawnposition="ThisInventory" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+  </Override>
+  <!-- LaserProjectile -->
+  <Override>
+    <Item name="squidd_laserprojectile" identifier="squidd_laserprojectile" category="Equipment" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,pistolammoitem" impactsoundtag="impact_metal_light" hideinmenus="true" scale="0.5">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="896,960,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="40" height="14" density="40" />
+      <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" hitscan="true" removeonhit="true">
+        <ParticleEmitter particle="otracerlaserprojectile" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1,1.5" colormultiplier="255,255,255,255" />
+        <Attack structuredamage="20" targetforce="50" itemdamage="0" severlimbsprobability="0.4">
+          <Affliction identifier="burn" strength="30" />
+          <Affliction identifier="explosiondamage" strength="15" />
+          <Affliction identifier="stun" strength="0.5" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <ParticleEmitter particle="omuzzleflashlaserprojectile" anglemin="0" anglemax="360" particleamount="10" velocitymin="0" scalemultiplier="0.5,0.5" colormultiplier="255,255,255,255" scalemin="0.0" scalemax="0.7" />
+        </StatusEffect>
+        <StatusEffect type="OnNotContained" target="This">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+  </Override>
+  <Item name="Laser Fuel Cell (Tri-Shot)" identifier="trilaserammocell" category="equipment" maxstacksize="3" Tags="ammo,smallitem,laserfuelcell" scale="0.35" description="An experimental pulse laser fuel cell, modified to fire a spread of three shots. It uses slightly more energy than a normal cell." impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <RequiredSkill identifier="medical" level="40" />
+      <RequiredSkill identifier="weapons" level="40" />
+      <RequiredItem identifier="phosphorus" />
+      <RequiredItem identifier="alienblood" />
+      <RequiredItem identifier="lithium" />
+      <RequiredItem identifier="aluminium" />
+    </Fabricate>
+    <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
+      <RequiredSkill identifier="weapons" level="20" />
+      <RequiredSkill identifier="medical" level="30" />
+      <RequiredItem identifier="phosphorus" />
+      <RequiredItem identifier="alienblood" />
+      <RequiredItem identifier="lithium" />
+      <RequiredItem identifier="trilaserammocell" mincondition="0.0" maxcondition="0.0" usecondition="false" />
+    </Fabricate>
+    <Deconstruct time="10">
+      <Item identifier="aluminium" />
+    </Deconstruct>
+    <Sprite texture="trilaserfuelcell.png" sourcerect="0,0,59,62" depth="0.7" origin="0.5,0.5" />
+    <InventoryIcon texture="trilaserfuelcell_inventory.png" sourcerect="0,0,59,62" />
+    <Body radius="10" height="20" width="40" density="11" />
+    <Holdable canbecombined="true" slots="RightHand,LeftHand,Any" msg="ItemMsgPickUpSelect">
+      <!--<StatusEffect type="OnContained" target="Character">
+        <Affliction identifier="burn" strength="0.15" />
+      </StatusEffect>-->
+    </Holdable>
+    <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="squidd_laserprojectile" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="battery">
+      <Containable items="trilaserprojectile" />
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+        <SpawnItem identifiers="trilaserprojectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+  </Item>
+  <!-- TriLaserProjectile -->
+  <Item name="trilaserprojectile" identifier="trilaserprojectile" category="Equipment" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,pistolammoitem" impactsoundtag="impact_metal_light" hideinmenus="true" scale="0.5">
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="896,960,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+    <Body width="40" height="14" density="40" />
+    <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" hitscan="true" removeonhit="true" hitscancount="3" spread="5">
+      <ParticleEmitter particle="otracerlaserprojectile" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1,1.5" colormultiplier="255,255,100,255" />
+      <Attack structuredamage="20" targetforce="50" itemdamage="0" severlimbsprobability="0.4">
+        <Affliction identifier="burn" strength="12.5" />
+        <Affliction identifier="explosiondamage" strength="7.5" />
+        <Affliction identifier="stun" strength="0.25" />
+      </Attack>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <ParticleEmitter particle="omuzzleflashlaserprojectile" anglemin="0" anglemax="360" particleamount="10" velocitymin="0" scalemultiplier="0.5,0.5" colormultiplier="255,255,100,255" scalemin="0.0" scalemax="0.7" />
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <Item name="Laser Fuel Cell (Welding)" identifier="weldlaserammocell" category="equipment" maxstacksize="3" Tags="ammo,smallitem,laserfuelcell" scale="0.35" description="An experimental pulse laser fuel cell, modified to weld hulls it hits. Handle with care." impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <RequiredSkill identifier="medical" level="40" />
+      <RequiredSkill identifier="weapons" level="40" />
+      <RequiredItem identifier="phosphorus" />
+      <RequiredItem identifier="weldingfueltank" />
+      <RequiredItem identifier="lithium" />
+      <RequiredItem identifier="aluminium" />
+    </Fabricate>
+    <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
+      <RequiredSkill identifier="weapons" level="20" />
+      <RequiredSkill identifier="medical" level="30" />
+      <RequiredItem identifier="phosphorus" />
+      <RequiredItem identifier="lithium" />
+      <RequiredItem identifier="weldlaserammocell" mincondition="0.0" maxcondition="0.0" usecondition="false" />
+    </Fabricate>
+    <Deconstruct time="10">
+      <Item identifier="aluminium" />
+    </Deconstruct>
+    <Sprite texture="weldlaserfuelcell.png" sourcerect="0,0,59,62" depth="0.7" origin="0.5,0.5" />
+    <InventoryIcon texture="weldlaserfuelcell_inventory.png" sourcerect="0,0,59,62" />
+    <Body radius="10" height="20" width="40" density="11" />
+    <Holdable canbecombined="true" slots="RightHand,LeftHand,Any" msg="ItemMsgPickUpSelect">
+      <!--<StatusEffect type="OnContained" target="Character">
+        <Affliction identifier="burn" strength="0.15" />
+      </StatusEffect>-->
+    </Holdable>
+    <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="squidd_laserprojectile" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="battery">
+      <Containable items="weldlaserprojectile" />
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+        <SpawnItem identifiers="weldlaserprojectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+  </Item>
+  <!-- WeldLaserProjectile -->
+  <Item name="weldlaserprojectile" identifier="weldlaserprojectile" category="Equipment" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,pistolammoitem" impactsoundtag="impact_metal_light" hideinmenus="true" scale="0.5">
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="896,960,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+    <Body width="40" height="14" density="40" />
+    <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" hitscan="true" removeonhit="true">
+      <ParticleEmitter particle="otracerlaserprojectile" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1,1.5" colormultiplier="0,255,0,255" />
+      <Attack structuredamage="-10" targetforce="50" itemdamage="0" severlimbsprobability="0.4">
+        <Affliction identifier="burn" strength="7.5" />
+        <Affliction identifier="explosiondamage" strength="7.5" />
+        <Affliction identifier="stun" strength="0.25" />
+      </Attack>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <ParticleEmitter particle="omuzzleflashlaserprojectile" anglemin="0" anglemax="360" particleamount="10" velocitymin="0" scalemultiplier="0.5,0.5" colormultiplier="0,255,0,255" scalemin="0.0" scalemax="0.7" />
+        <Explosion range="250.0" structuredamage="-40" itemdamage="-10" force="10.0" flames="false" smoke="false" sparks="false" underwaterbubble="false" flashcolor="255,0,0,255">
+          <Affliction identifier="explosiondamage" strength="10" />
+          <Affliction identifier="burn" strength="10" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <Item name="Laser Fuel Cell (Piercing)" identifier="piercinglaserammocell" category="equipment" maxstacksize="3" Tags="ammo,smallitem,laserfuelcell" scale="0.35" description="An experimental pulse laser fuel cell, modified to pierce through targets." impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <RequiredSkill identifier="medical" level="40" />
+      <RequiredSkill identifier="weapons" level="40" />
+      <RequiredItem identifier="phosphorus" />
+      <RequiredItem identifier="alienblood" />
+      <RequiredItem identifier="lithium" />
+      <RequiredItem identifier="titaniumaluminiumalloy" />
+    </Fabricate>
+    <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
+      <RequiredSkill identifier="weapons" level="20" />
+      <RequiredSkill identifier="medical" level="30" />
+      <RequiredItem identifier="phosphorus" />
+      <RequiredItem identifier="alienblood" />
+      <RequiredItem identifier="lithium" />
+      <RequiredItem identifier="piercinglaserammocell" mincondition="0.0" maxcondition="0.0" usecondition="false" />
+    </Fabricate>
+    <Deconstruct time="10">
+      <Item identifier="aluminium" />
+    </Deconstruct>
+    <Sprite texture="piercinglaserfuelcell.png" sourcerect="0,0,59,62" depth="0.7" origin="0.5,0.5" />
+    <InventoryIcon texture="piercinglaserfuelcell_inventory.png" sourcerect="0,0,59,62" />
+    <Body radius="10" height="20" width="40" density="11" />
+    <Holdable canbecombined="true" slots="RightHand,LeftHand,Any" msg="ItemMsgPickUpSelect">
+      <!--<StatusEffect type="OnContained" target="Character">
+        <Affliction identifier="burn" strength="0.15" />
+      </StatusEffect>-->
+    </Holdable>
+    <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="squidd_laserprojectile" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="battery">
+      <Containable items="piercinglaserprojectile" />
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+        <SpawnItem identifiers="piercinglaserprojectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+  </Item>
+  <!-- PiercingLaserProjectile -->
+  <Item name="piercinglaserprojectile" identifier="piercinglaserprojectile" category="Equipment" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,pistolammoitem" impactsoundtag="impact_metal_light" hideinmenus="true" scale="0.5">
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="896,960,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+    <Body width="40" height="14" density="40" />
+    <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" hitscan="true" removeonhit="true" maxtargetstohit="3">
+      <ParticleEmitter particle="otracerlaserprojectile" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1,1.5" colormultiplier="255,0,255,255" />
+      <Attack structuredamage="20" targetforce="50" itemdamage="0" severlimbsprobability="0.4">
+        <Affliction identifier="burn" strength="15" />
+        <Affliction identifier="explosiondamage" strength="12.5" />
+        <Affliction identifier="stun" strength="0.25" />
+      </Attack>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <ParticleEmitter particle="omuzzleflashlaserprojectile" anglemin="0" anglemax="360" particleamount="10" velocitymin="0" scalemultiplier="0.5,0.5" colormultiplier="255,0,255,255" scalemin="0.0" scalemax="0.7" />
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <Item name="Laser Fuel Cell (Shockwave)" identifier="shockwavelaserammocell" category="equipment" maxstacksize="3" Tags="ammo,smallitem,laserfuelcell" scale="0.35" description="An experimental pulse laser fuel cell, modified to trigger a stunning shockwave on impact. Handle with care." impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <RequiredSkill identifier="medical" level="40" />
+      <RequiredSkill identifier="weapons" level="40" />
+      <RequiredItem identifier="phosphorus" amount="2" />
+      <RequiredItem identifier="alienblood" />
+      <RequiredItem identifier="lithium" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+    <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
+      <RequiredSkill identifier="weapons" level="20" />
+      <RequiredSkill identifier="medical" level="30" />
+      <RequiredItem identifier="phosphorus" amount="2" />
+      <RequiredItem identifier="alienblood" />
+      <RequiredItem identifier="lithium" />
+      <RequiredItem identifier="shockwavelaserammocell" mincondition="0.0" maxcondition="0.0" usecondition="false" />
+    </Fabricate>
+    <Deconstruct time="10">
+      <Item identifier="aluminium" />
+    </Deconstruct>
+    <Sprite texture="shockwavelaserfuelcell.png" sourcerect="0,0,59,62" depth="0.7" origin="0.5,0.5" />
+    <InventoryIcon texture="shockwavelaserfuelcell_inventory.png" sourcerect="0,0,59,62" />
+    <Body radius="10" height="20" width="40" density="11" />
+    <Holdable canbecombined="true" slots="RightHand,LeftHand,Any" msg="ItemMsgPickUpSelect">
+      <!--<StatusEffect type="OnContained" target="Character">
+        <Affliction identifier="burn" strength="0.15" />
+      </StatusEffect>-->
+    </Holdable>
+    <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="squidd_laserprojectile" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="battery">
+      <Containable items="shockwavelaserprojectile" />
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+        <SpawnItem identifiers="shockwavelaserprojectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+  </Item>
+  <!-- ShockwaveLaserProjectile -->
+  <Item name="shockwavelaserprojectile" identifier="shockwavelaserprojectile" category="Equipment" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,pistolammoitem" impactsoundtag="impact_metal_light" hideinmenus="true" scale="0.5">
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="896,960,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+    <Body width="40" height="14" density="40" />
+    <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" hitscan="true" removeonhit="true">
+      <ParticleEmitter particle="otracerlaserprojectile" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1,1.5" colormultiplier="0,255,255,255" />
+      <Attack structuredamage="0" targetforce="50" itemdamage="0" severlimbsprobability="0.4">
+        <Affliction identifier="burn" strength="5" />
+        <Affliction identifier="explosiondamage" strength="10" />
+        <Affliction identifier="stun" strength="0.25" />
+      </Attack>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <ParticleEmitter particle="omuzzleflashlaserprojectile" anglemin="0" anglemax="360" particleamount="10" velocitymin="0" scalemultiplier="0.5,0.5" colormultiplier="0,255,255,255" scalemin="0.0" scalemax="0.7" />
+        <Explosion range="350.0" structuredamage="0" itemdamage="0" force="25.0" flames="false" smoke="false" sparks="false" underwaterbubble="false" flashcolor="0,255,255,255">
+          <Affliction identifier="explosiondamage" strength="15" />
+          <Affliction identifier="burn" strength="2.5" />
+          <Affliction identifier="stun" strength="1" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+</Items>

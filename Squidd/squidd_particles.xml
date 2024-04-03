@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<prefabs>
+  <omuzzleflashlaserprojectile lifetime="0.3" startdelaymin="0" startdelaymax="0.1" angularvelocitymin="-100" angularvelocitymax="100" startrotationmin="0" startrotationmax="359" rotatetodirection="False" drag="0" waterdrag="0" velocitychange="0,0" velocitychangewater="0,0" collisionradius="1" usecollision="False" deleteoncollision="False" friction="0.5" restitution="0.5" startsizemin="1.5,1.5" startsizemax="4.5,4.5" growtime="0" startcolor="255,0,0,250" endcolor="0,0,255,0" drawtarget="Both" drawontop="True" blendstate="Additive" loopanim="False" lifetimemin="0" sizechangemin="0,0" sizechangemax="0,0" middlecolor="255,0,255,255" usemiddlecolor="False" animduration="1" priority="0">
+    <sprite texture="%ModDir%/Squidd/squidd_particle_1.png" sourcerect="246,428,70,70" origin="0.5,0.5" />
+  </omuzzleflashlaserprojectile>
+  <otracerlaserprojectile lifetime="0.4" startdelaymin="0" startdelaymax="0" angularvelocitymin="0" angularvelocitymax="0" startrotationmin="0" startrotationmax="0" rotatetodirection="False" drag="0" waterdrag="0" velocitychange="0,0" velocitychangewater="0,0" collisionradius="1" usecollision="False" deleteoncollision="False" friction="0.5" restitution="0.5" startsizemin="0.75,0.15" startsizemax="0.75,0.15" growtime="0.02" startcolor="255,0,0,150" endcolor="0,0,255,0" drawtarget="Both" drawontop="True" blendstate="Additive" loopanim="False" lifetimemin="0" sizechangemin="1,-1" sizechangemax="1,-1" middlecolor="255,0,255,255" usemiddlecolor="False" animduration="1" priority="0">
+    <sprite texture="%ModDir%/Squidd/squidd_particle_1.png" sourcerect="144,440,1,68" origin="0.5,0.5" />
+  </otracerlaserprojectile>
+</prefabs>

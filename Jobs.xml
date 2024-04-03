@@ -1,0 +1,1775 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Jobs>
+  <Job identifier="oasisquartermaster" uicolor="0.5,0.46,0.9" vitalitymodifier="100" minnumber="0" maxnumber="0" initialcount="0" hiddenjob="true">
+    <Jobicon>
+      <sprite texture="%ModDir%/NewIcons.png" sourcerect="256,0,128,128" origin="0.5,0.5" />
+    </Jobicon>
+    <JobiconSmall>
+      <sprite texture="Content/UI/CommandUIAtlas.png" sourcerect="641,640,28,28" origin="0.5,0.5" />
+    </JobiconSmall>
+    <Skills>
+      <Skill identifier="mechanical" level="25,45" primary="true" />
+      <Skill identifier="electrical" level="15,35" />
+      <Skill identifier="weapons" level="10,25" />
+      <Skill identifier="medical" level="0,5" />
+      <Skill identifier="helm" level="0,5" />
+    </Skills>
+    <ItemSet>
+      <Item identifier="idcard" equip="true" showpreview="false" />
+      <Item identifier="baseballcap" equip="true" />
+      <Item identifier="bodyarmor" equip="true" />
+      <Item identifier="scp_rsh12">
+        <Item identifier="scp_arevolverround" />
+        <Item identifier="scp_arevolverround" />
+        <Item identifier="scp_arevolverround" />
+        <Item identifier="scp_arevolverround" />
+        <Item identifier="scp_arevolverround" />
+      </Item>
+      <Item identifier="scp_arevolverround" />
+      <Item identifier="scp_arevolverround" />
+      <Item identifier="scp_arevolverround" />
+      <Item identifier="scp_arevolverround" />
+      <Item identifier="scp_arevolverround" />
+      <Item identifier="quartermasterclothes" equip="true" outfit="true" />
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Commoner/quartermaster_torso_[GENDER]_2.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Commoner/quartermaster_torso_[GENDER]_2.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <PortraitClothing>
+      <sprite name="Portrait Clothing Mechanic" texture="Content/Items/Jobgear/PortraitClothing.png" sheetindex="1,0" />
+    </PortraitClothing>
+    <AppropriateOrders>
+      <Order identifier="fixleaks" />
+      <Order identifier="loaditems" />
+      <Order identifier="repairsystems" />
+    </AppropriateOrders>
+  </Job>
+  <Job identifier="oasiswizard" uicolor="0.5,0.5,0.7" vitalitymodifier="10" minnumber="0" maxnumber="0" initialcount="0" hiddenjob="true">
+    <Jobicon>
+      <sprite texture="%ModDir%/Images/MainUIAtlas.png" sourcerect="128,256,128,128" origin="0.5,0.5" />
+    </Jobicon>
+    <JobiconSmall>
+      <sprite texture="Content/UI/CommandUIAtlas.png" sourcerect="641,640,28,28" origin="0.5,0.5" />
+    </JobiconSmall>
+    <Skills>
+      <Skill identifier="mechanical" level="25,45" primary="true" />
+      <Skill identifier="electrical" level="15,35" />
+      <Skill identifier="weapons" level="10,25" />
+      <Skill identifier="medical" level="0,5" />
+      <Skill identifier="helm" level="0,5" />
+    </Skills>
+    <ItemSet>
+      <Item identifier="idcard" equip="true" showpreview="false" />
+      <Item identifier="wintercoatcoalition" equip="true" />
+      <Item identifier="mh_magichat" equip="true" />
+      <Item identifier="telekinesis" />
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Commoner/quartermaster_torso_[GENDER]_2.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Commoner/quartermaster_torso_[GENDER]_2.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <PortraitClothing>
+      <sprite name="Portrait Clothing Mechanic" texture="Content/Items/Jobgear/PortraitClothing.png" sheetindex="1,0" />
+    </PortraitClothing>
+    <AppropriateOrders>
+      <Order identifier="fixleaks" />
+      <Order identifier="loaditems" />
+      <Order identifier="repairsystems" />
+    </AppropriateOrders>
+  </Job>
+  <Job identifier="oasisabyssalcultist" uicolor="0.5,0.5,0.7" vitalitymodifier="25" minnumber="0" maxnumber="0" initialcount="0" hiddenjob="true">
+    <Jobicon>
+      <sprite texture="%ModDir%/NewIcons.png" sourcerect="269,134,128,128" origin="0.5,0.5" />
+    </Jobicon>
+    <JobiconSmall>
+      <sprite texture="Content/UI/CommandUIAtlas.png" sourcerect="641,640,28,28" origin="0.5,0.5" />
+    </JobiconSmall>
+    <Skills>
+      <Skill identifier="mechanical" level="25,45" primary="true" />
+      <Skill identifier="electrical" level="15,35" />
+      <Skill identifier="weapons" level="10,25" />
+      <Skill identifier="medical" level="0,5" />
+      <Skill identifier="helm" level="0,5" />
+    </Skills>
+    <ItemSet>
+      <Item identifier="idcard" equip="true" showpreview="false" />
+      <Item identifier="abysscultgarments" equip="true" />
+      <Item identifier="cultdoc" />
+      <Item identifier="telekinesis" />
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Commoner/quartermaster_torso_[GENDER]_2.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Commoner/quartermaster_torso_[GENDER]_2.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <PortraitClothing>
+      <sprite name="Portrait Clothing Mechanic" texture="Content/Items/Jobgear/PortraitClothing.png" sheetindex="1,0" />
+    </PortraitClothing>
+    <AppropriateOrders>
+      <Order identifier="fixleaks" />
+      <Order identifier="loaditems" />
+      <Order identifier="repairsystems" />
+    </AppropriateOrders>
+  </Job>
+  <Job identifier="oasisabyssalharbinger" uicolor="0.5,0.5,0.7" vitalitymodifier="100" minnumber="0" maxnumber="0" initialcount="0" hiddenjob="true">
+    <Jobicon>
+      <sprite texture="%ModDir%/NewIcons.png" sourcerect="269,134,128,128" origin="0.5,0.5" />
+    </Jobicon>
+    <JobiconSmall>
+      <sprite texture="Content/UI/CommandUIAtlas.png" sourcerect="641,640,28,28" origin="0.5,0.5" />
+    </JobiconSmall>
+    <Skills>
+      <Skill identifier="mechanical" level="25,100" primary="true" />
+      <Skill identifier="electrical" level="15,100" />
+      <Skill identifier="weapons" level="10,100" />
+      <Skill identifier="medical" level="0,100" />
+      <Skill identifier="helm" level="0,100" />
+    </Skills>
+    <ItemSet>
+      <Item identifier="idcard" equip="true" showpreview="false" />
+      <Item identifier="abyssharbingergarments" equip="true" />
+      <Item identifier="abyssharbingerimplant" equip="true" />
+      <Item identifier="oasisrituallanternspecial" />
+      <Item identifier="supershockspell" />
+      <Item identifier="cultdoc" />
+      <Item identifier="spikespell" />
+      <Item identifier="bindingspell" />
+      <Item identifier="telekinesis" />
+      <Item identifier="bindinground" />
+      <Item identifier="bindinground" />
+      <Item identifier="bindinground" />
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Commoner/quartermaster_torso_[GENDER]_2.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Commoner/quartermaster_torso_[GENDER]_2.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <PortraitClothing>
+      <sprite name="Portrait Clothing Mechanic" texture="Content/Items/Jobgear/PortraitClothing.png" sheetindex="1,0" />
+    </PortraitClothing>
+    <AppropriateOrders>
+      <Order identifier="fixleaks" />
+      <Order identifier="loaditems" />
+      <Order identifier="repairsystems" />
+    </AppropriateOrders>
+  </Job>
+  <Job identifier="oasiseldercultist" uicolor="1.0,0.5,0.5" vitalitymodifier="50" minnumber="0" maxnumber="0" initialcount="0" hiddenjob="true">
+    <Jobicon>
+      <sprite texture="%ModDir%/Images/MainUIAtlas.png" sourcerect="128,256,128,128" origin="0.5,0.5" />
+    </Jobicon>
+    <JobiconSmall>
+      <sprite texture="Content/UI/CommandUIAtlas.png" sourcerect="641,640,28,28" origin="0.5,0.5" />
+    </JobiconSmall>
+    <Skills>
+      <Skill identifier="mechanical" level="25,100" primary="true" />
+      <Skill identifier="electrical" level="15,100" />
+      <Skill identifier="weapons" level="10,100" />
+      <Skill identifier="medical" level="0,100" />
+      <Skill identifier="helm" level="0,100" />
+    </Skills>
+    <ItemSet>
+      <Item identifier="fractalidcard" equip="true" showpreview="false" />
+      <Item identifier="eldercultistgarments" equip="true" />
+      <Item identifier="abyssharbingerimplant" equip="true" />
+      <Item identifier="oasisrituallanternspecial" />
+      <Item identifier="oasisrituallanternelder" />
+      <Item identifier="eldertelekinesis" />
+      <Item identifier="cultdoc" />
+      <Item identifier="eldershockspell" />
+      <Item identifier="elderfirespell" />
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Commoner/quartermaster_torso_[GENDER]_2.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Commoner/quartermaster_torso_[GENDER]_2.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <PortraitClothing>
+      <sprite name="Portrait Clothing Mechanic" texture="Content/Items/Jobgear/PortraitClothing.png" sheetindex="1,0" />
+    </PortraitClothing>
+    <AppropriateOrders>
+      <Order identifier="fixleaks" />
+      <Order identifier="loaditems" />
+      <Order identifier="repairsystems" />
+    </AppropriateOrders>
+  </Job>
+  <Job identifier="oasishuskmissionary" uicolor="0.5,0.5,0.7" vitalitymodifier="25" minnumber="0" maxnumber="0" initialcount="0" hiddenjob="true">
+    <Jobicon>
+      <sprite texture="%ModDir%/Images/MainUIAtlas.png" sourcerect="640,256,128,128" origin="0.5,0.5" />
+    </Jobicon>
+    <JobiconSmall>
+      <sprite texture="Content/UI/CommandUIAtlas.png" sourcerect="641,640,28,28" origin="0.5,0.5" />
+    </JobiconSmall>
+    <Skills>
+      <Skill identifier="mechanical" level="25,45" primary="true" />
+      <Skill identifier="electrical" level="15,35" />
+      <Skill identifier="weapons" level="10,25" />
+      <Skill identifier="medical" level="0,5" />
+      <Skill identifier="helm" level="0,5" />
+    </Skills>
+    <ItemSet>
+      <Item identifier="idcard" equip="true" showpreview="false" />
+      <Item identifier="missionarymask" equip="true" />
+      <Item identifier="missionaryuniform" equip="true" />
+      <Item identifier="fortifyimplant" equip="true" />
+      <Item identifier="huskstinger" />
+      <Item identifier="huskeggs" />
+      <Item identifier="huskeggs" />
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Commoner/quartermaster_torso_[GENDER]_2.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Commoner/quartermaster_torso_[GENDER]_2.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <PortraitClothing>
+      <sprite name="Portrait Clothing Mechanic" texture="Content/Items/Jobgear/PortraitClothing.png" sheetindex="1,0" />
+    </PortraitClothing>
+    <AppropriateOrders>
+      <Order identifier="fixleaks" />
+      <Order identifier="loaditems" />
+      <Order identifier="repairsystems" />
+    </AppropriateOrders>
+  </Job>
+  <Job identifier="oasishuskzealot" uicolor="0.5,0.5,0.7" vitalitymodifier="25" minnumber="0" maxnumber="0" initialcount="0" hiddenjob="true">
+    <Jobicon>
+      <sprite texture="%ModDir%/Images/MainUIAtlas.png" sourcerect="640,256,128,128" origin="0.5,0.5" />
+    </Jobicon>
+    <JobiconSmall>
+      <sprite texture="Content/UI/CommandUIAtlas.png" sourcerect="641,640,28,28" origin="0.5,0.5" />
+    </JobiconSmall>
+    <Skills>
+      <Skill identifier="mechanical" level="25,45" primary="true" />
+      <Skill identifier="electrical" level="15,35" />
+      <Skill identifier="weapons" level="10,25" />
+      <Skill identifier="medical" level="0,5" />
+      <Skill identifier="helm" level="0,5" />
+    </Skills>
+    <ItemSet>
+      <Item identifier="idcard" equip="true" showpreview="false" />
+      <Item identifier="missionarymask" equip="true" />
+      <Item identifier="zealotrobes" equip="true" />
+      <Item identifier="fortifyimplant" equip="true" />
+      <Item identifier="huskstinger" />
+      <Item identifier="huskeggs" />
+      <Item identifier="huskeggs" />
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Commoner/quartermaster_torso_[GENDER]_2.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Commoner/quartermaster_torso_[GENDER]_2.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <PortraitClothing>
+      <sprite name="Portrait Clothing Mechanic" texture="Content/Items/Jobgear/PortraitClothing.png" sheetindex="1,0" />
+    </PortraitClothing>
+    <AppropriateOrders>
+      <Order identifier="fixleaks" />
+      <Order identifier="loaditems" />
+      <Order identifier="repairsystems" />
+    </AppropriateOrders>
+  </Job>
+  <Job identifier="slasher" uicolor="0.5,0.46,0.9" vitalitymodifier="25" minnumber="0" maxnumber="0" initialcount="0" hiddenjob="true">
+    <Jobicon>
+      <sprite texture="Content/UI/TalentsIcons2.png" sourcerect="896,640,128,128" color="200,0,0,255" origin="0.5,0.5" />
+    </Jobicon>
+    <JobiconSmall>
+      <sprite texture="Content/UI/TalentsIcons2.png" sourcerect="896,640,128,128" color="200,0,0,255" scale="0.15" origin="0.5,0.5" />
+    </JobiconSmall>
+    <Skills>
+      <Skill identifier="weapons" level="50,100" primary="true" />
+      <Skill identifier="mechanical" level="25,45" />
+      <Skill identifier="electrical" level="15,35" />
+      <Skill identifier="medical" level="0,5" />
+      <Skill identifier="helm" level="0,5" />
+    </Skills>
+    <ItemSet>
+      <Item identifier="fractalidcard" equip="true" showpreview="false" />
+      <Item identifier="eternalkillermask" equip="true" />
+      <Item identifier="eternalbloodymachete" />
+      <Item identifier="eternalclownsuitarmored" equip="true" outfit="true" />
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Commoner/quartermaster_torso_[GENDER]_2.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Commoner/quartermaster_torso_[GENDER]_2.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <PortraitClothing>
+      <sprite name="Portrait Clothing Mechanic" texture="Content/Items/Jobgear/PortraitClothing.png" sheetindex="1,0" />
+    </PortraitClothing>
+    <AppropriateOrders>
+      <Order identifier="fixleaks" />
+      <Order identifier="loaditems" />
+      <Order identifier="repairsystems" />
+    </AppropriateOrders>
+  </Job>
+  <Job identifier="ventdweller" uicolor="0.8,0.48,0.43" vitalitymodifier="10" minnumber="0" maxnumber="0" initialcount="0" hiddenjob="true">
+    <Jobicon>
+      <sprite texture="%ModDir%/Images/MainUIAtlas.png" sourcerect="128,256,128,128" origin="0.5,0.5" />
+    </Jobicon>
+    <JobiconSmall>
+      <sprite texture="Content/UI/TalentsIcons2.png" sourcerect="896,640,128,128" color="200,0,0,255" scale="0.15" origin="0.5,0.5" />
+    </JobiconSmall>
+    <Skills>
+      <Skill identifier="weapons" level="50,100" primary="true" />
+      <Skill identifier="mechanical" level="25,50" />
+      <Skill identifier="electrical" level="25,50" />
+      <Skill identifier="medical" level="0,5" />
+      <Skill identifier="helm" level="0,5" />
+    </Skills>
+    <ItemSet>
+      <Item identifier="ventdwelleridcard" equip="true" />
+      <Item identifier="ventdivingmask" equip="true">
+        <Item identifier="oxygenitetank" />
+      </Item>
+      <Item identifier="ek_mechanic_armor" equip="true" />
+      <Item identifier="renegadeclothes" equip="true" outfit="true" />
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <Item identifier="ventdwellerarcemitter">
+        <Item identifier="batterycell" />
+      </Item>
+      <Item identifier="helltorch">
+        <Item identifier="incendiumfueltank" />
+      </Item>
+      <Item identifier="oasisflintlockrifle">
+        <Item identifier="physicorium_flintlockammo" />
+      </Item>
+      <Item identifier="oasisflintlockpistol">
+        <Item identifier="physicorium_flintlockammo" />
+      </Item>
+      <Item identifier="physicorium_flintlockammo" />
+      <Item identifier="physicorium_flintlockammo" />
+      <Item identifier="physicorium_flintlockammo" />
+      <Item identifier="physicorium_flintlockammo" />
+      <Item identifier="physicorium_flintlockammo" />
+      <Item identifier="physicorium_flintlockammo" />
+      <Item identifier="physicorium_flintlockammo" />
+      <Item identifier="physicorium_flintlockammo" />
+      <Item identifier="toolbelt" equip="true">
+        <Item identifier="scp_armykit" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="crowbar" />
+        <Item identifier="screwdriver" />
+        <Item identifier="wrench" />
+      </Item>
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Commoner/quartermaster_torso_[GENDER]_2.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Commoner/quartermaster_torso_[GENDER]_2.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <PortraitClothing>
+      <sprite name="Portrait Clothing Mechanic" texture="Content/Items/Jobgear/PortraitClothing.png" sheetindex="1,0" />
+    </PortraitClothing>
+    <AppropriateOrders>
+      <Order identifier="fixleaks" />
+      <Order identifier="loaditems" />
+      <Order identifier="repairsystems" />
+    </AppropriateOrders>
+  </Job>
+  <!-- Santa is pretty tough. How else does he deliver so many presents? -->
+  <Job identifier="santa" uicolor="0.4,0.0,0.0" vitalitymodifier="100" minnumber="0" maxnumber="0" initialcount="0" hiddenjob="true">
+    <Jobicon>
+      <sprite texture="Content/UI/TalentsIcons2.png" sourcerect="896,640,128,128" color="200,0,0,255" origin="0.5,0.5" />
+    </Jobicon>
+    <JobiconSmall>
+      <sprite texture="Content/UI/TalentsIcons2.png" sourcerect="896,640,128,128" color="200,0,0,255" scale="0.15" origin="0.5,0.5" />
+    </JobiconSmall>
+    <Skills>
+      <Skill identifier="weapons" level="50,100" primary="true" />
+      <Skill identifier="mechanical" level="25,45" />
+      <Skill identifier="electrical" level="15,35" />
+      <Skill identifier="medical" level="0,50" />
+      <Skill identifier="helm" level="0,5" />
+    </Skills>
+    <ItemSet>
+      <Item identifier="idcard" equip="true" showpreview="false" />
+      <Item identifier="crowbar" />
+      <Item identifier="mh_santahat" equip="true" />
+      <Item identifier="oasis_santa" equip="true" outfit="true" />
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Commoner/quartermaster_torso_[GENDER]_2.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Commoner/quartermaster_torso_[GENDER]_2.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <PortraitClothing>
+      <sprite name="Portrait Clothing Mechanic" texture="Content/Items/Jobgear/PortraitClothing.png" sheetindex="1,0" />
+    </PortraitClothing>
+    <AppropriateOrders>
+      <Order identifier="fixleaks" />
+      <Order identifier="loaditems" />
+      <Order identifier="repairsystems" />
+    </AppropriateOrders>
+  </Job>
+  <!-- Elves are Santa's minions. -->
+  <Job identifier="elf" uicolor="0.0,0.4,0.0" vitalitymodifier="10" minnumber="0" maxnumber="0" initialcount="0" hiddenjob="true">
+    <Jobicon>
+      <sprite texture="Content/UI/TalentsIcons2.png" sourcerect="896,640,128,128" color="200,0,0,255" origin="0.5,0.5" />
+    </Jobicon>
+    <JobiconSmall>
+      <sprite texture="Content/UI/TalentsIcons2.png" sourcerect="896,640,128,128" color="200,0,0,255" scale="0.15" origin="0.5,0.5" />
+    </JobiconSmall>
+    <Skills>
+      <Skill identifier="weapons" level="25,50" primary="true" />
+      <Skill identifier="mechanical" level="25,45" />
+      <Skill identifier="electrical" level="15,35" />
+      <Skill identifier="medical" level="0,5" />
+      <Skill identifier="helm" level="0,5" />
+    </Skills>
+    <ItemSet>
+      <Item identifier="idcard" equip="true" showpreview="false" />
+      <Item identifier="crowbar" />
+      <Item identifier="mh_santaelfhat" equip="true" />
+      <Item identifier="oasis_santaelf" equip="true" outfit="true" />
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Commoner/quartermaster_torso_[GENDER]_2.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Commoner/quartermaster_torso_[GENDER]_2.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <PortraitClothing>
+      <sprite name="Portrait Clothing Mechanic" texture="Content/Items/Jobgear/PortraitClothing.png" sheetindex="1,0" />
+    </PortraitClothing>
+    <AppropriateOrders>
+      <Order identifier="fixleaks" />
+      <Order identifier="loaditems" />
+      <Order identifier="repairsystems" />
+    </AppropriateOrders>
+  </Job>
+  <Job identifier="clowncurse" uicolor="0.5,0.46,0.9" vitalitymodifier="100" minnumber="0" maxnumber="0" initialcount="0" hiddenjob="true">
+    <Jobicon>
+      <sprite texture="%ModDir%/Images/MainUIAtlas.png" sourcerect="128,256,128,128" origin="0.5,0.5" />
+    </Jobicon>
+    <JobiconSmall>
+      <sprite texture="Content/UI/CommandUIAtlas.png" sourcerect="641,640,28,28" origin="0.5,0.5" />
+    </JobiconSmall>
+    <Skills>
+      <Skill identifier="mechanical" level="0,0" primary="true" />
+      <Skill identifier="electrical" level="0,0" />
+      <Skill identifier="weapons" level="0,0" />
+      <Skill identifier="medical" level="0,0" />
+      <Skill identifier="helm" level="0,0" />
+    </Skills>
+    <ItemSet>
+      <Item identifier="idcard" equip="true" showpreview="false" />
+      <Item identifier="cursedclownmask2" equip="true" />
+      <Item identifier="cursedbikehorn" equip="true" />
+      <Item identifier="cursedclowncostume" equip="true" outfit="true" />
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Commoner/quartermaster_torso_[GENDER]_2.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Commoner/quartermaster_torso_[GENDER]_2.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <PortraitClothing>
+      <sprite name="Portrait Clothing Mechanic" texture="Content/Items/Jobgear/PortraitClothing.png" sheetindex="1,0" />
+    </PortraitClothing>
+    <AppropriateOrders>
+      <Order identifier="fixleaks" />
+      <Order identifier="loaditems" />
+      <Order identifier="repairsystems" />
+    </AppropriateOrders>
+  </Job>
+  <Job identifier="oasisjovianbasic" minnumber="0" maxnumber="0" initialcount="0" uicolor="0.8,0.48,0.43" vitalitymodifier="0" idlebehavior="Patrol" hiddenjob="true">
+    <Jobicon>
+      <sprite texture="%ModDir%/Images/MainUIAtlas.png" sourcerect="256,256,128,128" origin="0.5,0.5" />
+    </Jobicon>
+    <JobiconSmall>
+      <sprite texture="Content/UI/CommandUIAtlas.png" sourcerect="612,640,28,28" origin="0.5,0.5" />
+    </JobiconSmall>
+    <Skills>
+      <Skill identifier="weapons" level="20,30" primary="true" />
+      <Skill identifier="medical" level="20,30" />
+      <Skill identifier="mechanical" level="15,25" />
+      <Skill identifier="electrical" level="15,25" />
+      <Skill identifier="helm" level="5,10" />
+    </Skills>
+    <ItemSet>
+      <Item identifier="scp_renegadeuniform" equip="true" outfit="true" />
+      <Item identifier="idcard" equip="true" showpreview="false" />
+      <Item identifier="scp_mp443">
+        <Item identifier="scp_9mmmag" showpreview="false" />
+      </Item>
+      <Item identifier="divingknife" equip="false" />
+      <Item identifier="scp_renegadevest" equip="true" />
+      <Item identifier="baseballcap" equip="true" />
+      <Item identifier="toolbelt" equip="true">
+        <Item identifier="scp_9mmmag" />
+        <Item identifier="scp_9mmmag" />
+        <Item identifier="scp_armykit" />
+      </Item>
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_1.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_1.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <ItemSet>
+      <Item identifier="scp_renegadeuniform" equip="true" outfit="true" />
+      <Item identifier="idcard" equip="true" showpreview="false" />
+      <Item identifier="scp_sr1">
+        <Item identifier="scp_45mag" showpreview="false" />
+      </Item>
+      <Item identifier="divingknife" equip="false" />
+      <Item identifier="scp_renegadevest" equip="true" />
+      <Item identifier="baseballcap" equip="true" />
+      <Item identifier="toolbelt" equip="true">
+        <Item identifier="scp_45mag" />
+        <Item identifier="scp_45mag" />
+        <Item identifier="scp_armykit" />
+      </Item>
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_2.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_2.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <PortraitClothing>
+      <sprite name="Portrait Clothing Security Officer" texture="Content/Items/Jobgear/PortraitClothing.png" sheetindex="1,1" />
+    </PortraitClothing>
+    <AutonomousObjectives>
+      <Order identifier="fightintruders" prioritymodifier="1" />
+      <Order identifier="rescue" prioritymodifier="1" />
+      <Order identifier="extinguishfires" prioritymodifier="0.75" />
+      <Order identifier="operatereactor" option="powerup" prioritymodifier="0.2" />
+    </AutonomousObjectives>
+    <AppropriateOrders>
+      <Order identifier="operateweapons" />
+      <Order identifier="fightintruders" />
+    </AppropriateOrders>
+  </Job>
+  <Job identifier="oasisjovianstandard" minnumber="0" maxnumber="0" initialcount="0" uicolor="0.8,0.48,0.43" vitalitymodifier="10" idlebehavior="Patrol" hiddenjob="true">
+    <Jobicon>
+      <sprite texture="%ModDir%/Images/MainUIAtlas.png" sourcerect="256,256,128,128" origin="0.5,0.5" />
+    </Jobicon>
+    <JobiconSmall>
+      <sprite texture="Content/UI/CommandUIAtlas.png" sourcerect="612,640,28,28" origin="0.5,0.5" />
+    </JobiconSmall>
+    <Skills>
+      <Skill identifier="weapons" level="40,60" primary="true" />
+      <Skill identifier="medical" level="30,40" />
+      <Skill identifier="mechanical" level="15,25" />
+      <Skill identifier="electrical" level="15,25" />
+      <Skill identifier="helm" level="5,10" />
+    </Skills>
+    <ItemSet>
+      <Item identifier="scp_renegadeuniform" equip="true" outfit="true" />
+      <Item identifier="idcard" equip="true" showpreview="false" />
+      <Item identifier="scp_uzi">
+        <Item identifier="scp_9mmsmgmag" showpreview="false" />
+      </Item>
+      <Item identifier="scp_m9bayonet" equip="false" />
+      <Item identifier="bodyarmor" equip="true" />
+      <Item identifier="scp_renegadehelmet" equip="true" />
+      <Item identifier="toolbelt" equip="true">
+        <Item identifier="scp_9mmsmgmag" />
+        <Item identifier="scp_9mmsmgmag" />
+        <Item identifier="scp_armykit" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+      </Item>
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_1.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_1.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <ItemSet>
+      <Item identifier="scp_renegadeuniform" equip="true" outfit="true" />
+      <Item identifier="idcard" equip="true" showpreview="false" />
+      <Item identifier="scp_sr2">
+        <Item identifier="scp_umpmag" showpreview="false" />
+      </Item>
+      <Item identifier="scp_m9bayonet" equip="false" />
+      <Item identifier="bodyarmor" equip="true" />
+      <Item identifier="scp_renegadehelmet" equip="true" />
+      <Item identifier="toolbelt" equip="true">
+        <Item identifier="scp_umpmag" />
+        <Item identifier="scp_umpmag" />
+        <Item identifier="scp_armykit" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+      </Item>
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_2.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_2.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <ItemSet>
+      <Item identifier="scp_renegadeuniform" equip="true" outfit="true" />
+      <Item identifier="idcard" equip="true" showpreview="false" />
+      <Item identifier="scp_aks74u">
+        <Item identifier="scp_ak74mag" showpreview="false" />
+      </Item>
+      <Item identifier="scp_m9bayonet" equip="false" />
+      <Item identifier="bodyarmor" equip="true" />
+      <Item identifier="scp_renegadehelmet" equip="true" />
+      <Item identifier="toolbelt" equip="true">
+        <Item identifier="scp_ak74mag" />
+        <Item identifier="scp_ak74mag" />
+        <Item identifier="scp_armykit" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+      </Item>
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_2.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_2.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <ItemSet>
+      <Item identifier="scp_renegadeuniform" equip="true" outfit="true" />
+      <Item identifier="idcard" equip="true" showpreview="false" />
+      <Item identifier="scp_rm93">
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+      </Item>
+      <Item identifier="scp_m9bayonet" equip="false" />
+      <Item identifier="bodyarmor" equip="true" />
+      <Item identifier="scp_renegadehelmet" equip="true" />
+      <Item identifier="toolbelt" equip="true">
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="scp_armykit" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+      </Item>
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_2.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_2.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <PortraitClothing>
+      <sprite name="Portrait Clothing Security Officer" texture="Content/Items/Jobgear/PortraitClothing.png" sheetindex="1,1" />
+    </PortraitClothing>
+    <AutonomousObjectives>
+      <Order identifier="fightintruders" prioritymodifier="1" />
+      <Order identifier="rescue" prioritymodifier="1" />
+      <Order identifier="extinguishfires" prioritymodifier="0.75" />
+      <Order identifier="operatereactor" option="powerup" prioritymodifier="0.2" />
+    </AutonomousObjectives>
+    <AppropriateOrders>
+      <Order identifier="operateweapons" />
+      <Order identifier="fightintruders" />
+    </AppropriateOrders>
+  </Job>
+  <Job identifier="oasisjovianelite" minnumber="0" maxnumber="0" initialcount="0" uicolor="0.8,0.48,0.43" vitalitymodifier="15" idlebehavior="Patrol" hiddenjob="true">
+    <Jobicon>
+      <sprite texture="%ModDir%/Images/MainUIAtlas.png" sourcerect="256,256,128,128" origin="0.5,0.5" />
+    </Jobicon>
+    <JobiconSmall>
+      <sprite texture="Content/UI/CommandUIAtlas.png" sourcerect="612,640,28,28" origin="0.5,0.5" />
+    </JobiconSmall>
+    <Skills>
+      <Skill identifier="weapons" level="60,80" primary="true" />
+      <Skill identifier="medical" level="40,50" />
+      <Skill identifier="mechanical" level="15,25" />
+      <Skill identifier="electrical" level="15,25" />
+      <Skill identifier="helm" level="5,10" />
+    </Skills>
+    <ItemSet>
+      <Item identifier="scp_heavyrenuniform" equip="true" outfit="true" />
+      <Item identifier="idcard" equip="true" showpreview="false" />
+      <Item identifier="scp_ak74m">
+        <Item identifier="scp_ak74apmag" showpreview="false" />
+      </Item>
+      <Item identifier="scp_sr1">
+        <Item identifier="scp_45mag" showpreview="false" />
+      </Item>
+      <Item identifier="scp_m9bayonet" equip="false" />
+      <Item identifier="crowbar" equip="false" />
+      <Item identifier="scp_renegadeplatecarrier" equip="true" />
+      <Item identifier="scp_renegadeheavyhelmet" equip="true" />
+      <Item identifier="scp_assaultpack" equip="true">
+        <Item identifier="scp_ak74apmag" />
+        <Item identifier="scp_ak74apmag" />
+        <Item identifier="scp_ak74apmag" />
+        <Item identifier="scp_45mag" showpreview="false" />
+        <Item identifier="scp_45mag" showpreview="false" />
+        <Item identifier="scp_armykit" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+      </Item>
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_1.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_1.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <ItemSet>
+      <Item identifier="scp_heavyrenuniform" equip="true" outfit="true" />
+      <Item identifier="idcard" equip="true" showpreview="false" />
+      <Item identifier="scp_ak103">
+        <Item identifier="scp_akapmag" showpreview="false" />
+      </Item>
+      <Item identifier="scp_mp443">
+        <Item identifier="scp_9mmmag" showpreview="false" />
+      </Item>
+      <Item identifier="crowbar" equip="false" />
+      <Item identifier="scp_m9bayonet" equip="false" />
+      <Item identifier="scp_renegadeplatecarrier" equip="true" />
+      <Item identifier="scp_renegadeheavyhelmet" equip="true" />
+      <Item identifier="scp_assaultpack" equip="true">
+        <Item identifier="scp_akapmag" />
+        <Item identifier="scp_akapmag" />
+        <Item identifier="scp_akapmag" />
+        <Item identifier="scp_9mmmag" showpreview="false" />
+        <Item identifier="scp_9mmmag" showpreview="false" />
+        <Item identifier="scp_armykit" />
+        <Item identifier="scp_armykit" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+      </Item>
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_2.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_2.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <ItemSet>
+      <Item identifier="scp_heavyrenuniform" equip="true" outfit="true" />
+      <Item identifier="idcard" equip="true" showpreview="false" />
+      <Item identifier="scp_saiga12">
+        <Item identifier="scp_saigaextmag" showpreview="false" />
+      </Item>
+      <Item identifier="scp_rhino">
+        <Item identifier="scp_357round" showpreview="false" />
+        <Item identifier="scp_357round" showpreview="false" />
+        <Item identifier="scp_357round" showpreview="false" />
+        <Item identifier="scp_357round" showpreview="false" />
+        <Item identifier="scp_357round" showpreview="false" />
+        <Item identifier="scp_357round" showpreview="false" />
+      </Item>
+      <Item identifier="crowbar" equip="false" />
+      <Item identifier="scp_m9bayonet" equip="false" />
+      <Item identifier="scp_renegadeplatecarrier" equip="true" />
+      <Item identifier="scp_renegadeheavyhelmet" equip="true" />
+      <Item identifier="scp_assaultpack" equip="true">
+        <Item identifier="scp_saigaextmag" />
+        <Item identifier="scp_saigaextmag" />
+        <Item identifier="scp_357round" showpreview="false" />
+        <Item identifier="scp_357round" showpreview="false" />
+        <Item identifier="scp_357round" showpreview="false" />
+        <Item identifier="scp_357round" showpreview="false" />
+        <Item identifier="scp_357round" showpreview="false" />
+        <Item identifier="scp_357round" showpreview="false" />
+        <Item identifier="scp_357round" showpreview="false" />
+        <Item identifier="scp_357round" showpreview="false" />
+        <Item identifier="scp_357round" showpreview="false" />
+        <Item identifier="scp_357round" showpreview="false" />
+        <Item identifier="scp_357round" showpreview="false" />
+        <Item identifier="scp_357round" showpreview="false" />
+        <Item identifier="scp_armykit" />
+        <Item identifier="scp_armykit" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+      </Item>
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_2.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_2.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <ItemSet>
+      <Item identifier="scp_heavyrenuniform" equip="true" outfit="true" />
+      <Item identifier="idcard" equip="true" showpreview="false" />
+      <Item identifier="scp_tabuk">
+        <Item identifier="scp_akapmag" showpreview="false" />
+      </Item>
+      <Item identifier="scp_uzi">
+        <Item identifier="scp_9mmsmgmag" showpreview="false" />
+      </Item>
+      <Item identifier="crowbar" equip="false" />
+      <Item identifier="scp_m9bayonet" equip="false" />
+      <Item identifier="scp_renegadeplatecarrier" equip="true" />
+      <Item identifier="scp_renegadeheavyhelmet" equip="true" />
+      <Item identifier="scp_assaultpack" equip="true">
+        <Item identifier="scp_akapmag" />
+        <Item identifier="scp_akapmag" />
+        <Item identifier="scp_akapmag" />
+        <Item identifier="scp_9mmsmgmag" showpreview="false" />
+        <Item identifier="scp_9mmsmgmag" showpreview="false" />
+        <Item identifier="scp_9mmsmgmag" showpreview="false" />
+        <Item identifier="scp_armykit" />
+        <Item identifier="scp_armykit" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+      </Item>
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_2.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_2.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <PortraitClothing>
+      <sprite name="Portrait Clothing Security Officer" texture="Content/Items/Jobgear/PortraitClothing.png" sheetindex="1,1" />
+    </PortraitClothing>
+    <AutonomousObjectives>
+      <Order identifier="fightintruders" prioritymodifier="1" />
+      <Order identifier="rescue" prioritymodifier="1" />
+      <Order identifier="extinguishfires" prioritymodifier="0.75" />
+      <Order identifier="operatereactor" option="powerup" prioritymodifier="0.2" />
+    </AutonomousObjectives>
+    <AppropriateOrders>
+      <Order identifier="operateweapons" />
+      <Order identifier="fightintruders" />
+    </AppropriateOrders>
+  </Job>
+  <Job identifier="oasiscoalitionbasic" minnumber="0" maxnumber="0" initialcount="0" uicolor="0.43,0.48,0.8" vitalitymodifier="0" idlebehavior="Patrol" hiddenjob="true">
+    <Jobicon>
+      <sprite texture="%ModDir%/Images/MainUIAtlas.png" sourcerect="512,256,128,128" origin="0.5,0.5" />
+    </Jobicon>
+    <JobiconSmall>
+      <sprite texture="Content/UI/CommandUIAtlas.png" sourcerect="612,640,28,28" origin="0.5,0.5" />
+    </JobiconSmall>
+    <Skills>
+      <Skill identifier="weapons" level="30,40" primary="true" />
+      <Skill identifier="medical" level="15,25" />
+      <Skill identifier="mechanical" level="35,50" />
+      <Skill identifier="electrical" level="35,50" />
+      <Skill identifier="helm" level="5,10" />
+    </Skills>
+    <ItemSet>
+      <Item identifier="scp_lightuniform" equip="true" outfit="true" />
+      <Item identifier="scp_softvest" equip="true" outfit="true" />
+      <Item identifier="scp_simplehelmet" equip="true" />
+      <Item identifier="idcard" equip="true" showpreview="false" />
+      <Item identifier="scp_p226">
+        <Item identifier="scp_9mmmag" showpreview="false" />
+      </Item>
+      <Item identifier="divingknife" equip="false" />
+      <Item identifier="toolbelt" equip="true">
+        <Item identifier="scp_9mmmag" />
+        <Item identifier="scp_9mmmag" />
+        <Item identifier="scp_armykit" />
+        <Item identifier="screwdriver" />
+        <Item identifier="wrench" />
+      </Item>
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Security/securityofficertorso[GENDER]_1.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Security/securityofficertorso[GENDER]_1.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <ItemSet>
+      <Item identifier="scp_lightuniform" equip="true" outfit="true" />
+      <Item identifier="scp_softvest" equip="true" outfit="true" />
+      <Item identifier="idcard" equip="true" showpreview="false" />
+      <Item identifier="scp_meusoc">
+        <Item identifier="scp_45mag" showpreview="false" />
+      </Item>
+      <Item identifier="divingknife" equip="false" />
+      <Item identifier="scp_simplehelmet" equip="true" />
+      <Item identifier="toolbelt" equip="true">
+        <Item identifier="scp_45mag" />
+        <Item identifier="scp_45mag" />
+        <Item identifier="scp_armykit" />
+        <Item identifier="screwdriver" />
+        <Item identifier="wrench" />
+      </Item>
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Security/securityofficertorso[GENDER]_2.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Security/securityofficertorso[GENDER]_2.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <PortraitClothing>
+      <sprite name="Portrait Clothing Security Officer" texture="Content/Items/Jobgear/PortraitClothing.png" sheetindex="1,1" />
+    </PortraitClothing>
+    <AutonomousObjectives>
+      <Order identifier="fightintruders" prioritymodifier="1" />
+      <Order identifier="rescue" prioritymodifier="1" />
+      <Order identifier="extinguishfires" prioritymodifier="0.75" />
+      <Order identifier="operatereactor" option="powerup" prioritymodifier="0.2" />
+    </AutonomousObjectives>
+    <AppropriateOrders>
+      <Order identifier="operateweapons" />
+      <Order identifier="fightintruders" />
+    </AppropriateOrders>
+  </Job>
+  <Job identifier="oasiscoalitionstandard" minnumber="0" maxnumber="0" initialcount="0" uicolor="0.43,0.48,0.8" vitalitymodifier="5" idlebehavior="Patrol" hiddenjob="true">
+    <Jobicon>
+      <sprite texture="%ModDir%/Images/MainUIAtlas.png" sourcerect="512,256,128,128" origin="0.5,0.5" />
+    </Jobicon>
+    <JobiconSmall>
+      <sprite texture="Content/UI/CommandUIAtlas.png" sourcerect="612,640,28,28" origin="0.5,0.5" />
+    </JobiconSmall>
+    <Skills>
+      <Skill identifier="weapons" level="40,50" primary="true" />
+      <Skill identifier="medical" level="25,35" />
+      <Skill identifier="mechanical" level="25,40" />
+      <Skill identifier="electrical" level="25,40" />
+      <Skill identifier="helm" level="5,10" />
+    </Skills>
+    <ItemSet>
+      <Item identifier="scp_lightuniform" equip="true" outfit="true" />
+      <Item identifier="bodyarmor" equip="true" outfit="true" />
+      <Item identifier="ballistichelmet1" equip="true" />
+      <Item identifier="idcard" equip="true" showpreview="false" />
+      <Item identifier="scp_smg9">
+        <Item identifier="scp_9mmsmgmag" showpreview="false" />
+      </Item>
+      <Item identifier="divingknife" equip="false" />
+      <Item identifier="toolbelt" equip="true">
+        <Item identifier="scp_9mmsmgmag" />
+        <Item identifier="scp_9mmsmgmag" />
+        <Item identifier="scp_armykit" />
+        <Item identifier="screwdriver" />
+        <Item identifier="wrench" />
+      </Item>
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Security/securityofficertorso[GENDER]_1.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Security/securityofficertorso[GENDER]_1.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <ItemSet>
+      <Item identifier="scp_lightuniform" equip="true" outfit="true" />
+      <Item identifier="bodyarmor" equip="true" outfit="true" />
+      <Item identifier="idcard" equip="true" showpreview="false" />
+      <Item identifier="scp_ump45">
+        <Item identifier="scp_umpmag" showpreview="false" />
+      </Item>
+      <Item identifier="divingknife" equip="false" />
+      <Item identifier="ballistichelmet2" equip="true" />
+      <Item identifier="toolbelt" equip="true">
+        <Item identifier="scp_umpmag" />
+        <Item identifier="scp_umpmag" />
+        <Item identifier="scp_armykit" />
+        <Item identifier="screwdriver" />
+        <Item identifier="wrench" />
+      </Item>
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Security/securityofficertorso[GENDER]_2.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Security/securityofficertorso[GENDER]_2.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <PortraitClothing>
+      <sprite name="Portrait Clothing Security Officer" texture="Content/Items/Jobgear/PortraitClothing.png" sheetindex="1,1" />
+    </PortraitClothing>
+    <AutonomousObjectives>
+      <Order identifier="fightintruders" prioritymodifier="1" />
+      <Order identifier="rescue" prioritymodifier="1" />
+      <Order identifier="extinguishfires" prioritymodifier="0.75" />
+      <Order identifier="operatereactor" option="powerup" prioritymodifier="0.2" />
+    </AutonomousObjectives>
+    <AppropriateOrders>
+      <Order identifier="operateweapons" />
+      <Order identifier="fightintruders" />
+    </AppropriateOrders>
+  </Job>
+  <Job identifier="oasiscoalitionelite" minnumber="0" maxnumber="0" initialcount="0" uicolor="0.8,0.48,0.43" vitalitymodifier="0" idlebehavior="Patrol" hiddenjob="true">
+    <Jobicon>
+      <sprite texture="%ModDir%/Images/MainUIAtlas.png" sourcerect="512,256,128,128" origin="0.5,0.5" />
+    </Jobicon>
+    <JobiconSmall>
+      <sprite texture="Content/UI/CommandUIAtlas.png" sourcerect="612,640,28,28" origin="0.5,0.5" />
+    </JobiconSmall>
+    <Skills>
+      <Skill identifier="weapons" level="50,60" primary="true" />
+      <Skill identifier="medical" level="40,50" />
+      <Skill identifier="mechanical" level="20,30" />
+      <Skill identifier="electrical" level="20,30" />
+      <Skill identifier="helm" level="5,10" />
+    </Skills>
+    <ItemSet>
+      <Item identifier="scp_lightuniform" equip="true" outfit="true" />
+      <Item identifier="scp_heavyvest" equip="true" outfit="true" />
+      <Item identifier="scp_combathelmet" equip="true" />
+      <Item identifier="idcard" equip="true" showpreview="false" />
+      <Item identifier="scp_sg550">
+        <Item identifier="scp_556mag" showpreview="false" />
+      </Item>
+      <Item identifier="divingknife" equip="false" />
+      <Item identifier="scp_assaultpack" equip="true">
+        <Item identifier="scp_556mag" />
+        <Item identifier="scp_556mag" />
+        <Item identifier="scp_556mag" />
+        <Item identifier="scp_556mag" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="scp_armykit" />
+      </Item>
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Security/securityofficertorso[GENDER]_1.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Security/securityofficertorso[GENDER]_1.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <ItemSet>
+      <Item identifier="scp_lightuniform" equip="true" outfit="true" />
+      <Item identifier="scp_heavyvest" equip="true" outfit="true" />
+      <Item identifier="idcard" equip="true" showpreview="false" />
+      <Item identifier="scp_mxa1">
+        <Item identifier="scp_65mag" showpreview="false" />
+      </Item>
+      <Item identifier="divingknife" equip="false" />
+      <Item identifier="scp_combathelmet" equip="true" />
+      <Item identifier="scp_assaultpack" equip="true">
+        <Item identifier="scp_65mag" />
+        <Item identifier="scp_65mag" />
+        <Item identifier="scp_65mag" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="scp_armykit" />
+      </Item>
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Security/securityofficertorso[GENDER]_2.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Security/securityofficertorso[GENDER]_2.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <ItemSet>
+      <Item identifier="scp_lightuniform" equip="true" outfit="true" />
+      <Item identifier="scp_heavyvest" equip="true" outfit="true" />
+      <Item identifier="scp_combathelmet" equip="true" />
+      <Item identifier="idcard" equip="true" showpreview="false" />
+      <Item identifier="scp_m590">
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+      </Item>
+      <Item identifier="divingknife" equip="false" />
+      <Item identifier="scp_assaultpack" equip="true">
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="shotgunshell" showpreview="false" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="scp_armykit" />
+      </Item>
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Security/securityofficertorso[GENDER]_1.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Security/securityofficertorso[GENDER]_1.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <PortraitClothing>
+      <sprite name="Portrait Clothing Security Officer" texture="Content/Items/Jobgear/PortraitClothing.png" sheetindex="1,1" />
+    </PortraitClothing>
+    <AutonomousObjectives>
+      <Order identifier="fightintruders" prioritymodifier="1" />
+      <Order identifier="rescue" prioritymodifier="1" />
+      <Order identifier="extinguishfires" prioritymodifier="0.75" />
+      <Order identifier="operatereactor" option="powerup" prioritymodifier="0.2" />
+    </AutonomousObjectives>
+    <AppropriateOrders>
+      <Order identifier="operateweapons" />
+      <Order identifier="fightintruders" />
+    </AppropriateOrders>
+  </Job>
+  <Job identifier="oasiscoalitioncaptain" minnumber="0" maxnumber="0" initialcount="0" uicolor="0.8,0.48,0.43" vitalitymodifier="0" idlebehavior="Patrol" hiddenjob="true">
+    <Jobicon>
+      <sprite texture="Content/UI/MainIconsAtlas.png" sourcerect="256,256,128,128" origin="0.5,0.5" />
+    </Jobicon>
+    <JobiconSmall>
+      <sprite texture="Content/UI/CommandUIAtlas.png" sourcerect="612,640,28,28" origin="0.5,0.5" />
+    </JobiconSmall>
+    <Skills>
+      <Skill identifier="weapons" level="45,55" primary="true" />
+      <Skill identifier="medical" level="10,15" />
+      <Skill identifier="mechanical" level="20,30" />
+      <Skill identifier="electrical" level="20,30" />
+      <Skill identifier="helm" level="60,70" />
+    </Skills>
+    <ItemSet>
+      <Item identifier="scp_heavyuniform" equip="true" outfit="true" />
+      <Item identifier="scp_heavyvest" equip="true" outfit="true" />
+      <Item identifier="captainscap3" equip="true" />
+      <Item identifier="idcard" equip="true" showpreview="false" />
+      <Item identifier="scp_python">
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+      </Item>
+      <Item identifier="scp_assaultpack" equip="true">
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="scp_armykit" />
+      </Item>
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Security/securityofficertorso[GENDER]_1.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Security/securityofficertorso[GENDER]_1.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <PortraitClothing>
+      <sprite name="Portrait Clothing Security Officer" texture="Content/Items/Jobgear/PortraitClothing.png" sheetindex="1,1" />
+    </PortraitClothing>
+    <AutonomousObjectives>
+      <Order identifier="fightintruders" prioritymodifier="1" />
+      <Order identifier="rescue" prioritymodifier="1" />
+      <Order identifier="extinguishfires" prioritymodifier="0.75" />
+      <Order identifier="operatereactor" option="powerup" prioritymodifier="0.2" />
+    </AutonomousObjectives>
+    <AppropriateOrders>
+      <Order identifier="operateweapons" />
+      <Order identifier="fightintruders" />
+    </AppropriateOrders>
+  </Job>
+  <Job identifier="oasisjoviancaptain" minnumber="0" maxnumber="0" initialcount="0" uicolor="0.8,0.48,0.43" vitalitymodifier="0" idlebehavior="Patrol" hiddenjob="true">
+    <Jobicon>
+      <sprite texture="Content/UI/MainIconsAtlas.png" sourcerect="256,256,128,128" origin="0.5,0.5" />
+    </Jobicon>
+    <JobiconSmall>
+      <sprite texture="Content/UI/CommandUIAtlas.png" sourcerect="612,640,28,28" origin="0.5,0.5" />
+    </JobiconSmall>
+    <Skills>
+      <Skill identifier="weapons" level="45,55" primary="true" />
+      <Skill identifier="medical" level="10,15" />
+      <Skill identifier="mechanical" level="20,30" />
+      <Skill identifier="electrical" level="20,30" />
+      <Skill identifier="helm" level="60,70" />
+    </Skills>
+    <ItemSet>
+      <Item identifier="scp_renegadecaptainuniform" equip="true" outfit="true" />
+      <Item identifier="scp_renegadeplatecarrier" equip="true" outfit="true" />
+      <Item identifier="scp_renegadecaptainhat" equip="true" />
+      <Item identifier="idcard" equip="true" showpreview="false" />
+      <Item identifier="scp_rhino">
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+      </Item>
+      <Item identifier="scp_assaultpack" equip="true">
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="scp_357apround" showpreview="false" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="scp_armykit" />
+      </Item>
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Security/securityofficertorso[GENDER]_1.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Security/securityofficertorso[GENDER]_1.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <PortraitClothing>
+      <sprite name="Portrait Clothing Security Officer" texture="Content/Items/Jobgear/PortraitClothing.png" sheetindex="1,1" />
+    </PortraitClothing>
+    <AutonomousObjectives>
+      <Order identifier="fightintruders" prioritymodifier="1" />
+      <Order identifier="rescue" prioritymodifier="1" />
+      <Order identifier="extinguishfires" prioritymodifier="0.75" />
+      <Order identifier="operatereactor" option="powerup" prioritymodifier="0.2" />
+    </AutonomousObjectives>
+    <AppropriateOrders>
+      <Order identifier="operateweapons" />
+      <Order identifier="fightintruders" />
+    </AppropriateOrders>
+  </Job>
+  <Job identifier="subjugator" minnumber="0" maxnumber="0" initialcount="0" uicolor="0.4,0.4,0.8" vitalitymodifier="25" idlebehavior="Patrol" hiddenjob="true">
+    <Jobicon>
+      <sprite texture="%ModDir%/Images/MainUIAtlas.png" sourcerect="512,256,128,128" origin="0.5,0.5" />
+    </Jobicon>
+    <JobiconSmall>
+      <sprite texture="Content/UI/CommandUIAtlas.png" sourcerect="612,640,28,28" origin="0.5,0.5" />
+    </JobiconSmall>
+    <Skills>
+      <Skill identifier="weapons" level="50,100" primary="true" />
+      <Skill identifier="medical" level="30,100" />
+      <Skill identifier="mechanical" level="0,25" />
+      <Skill identifier="electrical" level="0,25" />
+      <Skill identifier="helm" level="25,50" />
+    </Skills>
+    <ItemSet>
+      <Item identifier="oasis_veronuniform" equip="true" outfit="true" />
+      <Item identifier="subjugatoridcard" equip="true" showpreview="false" />
+      <Item identifier="scp_uts15" equip="true">
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+      </Item>
+      <Item identifier="scp_hk433">
+        <Item identifier="scp_556apmag" showpreview="false" />
+      </Item>
+      <Item identifier="scp_submissionbaton" equip="false" />
+      <Item identifier="fulguriumbatterycell" />
+      <Item identifier="fulguriumbatterycell" />
+      <Item identifier="carrybooster" />
+      <Item identifier="crowbar" equip="false" />
+      <Item identifier="autoinjectorheadset" equip="true" showpreview="false">
+        <Item identifier="combatstimulantsyringe" />
+      </Item>
+      <Item identifier="oasis_veronrig" equip="true">
+        <Item identifier="40mmstungrenade" />
+        <Item identifier="40mmstungrenade" />
+        <Item identifier="40mmcoughsmoke" />
+        <Item identifier="40mmcoughsmoke" />
+        <Item identifier="40mmcoughsmoke" />
+        <Item identifier="40mmcoughsmoke" />
+      </Item>
+      <Item identifier="oasis_veronhelmet" equip="true" />
+      <Item identifier="bombimplant" equip="true" />
+      <Item identifier="scp_protopack" equip="true">
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="oasisrubbershell" showpreview="false" />
+        <Item identifier="scp_556apmag" showpreview="false" />
+        <Item identifier="scp_556apmag" showpreview="false" />
+        <Item identifier="scp_556apmag" showpreview="false" />
+        <Item identifier="scp_556apmag" showpreview="false" />
+        <Item identifier="scp_armykit" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+      </Item>
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_1.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_1.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <PortraitClothing>
+      <sprite name="Portrait Clothing Security Officer" texture="Content/Items/Jobgear/PortraitClothing.png" sheetindex="1,1" />
+    </PortraitClothing>
+    <AutonomousObjectives>
+      <Order identifier="fightintruders" prioritymodifier="1" />
+      <Order identifier="rescue" prioritymodifier="1" />
+      <Order identifier="extinguishfires" prioritymodifier="0.75" />
+      <Order identifier="operatereactor" option="powerup" prioritymodifier="0.2" />
+    </AutonomousObjectives>
+    <AppropriateOrders>
+      <Order identifier="operateweapons" />
+      <Order identifier="fightintruders" />
+    </AppropriateOrders>
+  </Job>
+  <Job identifier="cleaner" minnumber="0" maxnumber="0" initialcount="0" uicolor="0.4,0.4,0.8" vitalitymodifier="25" idlebehavior="Patrol" hiddenjob="true">
+    <Jobicon>
+      <sprite texture="%ModDir%/Images/MainUIAtlas.png" sourcerect="512,256,128,128" origin="0.5,0.5" />
+    </Jobicon>
+    <JobiconSmall>
+      <sprite texture="Content/UI/CommandUIAtlas.png" sourcerect="612,640,28,28" origin="0.5,0.5" />
+    </JobiconSmall>
+    <Skills>
+      <Skill identifier="weapons" level="50,100" primary="true" />
+      <Skill identifier="medical" level="30,100" />
+      <Skill identifier="mechanical" level="0,25" />
+      <Skill identifier="electrical" level="0,25" />
+      <Skill identifier="helm" level="25,50" />
+    </Skills>
+    <ItemSet>
+      <Item identifier="cleaneridcard" equip="true" showpreview="false" />
+      <Item identifier="oasis_veronuniform" equip="true" outfit="true" />
+      <Item identifier="scp_hk433">
+        <Item identifier="scp_556extmag" showpreview="false" />
+      </Item>
+      <Item identifier="scp_ash12unique">
+        <Item identifier="scp_ash12mag" showpreview="false" />
+      </Item>
+      <Item identifier="scp_submissionbaton" equip="false" />
+      <Item identifier="fulguriumbatterycell" />
+      <Item identifier="fulguriumbatterycell" />
+      <Item identifier="carrybooster" />
+      <Item identifier="crowbar" equip="false" />
+      <Item identifier="oasis_veronrig" equip="true" />
+      <Item identifier="autoinjectorheadset" equip="true" showpreview="false">
+        <Item identifier="combatstimulantsyringe" />
+      </Item>
+      <Item identifier="bombimplant" equip="true" />
+      <Item identifier="oasis_veronhelmet" equip="true" />
+      <Item identifier="scp_protopack" equip="true">
+        <Item identifier="scp_556extmag" showpreview="false" />
+        <Item identifier="scp_556extmag" showpreview="false" />
+        <Item identifier="scp_556extmag" showpreview="false" />
+        <Item identifier="scp_ash12mag" showpreview="false" />
+        <Item identifier="scp_ash12mag" showpreview="false" />
+        <Item identifier="40mmgrenade" />
+        <Item identifier="40mmgrenade" />
+        <Item identifier="40mmgrenade" />
+        <Item identifier="40mmgrenade" />
+        <Item identifier="scp_armykit" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+      </Item>
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_1.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_1.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <PortraitClothing>
+      <sprite name="Portrait Clothing Security Officer" texture="Content/Items/Jobgear/PortraitClothing.png" sheetindex="1,1" />
+    </PortraitClothing>
+    <AutonomousObjectives>
+      <Order identifier="fightintruders" prioritymodifier="1" />
+      <Order identifier="rescue" prioritymodifier="1" />
+      <Order identifier="extinguishfires" prioritymodifier="0.75" />
+      <Order identifier="operatereactor" option="powerup" prioritymodifier="0.2" />
+    </AutonomousObjectives>
+    <AppropriateOrders>
+      <Order identifier="operateweapons" />
+      <Order identifier="fightintruders" />
+    </AppropriateOrders>
+  </Job>
+  <Job identifier="marine" minnumber="0" maxnumber="0" initialcount="0" uicolor="0.4,0.4,0.8" vitalitymodifier="25" idlebehavior="Patrol" hiddenjob="true">
+    <Jobicon>
+      <sprite texture="%ModDir%/Images/MainUIAtlas.png" sourcerect="512,256,128,128" origin="0.5,0.5" />
+    </Jobicon>
+    <JobiconSmall>
+      <sprite texture="Content/UI/CommandUIAtlas.png" sourcerect="612,640,28,28" origin="0.5,0.5" />
+    </JobiconSmall>
+    <Skills>
+      <Skill identifier="weapons" level="50,100" primary="true" />
+      <Skill identifier="medical" level="30,100" />
+      <Skill identifier="mechanical" level="0,25" />
+      <Skill identifier="electrical" level="0,25" />
+      <Skill identifier="helm" level="25,50" />
+    </Skills>
+    <ItemSet>
+      <Item identifier="scp_heavyuniform" equip="true" outfit="true" />
+      <Item identifier="marineidcard" equip="true" showpreview="false" />
+      <Item identifier="scp_sg550">
+        <Item identifier="scp_556apmag" showpreview="false" />
+      </Item>
+      <Item identifier="scp_meusoc">
+        <Item identifier="scp_45apmag" showpreview="false" />
+      </Item>
+      <Item identifier="stunbaton" equip="false">
+        <Item identifier="fulguriumbatterycell" />
+      </Item>
+      <Item identifier="scp_m9bayonet" />
+      <Item identifier="flashlight">
+        <Item identifier="fulguriumbatterycell" />
+      </Item>
+      <Item identifier="carrybooster" />
+      <Item identifier="scp_heavyvest" equip="true">
+        <Item identifier="scp_556apmag" showpreview="false" />
+        <Item identifier="scp_556apmag" showpreview="false" />
+        <Item identifier="scp_556apmag" showpreview="false" />
+        <Item identifier="scp_556apmag" showpreview="false" />
+        <Item identifier="scp_556apmag" showpreview="false" />
+        <Item identifier="scp_45apmag" showpreview="false" />
+        <Item identifier="scp_45apmag" showpreview="false" />
+        <Item identifier="scp_45apmag" showpreview="false" />
+        <Item identifier="scp_45apmag" showpreview="false" />
+      </Item>
+      <Item identifier="scp_assaultpack" equip="true">
+        <Item identifier="scp_armykit" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antidama1" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="antibloodloss2" />
+        <Item identifier="flashgrenade" />
+        <Item identifier="flashgrenade" />
+        <Item identifier="combatstimulantsyringe" />
+        <Item identifier="combatstimulantsyringe" />
+        <Item identifier="fulguriumbatterycell" />
+        <Item identifier="fulguriumbatterycell" />
+      </Item>
+      <Item identifier="autoinjectorheadset" equip="true" showpreview="false">
+        <Item identifier="combatstimulantsyringe" />
+      </Item>
+      <Item identifier="scp_heavycombathelmet" equip="true" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_1.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_1.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <PortraitClothing>
+      <sprite name="Portrait Clothing Security Officer" texture="Content/Items/Jobgear/PortraitClothing.png" sheetindex="1,1" />
+    </PortraitClothing>
+    <AutonomousObjectives>
+      <Order identifier="fightintruders" prioritymodifier="1" />
+      <Order identifier="rescue" prioritymodifier="1" />
+      <Order identifier="extinguishfires" prioritymodifier="0.75" />
+      <Order identifier="operatereactor" option="powerup" prioritymodifier="0.2" />
+    </AutonomousObjectives>
+    <AppropriateOrders>
+      <Order identifier="operateweapons" />
+      <Order identifier="fightintruders" />
+    </AppropriateOrders>
+  </Job>
+  <Job identifier="guntercool" minnumber="0" maxnumber="0" initialcount="0" uicolor="0.4,0.8,0.4" vitalitymodifier="100" idlebehavior="Patrol" hiddenjob="true">
+    <Jobicon>
+      <sprite texture="Content/UI/MainIconsAtlas.png" sourcerect="256,256,128,128" origin="0.5,0.5" />
+    </Jobicon>
+    <JobiconSmall>
+      <sprite texture="Content/UI/CommandUIAtlas.png" sourcerect="612,640,28,28" origin="0.5,0.5" />
+    </JobiconSmall>
+    <Skills>
+      <Skill identifier="weapons" level="69,69" primary="true" />
+      <Skill identifier="medical" level="69,69" />
+      <Skill identifier="mechanical" level="69,69" />
+      <Skill identifier="electrical" level="69,69" />
+      <Skill identifier="helm" level="69,69" />
+    </Skills>
+    <ItemSet>
+      <Item identifier="clowncostume" equip="true" outfit="true" />
+      <Item identifier="scp_heavyvest" equip="true" outfit="true">
+        <Item identifier="carrybooster" />
+        <!--Item identifier="expbooster" /-->
+      </Item>
+      <Item identifier="fractalidcard" equip="true" showpreview="false" />
+      <Item identifier="scp_sledge" />
+      <Item identifier="scp_vodka" />
+      <Item identifier="scp_vodka" />
+      <Item identifier="scp_vodka" />
+      <Item identifier="scp_vodka" />
+      <Item identifier="scp_vodka" />
+      <Item identifier="scp_vodka" />
+      <Item identifier="scp_vodka" />
+      <Item identifier="scp_vodka" />
+      <Item identifier="scp_vodka" />
+      <Item identifier="scp_vodka" />
+      <Item identifier="scp_vodka" />
+      <Item identifier="scp_vodka" />
+      <Item identifier="scp_vodka" />
+      <Item identifier="scp_vodka" />
+      <Item identifier="scp_vodka" />
+      <Item identifier="scp_vodka" />
+      <Item identifier="autoinjectorheadset" equip="true" showpreview="false">
+        <Item identifier="combatstimulantsyringe" />
+      </Item>
+      <Item identifier="clownmask" equip="true" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_1.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_1.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <PortraitClothing>
+      <sprite name="Portrait Clothing Security Officer" texture="Content/Items/Jobgear/PortraitClothing.png" sheetindex="1,1" />
+    </PortraitClothing>
+    <AutonomousObjectives>
+      <Order identifier="fightintruders" prioritymodifier="1" />
+      <Order identifier="rescue" prioritymodifier="1" />
+      <Order identifier="extinguishfires" prioritymodifier="0.75" />
+      <Order identifier="operatereactor" option="powerup" prioritymodifier="0.2" />
+    </AutonomousObjectives>
+    <AppropriateOrders>
+      <Order identifier="operateweapons" />
+      <Order identifier="fightintruders" />
+    </AppropriateOrders>
+  </Job>
+  <!-- for the one who grips -->
+  <Job identifier="purifier" minnumber="0" maxnumber="0" initialcount="0" uicolor="1.0,0.2,0.2" vitalitymodifier="25" idlebehavior="Patrol" hiddenjob="true">
+    <Jobicon>
+      <sprite texture="%ModDir%/Images/knife.png" sourcerect="268,5,96,53" />
+    </Jobicon>
+    <JobiconSmall>
+      <sprite texture="%ModDir%/Images/knife.png" sourcerect="268,5,96,53" />
+    </JobiconSmall>
+    <Skills>
+      <Skill identifier="weapons" level="50,100" primary="true" />
+      <Skill identifier="medical" level="30,100" />
+      <Skill identifier="mechanical" level="0,25" />
+      <Skill identifier="electrical" level="0,25" />
+      <Skill identifier="helm" level="25,50" />
+    </Skills>
+    <ItemSet>
+      <Item identifier="zealotrobes" equip="true" outfit="true" />
+      <Item identifier="inquisitoridcard" equip="true" showpreview="false" />
+      <Item identifier="purifiernailgun" />
+      <Item identifier="olongnail" />
+      <Item identifier="tremorsledge" equip="false">
+        <Item identifier="fulguriumbatterycell" />
+      </Item>
+      <Item identifier="tremorsledgesmall" equip="false">
+        <Item identifier="fulguriumbatterycell" />
+      </Item>
+      <Item identifier="fulguriumbatterycell" />
+      <Item identifier="purifierarmoroasis" equip="true" />
+      <Item identifier="oasispexoskeleton" equip="true">
+        <Item identifier="fulguriumbatterycell" />
+      </Item>
+      <Item identifier="bombimplant" equip="true" />
+      <Item identifier="purifierhelmetoasis" equip="true" />
+      <Item identifier="autoinjectorheadset" equip="true" showpreview="false">
+        <Item identifier="combatstimulantsyringe" />
+      </Item>
+      <!--Item identifier="expbooster" /-->
+      <Item identifier="fanaticbooster" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_1.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_1.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <PortraitClothing>
+      <sprite name="Portrait Clothing Security Officer" texture="Content/Items/Jobgear/PortraitClothing.png" sheetindex="1,1" />
+    </PortraitClothing>
+    <AutonomousObjectives>
+      <Order identifier="fightintruders" prioritymodifier="1" />
+    </AutonomousObjectives>
+    <AppropriateOrders>
+      <Order identifier="operateweapons" />
+      <Order identifier="fightintruders" />
+    </AppropriateOrders>
+  </Job>
+  <!-- The One Who Grips -->
+  <Job identifier="kromer" minnumber="0" maxnumber="0" initialcount="0" uicolor="1.0,0.2,0.2" vitalitymodifier="50" idlebehavior="Patrol" hiddenjob="true">
+    <Jobicon>
+      <sprite texture="%ModDir%/Images/knife.png" sourcerect="268,5,96,53" />
+    </Jobicon>
+    <JobiconSmall>
+      <sprite texture="%ModDir%/Images/knife.png" sourcerect="268,5,96,53" />
+    </JobiconSmall>
+    <Skills>
+      <Skill identifier="weapons" level="50,100" primary="true" />
+      <Skill identifier="medical" level="30,100" />
+      <Skill identifier="mechanical" level="0,25" />
+      <Skill identifier="electrical" level="0,25" />
+      <Skill identifier="helm" level="25,50" />
+    </Skills>
+    <ItemSet>
+      <Item identifier="kromercoat" equip="true" outfit="true" />
+      <Item identifier="kromeridcard" equip="true" showpreview="false" />
+      <Item identifier="purifiernailgun" />
+      <Item identifier="kromernailimpaling" />
+      <Item identifier="kromernailslashing" />
+      <Item identifier="kromernailthrowing" />
+      <Item identifier="undershirtarmor" equip="true" />
+      <Item identifier="bombimplant" equip="true" />
+      <Item identifier="kromerhelmet" equip="true" />
+      <Item identifier="autoinjectorheadset" equip="true" showpreview="false">
+        <Item identifier="combatstimulantsyringe" />
+      </Item>
+      <!--Item identifier="expbooster" /-->
+      <Item identifier="fanaticbooster" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_1.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_1.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <PortraitClothing>
+      <sprite name="Portrait Clothing Security Officer" texture="Content/Items/Jobgear/PortraitClothing.png" sheetindex="1,1" />
+    </PortraitClothing>
+    <AutonomousObjectives>
+      <Order identifier="fightintruders" prioritymodifier="1" />
+    </AutonomousObjectives>
+    <AppropriateOrders>
+      <Order identifier="operateweapons" />
+      <Order identifier="fightintruders" />
+    </AppropriateOrders>
+  </Job>
+  <!-- The One Who Is Gripped -->
+  <Job identifier="maid" minnumber="0" maxnumber="100" initialcount="1" uicolor="1.0,0.75,0.8" vitalitymodifier="10" idlebehavior="Patrol" hiddenjob="true">
+    <Jobicon>
+      <sprite texture="Content/UI/MainIconsAtlas.png" sourcerect="640,256,128,128" origin="0.5,0.5" />
+    </Jobicon>
+    <JobiconSmall>
+      <sprite texture="Content/UI/CommandUIAtlas.png" sourcerect="612,640,28,28" origin="0.5,0.5" />
+    </JobiconSmall>
+    <Skills>
+      <Skill identifier="weapons" level="69,69" primary="true" />
+      <Skill identifier="medical" level="69,69" />
+      <Skill identifier="mechanical" level="69,69" />
+      <Skill identifier="electrical" level="69,69" />
+      <Skill identifier="helm" level="69,69" />
+    </Skills>
+    <ItemSet>
+      <Item identifier="oasismaidoutfit" equip="true" outfit="true" />
+      <Item identifier="oasismaidears" equip="true" />
+      <Item identifier="undershirtarmor" equip="true" outfit="true" />
+      <Item identifier="assistantidentitycard" equip="true" showpreview="false" />
+      <Item identifier="sprayer" />
+      <Item identifier="ethanol" />
+      <Item identifier="screwdriver" />
+      <Item identifier="wrench" />
+      <Item identifier="weldingtool">
+        <Item identifier="weldingfueltank" />
+      </Item>
+      <Item identifier="scp_largearmykit" />
+      <Item identifier="antidama1" />
+      <Item identifier="antidama1" />
+      <Item identifier="antidama1" />
+      <Item identifier="antidama1" />
+      <Item identifier="antibloodloss2" />
+      <Item identifier="antibloodloss2" />
+      <Item identifier="antibloodloss2" />
+      <Item identifier="antibloodloss2" />
+      <Item identifier="handcuffs" />
+      <Item identifier="carrybooster" />
+      <!--Item identifier="expbooster" /-->
+      <Item identifier="basicidentifier" />
+      <Item identifier="headset" equip="true" showpreview="false" />
+      <PreviewSprites dims="120,109">
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_1.png" sourcerect="2,38,120,109" offset="0,0" />
+        <sprite texture="Content/Items/Jobgear/Security/securityofficer_torso_[GENDER]_1.png" sourcerect="121,0,76,80" offset="-20,15" />
+      </PreviewSprites>
+    </ItemSet>
+    <PortraitClothing>
+      <sprite name="Portrait Clothing Security Officer" texture="Content/Items/Jobgear/PortraitClothing.png" sheetindex="1,1" />
+    </PortraitClothing>
+    <AutonomousObjectives>
+      <Order identifier="fightintruders" prioritymodifier="1" />
+      <Order identifier="rescue" prioritymodifier="1" />
+      <Order identifier="extinguishfires" prioritymodifier="0.75" />
+      <Order identifier="operatereactor" option="powerup" prioritymodifier="0.2" />
+    </AutonomousObjectives>
+    <AppropriateOrders>
+      <Order identifier="operateweapons" />
+      <Order identifier="fightintruders" />
+    </AppropriateOrders>
+  </Job>
+</Jobs>

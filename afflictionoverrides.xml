@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Afflictions>
+  <Override>
+    <Affliction name="Radiation sickness" identifier="radiationsickness" description="Burns and sores can be seen on patient's skin. They seem to be spreading." type="poison" causeofdeathdescription="Died of radiation sickness." selfcauseofdeathdescription="You have died of radiation sickness." limbspecific="false" indicatorlimb="Torso" showiconthreshold="25" showinhealthscannerthreshold="5" karmachangeonapplied="-1" treatmentthreshold="25" maxstrength="200" grainburst="3" healcostmultiplier="4.0">
+      <!-- Cause burns depending on strength -->
+      <Effect minstrength="25" maxstrength="49" mingrainstrength="0.5" maxgrainstrength="0.25" strengthchange="-0.1">
+        <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" interval="0.1" disabledeltatime="true">
+          <Affliction identifier="burn" amount="0.006" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="50" maxstrength="74" mingrainstrength="1.0" maxgrainstrength="0.5" strengthchange="-0.1" minchromaticaberration="0.0" maxchromaticaberration="1.0" minbodytint="255,0,0,0" maxbodytint="255,0,0,30">
+        <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" interval="0.1" disabledeltatime="true">
+          <Affliction identifier="burn" amount="0.0115" />
+          <!-- nausea decreases by 1 per second, so effectively this increases it by 0.05 -->
+          <Affliction identifier="nausea" amount="0.105" />
+          <Sound file="%ModDir%/Sounds/geigerloop.ogg" range="50" volume="0.25" loop="true" />
+        </StatusEffect>
+      </Effect>
+      <PeriodicEffect mininterval="1" maxinterval="1">
+        <StatusEffect target="Character" range="50" comparison="and">
+          <Conditional radiationsickness="gt 50" />
+          <Conditional radiationsickness="lt 75" />
+          <Affliction identifier="radiationprecursor" amount="0.5" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <Effect minstrength="75" maxstrength="99" mingrainstrength="1.0" maxgrainstrength="0.75" strengthchange="-0.1" minchromaticaberration="1.0" maxchromaticaberration="5.0" minbodytint="255,0,0,30" maxbodytint="255,0,0,60">
+        <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" interval="0.1" disabledeltatime="true">
+          <Affliction identifier="burn" amount="0.0235" />
+          <Affliction identifier="nausea" amount="0.11" />
+          <Sound file="%ModDir%/Sounds/geigerloop.ogg" range="75" volume="0.4" loop="true" />
+        </StatusEffect>
+      </Effect>
+      <PeriodicEffect mininterval="1" maxinterval="1">
+        <StatusEffect target="Character" range="75" comparison="and">
+          <Conditional radiationsickness="gt 75" />
+          <Conditional radiationsickness="lt 100" />
+          <Affliction identifier="radiationprecursor" amount="1" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <Effect minstrength="100" maxstrength="124" mingrainstrength="1.0" maxgrainstrength="1.0" strengthchange="-0.1" minchromaticaberration="1.0" maxchromaticaberration="5.0" minbodytint="255,0,0,60" maxbodytint="255,0,0,90">
+        <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" interval="0.1" disabledeltatime="true">
+          <Affliction identifier="burn" amount="0.0395" />
+          <Affliction identifier="nausea" amount="0.12" />
+          <Sound file="%ModDir%/Sounds/geigerloop.ogg" range="100" volume="0.5" loop="true" />
+        </StatusEffect>
+      </Effect>
+      <PeriodicEffect mininterval="1" maxinterval="1">
+        <StatusEffect target="Character" range="100" comparison="and">
+          <Conditional radiationsickness="gt 100" />
+          <Conditional radiationsickness="lt 125" />
+          <Affliction identifier="radiationprecursor" amount="1.5" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <Effect minstrength="125" maxstrength="149" mingrainstrength="1.0" maxgrainstrength="1.0" strengthchange="-0.1" minchromaticaberration="1.0" maxchromaticaberration="5.0" minbodytint="255,0,0,90" maxbodytint="255,0,0,120">
+        <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" interval="0.1" disabledeltatime="true">
+          <Affliction identifier="burn" amount="0.0555" />
+          <Affliction identifier="nausea" amount="0.14" />
+          <Sound file="%ModDir%/Sounds/geigerloop.ogg" range="125" volume="0.6" loop="true" />
+        </StatusEffect>
+      </Effect>
+      <PeriodicEffect mininterval="1" maxinterval="1">
+        <StatusEffect target="NearbyCharacters" range="125" comparison="and">
+          <Conditional radiationsickness="gt 125" />
+          <Conditional radiationsickness="lt 150" />
+          <Affliction identifier="radiationprecursor" amount="2" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <Effect minstrength="150" maxstrength="174" mingrainstrength="1.0" maxgrainstrength="1.0" strengthchange="-0.1" minchromaticaberration="1.0" maxchromaticaberration="5.0" minbodytint="255,0,0,120" maxbodytint="255,0,0,150">
+        <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" interval="0.1" disabledeltatime="true">
+          <Affliction identifier="burn" amount="0.0715" />
+          <Affliction identifier="nausea" amount="0.16" />
+          <Sound file="%ModDir%/Sounds/geigerloop.ogg" range="150" volume="0.75" loop="true" />
+        </StatusEffect>
+      </Effect>
+      <PeriodicEffect mininterval="1" maxinterval="1">
+        <StatusEffect target="Character" range="150" comparison="and">
+          <Conditional radiationsickness="gt 150" />
+          <Conditional radiationsickness="lt 175" />
+          <Affliction identifier="radiationprecursor" amount="2.5" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <Effect minstrength="175" maxstrength="199" mingrainstrength="1.0" maxgrainstrength="0.1" strengthchange="-0.1" minchromaticaberration="0.1" maxchromaticaberration="0.5" minbodytint="255,0,0,150" maxbodytint="255,0,0,180">
+        <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true" interval="0.1" disabledeltatime="true">
+          <Affliction identifier="burn" amount="0.0875" />
+          <Affliction identifier="nausea" amount="0.18" />
+          <Sound file="%ModDir%/Sounds/geigerloop.ogg" range="200" volume="1.0" loop="true" />
+        </StatusEffect>
+      </Effect>
+      <PeriodicEffect mininterval="1" maxinterval="1">
+        <StatusEffect target="Character" range="200">
+          <Conditional radiationsickness="gte 175" />
+          <Affliction identifier="radiationprecursor" amount="3" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,768,128,128" color="195,136,60,255" origin="0,0" />
+    </Affliction>
+  </Override>
+  <Override>
+    <!-- Schizophrenia. Instead of granting psychosis outright, this is a stealthier, long-term effect that plays similar sounds but with far greater intervals. -->
+    <Affliction name="Schizophrenia" translationoverride="schizophrenia" identifier="outsideinfluence" type="geneticmaterialdebuff" limbspecific="false" indicatorlimb="Head" showiconthreshold="101" showinhealthscannerthreshold="0" treatmentthreshold="100" maxstrength="100" interval="0.1" iconcolors="94,54,95;163,73,164;200,191,231">
+      <PeriodicEffect mininterval="180" maxinterval="600">
+        <StatusEffect target="Character" onlyoutside="true">
+          <Conditional IsLocalPlayer="True" />
+          <Sound file="Content/Characters/Spineling/SPINELING_idle2.ogg" selectionmode="Random" />
+          <Sound file="Content/Characters/Spineling/SPINELING_idle4.ogg" />
+          <Sound file="Content/Characters/Tigerthresher/TIGERTRESHER_idle1.ogg" />
+          <Sound file="Content/Characters/Tigerthresher/TIGERTRESHER_idle2.ogg" />
+          <Sound file="Content/Characters/Tigerthresher/TIGERTRESHER_attack1.ogg" />
+          <Sound file="Content/Characters/Moloch/MOLOCH_attack1.ogg" />
+          <Sound file="Content/Characters/Moloch/MOLOCH_attack2.ogg" />
+          <Sound file="Content/Characters/Husk/HUSK_idle1.ogg" />
+          <Sound file="Content/Characters/Husk/HUSK_idle4.ogg" />
+          <Sound file="Content/Characters/Hammerheadmatriarch/MHAMMERHEAD_idle3.ogg" />
+          <Sound file="Content/Characters/Hammerhead/HAMMERHEAD_idle4.ogg" />
+          <Sound file="Content/Characters/Hammerhead/HAMMERHEAD_attack2.ogg" />
+          <Sound file="Content/Characters/Hammerhead/HAMMERHEAD_attack3.ogg" />
+          <Sound file="Content/Characters/Crawlerhusk/HUSKEDCRAWLER_idle1.ogg" />
+          <Sound file="Content/Characters/Crawlerhusk/HUSKEDCRAWLER_idle3.ogg" />
+          <Sound file="Content/Characters/Crawlerhusk/HUSKEDCRAWLER_attack2.ogg" />
+        </StatusEffect>
+        <StatusEffect target="Character" onlyinside="true">
+          <Conditional IsLocalPlayer="True" />
+          <Sound file="Content/Items/Weapons/honk.ogg" selectionmode="Random" />
+          <Sound file="Content/Items/Weapons/ShotgunShot1.ogg" />
+          <Sound file="Content/Items/Weapons/ShotgunShot2.ogg" />
+          <Sound file="Content/Characters/Moloch/MOLOCH_attack1.ogg" />
+          <Sound file="Content/Characters/Moloch/MOLOCH_attack2.ogg" />
+          <Sound file="Content/Characters/Mudraptor/MUDRAPTOR_attack1.ogg" />
+          <Sound file="Content/Characters/Mudraptor/MUDRAPTOR_attack2.ogg" />
+          <Sound file="Content/Characters/Mudraptor/MUDRAPTOR_idle4.ogg" />
+          <Sound file="Content/Characters/Husk/HUSK_idle1.ogg" />
+          <Sound file="Content/Characters/Husk/HUSK_idle4.ogg" />
+          <Sound file="Content/Characters/Husk/HUSK_attack4.ogg" />
+          <Sound file="Content/Characters/Crawler/CRAWLER_idle3.ogg" />
+          <Sound file="%ModDir%/Sounds/ambient1.ogg" />
+          <Sound file="%ModDir%/Sounds/ambient4.ogg" />
+          <Sound file="%ModDir%/Sounds/ambient8.ogg" />
+          <Sound file="%ModDir%/Sounds/ambient9.ogg" />
+          <Sound file="%ModDir%/Sounds/ambient10.ogg" />
+          <Sound file="%ModDir%/Sounds/ambient12.ogg" />
+          <Sound file="%ModDir%/Sounds/geigerloop.ogg" />
+          <Sound file="%ModDir%/Sounds/heavycough2.ogg" />
+          <Sound file="%ModDir%/Sounds/lightcough2.ogg" />
+          <Sound file="%ModDir%/Sounds/ek_satchelbeep.ogg" />
+          <Sound file="%ModDir%/Sounds/deagle.ogg" />
+          <Sound file="%ModDir%/Sounds/cough1.ogg" />
+          <Sound file="%ModDir%/Sounds/cough2.ogg" />
+          <Sound file="%ModDir%/Sounds/cough3.ogg" />
+          <sound file="%ModDir%/Sounds/knocking.ogg" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <PeriodicEffect mininterval="120" maxinterval="600">
+        <StatusEffect target="Character">
+          <Affliction identifier="stun" strength="0.3" />
+          <Affliction identifier="incrementalstun" strength="50" />
+          <sound file="Content/Items/Weapons/StunBaton1.ogg" selectionmode="random" />
+          <sound file="Content/Items/Weapons/StunBaton2.ogg" />
+          <sound file="Content/Items/Weapons/StunBaton3.ogg" />
+          <sound file="Content/Items/Weapons/StunBaton4.ogg" />
+        </StatusEffect>
+        <StatusEffect target="This">
+          <Affliction identifier="knocking" amount="100" disabledeltatime="true" probability="0.5" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <icon texture="Content/UI/TalentsIcons3.png" sheetindex="5,0" sheetelementsize="128,128" color="163,73,764,255" origin="0,0" />
+    </Affliction>
+  </Override>
+  <Override>
+    <Affliction identifier="clownpower" type="talentbuff" isbuff="true" limbspecific="false" hideiconafterdelay="true" maxstrength="1" duration="1" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+      <Effect minstrength="0" maxstrength="1" resistancefor="damage" minresistance="0.15" maxresistance="0.15" tag="clown">
+        <StatValue stattype="MovementSpeed" value="0.1" />
+      </Effect>
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="2,7" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+  </Override>
+  <Affliction name="Honkified" identifier="honkified" description="The patient has been empowered by the Honkmother's grace." type="talentbuff" isbuff="true" limbspecific="false" hideiconafterdelay="true" maxstrength="1" duration="1" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+    <Effect minstrength="0" maxstrength="2" strengthchange="-1" resistancefor="damage" minresistance="0.0" maxresistance="0.2" minskillmultiplier="1.0" maxskillmultiplier="1.2">
+      <StatValue stattype="MovementSpeed" value="0.1" />
+      <StatValue stattype="AttackMultiplier" value="0.2" />
+    </Effect>
+    <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="2,7" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+  <Override>
+    <AfflictionHusk name="Natural Melee Weapon" identifier="naturalmeleeweapon" type="alieninfection" healableinmedicalclinic="false" limbspecific="false" targets="human,ancientmimic" huskedspeciesname="husk" indicatorlimb="Head" hideiconafterdelay="true" showiconthreshold="0" needsair="true" causespeechimpediment="false" treatmentthreshold="1000" dormantthreshold="0" activethreshold="0" transitionthreshold="1000" transformthresholdondeath="1000" sendmessages="false" maxstrength="100" iconcolors="94,54,95;163,73,164;200,191,231">
+      <icon texture="Content/UI/TalentsIcons3.png" sheetindex="4,0" sheetelementsize="128,128" color="181,230,29,255" origin="0,0" />
+    </AfflictionHusk>
+  </Override>
+  <Override>
+    <AfflictionHusk name="Natural Ranged Weapon" identifier="naturalrangedweapon" type="alieninfection" healableinmedicalclinic="false" limbspecific="false" targets="human,ancientmimic" huskedspeciesname="husk" indicatorlimb="Head" hideiconafterdelay="true" showiconthreshold="0" needsair="true" causespeechimpediment="false" treatmentthreshold="1000" dormantthreshold="0" activethreshold="0" transitionthreshold="1000" transformthresholdondeath="1000" sendmessages="false" maxstrength="100" iconcolors="94,54,95;163,73,164;200,191,231">
+      <icon texture="Content/UI/TalentsIcons3.png" sheetindex="4,0" sheetelementsize="128,128" color="181,230,29,255" origin="0,0" />
+    </AfflictionHusk>
+  </Override>
+  <Override>
+    <Stun name="Stun" identifier="stun" description="The patient is dazed and unresponsive." type="stun" limbspecific="false" indicatorlimb="Head" activationthreshold="1.0" showiconthreshold="10" maxstrength="30">
+      <Description textidentifier="afflictiondescription.stun" target="OtherCharacter" />
+      <Description textidentifier="afflictiondescription.stun.self" target="Self" />
+      <Effect minstrength="0" maxstrength="10" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-1.0" minscreenblur="0.0" maxscreenblur="100.0" graincolor="0,0,0,155" mingrainstrength="0.0" maxgrainstrength="50.0" minafflictionoverlayalphamultiplier="0.0" maxafflictionoverlayalphamultiplier="1.0">
+        <StatusEffect type="OnActive" target="Character" LowPassMultiplier="0.2" disabledeltatime="true" setvalue="true" speechImpediment="100.0">
+          <Conditional IsLocalPlayer="True" />
+          <!-- <Sound file="%ModDir%/silence.ogg" loop="false" /> -->
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="10" maxstrength="100" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-1.0" minscreenblur="40000000.00" maxscreenblur="400000000.0" graincolor="0,0,0,255" mingrainstrength="40000000.0" maxgrainstrength="400000000.0" minafflictionoverlayalphamultiplier="1.0" maxafflictionoverlayalphamultiplier="2.0">&gt;
+        <StatusEffect type="OnActive" target="Character" LowPassMultiplier="0.0" disabledeltatime="true" setvalue="true" speechImpediment="100.0"><Conditional IsLocalPlayer="True" /><!-- <Sound file="%ModDir%/silence.ogg" loop="true" /> --></StatusEffect></Effect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
+      <AfflictionOverlay texture="%ModDir%/Images/stunblind.png" sourcerect="0,0,1024,680" origin="0,0" />
+    </Stun>
+  </Override>
+  <Override>
+    <Affliction name="Incremental Stun" identifier="incrementalstun" type="stun" limbspecific="false" indicatorlimb="Torso" showiconthreshold="100" showinhealthscannerthreshold="1000" karmachangeonapplied="-10" maxstrength="100" WeaponsSkillGain="1.0">
+      <Description textidentifier="afflictiondescription.stun" target="OtherCharacter" />
+      <Description textidentifier="afflictiondescription.stun.self" target="Self" />
+      <Effect minstrength="0" maxstrength="90" minscreenblur="0" maxscreenblur="1.0" minscreendistort="0.0" maxscreendistort="0.6" minradialdistort="0" maxradialdistort="0.2" strengthchange="-5" minspeedmultiplier="1.0" maxspeedmultiplier="0.3" minafflictionoverlayalphamultiplier="0.0" maxafflictionoverlayalphamultiplier="1.0"></Effect>
+      <!-- <Effect minstrength="90" maxstrength="91" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-1.0" minscreenblur="1.00" maxscreenblur="150.0" minspeedmultiplier="0.3" maxspeedmultiplier="0.1"></Effect> -->
+      <Effect minstrength="90" maxstrength="100" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-1.0" minscreenblur="0.0" maxscreenblur="100.0" mingrainstrength="0.0" maxgrainstrength="100.0" graincolor="0,0,0,255" minafflictionoverlayalphamultiplier="1.0" maxafflictionoverlayalphamultiplier="2.0">
+        <StatusEffect type="OnActive" target="Character" LowPassMultiplier="0.0" interval="0.3" setvalue="true" speechImpediment="100.0">
+          <Conditional IsLocalPlayer="True" />
+        </StatusEffect>
+        <StatusEffect target="Character" interval="1" disabledeltatime="true">
+          <Affliction identifier="nausea" amount="3" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Character" interval="0.3" setvalue="true">
+          <Affliction identifier="stun" amount="5" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
+      <AfflictionOverlay texture="%ModDir%/Images/stunblind.png" sourcerect="0,0,1024,680" origin="0,0" />
+    </Affliction>
+  </Override>
+  <Override>
+    <Affliction name="ProgressiveStun" identifier="progressivestun" type="stun" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1000" showinhealthscannerthreshold="1000" karmachangeonapplied="-10" maxstrength="100" WeaponsSkillGain="1.0">
+      <!-- Basically the same as IncrementalStun, but works the other way around: increases quite rapidly and then causes incremental stun that wears off progressively -->
+      <Effect minstrength="0" maxstrength="9" minscreendistort="0.0" maxscreendistort="0.05" minscreenblur="0" maxscreenblur="0.1" strengthchange="2" minradialdistort="0" maxradialdistort="0.1" minspeedmultiplier="1.0" maxspeedmultiplier="0.9"></Effect>
+      <Effect minstrength="9" maxstrength="99" minscreendistort="0.05" maxscreendistort="0.6" minscreenblur="0.1" maxscreenblur="1.0" strengthchange="18" minradialdistort="0.1" maxradialdistort="1" minspeedmultiplier="0.9" maxspeedmultiplier="0.3"></Effect>
+      <Effect minstrength="99" maxstrength="100" minscreendistort="0.6" maxscreendistort="1" minscreenblur="1" maxscreenblur="1" minradialdistort="1" maxradialdistort="1" strengthchange="10" minspeedmultiplier="0.3" maxspeedmultiplier="0.3">
+        <StatusEffect target="Character" setvalue="true">
+          <ReduceAffliction identifier="progressivestun" strength="100" />
+          <Affliction identifier="disoriented" amount="100" />
+          <Affliction identifier="stun" amount="3" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="640,640,128,128" color="0,255,0,255" origin="0,0" />
+    </Affliction>
+  </Override>
+  <Affliction name="Disoriented" identifier="disoriented" type="stun" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1000" showinhealthscannerthreshold="1000" karmachangeonapplied="-10" maxstrength="100" WeaponsSkillGain="1.0">
+    <!-- Slows you down and messes with your vision. -->
+    <Effect minstrength="0" maxstrength="75" minscreenblur="0.0" maxscreenblur="10.0" graincolor="0,0,0,100" mingrainstrength="0.0" maxgrainstrength="25.0" minafflictionoverlayalphamultiplier="0.0" maxafflictionoverlayalphamultiplier="0.20" minspeedmultiplier="1.0" maxspeedmultiplier="0.5" strengthchange="-10">
+      <StatusEffect type="OnActive" target="Character" LowPassMultiplier="0.75" interval="0.3" setvalue="true" speechImpediment="10.0">
+        <Conditional IsLocalPlayer="True" />
+      </StatusEffect>
+      <StatusEffect target="Character">
+        <StatValue stattype="WeaponsSkillBonus" minvalue="0.0" maxvalue="-20" />
+        <StatValue stattype="MedicalSkillBonus" minvalue="0.0" maxvalue="-20" />
+        <StatValue stattype="RangedSpreadReduction" minvalue="-0.0" maxvalue="-0.25" />
+        <StatValue stattype="MeleeAttackSpeed" minvalue="-0.0" maxvalue="-0.1" />
+      </StatusEffect>
+    </Effect>
+    <!-- Extreme slow and vision blocking, adds stun vulnerability -->
+    <Effect minstrength="75" maxstrength="95" minscreenblur="10.0" maxscreenblur="50.0" graincolor="0,0,0,155" mingrainstrength="25.0" maxgrainstrength="75.0" minafflictionoverlayalphamultiplier="0.20" maxafflictionoverlayalphamultiplier="0.40" minspeedmultiplier="0.5" maxspeedmultiplier="0.15" strengthchange="-7.5" resistancefor="stun,incrementalstun" minresistance="0.0" maxresistance="-1.0">
+      <StatusEffect type="OnActive" target="Character" LowPassMultiplier="0.25" interval="0.3" setvalue="true" speechImpediment="50.0">
+        <Conditional IsLocalPlayer="True" />
+      </StatusEffect>
+      <StatusEffect target="Character">
+        <StatValue stattype="WeaponsSkillBonus" minvalue="-20" maxvalue="-50" />
+        <StatValue stattype="MedicalSkillBonus" minvalue="-20" maxvalue="-50" />
+        <StatValue stattype="RangedSpreadReduction" minvalue="-0.25" maxvalue="-1.0" />
+        <StatValue stattype="MeleeAttackSpeed" minvalue="-0.1" maxvalue="-0.5" />
+        <StatValue flagtype="MustWalk" />
+      </StatusEffect>
+    </Effect>
+    <!-- Maximum strength -->
+    <Effect minstrength="95" maxstrength="100" minscreenblur="50.0" maxscreenblur="50.0" graincolor="0,0,0,255" mingrainstrength="75.0" maxgrainstrength="75.0" minafflictionoverlayalphamultiplier="0.40" maxafflictionoverlayalphamultiplier="0.40" minspeedmultiplier="0.15" maxspeedmultiplier="0.15" strengthchange="-1" resistancefor="stun,incrementalstun" minresistance="-1.0" maxresistance="-1.0">
+      <StatusEffect type="OnActive" target="Character" LowPassMultiplier="0.0" interval="0.3" setvalue="true" speechImpediment="100.0">
+        <Conditional IsLocalPlayer="True" />
+      </StatusEffect>
+      <StatusEffect target="Character">
+        <StatValue stattype="WeaponsSkillBonus" value="-50" />
+        <StatValue stattype="MedicalSkillBonus" value="-50" />
+        <StatValue stattype="RangedSpreadReduction" value="-1.0" />
+        <StatValue stattype="MeleeAttackSpeed" value="-0.5" />
+        <StatValue flagtype="MustWalk" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="640,640,128,128" color="0,255,0,255" origin="0,0" />
+    <AfflictionOverlay texture="%ModDir%/Images/stunblind.png" sourcerect="0,0,1024,680" origin="0,0" />
+  </Affliction>
+  <Affliction name="Fast Disoriented" identifier="fastdisoriented" type="stun" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1000" showinhealthscannerthreshold="1000" karmachangeonapplied="-10" maxstrength="100" WeaponsSkillGain="1.0">
+    <!-- Slows you down and messes with your vision. -->
+    <Effect minstrength="0" maxstrength="75" minscreenblur="0.0" maxscreenblur="10.0" graincolor="0,0,0,100" mingrainstrength="0.0" maxgrainstrength="25.0" minafflictionoverlayalphamultiplier="0.0" maxafflictionoverlayalphamultiplier="0.20" minspeedmultiplier="1.0" maxspeedmultiplier="0.5" strengthchange="-50">
+      <StatusEffect type="OnActive" target="Character" LowPassMultiplier="0.75" interval="0.3" setvalue="true" speechImpediment="10.0">
+        <Conditional IsLocalPlayer="True" />
+      </StatusEffect>
+      <StatusEffect target="Character">
+        <StatValue stattype="WeaponsSkillBonus" minvalue="0.0" maxvalue="-20" />
+        <StatValue stattype="MedicalSkillBonus" minvalue="0.0" maxvalue="-20" />
+        <StatValue stattype="RangedSpreadReduction" minvalue="-0.0" maxvalue="-0.25" />
+        <StatValue stattype="MeleeAttackSpeed" minvalue="-0.0" maxvalue="-0.1" />
+      </StatusEffect>
+    </Effect>
+    <!-- Extreme slow and vision blocking, adds stun vulnerability -->
+    <Effect minstrength="75" maxstrength="95" minscreenblur="10.0" maxscreenblur="50.0" graincolor="0,0,0,155" mingrainstrength="25.0" maxgrainstrength="75.0" minafflictionoverlayalphamultiplier="0.20" maxafflictionoverlayalphamultiplier="0.40" minspeedmultiplier="0.5" maxspeedmultiplier="0.15" strengthchange="-35" resistancefor="stun,incrementalstun" minresistance="0.0" maxresistance="-1.0">
+      <StatusEffect type="OnActive" target="Character" LowPassMultiplier="0.25" interval="0.3" setvalue="true" speechImpediment="50.0">
+        <Conditional IsLocalPlayer="True" />
+      </StatusEffect>
+      <StatusEffect target="Character">
+        <StatValue stattype="WeaponsSkillBonus" minvalue="-20" maxvalue="-50" />
+        <StatValue stattype="MedicalSkillBonus" minvalue="-20" maxvalue="-50" />
+        <StatValue stattype="RangedSpreadReduction" minvalue="-0.25" maxvalue="-1.0" />
+        <StatValue stattype="MeleeAttackSpeed" minvalue="-0.1" maxvalue="-0.5" />
+        <StatValue flagtype="MustWalk" />
+      </StatusEffect>
+    </Effect>
+    <!-- Maximum strength -->
+    <Effect minstrength="95" maxstrength="100" minscreenblur="50.0" maxscreenblur="50.0" graincolor="0,0,0,255" mingrainstrength="75.0" maxgrainstrength="75.0" minafflictionoverlayalphamultiplier="0.40" maxafflictionoverlayalphamultiplier="0.40" minspeedmultiplier="0.15" maxspeedmultiplier="0.15" strengthchange="-5" resistancefor="stun,incrementalstun" minresistance="-1.0" maxresistance="-1.0">
+      <StatusEffect type="OnActive" target="Character" LowPassMultiplier="0.0" interval="0.3" setvalue="true" speechImpediment="100.0">
+        <Conditional IsLocalPlayer="True" />
+      </StatusEffect>
+      <StatusEffect target="Character">
+        <StatValue stattype="WeaponsSkillBonus" value="-50" />
+        <StatValue stattype="MedicalSkillBonus" value="-50" />
+        <StatValue stattype="RangedSpreadReduction" value="-1.0" />
+        <StatValue stattype="MeleeAttackSpeed" value="-0.5" />
+        <StatValue flagtype="MustWalk" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="640,640,128,128" color="0,255,0,255" origin="0,0" />
+    <AfflictionOverlay texture="%ModDir%/Images/stunblind.png" sourcerect="0,0,1024,680" origin="0,0" />
+  </Affliction>
+  <Override>
+    <Affliction identifier="tandemfire" type="talentbuff" isbuff="true" limbspecific="false" maxstrength="2" treatmentthreshold="1000" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+      <Effect minstrength="0" maxstrength="2" strengthchange="-1" minresistance="1" maxresistance="1" resistancefor="stun">
+        <StatValue stattype="AttackMultiplier" value="0.20" />
+        <StatValue stattype="FlowResistance" value="1.0" />
+      </Effect>
+      <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="2,0" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+  </Override>
+</Afflictions>

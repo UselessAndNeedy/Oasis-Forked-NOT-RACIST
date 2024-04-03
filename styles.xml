@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<style>
+  <secdocument1 color="255,255,255,255" textcolor="0,0,0,255">
+    <Sprite name="secdocument1" texture="%ModDir%/Images/secdocument1.png" size="0.0, 0.0" sourcerect="0,0,414,583" origin="0.5,0.5" compress="false" tile="false" />
+  </secdocument1>
+  <secdocument2 color="255,255,255,255" textcolor="0,0,0,255">
+    <Sprite name="secdocument2" texture="%ModDir%/Images/secdocument2.png" size="0.0, 0.0" sourcerect="0,0,414,583" origin="0.5,0.5" compress="false" tile="false" />
+  </secdocument2>
+  <secdocument3 color="255,255,255,255" textcolor="0,0,0,255">
+    <Sprite name="secdocument3" texture="%ModDir%/Images/secdocument3.png" size="0.0, 0.0" sourcerect="0,0,414,583" origin="0.5,0.5" compress="false" tile="false" />
+  </secdocument3>
+  <secdocument4 color="255,255,255,255" textcolor="0,0,0,255">
+    <Sprite name="secdocument4" texture="%ModDir%/Images/secdocument4.png" size="0.0, 0.0" sourcerect="0,0,414,583" origin="0.5,0.5" compress="false" tile="false" />
+  </secdocument4>
+  <honkument1 color="255,255,255,255" textcolor="0,0,0,255">
+    <Sprite name="honkument1" texture="%ModDir%/Images/honkument1.png" size="0.0, 0.0" sourcerect="0,0,414,583" origin="0.5,0.5" compress="false" tile="false" />
+  </honkument1>
+  <honkument2 color="255,255,255,255" textcolor="0,0,0,255">
+    <Sprite name="honkument2" texture="%ModDir%/Images/honkument2.png" size="0.0, 0.0" sourcerect="0,0,414,583" origin="0.5,0.5" compress="false" tile="false" />
+  </honkument2>
+  <honkument3 color="255,255,255,255" textcolor="0,0,0,255">
+    <Sprite name="honkument3" texture="%ModDir%/Images/honkument3.png" size="0.0, 0.0" sourcerect="0,0,414,583" origin="0.5,0.5" compress="false" tile="false" />
+  </honkument3>
+  <cultdoc color="255,255,255,255" textcolor="0,0,0,255">
+    <Sprite name="cultdoc" texture="%ModDir%/Images/cultdocument.png" size="0.0, 0.0" sourcerect="0,0,414,583" origin="0.5,0.5" compress="false" tile="false" />
+  </cultdoc>
+  <emptydoc color="255,255,255,255" textcolor="0,0,0,255">
+    <Sprite name="emptydoc" texture="%ModDir%/Images/documentempty.png" size="0.0, 0.0" sourcerect="0,0,414,583" origin="0.5,0.5" compress="false" tile="false" />
+  </emptydoc>
+  <breakingbaro1 color="255,255,255,255" textcolor="0,0,0,255">
+    <Sprite name="breakingbaro1" texture="%ModDir%/Images/breakingbaro1.png" size="0.0, 0.0" sourcerect="0,0,414,583" origin="0.5,0.5" compress="false" tile="false" />
+  </breakingbaro1>
+  <breakingbaro2 color="255,255,255,255" textcolor="0,0,0,255">
+    <Sprite name="breakingbaro2" texture="%ModDir%/Images/breakingbaro2.png" size="0.0, 0.0" sourcerect="0,0,414,583" origin="0.5,0.5" compress="false" tile="false" />
+  </breakingbaro2>
+  <breakingbaro3 color="255,255,255,255" textcolor="0,0,0,255">
+    <Sprite name="breakingbaro3" texture="%ModDir%/Images/breakingbaro3.png" size="0.0, 0.0" sourcerect="0,0,414,583" origin="0.5,0.5" compress="false" tile="false" />
+  </breakingbaro3>
+  <breakingbaro4 color="255,255,255,255" textcolor="0,0,0,255">
+    <Sprite name="breakingbaro4" texture="%ModDir%/Images/breakingbaro4.png" size="0.0, 0.0" sourcerect="0,0,414,583" origin="0.5,0.5" compress="false" tile="false" />
+  </breakingbaro4>
+  <breakingbaro5 color="255,255,255,255" textcolor="0,0,0,255">
+    <Sprite name="breakingbaro5" texture="%ModDir%/Images/breakingbaro5.png" size="0.0, 0.0" sourcerect="0,0,414,583" origin="0.5,0.5" compress="false" tile="false" />
+  </breakingbaro5>
+  <CultItemUI color="255,255,255,242" textcolor="0,0,0,255">
+    <Sprite name="CultItemUI" texture="%ModDir%/Images/CultUIAtlasFrames.png" size="0.0, 0.0" sourcerect="7,7,360,361" slice="33,38,340,340" origin="0.5,0.5" compress="false" />
+  </CultItemUI>
+</style>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sounds>
+  <footstep_ghost file="%ModDir%/Sounds/Footsteps/Phantom/Phantomfootstep.ogg" range="1" />
+  <footstep_huskhardsuit file="%ModDir%/Sounds/Footsteps/Huskmutantarmored/footstep1.ogg" range="1000" />
+  <footstep_huskhardsuit file="%ModDir%/Sounds/Footsteps/Huskmutantarmored/footstep2.ogg" range="1000" />
+  <footstep_huskhardsuit file="%ModDir%/Sounds/Footsteps/Huskmutantarmored/footstep3.ogg" range="1000" />
+  <footstep_huskhardsuit file="%ModDir%/Sounds/Footsteps/Huskmutantarmored/footstep4.ogg" range="1000" />
+  <footstep_huskhardsuit file="%ModDir%/Sounds/Footsteps/Huskmutantarmored/footstep5.ogg" range="1000" />
+  <footstep_husktitan file="%ModDir%/Sounds/titan_footstep_2.ogg" range="1500" />
+  <footstep_husktitan file="%ModDir%/Sounds/titan_footstep_3.ogg" range="1500" />
+  <footstep_maid file="%ModDir%/Sounds/Collar.ogg" range="500" volume="0.5" />
+</sounds>

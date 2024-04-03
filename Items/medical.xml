@@ -1,0 +1,920 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="Nitroglycerin Syringe" identifier="nitrosyringe" category="Medical" maxstacksize="8" maxstacksizecharacterinventory="8" MaxStackSizeHoldableOrWearableInventory="8" impacttolerance="6" cargocontaineridentifier="mediccrate" Tags="smallitem,chem,medical,syringe" description="A syringe containing a dose of nitroglycerin and stabilozine which is typically used to treat organ damage. DO NOT OVERDOSE." useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    <PreferredContainer primary="toxcab" minamount="1" maxamount="3" spawnprobability="0.5" />
+    <PreferredContainer secondary="toxcontainer" />
+    <PreferredContainer primary="wrecktoxcab,abandonedtoxcab,wreckmedcab" minamount="0" maxamount="3" spawnprobability="1" />
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="30">
+      <RequiredSkill identifier="medical" level="45" />
+      <RequiredItem identifier="nitroglycerin" amount="1" />
+      <RequiredItem identifier="stabilozine" amount="2" />
+    </Fabricate>
+    <Deconstruct time="5">
+      <Item identifier="nitroglycerin" />
+    </Deconstruct>
+    <SuitableTreatment identifier="nitroglycerininjection" suitability="-15" />
+    <InventoryIcon texture="%ModDir%/Images/InventoryIconsMisc.png" sourcerect="791,407,56,56" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/InventoryIconsMisc.png" sourcerect="851,397,48,63" depth="0.6" origin="0.5,0.5" />
+    <Body width="35" height="65" density="10.2" waterdragcoefficient="1" />
+    <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+      <RequiredSkill identifier="medical" level="45" />
+      <StatusEffect type="OnImpact" target="This" Condition="0.0" setvalue="true" />
+      <StatusEffect type="OnFire" target="This" Condition="-50.0" />
+      <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" duration="1">
+        <Affliction identifier="nitroglycerininjection" amount="15" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnFailure" target="UseTarget" duration="1">
+        <Affliction identifier="nitroglycerininjection" amount="10" />
+      </StatusEffect>
+      <StatusEffect type="OnSuccess" target="UseTarget">
+        <Conditional entitytype="eq Character" />
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+      </StatusEffect>
+      <StatusEffect type="OnFailure" target="UseTarget">
+        <Conditional entitytype="eq Character" />
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget" multiplyafflictionsbymaxvitality="true" AllowWhenBroken="true">
+        <Affliction identifier="stun" amount="0.1" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This">
+        <Remove />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This" Condition="-100.0">
+        <sound file="Content/Items/Weapons/ExplosionMedium1.ogg" range="3000" />
+        <sound file="Content/Items/Weapons/ExplosionMedium2.ogg" range="3000" />
+        <sound file="Content/Items/Weapons/ExplosionMedium3.ogg" range="3000" />
+        <Explosion range="300.0" ballastfloradamage="60" structuredamage="90" itemdamage="300" force="8" severlimbsprobability="0.3" decal="explosion" decalsize="0.3">
+          <Affliction identifier="explosiondamage" strength="75" dividebylimbcount="true" />
+          <Affliction identifier="burn" strength="10" probability="0.2" dividebylimbcount="false" />
+          <Affliction identifier="bleeding" strength="20" probability="0.05" dividebylimbcount="false" />
+          <Affliction identifier="stun" strength="5" />
+        </Explosion>
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+    <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
+    <SkillRequirementHint identifier="medical" level="45" />
+  </Item>
+  <!-- Abyssal Syringe, rots you away -->
+  <Item name="Abyssal Blood" identifier="abyssalsyringe" category="Medical" maxstacksize="8" maxstacksizecharacterinventory="8" MaxStackSizeHoldableOrWearableInventory="8" cargocontaineridentifier="mediccrate" Tags="smallitem,chem,medical,syringe" description="A syringe containing a dark substance which seems to be perpetually decaying. Do not consume." useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="45">
+      <RequiredSkill identifier="medical" level="45" />
+      <RequiredItem identifier="abyssalmeat" amount="1" />
+      <RequiredItem identifier="dementonite" amount="2" />
+    </Fabricate>
+    <Deconstruct time="5">
+      <Item identifier="dementonite" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Images/medical.png" sourcerect="322,9,32,69" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/medical.png" sourcerect="322,9,32,69" depth="0.6" origin="0.5,0.5" />
+    <SuitableTreatment identifier="thrallcurse" suitability="-5" />
+    <Body width="35" height="65" density="10.2" waterdragcoefficient="1" />
+    <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+      <RequiredSkill identifier="medical" level="45" />
+      <StatusEffect type="OnSuccess" target="This" Condition="-100.0" setvalue="true" />
+      <StatusEffect type="OnFailure" target="This" Condition="-100.0" setvalue="true" />
+      <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" duration="10">
+        <Affliction identifier="thrallcurse" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnFailure" target="UseTarget" duration="10">
+        <Affliction identifier="thrallcurse" amount="0.1" />
+      </StatusEffect>
+      <StatusEffect type="OnSuccess" target="UseTarget">
+        <Conditional entitytype="eq Character" />
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+      </StatusEffect>
+      <StatusEffect type="OnFailure" target="UseTarget">
+        <Conditional entitytype="eq Character" />
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget" multiplyafflictionsbymaxvitality="true" AllowWhenBroken="true">
+        <Affliction identifier="stun" amount="0.1" />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+    <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
+    <SkillRequirementHint identifier="medical" level="45" />
+  </Item>
+  <!-- Abyssal Syringe, stops the rot -->
+  <Item name="Abyss Vaccine Type I" identifier="abyssalvaccine" category="Medical" maxstacksize="8" maxstacksizecharacterinventory="8" MaxStackSizeHoldableOrWearableInventory="8" cargocontaineridentifier="mediccrate" Tags="smallitem,chem,medical,syringe" description="A poorly understood stabilization of the abyssal decay. Prevents the affliction from worsening, but doesn't cure it. Do not inject if you are healthy." useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="30">
+      <RequiredSkill identifier="medical" level="60" />
+      <RequiredItem identifier="abyssalsyringe" />
+      <RequiredItem identifier="saltgrenade" />
+      <RequiredItem identifier="stabilozine" />
+    </Fabricate>
+    <Deconstruct time="5">
+      <Item identifier="abyssalsyringe" />
+    </Deconstruct>
+    <SuitableTreatment identifier="thrallcurse" suitability="-30" />
+    <InventoryIcon texture="%ModDir%/Images/medical.png" sourcerect="322,9,32,69" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/medical.png" sourcerect="322,9,32,69" depth="0.6" origin="0.5,0.5" />
+    <Body width="35" height="65" density="10.2" waterdragcoefficient="1" />
+    <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+      <RequiredSkill identifier="medical" level="45" />
+      <StatusEffect type="OnSuccess" target="This" Condition="-100.0" setvalue="true" />
+      <StatusEffect type="OnFailure" target="This" Condition="-100.0" setvalue="true" />
+      <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" duration="10">
+        <Affliction identifier="thrallvaccine" amount="2" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnFailure" target="UseTarget" duration="10">
+        <Affliction identifier="thrallvaccine" amount="1" />
+      </StatusEffect>
+      <StatusEffect type="OnSuccess" target="UseTarget">
+        <Conditional entitytype="eq Character" />
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+      </StatusEffect>
+      <StatusEffect type="OnFailure" target="UseTarget">
+        <Conditional entitytype="eq Character" />
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget" multiplyafflictionsbymaxvitality="true" AllowWhenBroken="true">
+        <Affliction identifier="stun" amount="0.1" />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+    <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
+    <SkillRequirementHint identifier="medical" level="45" />
+  </Item>
+  <!-- Abyssal Antagonist, reduces the rot -->
+  <Item name="Abyss Vaccine Type II" identifier="abyssalvaccine2" category="Medical" maxstacksize="8" maxstacksizecharacterinventory="8" MaxStackSizeHoldableOrWearableInventory="8" cargocontaineridentifier="mediccrate" Tags="smallitem,chem,medical,syringe" description="A poorly understood antagonist of the abyssal decay. When injected alongside Type 1, reverts the decay to some extent. Do not inject without first using the Type 1." useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="30">
+      <RequiredSkill identifier="medical" level="60" />
+      <RequiredItem identifier="abyssalsyringe" />
+      <RequiredItem identifier="adrenaline" amount="2" />
+      <RequiredItem identifier="stabilozine" />
+    </Fabricate>
+    <Deconstruct time="5">
+      <Item identifier="abyssalsyringe" />
+    </Deconstruct>
+    <SuitableTreatment identifier="thrallcurse" suitability="-50" />
+    <InventoryIcon texture="%ModDir%/Images/medical.png" sourcerect="322,9,32,69" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/medical.png" sourcerect="322,9,32,69" depth="0.6" origin="0.5,0.5" />
+    <Body width="35" height="65" density="10.2" waterdragcoefficient="1" />
+    <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+      <RequiredSkill identifier="medical" level="45" />
+      <StatusEffect type="OnSuccess" target="This" Condition="-100.0" setvalue="true" />
+      <StatusEffect type="OnFailure" target="This" Condition="-100.0" setvalue="true" />
+      <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" duration="10">
+        <Affliction identifier="thrallvaccine2" amount="2" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnFailure" target="UseTarget" duration="10">
+        <Affliction identifier="thrallvaccine2" amount="1" />
+      </StatusEffect>
+      <StatusEffect type="OnSuccess" target="UseTarget">
+        <Conditional entitytype="eq Character" />
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+      </StatusEffect>
+      <StatusEffect type="OnFailure" target="UseTarget">
+        <Conditional entitytype="eq Character" />
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget" multiplyafflictionsbymaxvitality="true" AllowWhenBroken="true">
+        <Affliction identifier="stun" amount="0.1" />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+    <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
+    <SkillRequirementHint identifier="medical" level="45" />
+  </Item>
+  <!-- Abyssal Antithesis, reduces the rot -->
+  <Item name="Abyss Vaccine Type III" identifier="abyssalvaccine3" category="Medical" maxstacksize="8" maxstacksizecharacterinventory="8" MaxStackSizeHoldableOrWearableInventory="8" cargocontaineridentifier="mediccrate" Tags="smallitem,chem,medical,syringe" description="A poorly understood antithesis of the abyssal decay. When injected alongside Type 1 and 2, cures the decay. Do not inject without first using the Type 1 and 2." useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="30">
+      <RequiredSkill identifier="medical" level="60" />
+      <RequiredItem identifier="abyssalsyringe" />
+      <RequiredItem identifier="abyssalvaccine" />
+      <RequiredItem identifier="abyssalvaccine2" />
+      <RequiredItem identifier="dementonite" />
+    </Fabricate>
+    <Deconstruct time="5">
+      <Item identifier="abyssalsyringe" />
+    </Deconstruct>
+    <SuitableTreatment identifier="thrallcurse" suitability="-100" />
+    <InventoryIcon texture="%ModDir%/Images/medical.png" sourcerect="322,9,32,69" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/medical.png" sourcerect="322,9,32,69" depth="0.6" origin="0.5,0.5" />
+    <Body width="35" height="65" density="10.2" waterdragcoefficient="1" />
+    <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+      <RequiredSkill identifier="medical" level="45" />
+      <StatusEffect type="OnSuccess" target="This" Condition="-100.0" setvalue="true" />
+      <StatusEffect type="OnFailure" target="This" Condition="-100.0" setvalue="true" />
+      <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" duration="10">
+        <Affliction identifier="thrallvaccine3" amount="2" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnFailure" target="UseTarget" duration="10">
+        <Affliction identifier="thrallvaccine3" amount="1" />
+      </StatusEffect>
+      <StatusEffect type="OnSuccess" target="UseTarget">
+        <Conditional entitytype="eq Character" />
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+      </StatusEffect>
+      <StatusEffect type="OnFailure" target="UseTarget">
+        <Conditional entitytype="eq Character" />
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget" multiplyafflictionsbymaxvitality="true" AllowWhenBroken="true">
+        <Affliction identifier="stun" amount="0.1" />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+    <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
+    <SkillRequirementHint identifier="medical" level="45" />
+  </Item>
+  <!-- Medical Pod -->
+  <Item name="Healing Pod" identifier="healpod" nameidentifier="healing_pod" description="A cut-down bunk with some built-in medical equipment to accelerate the natural healing of wounds." allowattachitems="true" width="463" height="398" texturescale="1.0,1.0" scale="0.5" category="Decorative">
+    <sprite texture="%ModDir%/Images/Storage.png" sourcerect="1296,1289,463,387" depth="0.85" premultiplyalpha="false" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Images/Storage.png" sourcerect="1390,1126,320,160" depth="0.86" origin="0.5,0.5" offset="40,-95" />
+    <!-- <DecorativeSprite texture="%ModDir%/Images/Storage.png" sourcerect="1390,1126,320,160" depth="0.86" origin="0.5,0.5" offset="40,105" /> -->
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <RequiredItem identifier="steel" amount="2" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="rubber" />
+    </Fabricate>
+    <Body width="128" height="128" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachWrench" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="wrench" type="Equipped" />
+    </Holdable>
+    <Controller UserPos="0,-300" direction="Right" hidehud="false" canbeselected="true" drawuserbehind="true" noninteractablewhenflippedy="true">
+      <limbposition limb="Head" position="14,-300" />
+      <limbposition limb="Torso" position="124,-270" />
+      <limbposition limb="Waist" position="264,-290" />
+      <limbposition limb="RightFoot" position="484,-290" />
+      <limbposition limb="LeftFoot" position="484,-290" />
+      <limbposition limb="RightHand" position="264,-290" allowusinglimb="false" />
+      <limbposition limb="LeftHand" position="264,-290" allowusinglimb="false" />
+      <StatusEffect type="OnActive" target="Character">
+        <reduceaffliction type="damage" strength="0.5" />
+        <reduceaffliction type="brokenbone" strength="0.1" />
+        <reduceaffliction type="severeorgandamage" strength="0.1" />
+        <reduceaffliction identifier="bloodloss" strength="0.5" />
+        <reduceaffliction identifier="bleeding" strength="0.5" />
+        <reduceaffliction identifier="nausea" strength="0.5" />
+        <reduceaffliction identifier="opiatewithdrawal" strength="0.5" />
+        <reduceaffliction identifier="opiateaddiction" strength="0.5" />
+        <reduceaffliction identifier="drunk" strength="0.5" />
+        <reduceaffliction identifier="huskinfection" strength="1" />
+        <reduceaffliction identifier="hvirusstage1" strength="1" />
+        <reduceaffliction identifier="hvirusstage2" strength="1" />
+        <reduceaffliction identifier="scp_lineavirus" strength="0.75" />
+        <reduceaffliction identifier="scp_wastingdisease" strength="0.75" />
+        <reduceaffliction identifier="scp_presolatexinfection" strength="1" />
+        <reduceaffliction identifier="radiationsickness" strength="5" />
+        <reduceaffliction identifier="frostbite" strength="2.5" />
+        <reduceaffliction identifier="organdamage" strength="0.5" />
+        <reduceaffliction identifier="bitewounds" strength="0.5" />
+        <reduceaffliction identifier="burn" strength="0.5" />
+        <reduceaffliction identifier="freeze" strength="0.5" />
+      </StatusEffect>
+    </Controller>
+  </Item>
+  <!-- Hyperius Asperivirus Syringe -->
+  <Item name="Hyperius Asperivirus Syringe" identifier="hvirussyringe" description="A syringe containing an extremely contagious specimen of an airborne and waterborne virus that has been identified since humanity arrived, primarily affecting the respiratory and gastrointestinal system." category="Material" cargocontaineridentifier="chemicalcrate" Tags="smallitem,chem,medical,syringe" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+    <PreferredContainer primary="toxcab" amount="1" spawnprobability="0.05" />
+    <PreferredContainer secondary="toxcontainer" />
+    <PreferredContainer primary="wrecktoxcab,abandonedtoxcab,wreckmedcab" amount="2" spawnprobability="0.01" />
+    <Price baseprice="650" sold="false"></Price>
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="60">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredSkill identifier="medical" level="50" />
+      <RequiredItem identifier="alienblood" amount="2" />
+      <RequiredItem identifier="sulphuricacid" />
+      <RequiredItem identifier="carbon" />
+      <RequiredItem identifier="chlorine" />
+    </Fabricate>
+    <Deconstruct time="20">
+      <Item identifier="alienblood" />
+      <Item identifier="carbon" />
+    </Deconstruct>
+    <SuitableTreatment type="hvirusstage2" suitability="-100" />
+    <InventoryIcon name="hvirusinv" texture="%ModDir%/Images/medical.png" sourcerect="175,435,55,56" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/medical.png" sourcerect="514,122,37,67" depth="0.6" origin="0.5,0.5" />
+    <Body width="35" height="65" density="20" />
+    <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-5,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnUse" target="This" Condition="-50.0" disabledeltatime="true" />
+      <StatusEffect type="OnUse">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="600" />
+      </StatusEffect>
+      <StatusEffect tags="poison" type="OnUse" target="UseTarget">
+        <Affliction identifier="hvirusstage2" amount="1" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnUse" target="Limb, This">
+        <Affliction identifier="lacerations" amount="2" probability="0.33" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+    <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
+  </Item>
+  <!-- Hyperius Asperivirus Cure -->
+  <Item name="Hyperius Asperivirus Antidote" identifier="hviruscure" description="A syringe predominantly containing Stabilozine and ABX, capable of dissolving the protein coating of the asperivirus virions and allowing fast recovery in addition to temporary immunity." category="Material" cargocontaineridentifier="chemicalcrate" Tags="smallitem,chem,medical,syringe" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+    <PreferredContainer primary="toxcab" amount="2" spawnprobability="0.075" />
+    <PreferredContainer secondary="toxcontainer" />
+    <PreferredContainer primary="wrecktoxcab,abandonedtoxcab,wreckmedcab" amount="2" spawnprobability="0.025" />
+    <Price baseprice="650" sold="false"></Price>
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="60">
+      <RequiredSkill identifier="medical" level="35" />
+      <RequiredItem identifier="plastic" />
+      <RequiredItem identifier="antibiotics" />
+      <RequiredItem identifier="stabilozine" amount="2" />
+    </Fabricate>
+    <Deconstruct time="20">
+      <Item identifier="stabilozine" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <SuitableTreatment type="hvirusstage2" suitability="100" />
+    <SuitableTreatment type="hvirusstage3" suitability="100" />
+    <InventoryIcon name="antihvirusinv" texture="%ModDir%/Images/medical.png" sourcerect="233,436,54,55" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/medical.png" sourcerect="476,122,36,66" depth="0.6" origin="0.5,0.5" />
+    <Body width="35" height="65" density="20" />
+    <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-5,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+      <StatusEffect type="OnUse">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="600" />
+      </StatusEffect>
+      <StatusEffect tags="poison" type="OnUse" target="UseTarget">
+        <Affliction identifier="hvirusimmunity" amount="300" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+    <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
+  </Item>
+  <!-- gene flayer -->
+  <Item name="Genetic Flayer Syringe" identifier="geneflaysyringe" category="Equipment" Tags="smallitem,chem,medical" description="A mix of multiple toxic chemicals and radioactive substances designed to break down the patient's genetic structure, causing mutations and massive damage." cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" useinhealthinterface="true" scale="1">
+    <PreferredContainer primary="toxcab" amount="2" spawnprobability="0.075" />
+    <PreferredContainer secondary="toxcontainer" />
+    <PreferredContainer primary="wrecktoxcab,abandonedtoxcab,wreckmedcab" amount="2" spawnprobability="0.025" />
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="60">
+      <RequiredSkill identifier="medical" level="50" />
+      <RequiredItem identifier="carbon" />
+      <RequiredItem identifier="plastic" />
+      <RequiredItem identifier="alienblood" amount="2" />
+      <RequiredItem identifier="chlorine" />
+    </Fabricate>
+    <SuitableTreatment type="geneflay" suitability="-300" />
+    <SuitableTreatment type="geneticmaterialdebuff" suitability="-50" />
+    <SuitableTreatment type="geneticmaterialbuff" suitability="-50" />
+    <SuitableTreatment type="organdamage" suitability="-50" />
+    <SuitableTreatment type="burn" suitability="-50" />
+    <SuitableTreatment type="nausea" suitability="-15" />
+    <InventoryIcon texture="%ModDir%/Images/calyxinjectormutagenicinventory.png" sourcerect="0,0,64,64" origin="0.49928394,0.5012731" />
+    <Sprite texture="%ModDir%/Images/calyxinjectormutagenic.png" sourcerect="0,13,76,20" depth="0.55" origin="0.5,0.5" />
+    <Body width="40" height="17" density="50" />
+    <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="5,-15" handle1="-10,3" holdangle="270" reload="1.0">
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+      <StatusEffect type="OnUse" target="Character">
+        <Sound file="%ModDir%/Sounds/symbiotichuskinject.ogg" range="750" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="UseTarget">
+        <Conditional speciesname="human" />
+        <Affliction identifier="geneflay" amount="300" />
+        <Affliction identifier="increasedswimmingspeed" amount="100" probability="0.1" />
+        <Affliction identifier="naturalmeleeweapon" amount="50" probability="0.1" />
+        <Affliction identifier="damageresistance" amount="50" probability="0.1" />
+        <Affliction identifier="increasedwalkingspeed" amount="50" probability="0.1" />
+        <Affliction identifier="decreasedoxygenconsumption" amount="50" probability="0.1" />
+        <Affliction identifier="increasedmeleedamage" amount="50" probability="0.1" />
+        <Affliction identifier="healdamage" amount="20" probability="0.2" />
+        <Affliction identifier="naturalrangedweapon" amount="100" probability="0.1" />
+        <Affliction identifier="husktransformimmunity" amount="100" probability="0.1" />
+        <Affliction identifier="vigorondamage" amount="20" probability="0.2" />
+        <Affliction identifier="hyperactivityondamage" amount="20" probability="0.2" />
+        <Affliction identifier="increasedmeleedamageondamage" amount="20" probability="0.2" />
+        <Affliction identifier="regenparasite" amount="100" probability="0.2" />
+        <Affliction identifier="ironstomach" amount="50" probability="0.2" />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+    <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
+    <LightComponent range="150" castshadows="True" drawbehindsubs="False" ison="True" blinkfrequency="0" lightcolor="124, 22, 196,100" isactive="True" minvoltage="0" powerconsumption="0" vulnerabletoemp="False" pickingtime="0" canbepicked="False" allowingameediting="False" msg="" />
+  </Item>
+  <!-- gene stabilizer -->
+  <Item name="Genetic Stabilization Syringe" identifier="genestabsyringe" category="Equipment" Tags="smallitem,chem,medical" description="A mix of multiple medicines designed to restabilize a patient's genetic code." cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" useinhealthinterface="true" scale="1">
+    <PreferredContainer primary="toxcab" amount="2" spawnprobability="0.075" />
+    <PreferredContainer secondary="toxcontainer" />
+    <PreferredContainer primary="wrecktoxcab,abandonedtoxcab,wreckmedcab" amount="2" spawnprobability="0.025" />
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="30">
+      <RequiredSkill identifier="medical" level="50" />
+      <RequiredItem identifier="carbon" />
+      <RequiredItem identifier="stabilozine" />
+      <RequiredItem identifier="antibloodloss1" />
+    </Fabricate>
+    <SuitableTreatment type="geneticmaterialbuff" suitability="100" />
+    <SuitableTreatment type="geneticmaterialdebuff" suitability="100" />
+    <InventoryIcon texture="%ModDir%/Images/calyxinjectormutagenicinventory1.png" sourcerect="0,0,64,64" origin="0.49928394,0.5012731" />
+    <Sprite texture="%ModDir%/Images/calyxinjectormutagenic1.png" sourcerect="0,13,76,20" depth="0.55" origin="0.5,0.5" />
+    <Body width="40" height="17" density="50" />
+    <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="5,-15" handle1="-10,3" holdangle="270" reload="1.0">
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+      <StatusEffect type="OnUse" target="Character">
+        <Sound file="%ModDir%/Sounds/symbiotichuskinject.ogg" range="750" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="UseTarget">
+        <ReduceAffliction type="geneticmaterialbuff" strength="200" />
+        <ReduceAffliction type="geneticmaterialdebuff" strength="200" />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+    <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
+    <LightComponent range="150" castshadows="True" drawbehindsubs="False" ison="True" blinkfrequency="0" lightcolor="0,150,200,100" isactive="True" minvoltage="0" powerconsumption="0" vulnerabletoemp="False" pickingtime="0" canbepicked="False" allowingameediting="False" msg="" />
+  </Item>
+  <!-- advanced gene stabilizer -->
+  <Item name="Advanced Genetic Stabilization Syringe" identifier="adgenestabsyringe" category="Equipment" Tags="smallitem,chem,medical" description="A complex mix of multiple medicines designed to remove negative genetic code without harming the positive code." cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" useinhealthinterface="true" scale="1">
+    <PreferredContainer primary="toxcab" amount="2" spawnprobability="0.075" />
+    <PreferredContainer secondary="toxcontainer" />
+    <PreferredContainer primary="wrecktoxcab,abandonedtoxcab,wreckmedcab" amount="2" spawnprobability="0.025" />
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="60">
+      <RequiredSkill identifier="medical" level="75" />
+      <RequiredItem identifier="carbon" amount="2" />
+      <RequiredItem identifier="stabilozine" amount="2" />
+      <RequiredItem identifier="antirad" />
+      <RequiredItem identifier="antibloodloss1" amount="2" />
+    </Fabricate>
+    <SuitableTreatment type="geneticmaterialdebuff" suitability="100" />
+    <InventoryIcon texture="%ModDir%/Images/calyxinjectormutagenicinventory1.png" sourcerect="0,0,64,64" origin="0.49928394,0.5012731" />
+    <Sprite texture="%ModDir%/Images/calyxinjectormutagenic1.png" sourcerect="0,13,76,20" depth="0.55" origin="0.5,0.5" />
+    <Body width="40" height="17" density="50" />
+    <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="5,-15" handle1="-10,3" holdangle="270" reload="1.0">
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+      <StatusEffect type="OnUse" target="UseTarget">
+        <Sound file="%ModDir%/Sounds/symbiotichuskinject.ogg" range="750" />
+        <ReduceAffliction type="geneticmaterialdebuff" strength="200" />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+    <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
+    <LightComponent range="150" castshadows="True" drawbehindsubs="False" ison="True" blinkfrequency="0" lightcolor="0,150,200,100" isactive="True" minvoltage="0" powerconsumption="0" vulnerabletoemp="False" pickingtime="0" canbepicked="False" allowingameediting="False" msg="" />
+  </Item>
+  <!-- husk stabilizer -->
+  <Item name="Husk Stabilization Syringe" identifier="huskstabsyringe" category="Equipment" Tags="smallitem,chem,medical" description="An injection that prevents a husk from decaying into an old husk." cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" useinhealthinterface="true" scale="1">
+    <PreferredContainer primary="locker,weaponcontainer,medcab" />
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="5">
+      <RequiredItem identifier="huskeggs" />
+      <RequiredItem identifier="stabilozine" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Images/calyxinjectormutagenicinventory1.png" sourcerect="0,0,64,64" origin="0.49928394,0.5012731" />
+    <Sprite texture="%ModDir%/Images/calyxinjectormutagenic1.png" sourcerect="0,13,76,20" depth="0.55" origin="0.5,0.5" />
+    <Body width="40" height="17" density="50" />
+    <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="5,-15" handle1="-10,3" holdangle="270" reload="1.0">
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+      <StatusEffect type="OnUse" target="UseTarget">
+        <Sound file="%ModDir%/Sounds/symbiotichuskinject.ogg" range="750" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="UseTarget">
+        <Affliction identifier="huskstabilized" amount="1" />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+    <LightComponent range="150" castshadows="True" drawbehindsubs="False" ison="True" blinkfrequency="0" lightcolor="0,150,200,100" isactive="True" minvoltage="0" powerconsumption="0" vulnerabletoemp="False" pickingtime="0" canbepicked="False" allowingameediting="False" msg="" />
+  </Item>
+  <!-- Enchanted Blood Pack -->
+  <!-- *************************************************************************************************************************************************************************** -->
+  <Item name="Blessed Blood Pack" identifier="magicbloodpack" category="Medical" maxstacksize="8" maxstacksizecharacterinventory="8" MaxStackSizeHoldableOrWearableInventory="8" cargocontaineridentifier="mediccrate" Tags="smallitem,chem,medical,petfood1,petfood2,petfood3" useinhealthinterface="true" description="A pack of blood substitute which has been infused with some kind of energy, enhancing its healing properties significantly." scale="0.5" impactsoundtag="impact_soft">
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    <PreferredContainer primary="medcab" minamount="0" maxamount="1" spawnprobability="0.01" notcampaign="true" />
+    <PreferredContainer secondary="outpostmedcab" minamount="1" maxamount="2" spawnprobability="0.01" />
+    <PreferredContainer secondary="outpostmedcompartment" amount="1" spawnprobability="0.01" />
+    <PreferredContainer secondary="wreckmedcab,abandonedmedcab" minamount="1" maxamount="2" spawnprobability="0.01" />
+    <PreferredContainer secondary="medcontainer" />
+    <SuitableTreatment type="bloodloss" suitability="95" />
+    <SuitableTreatment type="hollow" suitability="45" />
+    <SuitableTreatment type="condemned" suitability="30" />
+    <Fabricate suitablefabricators="cultfabricator" requiredtime="15">
+      <RequiredSkill identifier="medical" level="30" />
+      <RequiredItem identifier="antibloodloss2" />
+    </Fabricate>
+    <Deconstruct time="5">
+      <Item identifier="antibloodloss2" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Images/InventoryIcons.png" sourcerect="176,303,37,60" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/InventoryIcons.png" sourcerect="224,308,77,45" depth="0.6" origin="0.5,0.5" />
+    <Body width="80" height="42" density="11" />
+    <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
+      <RequiredSkill identifier="medical" level="30" />
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnUse" target="UseTarget,This" duration="15">
+        <ReduceAffliction identifier="bloodloss" amount="5" />
+        <ReduceAffliction identifier="hollow" amount="3" />
+        <ReduceAffliction identifier="condemned" amount="2" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnFailure" target="UseTarget,This" duration="15">
+        <ReduceAffliction identifier="bloodloss" amount="2.5" />
+        <ReduceAffliction identifier="hollow" amount="1.5" />
+        <ReduceAffliction identifier="condemned" amount="1" />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+    <AiTarget sightrange="1000" static="true" />
+    <LightComponent range="50" castshadows="False" drawbehindsubs="False" ison="True" blinkfrequency="0" lightcolor="150,0,200,25" isactive="True" minvoltage="0" powerconsumption="0" vulnerabletoemp="False" pickingtime="0" canbepicked="False" allowingameediting="False" msg="" />
+  </Item>
+  <!-- Elixir of Resurrection -->
+  <!-- *************************************************************************************************************************************************************************** -->
+  <Item name="Elixir of Resurrection" identifier="resurrectionelixir" category="Medical" maxstacksize="1" spritecolor="200,255,255,255" inventoryiconcolor="200,255,255,255" cargocontaineridentifier="mediccrate" Tags="smallitem,chem,medical,syringe" useinhealthinterface="true" description="A deusizine syringe filled with an unknown substance charged with unholy magical essence. Be careful what you do with this." scale="0.5" impactsoundtag="impact_soft" requireaimtouse="true">
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    <PreferredContainer primary="medcab" minamount="0" maxamount="1" spawnprobability="0.01" notcampaign="true" />
+    <PreferredContainer secondary="outpostmedcab" minamount="1" maxamount="2" spawnprobability="0.01" />
+    <PreferredContainer secondary="outpostmedcompartment" amount="1" spawnprobability="0.01" />
+    <PreferredContainer secondary="wreckmedcab,abandonedmedcab" minamount="1" maxamount="2" spawnprobability="0.01" />
+    <PreferredContainer secondary="medcontainer" />
+    <SuitableTreatment type="bloodloss" suitability="95" />
+    <SuitableTreatment type="hollow" suitability="45" />
+    <SuitableTreatment type="condemned" suitability="30" />
+    <Fabricate suitablefabricators="cultfabricator" requiredtime="15">
+      <RequiredSkill identifier="medical" level="30" />
+      <RequiredItem identifier="deusizine" />
+    </Fabricate>
+    <Deconstruct time="5">
+      <Item identifier="deusizine" />
+    </Deconstruct>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="384,704,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="226,306,38,72" depth="0.6" origin="0.5,0.5" />
+    <Body width="80" height="42" density="11" />
+    <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+      <RequiredSkill identifier="medical" level="50" />
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnSuccess" target="Limb,This">
+        <Affliction identifier="resurrection" amount="60" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnFailure" target="Limb,This">
+        <Affliction identifier="thrallreanimation" amount="60" />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+    <Projectile characterusable="false" launchimpulse="20.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
+    <AiTarget sightrange="1000" static="true" />
+    <LightComponent range="50" castshadows="False" drawbehindsubs="False" ison="True" blinkfrequency="0" lightcolor="150,0,200,50" isactive="True" minvoltage="0" powerconsumption="0" vulnerabletoemp="False" pickingtime="0" canbepicked="False" allowingameediting="False" msg="" />
+    <SkillRequirementHint identifier="medical" level="50" />
+  </Item>
+  <Item name="Elixir of Resurrection Placeholder" identifier="resurrectionelixirplaceholder" category="Medical" maxstacksize="1" spritecolor="200,255,255,255" inventoryiconcolor="200,255,255,255" cargocontaineridentifier="mediccrate" Tags="smallitem" useinhealthinterface="true" description="Deconstruct this to get an Elixir of Resurrection." scale="0.5" impactsoundtag="impact_soft" requireaimtouse="true">
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    <PreferredContainer primary="medcab" minamount="0" maxamount="1" spawnprobability="0.01" notcampaign="true" />
+    <PreferredContainer secondary="outpostmedcab" minamount="1" maxamount="2" spawnprobability="0.01" />
+    <PreferredContainer secondary="outpostmedcompartment" amount="1" spawnprobability="0.01" />
+    <PreferredContainer secondary="wreckmedcab,abandonedmedcab" minamount="1" maxamount="2" spawnprobability="0.01" />
+    <PreferredContainer secondary="medcontainer" />
+    <SuitableTreatment type="bloodloss" suitability="95" />
+    <SuitableTreatment type="hollow" suitability="45" />
+    <SuitableTreatment type="condemned" suitability="30" />
+    <Deconstruct time="5">
+      <Item identifier="resurrectionelixir" />
+    </Deconstruct>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="384,704,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="226,306,38,72" depth="0.6" origin="0.5,0.5" />
+    <Body width="80" height="42" density="11" />
+    <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true"></MeleeWeapon>
+    <AiTarget sightrange="10" static="true" />
+    <LightComponent range="50" castshadows="False" drawbehindsubs="False" ison="True" blinkfrequency="0" lightcolor="150,0,200,50" isactive="True" minvoltage="0" powerconsumption="0" vulnerabletoemp="False" pickingtime="0" canbepicked="False" allowingameediting="False" msg="" />
+  </Item>
+  <!-- Cursed Fentanyl. -->
+  <!-- *************************************************************************************************************************************************************************** -->
+  <Item name="Cursed Fentanyl" identifier="cursedfentanyl" category="Medical" maxstacksize="8" maxstacksizecharacterinventory="8" MaxStackSizeHoldableOrWearableInventory="8" cargocontaineridentifier="mediccrate" Tags="smallitem,chem,medical,syringe" description="An already potent substance empowered further by the use of dark magic. Unfortunately, the power is far too much for the human body to handle. Using this is often a death sentence." useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    <PreferredContainer primary="medcab" secondary="medcontainer" />
+    <SuitableTreatment type="damage" suitability="100" />
+    <SuitableTreatment type="burn" suitability="100" />
+    <SuitableTreatment type="bleeding" suitability="100" />
+    <InventoryIcon texture="Content/Items/Medical/Medicines.png" sourcerect="4,379,37,66" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="4,379,37,66" depth="0.6" origin="0.5,0.5" />
+    <Body width="35" height="65" density="10.2" />
+    <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+      <RequiredSkill identifier="medical" level="50" />
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" setvalue="true" />
+      <StatusEffect type="OnFailure" target="This" Condition="-100.0" setvalue="true" />
+      <StatusEffect tags="medical" type="OnUse" target="UseTarget">
+        <Affliction identifier="devildeal" amount="90" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnFailure" target="UseTarget">
+        <Affliction identifier="devildeal" amount="60" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="UseTarget">
+        <Conditional entitytype="eq Character" />
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+      </StatusEffect>
+      <StatusEffect type="OnFailure" target="UseTarget">
+        <Conditional entitytype="eq Character" />
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget" multiplyafflictionsbymaxvitality="true" AllowWhenBroken="true">
+        <Affliction identifier="stun" amount="0.1" />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+    <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
+  </Item>
+  <!-- Super Fentanyl -->
+  <!-- *************************************************************************************************************************************************************************** -->
+  <Item name="Europinium" identifier="europinium" category="Medical" maxstacksize="4" cargocontaineridentifier="mediccrate" Tags="smallitem,chem,medical,syringe" description="A cocktail of potent healing drugs that is designed to gradually heal the user for a long period of time." useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    <PreferredContainer primary="medcab" secondary="medcontainer" />
+    <PreferredContainer secondary="wreckmedcab,abandonedmedcab" minamount="1" maxamount="1" spawnprobability="0.01" />
+    <PreferredContainer secondary="outpostmedcab" minamount="1" maxamount="1" spawnprobability="0.01" />
+    <PreferredContainer secondary="outpostmedcompartment" amount="1" spawnprobability="0.01" />
+    <PreferredContainer secondary="outposttrashcan" amount="1" spawnprobability="0.01" />
+    <Price baseprice="500">
+      <Price storeidentifier="merchantmedical" multiplier="0.9" />
+    </Price>
+    <SuitableTreatment type="damage" suitability="100" />
+    <SuitableTreatment type="bleeding" suitability="100" />
+    <SuitableTreatment type="burn" suitability="100" />
+    <SuitableTreatment identifier="opiatewithdrawal" suitability="100" />
+    <SuitableTreatment identifier="opiateoverdose" suitability="-20" />
+    <SuitableTreatment identifier="opiateaddiction" suitability="-10" />
+    <SuitableTreatment identifier="oxygenlow" suitability="-40" />
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="60">
+      <RequiredSkill identifier="medical" level="75" />
+      <RequiredItem identifier="antidama2" />
+      <RequiredItem identifier="adrenaline" />
+      <RequiredItem identifier="stabilozine" />
+      <RequiredItem identifier="pomegrenadeextract" />
+      <RequiredItem identifier="hyperzine" />
+    </Fabricate>
+    <Deconstruct time="20">
+      <Item identifier="opium" />
+      <Item identifier="adrenaline" />
+      <Item identifier="ethanol" />
+      <Item identifier="antidama1" />
+      <Item identifier="pomegrenadeextract" />
+    </Deconstruct>
+    <InventoryIcon texture="Content/Items/Medical/Medicines.png" sourcerect="112,210,38,67" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="112,210,38,67" depth="0.6" origin="0.5,0.5" />
+    <Body width="35" height="65" density="10.2" />
+    <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+      <RequiredSkill identifier="medical" level="50" />
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" setvalue="true" />
+      <StatusEffect type="OnFailure" target="This" Condition="-100.0" setvalue="true" />
+      <StatusEffect tags="medical" type="OnUse" target="UseTarget" duration="5">
+        <Affliction identifier="superserum" amount="60" />
+        <Affliction identifier="haste" amount="60" />
+        <Affliction identifier="strengthen" amount="60" />
+        <Affliction identifier="opiateaddiction" amount="10" />
+        <Affliction identifier="opiateoverdose" amount="5" />
+        <ReduceAffliction identifier="opiatewithdrawal" amount="10" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnFailure" target="UseTarget" duration="150">
+        <ReduceAffliction type="damage" amount="0.5" />
+        <ReduceAffliction type="bleeding" amount="0.5" />
+        <ReduceAffliction type="burn" amount="0.5" />
+        <Affliction identifier="oxygenlow" amount="0.1" />
+        <Affliction identifier="opiateaddiction" amount="0.5" />
+        <Affliction identifier="opiateoverdose" amount="0.7" />
+        <ReduceAffliction identifier="opiatewithdrawal" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="UseTarget">
+        <Conditional entitytype="eq Character" />
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+      </StatusEffect>
+      <StatusEffect type="OnFailure" target="UseTarget">
+        <Conditional entitytype="eq Character" />
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget" multiplyafflictionsbymaxvitality="true" AllowWhenBroken="true">
+        <Affliction identifier="stun" amount="0.1" />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+    <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
+  </Item>
+  <!-- warmth -->
+  <Item name="Warmth Injector" identifier="warmsyringe" category="Equipment" Tags="smallitem,chem,medical" description="A mix of multiple medicines designed to warm up the patient and restore frozen cells." cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" useinhealthinterface="true" scale="1">
+    <PreferredContainer primary="locker,weaponcontainer,medcab" />
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="30">
+      <RequiredSkill identifier="medical" level="50" />
+      <RequiredItem identifier="carbon" />
+      <RequiredItem identifier="stabilozine" amount="2" />
+      <RequiredItem identifier="morphine" />
+      <RequiredItem identifier="antibloodloss1" />
+    </Fabricate>
+    <SuitableTreatment type="frostbite1" suitability="300" />
+    <SuitableTreatment type="frostbite2" suitability="180" />
+    <SuitableTreatment type="freeze" suitability="60" />
+    <InventoryIcon texture="%ModDir%/Images/calyxinjectormutagenicinventory2.png" sourcerect="0,0,64,64" origin="0.49928394,0.5012731" />
+    <Sprite texture="%ModDir%/Images/calyxinjectormutagenic2.png" sourcerect="0,13,76,20" depth="0.55" origin="0.5,0.5" />
+    <Body width="40" height="17" density="50" />
+    <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="5,-15" handle1="-10,3" holdangle="270" reload="1.0">
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+      <StatusEffect type="OnUse" target="UseTarget" duration="60">
+        <Sound file="%ModDir%/Sounds/symbiotichuskinject.ogg" range="750" />
+        <ReduceAffliction identifier="frostbite1" amount="5" />
+        <ReduceAffliction identifier="frostbite2" amount="3" />
+        <ReduceAffliction identifier="freeze" amount="1" />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+    <LightComponent range="150" castshadows="True" drawbehindsubs="False" ison="True" blinkfrequency="0" lightcolor="175,100,0,100" isactive="True" minvoltage="0" powerconsumption="0" vulnerabletoemp="False" pickingtime="0" canbepicked="False" allowingameediting="False" msg="" />
+  </Item>
+  <Item name="Tobacconade" identifier="tobacconade" category="Medical" maxstacksize="8" maxstacksizecharacterinventory="8" MaxStackSizeHoldableOrWearableInventory="8" cargocontaineridentifier="mediccrate" Tags="smallitem,chem,medical,syringe" description="Chemically mixing tobacco and pomegrenade extract results in a low-grade antipsychotic. It has the unfortunate side effect of causing a mild high." useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    <PreferredContainer primary="medcab" minamount="2" maxamount="4" spawnprobability="0.5" notcampaign="true" />
+    <PreferredContainer secondary="wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.1" />
+    <PreferredContainer secondary="wreckmedcab,abandonedmedcab" minamount="1" maxamount="2" spawnprobability="0.2" />
+    <PreferredContainer secondary="medcontainer" />
+    <Price baseprice="80" minavailable="4">
+      <Price storeidentifier="merchantoutpost" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.2" />
+      <Price storeidentifier="merchantresearch" multiplier="0.9" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.2" />
+      <Price storeidentifier="merchantmine" multiplier="0.75" />
+    </Price>
+    <SuitableTreatment type="damage" suitability="15" />
+    <SuitableTreatment type="burn" suitability="15" />
+    <SuitableTreatment identifier="psychosis" suitability="100" />
+    <SuitableTreatment identifier="oasishigh" suitability="-10" />
+    <SuitableTreatment identifier="oxygenlow" suitability="-30" />
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="20">
+      <RequiredSkill identifier="medical" level="40" />
+      <RequiredItem identifier="pomegrenadeextract" />
+      <RequiredItem identifier="pipetobacco" />
+      <RequiredItem identifier="stabilozine" />
+    </Fabricate>
+    <Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="115" fabricationlimitmin="0" fabricationlimitmax="3" />
+    <Deconstruct time="30">
+      <Item identifier="pomegrenadextract" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Images/InventoryIcons.png" sourcerect="78,302,56,75" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/InventoryIcons.png" sourcerect="134,291,37,66" depth="0.6" origin="0.5,0.5" />
+    <Body width="35" height="65" density="10.2" waterdragcoefficient="1" />
+    <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+      <RequiredSkill identifier="medical" level="25" />
+      <StatusEffect type="OnSuccess" target="This" Condition="-100.0" setvalue="true" />
+      <StatusEffect type="OnFailure" target="This" Condition="-100.0" setvalue="true" />
+      <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" duration="1">
+        <Affliction identifier="oxygenlow" amount="10" />
+        <Affliction identifier="tobacconade" amount="25" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" duration="25">
+        <ReduceAffliction type="damage" amount="0.25" />
+        <ReduceAffliction type="burn" amount="0.25" />
+        <Affliction identifier="oasishigh" amount="0.5" />
+        <ReduceAffliction identifier="psychosis" amount="2" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnFailure" target="UseTarget" duration="1">
+        <Affliction identifier="oxygenlow" amount="12.5" />
+        <Affliction identifier="tobacconade" amount="20" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnFailure" target="UseTarget" duration="25">
+        <ReduceAffliction type="damage" amount="0.125" />
+        <ReduceAffliction type="burn" amount="0.125" />
+        <Affliction identifier="oasishigh" amount="0.4" />
+        <ReduceAffliction identifier="psychosis" amount="1" />
+      </StatusEffect>
+      <StatusEffect type="OnSuccess" target="UseTarget">
+        <Conditional entitytype="eq Character" />
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+      </StatusEffect>
+      <StatusEffect type="OnFailure" target="UseTarget">
+        <Conditional entitytype="eq Character" />
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget" multiplyafflictionsbymaxvitality="true" AllowWhenBroken="true">
+        <Affliction identifier="stun" amount="0.1" />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+    <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
+    <SkillRequirementHint identifier="medical" level="25" />
+  </Item>
+  <Item name="Smelling Salts" identifier="smellingsalts" category="Misc" Tags="smallitem" scale="0.5" cargocontaineridentifier="metalcrate" allowasextracargo="true" impactsoundtag="impact_soft" isshootable="true" requireaimtouse="true">
+    <PreferredContainer primary="crewcab" />
+    <Price baseprice="130" sold="false" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredItem identifier="pipetobacco" />
+      <RequiredItem identifier="sodium" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Images/InventoryIconsMisc.png" sourcerect="362,102,23,51" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/InventoryIconsMisc.png" sourcerect="362,102,23,51" depth="0.55" origin="0.5,0.5" />
+    <Body width="45" height="10" density="9.9" />
+    <Holdable slots="Any,RightHand,LeftHand" aimable="false" aimpos="30,14" handle1="0,-10" swingamount="0,0" swingspeed="0.5" swingwhenusing="true" msg="ItemMsgPickUpSelect" canBeCombined="true" removeOnCombined="true">
+      <StatusEffect type="OnUse" target="This" Condition="-3.3">
+        <ParticleEmitter particle="swirlysmoke" particlespersecond="2" scalemin="1" scalemax="2" anglemin="0" anglemax="360" velocitymin="0" velocitymax="10" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnUse" target="Character">
+        <Affliction identifier="smellingsaltsmanager" amount="1" />
+        <Affliction identifier="oasishigh" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="Calomel Smelling Salts" identifier="calomelsmellingsalts" category="Misc" Tags="smallitem" scale="0.5" cargocontaineridentifier="metalcrate" allowasextracargo="true" impactsoundtag="impact_soft" isshootable="true" requireaimtouse="true">
+    <PreferredContainer primary="crewcab" />
+    <Price baseprice="130" sold="false" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredItem identifier="pipetobacco" />
+      <RequiredItem identifier="sodium" />
+      <RequiredItem identifier="iron" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Images/InventoryIconsMisc.png" sourcerect="362,102,23,51" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/InventoryIconsMisc.png" sourcerect="362,102,23,51" depth="0.55" origin="0.5,0.5" />
+    <Body width="45" height="10" density="9.9" />
+    <Holdable slots="Any,RightHand,LeftHand" aimable="false" aimpos="30,14" handle1="0,-10" swingamount="0,0" swingspeed="0.5" swingwhenusing="true" msg="ItemMsgPickUpSelect" canBeCombined="true" removeOnCombined="true">
+      <StatusEffect type="OnUse" target="This" Condition="-3.3">
+        <ParticleEmitter particle="swirlysmoke" particlespersecond="2" scalemin="1" scalemax="2" anglemin="0" anglemax="360" velocitymin="0" velocitymax="10" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnUse" target="Character">
+        <Affliction identifier="calomelsaltsmanager" amount="1" />
+        <Affliction identifier="oasishigh" amount="1" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="Cyanide Pill" identifier="cyanidepill" category="Material" maxstacksize="1" maxstacksizecharacterinventory="1" cargocontaineridentifier="chemicalcrate" Tags="smallitem,chem,poison,syringe" description="A highly potent cyanide syringe used to instantly kill oneself. Cannot be used on others. Aim and 'fire' to use." useinhealthinterface="false" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    <PreferredContainer primary="toxcab" secondary="toxcontainer" />
+    <PreferredContainer primary="wrecktoxcab,abandonedtoxcab" spawnprobability="0.05" />
+    <Price baseprice="250" minavailable="1">
+      <Price storeidentifier="merchantoutpost" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" />
+      <Price storeidentifier="merchantresearch" multiplier="0.9" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.1" />
+      <Price storeidentifier="merchantmine" sold="false" multiplier="1.1" />
+      <Price storeidentifier="merchanthusk" minavailable="0" maxavailable="1">
+        <Reputation faction="huskcult" min="50" />
+      </Price>
+    </Price>
+    <Fabricate suitablefabricators="spyfab" requiredtime="60">
+      <RequiredSkill identifier="medical" level="50" />
+      <RequiredItem identifier="cyanide" />
+    </Fabricate>
+    <Deconstruct time="20">
+      <Item identifier="cyanide" />
+    </Deconstruct>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="192,640,64,64" origin="0.5,0.5" />
+    <Sprite texture="Medicines.png" sourcerect="37,69,38,69" depth="0.6" origin="0.5,0.5" />
+    <Body width="35" height="65" density="10.2" waterdragcoefficient="1" />
+    <MeleeWeapon slots="Any,RightHand+LeftHand" aimable="false" controlpose="true" aimpos="35,18" handle1="-30,0" handle2="90,10" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnUse" target="Character">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        <Affliction identifier="cyanidepoisoning" amount="75" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+      <StatusEffect type="OnSecondaryUse" target="This,Character" Condition="-100.0">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        <Affliction identifier="cyanidepoisoning" amount="75" />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+  </Item>
+</Items>

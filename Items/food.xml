@@ -1,0 +1,2394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="Butcher Knife" identifier="butcherknife" category="Weapon" description="A sharp and easily concealed knife, best used for cutting apart bodies." Tags="smallitem,weapon,gunsmith,mountableweapon" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+    <PreferredContainer secondary="wreckarmcab,abandonedarmcab" amount="1" spawnprobability="0.25" />
+    <PreferredContainer secondary="abandonedstoragecab" amount="1" spawnprobability="0.05" />
+    <PreferredContainer secondary="beaconsupplycab" amount="1" spawnprobability="0.05" />
+    <PreferredContainer primary="secarmcab" secondary="armcab" />
+    <Price baseprice="30">
+      <Price storeidentifier="merchantoutpost" multiplier="1.5" minavailable="6" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="8" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="15" />
+      <Price storeidentifier="merchantmine" multiplier="1.25" minavailable="2" />
+      <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="15" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="iron" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="weapons" level="30" />
+      <RequiredItem identifier="iron" amount="2" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="835,385,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="183,203,66,16" depth="0.55" origin="0.5,0.5" />
+    <Body width="65" height="15" density="50" />
+    <Holdable slots="Any,RightHand,LeftHand" aimpos="50,0" handle1="-10,0" holdangle="30" reload="0.75" range="50" combatPriority="25" msg="ItemMsgPickUpSelect">
+      <Attack targetimpulse="2" severlimbsprobability="0.1" itemdamage="10" structuredamage="10" structuresoundtype="StructureSlash">
+        <Affliction identifier="lacerations" strength="10" />
+        <Affliction identifier="bleeding" strength="10" />
+        <Affliction identifier="stun" strength="0.2" />
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Conditional isdead="true" />
+          <Affliction identifier="butchered" strength="1" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" Comparison="And">
+          <Conditional butchered="lte 1" isdead="true" />
+          <Conditional SpeciesGroup="human" />
+          <SpawnItem identifier="spoiledmeat" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" Comparison="And">
+          <Conditional butchered="lte 1" isdead="true" />
+          <Conditional SpeciesGroup="demonic" />
+          <SpawnItem identifier="abyssalmeat" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" Comparison="And">
+          <Conditional butchered="lte 1" isdead="true" />
+          <Conditional SpeciesGroup="husk" />
+          <SpawnItem identifiers="huskeggsbasic" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" Comparison="And">
+          <Conditional butchered="lte 2" isdead="true" />
+          <Conditional SpeciesGroup="crawler" />
+          <SpawnItem identifiers="rawcrawlermeat" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" Comparison="And">
+          <Conditional butchered="lte 3" isdead="true" />
+          <Conditional SpeciesGroup="mudraptor" />
+          <SpawnItem identifiers="rawmudraptormeat" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" Comparison="And">
+          <Conditional butchered="lte 1" isdead="true" />
+          <Conditional SpeciesGroup="mudraptor" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" Comparison="And">
+          <Conditional butchered="lte 2" isdead="true" />
+          <Conditional SpeciesGroup="spineling" />
+          <SpawnItem identifiers="rawspinelingmeat" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" Comparison="And">
+          <Conditional butchered="lte 1" isdead="true" />
+          <Conditional SpeciesName="tigerthresher_hatchling" />
+          <SpawnItem identifiers="rawthreshermeat" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" Comparison="And">
+          <Conditional butchered="lte 2" isdead="true" />
+          <Conditional SpeciesName="tigerthresher" />
+          <SpawnItem identifiers="rawthreshermeat" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" Comparison="And">
+          <Conditional butchered="lte 3" isdead="true" />
+          <Conditional SpeciesName="bonethresher" />
+          <SpawnItem identifiers="rawthreshermeat" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" Comparison="And">
+          <Conditional butchered="lte 3" isdead="true" />
+          <Conditional SpeciesGroup="moloch" />
+          <SpawnItem identifiers="rawmolochmeat" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" Comparison="And">
+          <Conditional butchered="lte 1" isdead="true" />
+          <Conditional SpeciesGroup="moloch" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" Comparison="And">
+          <Conditional butchered="lte 1" isdead="true" />
+          <Conditional SpeciesGroup="thalamus" />
+          <SpawnItem identifiers="spoiledmeat" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" Comparison="And">
+          <Conditional butchered="lte 5" isdead="true" />
+          <Conditional SpeciesName="watcher" />
+          <SpawnItem identifiers="rawwatchermeat" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" Comparison="And">
+          <Conditional butchered="lte 5" isdead="true" />
+          <Conditional SpeciesName="latcher" />
+          <SpawnItem identifiers="rawabyssalmeat" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" Comparison="And">
+          <Conditional butchered="lte 7" isdead="true" />
+          <Conditional SpeciesName="charybdis" />
+          <SpawnItem identifiers="rawcharybdismeat" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" Comparison="And">
+          <Conditional butchered="lte 10" isdead="true" />
+          <Conditional SpeciesName="endworm" />
+          <SpawnItem identifiers="rawabyssalmeat" spawnposition="This" />
+        </StatusEffect>
+      </Attack>
+    </Holdable>
+    <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+    <Quality>
+      <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="Spoiled Meat" identifier="spoiledmeat" spritecolor="50,50,50,255" inventoryiconcolor="50,50,50,255" description="Meat that is far past its expiration date." Tags="smallitem,chem,medical,organ" cargocontaineridentifier="chemicalcrate" maxstacksize="32" maxstacksizecharacterinventory="8" MaxStackSizeHoldableOrWearableInventory="8" category="Material" scale="0.5" impactsoundtag="impact_soft">
+    <Sprite texture="%ModDir%/Images/InventoryIconsMisc.png" depth="0.7" sourcerect="952,774,48,56" origin="0.5,0.5" />
+    <InventoryIcon texture="%ModDir%/Images/InventoryIconsMisc.png" sourcerect="952,774,48,56" origin="0.5,0.5" />
+    <Deconstruct time="10" />
+    <Body width="48" height="46" />
+    <Holdable slots="RightHand,LeftHand,Any" holdpos="0,-70" handle1="0,10" />
+  </Item>
+  <Item name="Decaying Meat" identifier="abyssalmeat" description="Meat that is perpetually decaying, tainted by a dark energy." Tags="smallitem,chem,medical,organ" cargocontaineridentifier="chemicalcrate" maxstacksize="32" maxstacksizecharacterinventory="8" MaxStackSizeHoldableOrWearableInventory="8" category="Material" scale="0.5" impactsoundtag="impact_soft">
+    <Sprite texture="%ModDir%/Images/InventoryIconsMisc.png" depth="0.7" sourcerect="952,774,48,56" origin="0.5,0.5" />
+    <InventoryIcon texture="%ModDir%/Images/InventoryIconsMisc.png" sourcerect="952,774,48,56" origin="0.5,0.5" />
+    <Deconstruct time="10" />
+    <Body width="48" height="46" />
+    <Holdable slots="RightHand,LeftHand,Any" holdpos="0,-70" handle1="0,10" />
+  </Item>
+  <Item name="Mystery Meat" identifier="mysterymeat" category="Medical" maxstacksize="32" maxstacksizecharacterinventory="8" MaxStackSizeHoldableOrWearableInventory="8" cargocontaineridentifier="chemicalcrate" description="Rations, a can of several meat products. Better than starving." Tags="smallitem,chem,medical" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="crewcab" />
+    <Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="50" fabricationlimitmin="5" fabricationlimitmax="10" />
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="10">
+      <RequiredSkill identifier="medical" level="10" />
+      <RequiredItem tag="organ" />
+      <RequiredItem identifier="aluminium" />
+    </Fabricate>
+    <Fabricate suitablefabricators="medicalfabricator,fabricator" requiredtime="5">
+      <RequiredSkill identifier="medical" level="5" />
+      <RequiredItem tag="organ" />
+      <RequiredItem identifier="mysterymeat" mincondition="0.0" maxcondition="0.0" />
+    </Fabricate>
+    <Deconstruct time="5">
+      <Item identifier="aluminium" />
+    </Deconstruct>
+    <Sprite texture="%ModDir%/Images/InventoryIconsMisc.png" sourcerect="836,841,54,79" depth="0.6" origin="0.5,0.5" />
+    <InventoryIcon texture="%ModDir%/Images/InventoryIconsMisc.png" sourcerect="836,841,54,79" origin="0.5,0.5" />
+    <Body width="54" height="79" density="20" />
+    <Holdable slots="RightHand,LeftHand,Any" holdpos="0,-70" handle1="0,10">
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+      <StatusEffect type="OnSecondaryUse" target="This" Condition="-10.0" />
+      <StatusEffect type="OnSecondaryUse" target="This,Character" Condition="-10" stackable="false" comparison="and" delay="0.5">
+        <Conditional Condition="lte 5" />
+        <Conditional Condition="gte 4" />
+        <Affliction identifier="rations" amount="120" />
+        <Affliction identifier="full" amount="60" />
+        <Affliction identifier="foodpoison" amount="30" probability="0.4" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnUse" target="UseTarget">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        <Affliction identifier="rations" amount="120" />
+        <Affliction identifier="full" amount="60" />
+        <Affliction identifier="foodpoison" amount="30" probability="0.4" />
+      </StatusEffect>
+      <!-- Poison effects -->
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="morbusine" type="Contained" />
+        <Affliction identifier="morbusinepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="chloralhydrate" type="Contained" />
+        <Affliction identifier="incrementalstun" amount="50" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="cyanide" type="Contained" />
+        <Affliction identifier="cyanidepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="radiotoxin" type="Contained" />
+        <Affliction identifier="radiationsickness" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sufforin" type="Contained" />
+        <Affliction identifier="sufforinpoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="deliriumine" type="Contained" />
+        <Affliction identifier="deliriuminepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyxis" type="Contained" />
+        <Affliction identifier="slowparalysis" amount="1.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyzant" type="Contained" />
+        <Affliction identifier="paralysis" amount="3" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="hallucinogenicbufotoxin" type="Contained" />
+        <ReduceAffliction identifier="paralysis" amount="6" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" targetlimb="Torso" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sulphuricacid" type="Contained" />
+        <Affliction identifier="acidburn" amount="3.5" />
+        <Affliction identifier="organdamage" amount="5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="ethanol" type="Contained" />
+        <Affliction identifier="drunk" amount="1" />
+        <ReduceAffliction identifier="psychosis" amount="1" />
+        <ReduceAffliction identifier="hallucinating" amount="1" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggsbasic" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.01" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggs" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.25" />
+      </StatusEffect>
+    </Holdable>
+    <ItemContainer capacity="11" maxstacksize="1" hideitems="true" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="false" ShowContainedStateIndicator="false" removecontaineditemsondeconstruct="true">
+      <Containable items="poison,ethanol,huskeggsbasic,huskeggs,paralyxis" />
+    </ItemContainer>
+  </Item>
+  <Item name="Raw Crawler Meat" identifier="rawcrawlermeat" description="Might make a decent snack." Tags="smallitem,chem,medical,rawmeat" cargocontaineridentifier="chemicalcrate" maxstacksize="32" maxstacksizecharacterinventory="8" MaxStackSizeHoldableOrWearableInventory="8" category="Material" scale="0.5" impactsoundtag="impact_soft">
+    <Sprite texture="%ModDir%/Images/InventoryIconsMisc.png" depth="0.7" sourcerect="903,773,48,56" origin="0.5,0.5" />
+    <InventoryIcon texture="%ModDir%/Images/InventoryIconsMisc.png" sourcerect="903,773,48,56" origin="0.5,0.5" />
+    <Deconstruct time="10">
+      <Item identifier="stabilozine" />
+      <Item identifier="stabilozine" />
+      <Item identifier="antibloodloss2" />
+      <Item identifier="antibloodloss1" />
+      <Item identifier="antibloodloss1" />
+    </Deconstruct>
+    <Body width="46" height="44" />
+    <Holdable slots="RightHand,LeftHand,Any" holdpos="0,-70" handle1="0,10">
+      <StatusEffect type="OnNotContained" target="This" Condition="-0.5" />
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" comparison="and">
+        <Conditional Condition="gte 1" />
+        <Conditional Condition="lte 50" />
+        <SpawnItem identifiers="spoiledmeat" spawnposition="This" />
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        <Affliction identifier="foodpoison" amount="30" probability="0.5" />
+        <Affliction identifier="rations" amount="60" />
+        <Affliction identifier="full" amount="30" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" delay="0.1">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" Condition="-0.1" />
+      <!-- Poison effects -->
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="morbusine" type="Contained" />
+        <Affliction identifier="morbusinepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="chloralhydrate" type="Contained" />
+        <Affliction identifier="incrementalstun" amount="50" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="cyanide" type="Contained" />
+        <Affliction identifier="cyanidepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="radiotoxin" type="Contained" />
+        <Affliction identifier="radiationsickness" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sufforin" type="Contained" />
+        <Affliction identifier="sufforinpoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="deliriumine" type="Contained" />
+        <Affliction identifier="deliriuminepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyxis" type="Contained" />
+        <Affliction identifier="slowparalysis" amount="1.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyzant" type="Contained" />
+        <Affliction identifier="paralysis" amount="3" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="hallucinogenicbufotoxin" type="Contained" />
+        <ReduceAffliction identifier="paralysis" amount="6" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" targetlimb="Torso" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sulphuricacid" type="Contained" />
+        <Affliction identifier="acidburn" amount="3.5" />
+        <Affliction identifier="organdamage" amount="5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="ethanol" type="Contained" />
+        <Affliction identifier="drunk" amount="1" />
+        <ReduceAffliction identifier="psychosis" amount="1" />
+        <ReduceAffliction identifier="hallucinating" amount="1" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggsbasic" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.01" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggs" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.25" />
+      </StatusEffect>
+    </Holdable>
+    <ItemContainer capacity="11" maxstacksize="1" hideitems="true" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="false" ShowContainedStateIndicator="false" removecontaineditemsondeconstruct="true">
+      <Containable items="poison,ethanol,huskeggsbasic,huskeggs,paralyxis" />
+    </ItemContainer>
+  </Item>
+  <Item name="Cooked Crawler Chunks" identifier="oasiscookedcrawlermeat" description="Pieces of Crawler flesh which vaguely resemble chicken nuggets, deep fried in plant oil." Tags="smallitem,chem,medical" cargocontaineridentifier="chemicalcrate" maxstacksize="32" maxstacksizecharacterinventory="8" MaxStackSizeHoldableOrWearableInventory="8" category="Medical" scale="0.5" impactsoundtag="impact_soft">
+    <Sprite texture="%ModDir%/Images/InventoryIconsMisc.png" depth="0.7" sourcerect="964,876,45,56" origin="0.5,0.5" />
+    <InventoryIcon texture="%ModDir%/Images/InventoryIconsMisc.png" sourcerect="964,876,45,56" origin="0.5,0.5" />
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="30" amount="2">
+      <RequiredSkill identifier="medical" level="30" />
+      <RequiredItem identifier="rawcrawlermeat" mincondition="0.5" usecondition="true" />
+      <RequiredItem identifier="rawcrawlermeat" mincondition="0.5" usecondition="true" />
+      <RequiredItem tag="plantitem" />
+    </Fabricate>
+    <Fabricate suitablefabricators="vendingmachine" requiredtime="1" output="1" fabricationlimitmin="4" fabricationlimitmax="12">
+      <RequiredItem identifier="10markbill" amount="1" />
+    </Fabricate>
+    <Deconstruct time="10">
+      <Item identifier="rawcrawlermeat" />
+    </Deconstruct>
+    <Body width="45" height="46" />
+    <Holdable slots="RightHand,LeftHand,Any" holdpos="0,-70" handle1="0,10">
+      <StatusEffect type="OnUse" target="Character">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        <Affliction identifier="snack" amount="60" />
+        <Affliction identifier="full" amount="15" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+      <StatusEffect type="OnSecondaryUse" target="This" Condition="-10.0" />
+      <StatusEffect type="OnSecondaryUse" target="This,Character" disabledeltatime="true">
+        <Conditional Condition="lte 0" />
+        <Affliction identifier="snack" amount="60" />
+        <Affliction identifier="full" amount="15" />
+        <RemoveItem />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+      <!-- Poison effects -->
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="morbusine" type="Contained" />
+        <Affliction identifier="morbusinepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="chloralhydrate" type="Contained" />
+        <Affliction identifier="incrementalstun" amount="50" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="cyanide" type="Contained" />
+        <Affliction identifier="cyanidepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="radiotoxin" type="Contained" />
+        <Affliction identifier="radiationsickness" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sufforin" type="Contained" />
+        <Affliction identifier="sufforinpoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="deliriumine" type="Contained" />
+        <Affliction identifier="deliriuminepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyxis" type="Contained" />
+        <Affliction identifier="slowparalysis" amount="1.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyzant" type="Contained" />
+        <Affliction identifier="paralysis" amount="3" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="hallucinogenicbufotoxin" type="Contained" />
+        <ReduceAffliction identifier="paralysis" amount="6" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" targetlimb="Torso" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sulphuricacid" type="Contained" />
+        <Affliction identifier="acidburn" amount="3.5" />
+        <Affliction identifier="organdamage" amount="5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="ethanol" type="Contained" />
+        <Affliction identifier="drunk" amount="1" />
+        <ReduceAffliction identifier="psychosis" amount="1" />
+        <ReduceAffliction identifier="hallucinating" amount="1" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggsbasic" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.01" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggs" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.25" />
+      </StatusEffect>
+    </Holdable>
+    <ItemContainer capacity="11" maxstacksize="1" hideitems="true" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="false" ShowContainedStateIndicator="false" removecontaineditemsondeconstruct="true">
+      <Containable items="poison,ethanol,huskeggsbasic,huskeggs,paralyxis" />
+    </ItemContainer>
+  </Item>
+  <Item name="Raw Mudraptor Meat" identifier="rawmudraptormeat" description="Might be good for a steak." Tags="smallitem,chem,medical" cargocontaineridentifier="chemicalcrate" maxstacksize="32" maxstacksizecharacterinventory="8" MaxStackSizeHoldableOrWearableInventory="8" category="Material" scale="0.5" impactsoundtag="impact_soft">
+    <Sprite texture="%ModDir%/Images/InventoryIconsMisc.png" depth="0.7" sourcerect="903,773,48,56" origin="0.5,0.5" />
+    <InventoryIcon texture="%ModDir%/Images/InventoryIconsMisc.png" sourcerect="903,773,48,56" origin="0.5,0.5" />
+    <Deconstruct time="10">
+      <Item identifier="stabilozine" />
+      <Item identifier="stabilozine" />
+      <Item identifier="antibloodloss2" />
+      <Item identifier="antibloodloss1" />
+      <Item identifier="antibloodloss1" />
+    </Deconstruct>
+    <Body width="46" height="44" />
+    <Holdable slots="RightHand,LeftHand,Any" holdpos="0,-70" handle1="0,10">
+      <StatusEffect type="OnNotContained" target="This" Condition="-0.5" />
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" comparison="and">
+        <Conditional Condition="gte 1" />
+        <Conditional Condition="lte 2" />
+        <SpawnItem identifiers="spoiledmeat" spawnposition="This" />
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        <Affliction identifier="foodpoison" amount="30" probability="0.5" />
+        <Affliction identifier="rations" amount="60" />
+        <Affliction identifier="full" amount="30" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" delay="0.1">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" Condition="-0.1" />
+      <!-- Poison effects -->
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="morbusine" type="Contained" />
+        <Affliction identifier="morbusinepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="chloralhydrate" type="Contained" />
+        <Affliction identifier="incrementalstun" amount="50" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="cyanide" type="Contained" />
+        <Affliction identifier="cyanidepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="radiotoxin" type="Contained" />
+        <Affliction identifier="radiationsickness" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sufforin" type="Contained" />
+        <Affliction identifier="sufforinpoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="deliriumine" type="Contained" />
+        <Affliction identifier="deliriuminepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyxis" type="Contained" />
+        <Affliction identifier="slowparalysis" amount="1.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyzant" type="Contained" />
+        <Affliction identifier="paralysis" amount="3" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="hallucinogenicbufotoxin" type="Contained" />
+        <ReduceAffliction identifier="paralysis" amount="6" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" targetlimb="Torso" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sulphuricacid" type="Contained" />
+        <Affliction identifier="acidburn" amount="3.5" />
+        <Affliction identifier="organdamage" amount="5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="ethanol" type="Contained" />
+        <Affliction identifier="drunk" amount="1" />
+        <ReduceAffliction identifier="psychosis" amount="1" />
+        <ReduceAffliction identifier="hallucinating" amount="1" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggsbasic" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.01" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggs" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.25" />
+      </StatusEffect>
+    </Holdable>
+    <ItemContainer capacity="11" maxstacksize="1" hideitems="true" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="false" ShowContainedStateIndicator="false" removecontaineditemsondeconstruct="true">
+      <Containable items="poison,ethanol,huskeggsbasic,huskeggs,paralyxis" />
+    </ItemContainer>
+  </Item>
+  <Item name="Mudraptor Meat" identifier="cookedmudraptormeat" description="A small steak made of Mudraptor meat and seasoned to perfection." Tags="smallitem,chem,medical" cargocontaineridentifier="chemicalcrate" maxstacksize="6" category="Medical" scale="0.5" impactsoundtag="impact_soft">
+    <Sprite texture="%ModDir%/Images/InventoryIconsMisc.png" depth="0.7" sourcerect="903,880,50,34" origin="0.5,0.5" />
+    <InventoryIcon texture="%ModDir%/Images/InventoryIconsMisc.png" sourcerect="903,880,50,34" origin="0.5,0.5" />
+    <Fabricate suitablefabricators="vendingmachine" requiredtime="1" output="1" fabricationlimitmin="4" fabricationlimitmax="12">
+      <RequiredItem identifier="50markbill" amount="1" />
+    </Fabricate>
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="30" amount="2">
+      <RequiredSkill identifier="medical" level="50" />
+      <RequiredItem identifier="rawmudraptormeat" mincondition="0.5" usecondition="true" />
+      <RequiredItem identifier="sodium" />
+      <RequiredItem identifier="ethanol" />
+    </Fabricate>
+    <Deconstruct time="10">
+      <Item identifier="rawmudraptormeat" />
+    </Deconstruct>
+    <Body width="40" height="45" />
+    <Holdable slots="RightHand,LeftHand,Any" holdpos="0,-70" handle1="0,10">
+      <StatusEffect type="OnUse" target="Character">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        <Affliction identifier="meal" amount="120" />
+        <Affliction identifier="full" amount="60" />
+        <Affliction identifier="strengthen" amount="30" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+      <StatusEffect type="OnSecondaryUse" target="This" Condition="-10.0" />
+      <StatusEffect type="OnSecondaryUse" target="This,UseTarget" disabledeltatime="true">
+        <Conditional Condition="lte 0" />
+        <Affliction identifier="meal" amount="120" />
+        <Affliction identifier="full" amount="60" />
+        <Affliction identifier="strengthen" amount="30" />
+        <RemoveItem />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+      <!-- Poison effects -->
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="morbusine" type="Contained" />
+        <Affliction identifier="morbusinepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="chloralhydrate" type="Contained" />
+        <Affliction identifier="incrementalstun" amount="50" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="cyanide" type="Contained" />
+        <Affliction identifier="cyanidepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="radiotoxin" type="Contained" />
+        <Affliction identifier="radiationsickness" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sufforin" type="Contained" />
+        <Affliction identifier="sufforinpoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="deliriumine" type="Contained" />
+        <Affliction identifier="deliriuminepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyxis" type="Contained" />
+        <Affliction identifier="slowparalysis" amount="1.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyzant" type="Contained" />
+        <Affliction identifier="paralysis" amount="3" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="hallucinogenicbufotoxin" type="Contained" />
+        <ReduceAffliction identifier="paralysis" amount="6" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" targetlimb="Torso" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sulphuricacid" type="Contained" />
+        <Affliction identifier="acidburn" amount="3.5" />
+        <Affliction identifier="organdamage" amount="5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="ethanol" type="Contained" />
+        <Affliction identifier="drunk" amount="1" />
+        <ReduceAffliction identifier="psychosis" amount="1" />
+        <ReduceAffliction identifier="hallucinating" amount="1" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggsbasic" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.01" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggs" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.25" />
+      </StatusEffect>
+    </Holdable>
+    <ItemContainer capacity="11" maxstacksize="1" hideitems="true" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="false" ShowContainedStateIndicator="false" removecontaineditemsondeconstruct="true">
+      <Containable items="poison,ethanol,huskeggsbasic,huskeggs,paralyxis" />
+    </ItemContainer>
+  </Item>
+  <Item name="Watcher Meat" identifier="rawwatchermeat" description="You sure about this?" Tags="smallitem,chem,medical" cargocontaineridentifier="chemicalcrate" maxstacksize="32" maxstacksizecharacterinventory="8" MaxStackSizeHoldableOrWearableInventory="8" category="Medical" scale="0.5" impactsoundtag="impact_soft">
+    <Sprite texture="%ModDir%/Images/InventoryIconsMisc.png" depth="0.7" sourcerect="953,829,45,45" origin="0.5,0.5" />
+    <InventoryIcon texture="%ModDir%/Images/InventoryIconsMisc.png" sourcerect="953,829,45,45" origin="0.5,0.5" />
+    <Fabricate suitablefabricators="vendingmachine" requiredtime="1" output="1" fabricationlimitmin="4" fabricationlimitmax="12">
+      <RequiredItem identifier="200markbill" amount="1" />
+    </Fabricate>
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="30" amount="2">
+      <RequiredSkill identifier="medical" level="50" />
+      <RequiredItem identifier="watchershell" />
+    </Fabricate>
+    <Deconstruct time="10">
+      <Item identifier="stabilozine" />
+      <Item identifier="stabilozine" />
+      <Item identifier="deliriumine" />
+    </Deconstruct>
+    <Body width="40" height="45" />
+    <Holdable slots="RightHand,LeftHand,Any" holdpos="0,-70" handle1="0,10">
+      <StatusEffect type="OnUse" target="UseTarget">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        <Affliction identifier="meal" amount="150" />
+        <Affliction identifier="full" amount="150" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="UseTarget" duration="30">
+        <Affliction identifier="huskally" amount="1" />
+        <Affliction identifier="psychosis" amount="2" />
+        <Affliction identifier="hallucinating" amount="2" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+      <StatusEffect type="OnSecondaryUse" target="This" Condition="-10.0" />
+      <StatusEffect type="OnSecondaryUse" target="This,Character" disabledeltatime="true">
+        <Conditional Condition="lte 0" />
+        <Affliction identifier="meal" amount="150" />
+        <Affliction identifier="full" amount="150" />
+        <RemoveItem />
+      </StatusEffect>
+      <StatusEffect type="OnSecondaryUse" target="Character" duration="30">
+        <Conditional Condition="lte 0" />
+        <Affliction identifier="huskally" amount="1" />
+        <Affliction identifier="psychosis" amount="2" />
+        <Affliction identifier="hallucinating" amount="2" />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+      <!-- Poison effects -->
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="morbusine" type="Contained" />
+        <Affliction identifier="morbusinepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="chloralhydrate" type="Contained" />
+        <Affliction identifier="incrementalstun" amount="50" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="cyanide" type="Contained" />
+        <Affliction identifier="cyanidepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="radiotoxin" type="Contained" />
+        <Affliction identifier="radiationsickness" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sufforin" type="Contained" />
+        <Affliction identifier="sufforinpoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="deliriumine" type="Contained" />
+        <Affliction identifier="deliriuminepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyxis" type="Contained" />
+        <Affliction identifier="slowparalysis" amount="1.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyzant" type="Contained" />
+        <Affliction identifier="paralysis" amount="3" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="hallucinogenicbufotoxin" type="Contained" />
+        <ReduceAffliction identifier="paralysis" amount="6" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" targetlimb="Torso" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sulphuricacid" type="Contained" />
+        <Affliction identifier="acidburn" amount="3.5" />
+        <Affliction identifier="organdamage" amount="5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="ethanol" type="Contained" />
+        <Affliction identifier="drunk" amount="1" />
+        <ReduceAffliction identifier="psychosis" amount="1" />
+        <ReduceAffliction identifier="hallucinating" amount="1" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggsbasic" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.01" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggs" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.25" />
+      </StatusEffect>
+    </Holdable>
+    <ItemContainer capacity="11" maxstacksize="1" hideitems="true" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="false" ShowContainedStateIndicator="false" removecontaineditemsondeconstruct="true">
+      <Containable items="poison,ethanol,huskeggsbasic,huskeggs,paralyxis" />
+    </ItemContainer>
+  </Item>
+  <Item name="Raw Thresher Meat" identifier="rawthreshermeat" description="Tastes like chicken." Tags="smallitem,chem,medical" cargocontaineridentifier="chemicalcrate" maxstacksize="32" maxstacksizecharacterinventory="8" MaxStackSizeHoldableOrWearableInventory="8" category="Material" scale="0.5" impactsoundtag="impact_soft">
+    <Sprite texture="%ModDir%/Images/InventoryIconsMisc.png" depth="0.7" sourcerect="903,773,48,56" origin="0.5,0.5" />
+    <InventoryIcon texture="%ModDir%/Images/InventoryIconsMisc.png" sourcerect="903,773,48,56" origin="0.5,0.5" />
+    <Deconstruct time="10">
+      <Item identifier="stabilozine" />
+      <Item identifier="stabilozine" />
+      <Item identifier="antibloodloss2" />
+      <Item identifier="antibloodloss1" />
+      <Item identifier="antibloodloss1" />
+    </Deconstruct>
+    <Body width="40" height="45" />
+    <Holdable slots="RightHand,LeftHand,Any" holdpos="0,-70" handle1="0,10">
+      <StatusEffect type="OnNotContained" target="This" Condition="-0.5" />
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" comparison="and">
+        <Conditional Condition="gte 1" />
+        <Conditional Condition="lte 2" />
+        <SpawnItem identifiers="spoiledmeat" spawnposition="This" />
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        <Affliction identifier="foodpoison" amount="30" probability="0.5" />
+        <Affliction identifier="rations" amount="60" />
+        <Affliction identifier="full" amount="30" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" delay="0.1">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" Condition="-0.1" />
+      <!-- Poison effects -->
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="morbusine" type="Contained" />
+        <Affliction identifier="morbusinepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="chloralhydrate" type="Contained" />
+        <Affliction identifier="incrementalstun" amount="50" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="cyanide" type="Contained" />
+        <Affliction identifier="cyanidepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="radiotoxin" type="Contained" />
+        <Affliction identifier="radiationsickness" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sufforin" type="Contained" />
+        <Affliction identifier="sufforinpoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="deliriumine" type="Contained" />
+        <Affliction identifier="deliriuminepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyxis" type="Contained" />
+        <Affliction identifier="slowparalysis" amount="1.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyzant" type="Contained" />
+        <Affliction identifier="paralysis" amount="3" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="hallucinogenicbufotoxin" type="Contained" />
+        <ReduceAffliction identifier="paralysis" amount="6" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" targetlimb="Torso" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sulphuricacid" type="Contained" />
+        <Affliction identifier="acidburn" amount="3.5" />
+        <Affliction identifier="organdamage" amount="5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="ethanol" type="Contained" />
+        <Affliction identifier="drunk" amount="1" />
+        <ReduceAffliction identifier="psychosis" amount="1" />
+        <ReduceAffliction identifier="hallucinating" amount="1" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggsbasic" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.01" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggs" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.25" />
+      </StatusEffect>
+    </Holdable>
+    <ItemContainer capacity="11" maxstacksize="1" hideitems="true" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="false" ShowContainedStateIndicator="false" removecontaineditemsondeconstruct="true">
+      <Containable items="poison,ethanol,huskeggsbasic,huskeggs,paralyxis" />
+    </ItemContainer>
+  </Item>
+  <Item name="Thresher Tenders" identifier="cookedthreshermeat" description="Pieces of Thresher flesh which vaguely resemble chicken tenders, deep fried in plant oil. Superior to Crawler Chunks overall." Tags="smallitem,chem,medical" cargocontaineridentifier="chemicalcrate" maxstacksize="32" maxstacksizecharacterinventory="8" MaxStackSizeHoldableOrWearableInventory="8" category="Medical" scale="0.5" impactsoundtag="impact_soft">
+    <Sprite texture="%ModDir%/Images/InventoryIconsMisc.png" depth="0.7" sourcerect="964,876,45,56" origin="0.5,0.5" />
+    <InventoryIcon texture="%ModDir%/Images/InventoryIconsMisc.png" sourcerect="964,876,45,56" origin="0.5,0.5" />
+    <Fabricate suitablefabricators="vendingmachine" requiredtime="1" output="1" fabricationlimitmin="4" fabricationlimitmax="12">
+      <RequiredItem identifier="50markbill" amount="1" />
+      <RequiredItem identifier="10markbill" amount="2" />
+      <RequiredItem identifier="5markscoin" amount="1" />
+    </Fabricate>
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="30" amount="2">
+      <RequiredSkill identifier="medical" level="30" />
+      <RequiredItem identifier="rawthreshermeat" mincondition="0.5" usecondition="true" />
+      <RequiredItem identifier="rawthreshermeat" mincondition="0.5" usecondition="true" />
+      <RequiredItem tag="plantitem" />
+    </Fabricate>
+    <Deconstruct time="10">
+      <Item identifier="rawthreshermeat" />
+    </Deconstruct>
+    <Body width="40" height="45" />
+    <Holdable slots="RightHand,LeftHand,Any" holdpos="0,-70" handle1="0,10">
+      <StatusEffect type="OnUse" target="UseTarget">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        <Affliction identifier="snack" amount="90" />
+        <Affliction identifier="full" amount="15" />
+        <Affliction identifier="strengthen" amount="15" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+      <StatusEffect type="OnSecondaryUse" target="This" Condition="-10.0" />
+      <StatusEffect type="OnSecondaryUse" target="This,Character" disabledeltatime="true">
+        <Conditional Condition="lte 0" />
+        <Affliction identifier="snack" amount="90" />
+        <Affliction identifier="full" amount="15" />
+        <Affliction identifier="strengthen" amount="15" />
+        <RemoveItem />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+      <!-- Poison effects -->
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="morbusine" type="Contained" />
+        <Affliction identifier="morbusinepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="chloralhydrate" type="Contained" />
+        <Affliction identifier="incrementalstun" amount="50" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="cyanide" type="Contained" />
+        <Affliction identifier="cyanidepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="radiotoxin" type="Contained" />
+        <Affliction identifier="radiationsickness" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sufforin" type="Contained" />
+        <Affliction identifier="sufforinpoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="deliriumine" type="Contained" />
+        <Affliction identifier="deliriuminepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyxis" type="Contained" />
+        <Affliction identifier="slowparalysis" amount="1.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyzant" type="Contained" />
+        <Affliction identifier="paralysis" amount="3" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="hallucinogenicbufotoxin" type="Contained" />
+        <ReduceAffliction identifier="paralysis" amount="6" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" targetlimb="Torso" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sulphuricacid" type="Contained" />
+        <Affliction identifier="acidburn" amount="3.5" />
+        <Affliction identifier="organdamage" amount="5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="ethanol" type="Contained" />
+        <Affliction identifier="drunk" amount="1" />
+        <ReduceAffliction identifier="psychosis" amount="1" />
+        <ReduceAffliction identifier="hallucinating" amount="1" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggsbasic" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.01" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggs" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.25" />
+      </StatusEffect>
+    </Holdable>
+    <ItemContainer capacity="11" maxstacksize="1" hideitems="true" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="false" ShowContainedStateIndicator="false" removecontaineditemsondeconstruct="true">
+      <Containable items="poison,ethanol,huskeggsbasic,huskeggs,paralyxis" />
+    </ItemContainer>
+  </Item>
+  <!-- <Item name="Raw Hammerhead Meat" identifier="rawhammerheadmeat" description="This meat is surprisingly intact, despite the monster's tendency to ram itself into things." Tags="smallitem,chem,medical" cargocontaineridentifier="chemicalcrate" maxstacksize="32" maxstacksizecharacterinventory="8" MaxStackSizeHoldableOrWearableInventory="8" category="Material" scale="0.5" impactsoundtag="impact_soft">
+    <Sprite texture="%ModDir%/Images/InventoryIconsMisc.png" depth="0.7" sourcerect="903,773,48,56" origin="0.5,0.5" />
+	<InventoryIcon texture="%ModDir%/Images/InventoryIconsMisc.png" sourcerect="903,773,48,56" origin="0.5,0.5" />
+    <Deconstruct time="10">
+      <Item identifier="stabilozine" />
+      <Item identifier="stabilozine" />
+      <Item identifier="antibloodloss2" />
+      <Item identifier="antibloodloss1" />
+      <Item identifier="antibloodloss1" />
+    </Deconstruct>
+    <Body width="40" height="45" />
+    <Holdable slots="RightHand,LeftHand,Any" holdpos="0,-70" handle1="0,10">
+	  <StatusEffect type="OnNotContained" target="This" Condition="-0.5" />
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+	  <StatusEffect type="Always" target="This" comparison="and">
+	    <Conditional Condition="gte 1" />
+		<Conditional Condition="lte 2" />
+	    <SpawnItem identifiers="spoiledmeat" spawnposition="This" />
+		<Remove />
+	  </StatusEffect>
+	  <StatusEffect type="OnUse" target="Character">
+	    <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+		<Affliction identifier="foodpoison" amount="30" probability="0.5" />
+		<Affliction identifier="rations" amount="60" />
+		<Affliction identifier="full" amount="30" />
+      </StatusEffect>
+	  <StatusEffect type="OnUse" target="This" delay="0.1">
+	    <Remove />
+	  </StatusEffect>
+	  <StatusEffect type="Always" target="This" Condition="-0.1" />
+	</Holdable>
+  </Item> -->
+  <Item name="Hammerhead Ham" identifier="cookedhammerheadmeat" description="A large piece of Hammerhead flesh, cooked into a large ham and sweetened with Pomegrenade juice." Tags="smallitem,chem,medical" cargocontaineridentifier="chemicalcrate" maxstacksize="2" category="Medical" scale="0.5" impactsoundtag="impact_soft">
+    <Sprite texture="%ModDir%/Images/InventoryIconsMisc.png" depth="0.7" sourcerect="905,915,53,31" origin="0.5,0.5" />
+    <InventoryIcon texture="%ModDir%/Images/InventoryIconsMisc.png" sourcerect="905,915,53,31" origin="0.5,0.5" />
+    <Fabricate suitablefabricators="vendingmachine" requiredtime="1" output="1" fabricationlimitmin="4" fabricationlimitmax="12">
+      <RequiredItem identifier="50markbill" amount="1" />
+      <RequiredItem identifier="100markbill" amount="1" />
+    </Fabricate>
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="45">
+      <RequiredSkill identifier="medical" level="30" />
+      <RequiredItem identifier="hammerheadribs" amount="1" />
+      <RequiredItem identifier="sodium" />
+      <RequiredItem identifier="pomegrenadeextract" />
+    </Fabricate>
+    <Body width="40" height="45" />
+    <Holdable slots="RightHand,LeftHand,Any" holdpos="0,-70" handle1="0,10">
+      <StatusEffect type="OnUse" target="UseTarget">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        <Affliction identifier="meal" amount="180" />
+        <Affliction identifier="full" amount="90" />
+        <Affliction identifier="strengthen" amount="45" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+      <StatusEffect type="OnSecondaryUse" target="This" Condition="-10.0" />
+      <StatusEffect type="OnSecondaryUse" target="This,Character" disabledeltatime="true">
+        <Conditional Condition="lte 0" />
+        <Affliction identifier="meal" amount="180" />
+        <Affliction identifier="full" amount="90" />
+        <Affliction identifier="strengthen" amount="45" />
+        <RemoveItem />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+      <!-- Poison effects -->
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="morbusine" type="Contained" />
+        <Affliction identifier="morbusinepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="chloralhydrate" type="Contained" />
+        <Affliction identifier="incrementalstun" amount="50" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="cyanide" type="Contained" />
+        <Affliction identifier="cyanidepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="radiotoxin" type="Contained" />
+        <Affliction identifier="radiationsickness" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sufforin" type="Contained" />
+        <Affliction identifier="sufforinpoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="deliriumine" type="Contained" />
+        <Affliction identifier="deliriuminepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyxis" type="Contained" />
+        <Affliction identifier="slowparalysis" amount="1.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyzant" type="Contained" />
+        <Affliction identifier="paralysis" amount="3" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="hallucinogenicbufotoxin" type="Contained" />
+        <ReduceAffliction identifier="paralysis" amount="6" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" targetlimb="Torso" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sulphuricacid" type="Contained" />
+        <Affliction identifier="acidburn" amount="3.5" />
+        <Affliction identifier="organdamage" amount="5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="ethanol" type="Contained" />
+        <Affliction identifier="drunk" amount="1" />
+        <ReduceAffliction identifier="psychosis" amount="1" />
+        <ReduceAffliction identifier="hallucinating" amount="1" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggsbasic" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.01" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggs" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.25" />
+      </StatusEffect>
+    </Holdable>
+    <ItemContainer capacity="11" maxstacksize="1" hideitems="true" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="false" ShowContainedStateIndicator="false" removecontaineditemsondeconstruct="true">
+      <Containable items="poison,ethanol,huskeggsbasic,huskeggs,paralyxis" />
+    </ItemContainer>
+  </Item>
+  <Item name="Raw Spineling Meat" identifier="rawspinelingmeat" description="This doesn't seem very sturdy, but it might make a good filler." Tags="smallitem,chem,medical" cargocontaineridentifier="chemicalcrate" maxstacksize="32" maxstacksizecharacterinventory="8" MaxStackSizeHoldableOrWearableInventory="8" category="Material" scale="0.5" impactsoundtag="impact_soft">
+    <Sprite texture="%ModDir%/Images/InventoryIconsMisc.png" depth="0.7" sourcerect="903,773,48,56" origin="0.5,0.5" />
+    <InventoryIcon texture="%ModDir%/Images/InventoryIconsMisc.png" sourcerect="903,773,48,56" origin="0.5,0.5" />
+    <Deconstruct time="10">
+      <Item identifier="stabilozine" />
+      <Item identifier="stabilozine" />
+      <Item identifier="antibloodloss2" />
+      <Item identifier="antibloodloss1" />
+      <Item identifier="antibloodloss1" />
+    </Deconstruct>
+    <Body width="40" height="45" />
+    <Holdable slots="RightHand,LeftHand,Any" holdpos="0,-70" handle1="0,10">
+      <StatusEffect type="OnNotContained" target="This" Condition="-0.5" />
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" comparison="and">
+        <Conditional Condition="gte 1" />
+        <Conditional Condition="lte 2" />
+        <SpawnItem identifiers="spoiledmeat" spawnposition="This" />
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        <Affliction identifier="foodpoison" amount="30" probability="0.5" />
+        <Affliction identifier="rations" amount="60" />
+        <Affliction identifier="full" amount="30" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" delay="0.1">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" Condition="-0.1" />
+      <!-- Poison effects -->
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="morbusine" type="Contained" />
+        <Affliction identifier="morbusinepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="chloralhydrate" type="Contained" />
+        <Affliction identifier="incrementalstun" amount="50" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="cyanide" type="Contained" />
+        <Affliction identifier="cyanidepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="radiotoxin" type="Contained" />
+        <Affliction identifier="radiationsickness" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sufforin" type="Contained" />
+        <Affliction identifier="sufforinpoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="deliriumine" type="Contained" />
+        <Affliction identifier="deliriuminepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyxis" type="Contained" />
+        <Affliction identifier="slowparalysis" amount="1.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyzant" type="Contained" />
+        <Affliction identifier="paralysis" amount="3" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="hallucinogenicbufotoxin" type="Contained" />
+        <ReduceAffliction identifier="paralysis" amount="6" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" targetlimb="Torso" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sulphuricacid" type="Contained" />
+        <Affliction identifier="acidburn" amount="3.5" />
+        <Affliction identifier="organdamage" amount="5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="ethanol" type="Contained" />
+        <Affliction identifier="drunk" amount="1" />
+        <ReduceAffliction identifier="psychosis" amount="1" />
+        <ReduceAffliction identifier="hallucinating" amount="1" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggsbasic" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.01" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggs" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.25" />
+      </StatusEffect>
+    </Holdable>
+    <ItemContainer capacity="11" maxstacksize="1" hideitems="true" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="false" ShowContainedStateIndicator="false" removecontaineditemsondeconstruct="true">
+      <Containable items="poison,ethanol,huskeggsbasic,huskeggs,paralyxis" />
+    </ItemContainer>
+  </Item>
+  <Item name="Spineling Sausage" identifier="cookedspinelingmeat" description="Just as phallic as the creature it was made from." Tags="smallitem,chem,medical" cargocontaineridentifier="chemicalcrate" maxstacksize="32" maxstacksizecharacterinventory="8" MaxStackSizeHoldableOrWearableInventory="8" category="Medical" scale="0.5" impactsoundtag="impact_soft">
+    <Sprite texture="%ModDir%/Images/InventoryIconsMisc.png" depth="0.7" sourcerect="903,947,62,28" origin="0.5,0.5" />
+    <InventoryIcon texture="%ModDir%/Images/InventoryIconsMisc.png" sourcerect="903,947,62,28" origin="0.5,0.5" />
+    <Fabricate suitablefabricators="vendingmachine" requiredtime="1" output="1" fabricationlimitmin="4" fabricationlimitmax="12">
+      <RequiredItem identifier="50markbill" amount="1" />
+      <RequiredItem identifier="10markbill" amount="2" />
+      <RequiredItem identifier="5markscoin" amount="1" />
+    </Fabricate>
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="30" amount="2" mincondition="0.5" usecondition="true">
+      <RequiredSkill identifier="medical" level="30" />
+      <RequiredItem identifier="rawspinelingmeat" mincondition="0.5" usecondition="true" />
+      <RequiredItem tag="plantitem" />
+    </Fabricate>
+    <Deconstruct time="10">
+      <Item identifier="rawspinelingmeat" />
+    </Deconstruct>
+    <Body width="40" height="45" />
+    <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-8,0" holdangle="60" reload="1.0" range="50" combatpriority="8" msg="ItemMsgPickUpSelect">
+      <Attack structuredamage="5" itemdamage="2" targetimpulse="5">
+        <Affliction identifier="blunttrauma" strength="5" />
+        <Affliction identifier="stun" strength="0.2" />
+        <Sound file="Content/Items/Weapons/Smack1.ogg" range="800" />
+      </Attack>
+      <StatusEffect type="OnUse" target="UseTarget">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        <Affliction identifier="snack" amount="60" />
+        <Affliction identifier="full" amount="30" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+      <StatusEffect type="OnSecondaryUse" target="This" Condition="-10.0" />
+      <StatusEffect type="OnSecondaryUse" target="This,Character" disabledeltatime="true">
+        <Conditional Condition="lte 0" />
+        <Affliction identifier="snack" amount="60" />
+        <Affliction identifier="full" amount="30" />
+        <RemoveItem />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+      <!-- Poison effects -->
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="morbusine" type="Contained" />
+        <Affliction identifier="morbusinepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="chloralhydrate" type="Contained" />
+        <Affliction identifier="incrementalstun" amount="50" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="cyanide" type="Contained" />
+        <Affliction identifier="cyanidepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="radiotoxin" type="Contained" />
+        <Affliction identifier="radiationsickness" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sufforin" type="Contained" />
+        <Affliction identifier="sufforinpoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="deliriumine" type="Contained" />
+        <Affliction identifier="deliriuminepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyxis" type="Contained" />
+        <Affliction identifier="slowparalysis" amount="1.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyzant" type="Contained" />
+        <Affliction identifier="paralysis" amount="3" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="hallucinogenicbufotoxin" type="Contained" />
+        <ReduceAffliction identifier="paralysis" amount="6" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" targetlimb="Torso" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sulphuricacid" type="Contained" />
+        <Affliction identifier="acidburn" amount="3.5" />
+        <Affliction identifier="organdamage" amount="5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="ethanol" type="Contained" />
+        <Affliction identifier="drunk" amount="1" />
+        <ReduceAffliction identifier="psychosis" amount="1" />
+        <ReduceAffliction identifier="hallucinating" amount="1" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggsbasic" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.01" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggs" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.25" />
+      </StatusEffect>
+    </MeleeWeapon>
+    <ItemContainer capacity="11" maxstacksize="1" hideitems="true" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="false" ShowContainedStateIndicator="false" removecontaineditemsondeconstruct="true">
+      <Containable items="poison,ethanol,huskeggsbasic,huskeggs,paralyxis" />
+    </ItemContainer>
+  </Item>
+  <Item name="Comically Large Spineling Sausage" identifier="comicalcookedspinelingmeat" description="Show all your crewmates your massive sausage!" variantof="crowbar" Tags="smallitem,chem,medical,dooropeningtool,crowbaritem" cargocontaineridentifier="chemicalcrate" maxstacksize="1" category="Weapon" scale="1" impactsoundtag="impact_soft">
+    <Sprite texture="%ModDir%/Images/InventoryIconsMisc.png" depth="0.7" sourcerect="900,976,108,40" origin="0.5,0.5" />
+    <InventoryIcon texture="%ModDir%/Images/InventoryIconsMisc.png" sourcerect="900,976,108,40" origin="0.5,0.5" />
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="30">
+      <RequiredSkill identifier="medical" level="30" />
+      <RequiredItem identifier="rawspinelingmeat" amount="1" mincondition="0.5" usecondition="true" />
+      <RequiredItem identifier="rawspinelingmeat" amount="1" mincondition="0.5" usecondition="true" />
+      <RequiredItem identifier="rawspinelingmeat" amount="1" mincondition="0.5" usecondition="true" />
+      <RequiredItem identifier="creepingorange" amount="1" />
+    </Fabricate>
+    <Deconstruct time="10">
+      <Item identifier="rawspinelingmeat" amount="1" />
+    </Deconstruct>
+    <Body width="120" height="20" density="50" />
+    <MeleeWeapon slots="RightHand+LeftHand,Any" controlpose="true" aimpos="45,10" handle1="-10,0" handle2="0,5" holdangle="60" reload="1" range="100" combatpriority="25" msg="ItemMsgPickUpSelect">
+      <Attack structuredamage="15" itemdamage="5" targetimpulse="15">
+        <Affliction identifier="blunttrauma" strength="12.5" />
+        <Affliction identifier="stun" strength="0.5" />
+        <Sound file="Content/Items/Weapons/Smack2.ogg" range="800" />
+      </Attack>
+    </MeleeWeapon>
+  </Item>
+  <Item name="Moloch Sushi" identifier="rawmolochmeat" description="Surprisingly buoyant due to air pockets, and impossible to cook." Tags="smallitem,chem,medical" cargocontaineridentifier="chemicalcrate" maxstacksize="32" maxstacksizecharacterinventory="8" MaxStackSizeHoldableOrWearableInventory="8" category="Material" scale="0.5" impactsoundtag="impact_soft">
+    <Sprite texture="%ModDir%/Images/InventoryIconsMisc.png" depth="0.7" sourcerect="905,830,47,48" origin="0.5,0.5" />
+    <InventoryIcon texture="%ModDir%/Images/InventoryIconsMisc.png" sourcerect="905,830,47,48" origin="0.5,0.5" />
+    <Deconstruct time="10">
+      <Item identifier="stabilozine" />
+      <Item identifier="stabilozine" />
+      <Item identifier="antibloodloss2" />
+      <Item identifier="antibloodloss1" />
+      <Item identifier="antibloodloss1" />
+    </Deconstruct>
+    <Body width="40" height="45" />
+    <Holdable slots="RightHand,LeftHand,Any" holdpos="0,-70" handle1="0,10">
+      <StatusEffect type="OnUse" target="UseTarget">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        <Affliction identifier="meal" amount="120" />
+        <Affliction identifier="full" amount="60" />
+        <Affliction identifier="pressurestabilized" amount="30" />
+        <Affliction identifier="foodpoison" amount="30" probability="0.1" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+      <StatusEffect type="OnSecondaryUse" target="This" Condition="-10.0" />
+      <StatusEffect type="OnSecondaryUse" target="This,Character" disabledeltatime="true">
+        <Conditional Condition="lte 0" />
+        <Affliction identifier="meal" amount="120" />
+        <Affliction identifier="full" amount="60" />
+        <Affliction identifier="pressurestabilized" amount="30" />
+        <Affliction identifier="foodpoison" amount="30" probability="0.1" />
+        <RemoveItem />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+      <!-- Poison effects -->
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="morbusine" type="Contained" />
+        <Affliction identifier="morbusinepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="chloralhydrate" type="Contained" />
+        <Affliction identifier="incrementalstun" amount="50" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="cyanide" type="Contained" />
+        <Affliction identifier="cyanidepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="radiotoxin" type="Contained" />
+        <Affliction identifier="radiationsickness" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sufforin" type="Contained" />
+        <Affliction identifier="sufforinpoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="deliriumine" type="Contained" />
+        <Affliction identifier="deliriuminepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyxis" type="Contained" />
+        <Affliction identifier="slowparalysis" amount="1.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyzant" type="Contained" />
+        <Affliction identifier="paralysis" amount="3" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="hallucinogenicbufotoxin" type="Contained" />
+        <ReduceAffliction identifier="paralysis" amount="6" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" targetlimb="Torso" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sulphuricacid" type="Contained" />
+        <Affliction identifier="acidburn" amount="3.5" />
+        <Affliction identifier="organdamage" amount="5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="ethanol" type="Contained" />
+        <Affliction identifier="drunk" amount="1" />
+        <ReduceAffliction identifier="psychosis" amount="1" />
+        <ReduceAffliction identifier="hallucinating" amount="1" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggsbasic" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.01" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggs" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.25" />
+      </StatusEffect>
+    </Holdable>
+    <ItemContainer capacity="11" maxstacksize="1" hideitems="true" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="false" ShowContainedStateIndicator="false" removecontaineditemsondeconstruct="true">
+      <Containable items="poison,ethanol,huskeggsbasic,huskeggs,paralyxis" />
+    </ItemContainer>
+  </Item>
+  <Item name="Raw Abyssal Flesh" identifier="rawabyssalmeat" description="Ready to be made into a feast fit for a monster slayer." Tags="smallitem,chem,medical" cargocontaineridentifier="chemicalcrate" maxstacksize="32" maxstacksizecharacterinventory="8" MaxStackSizeHoldableOrWearableInventory="8" category="Material" scale="0.5" impactsoundtag="impact_soft">
+    <Sprite texture="%ModDir%/Images/InventoryIconsMisc.png" depth="0.7" sourcerect="903,773,48,56" origin="0.5,0.5" />
+    <InventoryIcon texture="%ModDir%/Images/InventoryIconsMisc.png" sourcerect="903,773,48,56" origin="0.5,0.5" />
+    <Deconstruct time="10">
+      <Item identifier="stabilozine" />
+      <Item identifier="stabilozine" />
+      <Item identifier="antibloodloss2" />
+      <Item identifier="antibloodloss1" />
+      <Item identifier="antibloodloss1" />
+    </Deconstruct>
+    <Body width="40" height="45" />
+    <Holdable slots="RightHand,LeftHand,Any" holdpos="0,-70" handle1="0,10">
+      <StatusEffect type="OnNotContained" target="This" Condition="-0.5" />
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" comparison="and">
+        <Conditional Condition="gte 1" />
+        <Conditional Condition="lte 2" />
+        <SpawnItem identifiers="spoiledmeat" spawnposition="This" />
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        <Affliction identifier="foodpoison" amount="30" probability="0.5" />
+        <Affliction identifier="rations" amount="60" />
+        <Affliction identifier="full" amount="30" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" delay="0.1">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" Condition="-0.1" />
+      <!-- Poison effects -->
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="morbusine" type="Contained" />
+        <Affliction identifier="morbusinepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="chloralhydrate" type="Contained" />
+        <Affliction identifier="incrementalstun" amount="50" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="cyanide" type="Contained" />
+        <Affliction identifier="cyanidepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="radiotoxin" type="Contained" />
+        <Affliction identifier="radiationsickness" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sufforin" type="Contained" />
+        <Affliction identifier="sufforinpoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="deliriumine" type="Contained" />
+        <Affliction identifier="deliriuminepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyxis" type="Contained" />
+        <Affliction identifier="slowparalysis" amount="1.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyzant" type="Contained" />
+        <Affliction identifier="paralysis" amount="3" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="hallucinogenicbufotoxin" type="Contained" />
+        <ReduceAffliction identifier="paralysis" amount="6" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" targetlimb="Torso" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sulphuricacid" type="Contained" />
+        <Affliction identifier="acidburn" amount="3.5" />
+        <Affliction identifier="organdamage" amount="5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="ethanol" type="Contained" />
+        <Affliction identifier="drunk" amount="1" />
+        <ReduceAffliction identifier="psychosis" amount="1" />
+        <ReduceAffliction identifier="hallucinating" amount="1" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggsbasic" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.01" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggs" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.25" />
+      </StatusEffect>
+    </Holdable>
+    <ItemContainer capacity="11" maxstacksize="1" hideitems="true" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="false" ShowContainedStateIndicator="false" removecontaineditemsondeconstruct="true">
+      <Containable items="poison,ethanol,huskeggsbasic,huskeggs,paralyxis" />
+    </ItemContainer>
+  </Item>
+  <Item name="Abyssal Abalone" identifier="cookedabyssalmeat" description="Meat from titanic Abyssal creatures, cut out and placed into pieces of their shells. A delicacy and a triumph." Tags="smallitem,chem,medical" cargocontaineridentifier="chemicalcrate" maxstacksize="2" category="Medical" scale="0.5" impactsoundtag="impact_soft">
+    <Sprite texture="%ModDir%/Images/InventoryIconsMisc.png" depth="0.7" sourcerect="833,924,64,43" origin="0.5,0.5" />
+    <InventoryIcon texture="%ModDir%/Images/InventoryIconsMisc.png" sourcerect="833,924,64,43" origin="0.5,0.5" />
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="45">
+      <RequiredSkill identifier="medical" level="30" />
+      <RequiredItem identifier="rawabyssalmeat" mincondition="0.5" usecondition="true" />
+      <RequiredItem identifier="rawabyssalmeat" mincondition="0.5" usecondition="true" />
+      <RequiredItem identifier="sodium" />
+      <RequiredItem tag="plantitem" />
+    </Fabricate>
+    <Deconstruct time="10">
+      <Item identifier="rawabyssalmeat" />
+    </Deconstruct>
+    <Body width="50" height="40" />
+    <Holdable slots="RightHand,LeftHand,Any" holdpos="0,-70" handle1="0,10">
+      <StatusEffect type="OnUse" target="UseTarget">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        <Affliction identifier="meal" amount="240" />
+        <Affliction identifier="full" amount="120" />
+        <Affliction identifier="strengthen" amount="180" />
+        <Affliction identifier="pressurestabilized" amount="100" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+      <StatusEffect type="OnSecondaryUse" target="This" Condition="-10.0" />
+      <StatusEffect type="OnSecondaryUse" target="This,Character" disabledeltatime="true">
+        <Conditional Condition="lte 0" />
+        <Affliction identifier="meal" amount="240" />
+        <Affliction identifier="full" amount="120" />
+        <Affliction identifier="strengthen" amount="180" />
+        <Affliction identifier="pressurestabilized" amount="100" />
+        <RemoveItem />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+      <!-- Poison effects -->
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="morbusine" type="Contained" />
+        <Affliction identifier="morbusinepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="chloralhydrate" type="Contained" />
+        <Affliction identifier="incrementalstun" amount="50" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="cyanide" type="Contained" />
+        <Affliction identifier="cyanidepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="radiotoxin" type="Contained" />
+        <Affliction identifier="radiationsickness" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sufforin" type="Contained" />
+        <Affliction identifier="sufforinpoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="deliriumine" type="Contained" />
+        <Affliction identifier="deliriuminepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyxis" type="Contained" />
+        <Affliction identifier="slowparalysis" amount="1.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyzant" type="Contained" />
+        <Affliction identifier="paralysis" amount="3" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="hallucinogenicbufotoxin" type="Contained" />
+        <ReduceAffliction identifier="paralysis" amount="6" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" targetlimb="Torso" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sulphuricacid" type="Contained" />
+        <Affliction identifier="acidburn" amount="3.5" />
+        <Affliction identifier="organdamage" amount="5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="ethanol" type="Contained" />
+        <Affliction identifier="drunk" amount="1" />
+        <ReduceAffliction identifier="psychosis" amount="1" />
+        <ReduceAffliction identifier="hallucinating" amount="1" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggsbasic" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.01" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggs" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.25" />
+      </StatusEffect>
+    </Holdable>
+    <ItemContainer capacity="11" maxstacksize="1" hideitems="true" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="false" ShowContainedStateIndicator="false" removecontaineditemsondeconstruct="true">
+      <Containable items="poison,ethanol,huskeggsbasic,huskeggs,paralyxis" />
+    </ItemContainer>
+  </Item>
+  <Item name="Raw Charybdis Meat" identifier="rawcharybdismeat" description="Ready to be made into a feast fit for a monster slayer." Tags="smallitem,chem,medical" cargocontaineridentifier="chemicalcrate" maxstacksize="32" maxstacksizecharacterinventory="8" MaxStackSizeHoldableOrWearableInventory="8" category="Material" scale="0.5" impactsoundtag="impact_soft">
+    <Sprite name="RCM Sprite" texture="%ModDir%/Images/InventoryIconsMisc.png" depth="0.7" sourcerect="903,773,48,56" origin="0.5,0.5" />
+    <InventoryIcon name="RCM Icon" texture="%ModDir%/Images/InventoryIconsMisc.png" sourcerect="903,773,48,56" origin="0.5,0.5" />
+    <Deconstruct time="10">
+      <Item identifier="stabilozine" />
+      <Item identifier="stabilozine" />
+      <Item identifier="antibloodloss2" />
+      <Item identifier="antibloodloss1" />
+      <Item identifier="antibloodloss1" />
+    </Deconstruct>
+    <Body width="40" height="45" />
+    <Holdable slots="RightHand,LeftHand,Any" holdpos="0,-70" handle1="0,10">
+      <StatusEffect type="OnNotContained" target="This" Condition="-1.5" />
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" comparison="and">
+        <Conditional Condition="gte 1" />
+        <Conditional Condition="lte 2" />
+        <SpawnItem identifiers="spoiledmeat" spawnposition="This" />
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        <Affliction identifier="foodpoison" amount="30" probability="0.5" />
+        <Affliction identifier="rations" amount="60" />
+        <Affliction identifier="full" amount="30" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" delay="0.1">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" Condition="-0.1" />
+      <!-- Poison effects -->
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="morbusine" type="Contained" />
+        <Affliction identifier="morbusinepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="chloralhydrate" type="Contained" />
+        <Affliction identifier="incrementalstun" amount="50" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="cyanide" type="Contained" />
+        <Affliction identifier="cyanidepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="radiotoxin" type="Contained" />
+        <Affliction identifier="radiationsickness" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sufforin" type="Contained" />
+        <Affliction identifier="sufforinpoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="deliriumine" type="Contained" />
+        <Affliction identifier="deliriuminepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyxis" type="Contained" />
+        <Affliction identifier="slowparalysis" amount="1.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyzant" type="Contained" />
+        <Affliction identifier="paralysis" amount="3" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="hallucinogenicbufotoxin" type="Contained" />
+        <ReduceAffliction identifier="paralysis" amount="6" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" targetlimb="Torso" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sulphuricacid" type="Contained" />
+        <Affliction identifier="acidburn" amount="3.5" />
+        <Affliction identifier="organdamage" amount="5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="ethanol" type="Contained" />
+        <Affliction identifier="drunk" amount="1" />
+        <ReduceAffliction identifier="psychosis" amount="1" />
+        <ReduceAffliction identifier="hallucinating" amount="1" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggsbasic" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.01" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggs" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.25" />
+      </StatusEffect>
+    </Holdable>
+    <ItemContainer capacity="11" maxstacksize="1" hideitems="true" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="false" ShowContainedStateIndicator="false" removecontaineditemsondeconstruct="true">
+      <Containable items="poison,ethanol,huskeggsbasic,huskeggs,paralyxis" />
+    </ItemContainer>
+  </Item>
+  <Item name="Charybdis Calamari" identifier="cookedcharybdismeat" description="Some of the Charybdis's smaller tentacles shaped into rings, deep fried, and seasoned." Tags="smallitem,chem,medical" cargocontaineridentifier="chemicalcrate" maxstacksize="2" category="Medical" scale="0.5" impactsoundtag="impact_soft">
+    <Sprite name="CCM Sprite" texture="%ModDir%/Images/InventoryIconsMisc.png" depth="0.7" sourcerect="835,972,65,49" origin="0.5,0.5" />
+    <InventoryIcon name="CCM Icon" texture="%ModDir%/Images/InventoryIconsMisc.png" sourcerect="835,972,65,49" origin="0.5,0.5" />
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="45">
+      <RequiredSkill identifier="medical" level="30" />
+      <RequiredItem identifier="rawcharybdismeat" mincondition="0.5" usecondition="true" />
+      <RequiredItem identifier="rawcharybdismeat" mincondition="0.5" usecondition="true" />
+      <RequiredItem identifier="sodium" />
+      <RequiredItem tag="plantitem" />
+    </Fabricate>
+    <Deconstruct time="10">
+      <Item identifier="rawcharybdismeat" />
+    </Deconstruct>
+    <Body width="50" height="40" />
+    <Holdable slots="RightHand,LeftHand,Any" holdpos="0,-70" handle1="0,10">
+      <StatusEffect type="OnUse" target="UseTarget">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        <Affliction identifier="meal" amount="240" />
+        <Affliction identifier="full" amount="120" />
+        <Affliction identifier="strengthen" amount="180" />
+        <Affliction identifier="pressurestabilized" amount="100" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+      <StatusEffect type="OnSecondaryUse" target="This" Condition="-10.0" />
+      <StatusEffect type="OnSecondaryUse" target="This,Character" disabledeltatime="true">
+        <Conditional Condition="lte 0" />
+        <Affliction identifier="meal" amount="240" />
+        <Affliction identifier="full" amount="120" />
+        <Affliction identifier="strengthen" amount="180" />
+        <Affliction identifier="pressurestabilized" amount="100" />
+        <RemoveItem />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+      <!-- Poison effects -->
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="morbusine" type="Contained" />
+        <Affliction identifier="morbusinepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="chloralhydrate" type="Contained" />
+        <Affliction identifier="incrementalstun" amount="50" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="cyanide" type="Contained" />
+        <Affliction identifier="cyanidepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="radiotoxin" type="Contained" />
+        <Affliction identifier="radiationsickness" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sufforin" type="Contained" />
+        <Affliction identifier="sufforinpoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="deliriumine" type="Contained" />
+        <Affliction identifier="deliriuminepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyxis" type="Contained" />
+        <Affliction identifier="slowparalysis" amount="1.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyzant" type="Contained" />
+        <Affliction identifier="paralysis" amount="3" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="hallucinogenicbufotoxin" type="Contained" />
+        <ReduceAffliction identifier="paralysis" amount="6" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" targetlimb="Torso" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sulphuricacid" type="Contained" />
+        <Affliction identifier="acidburn" amount="3.5" />
+        <Affliction identifier="organdamage" amount="5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="ethanol" type="Contained" />
+        <Affliction identifier="drunk" amount="1" />
+        <ReduceAffliction identifier="psychosis" amount="1" />
+        <ReduceAffliction identifier="hallucinating" amount="1" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggsbasic" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.01" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggs" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.25" />
+      </StatusEffect>
+    </Holdable>
+    <ItemContainer capacity="11" maxstacksize="1" hideitems="true" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="false" ShowContainedStateIndicator="false" removecontaineditemsondeconstruct="true">
+      <Containable items="poison,ethanol,huskeggsbasic,huskeggs,paralyxis" />
+    </ItemContainer>
+  </Item>
+  <!-- Husk Caviar, uses inactive husk eggs and boosts the consumer's defense against Husk. -->
+  <Item name="Husk Caviar" identifier="huskcaviar" category="Medical,Material" maxstacksize="4" cargocontaineridentifier="chemicalcrate" description="A small but carefully prepared dish of (hopefully) deactivated husk eggs." Tags="smallitem,chem,medical" useinhealthinterface="true" scale="0.15" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="crewcab" />
+    <Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="40" fabricationlimitmin="5" fabricationlimitmax="10" />
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="30">
+      <RequiredSkill identifier="medical" level="30" />
+      <RequiredItem identifier="huskeggsbasic" />
+      <RequiredItem identifier="stabilozine" />
+    </Fabricate>
+    <Deconstruct time="5">
+      <Item identifier="huskeggs" />
+    </Deconstruct>
+    <SuitableTreatment type="damage" suitability="3" />
+    <SuitableTreatment identifier="burn" suitability="3" />
+    <SuitableTreatment identifier="bleeding" suitability="3" />
+    <SuitableTreatment identifier="nausea" suitability="3" />
+    <SuitableTreatment identifier="opiatewithdrawal" suitability="3" />
+    <SuitableTreatment identifier="opiateaddiction" suitability="3" />
+    <SuitableTreatment identifier="drunk" suitability="3" />
+    <SuitableTreatment identifier="huskinfection" suitability="10" />
+    <SuitableTreatment identifier="full" suitability="-10" />
+    <InventoryIcon texture="%ModDir%/Images/HuskEggFood.png" sourcerect="0,41,150,81" origin="0.5,0.5" scale="0.5" />
+    <Sprite texture="%ModDir%/Images/HuskEggFood.png" sourcerect="0,41,150,81" depth="0.6" origin="0.5,0.5" scale="0.5" />
+    <Body width="30" height="55" density="20" />
+    <Holdable slots="RightHand,LeftHand,Any" holdpos="0,-70" handle1="0,10">
+      <StatusEffect type="OnUse" target="This" Condition="-25.0" disabledeltatime="true" />
+      <StatusEffect maxinterval="1" type="OnSecondaryUse" target="This" Condition="-10.0" />
+      <StatusEffect type="OnSecondaryUse" target="This,Character" disabledeltatime="true">
+        <Conditional Condition="lte 0" />
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="50" volume="0.5" />
+        <Affliction identifier="snack" amount="60" />
+        <Affliction identifier="full" amount="45" />
+        <Affliction identifier="huskinfectionresistance" amount="120" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="UseTarget">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        <Affliction identifier="snack" amount="30" />
+        <Affliction identifier="full" amount="10" />
+        <Affliction identifier="huskinfectionresistance" amount="30" />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+      <!-- Poison effects -->
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="morbusine" type="Contained" />
+        <Affliction identifier="morbusinepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="chloralhydrate" type="Contained" />
+        <Affliction identifier="incrementalstun" amount="50" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="cyanide" type="Contained" />
+        <Affliction identifier="cyanidepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="radiotoxin" type="Contained" />
+        <Affliction identifier="radiationsickness" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sufforin" type="Contained" />
+        <Affliction identifier="sufforinpoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="deliriumine" type="Contained" />
+        <Affliction identifier="deliriuminepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyxis" type="Contained" />
+        <Affliction identifier="slowparalysis" amount="1.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyzant" type="Contained" />
+        <Affliction identifier="paralysis" amount="3" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="hallucinogenicbufotoxin" type="Contained" />
+        <ReduceAffliction identifier="paralysis" amount="6" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" targetlimb="Torso" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sulphuricacid" type="Contained" />
+        <Affliction identifier="acidburn" amount="3.5" />
+        <Affliction identifier="organdamage" amount="5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="ethanol" type="Contained" />
+        <Affliction identifier="drunk" amount="1" />
+        <ReduceAffliction identifier="psychosis" amount="1" />
+        <ReduceAffliction identifier="hallucinating" amount="1" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggsbasic" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.01" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggs" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.25" />
+      </StatusEffect>
+    </Holdable>
+    <ItemContainer capacity="11" maxstacksize="1" hideitems="true" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="false" ShowContainedStateIndicator="false" removecontaineditemsondeconstruct="true">
+      <Containable items="poison,ethanol,huskeggsbasic,huskeggs,paralyxis" />
+    </ItemContainer>
+    <Quality>
+      <QualityStat stattype="Condition" value="0.25" />
+    </Quality>
+  </Item>
+  <!-- Canteen with impure water, can be filled outside the airlock and gives a chance of food poisoning if consumed -->
+  <Item name="Canteen" identifier="impurecanteen" category="Medical,Material" maxstacksize="1" cargocontaineridentifier="chemicalcrate" description="A canteen which can be filled by going out the airlock. Unpurified." Tags="smallitem,chem,medical,refillableoxygensource" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.1" />
+    <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="2" spawnprobability="0.15" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="10" condition="0">
+      <RequiredItem identifier="aluminium" />
+    </Fabricate>
+    <Deconstruct time="5">
+      <Item identifier="aluminium" />
+    </Deconstruct>
+    <SuitableTreatment type="damage" suitability="4" />
+    <SuitableTreatment identifier="burn" suitability="4" />
+    <SuitableTreatment identifier="bleeding" suitability="4" />
+    <SuitableTreatment identifier="nausea" suitability="4" />
+    <SuitableTreatment identifier="opiatewithdrawal" suitability="4" />
+    <SuitableTreatment identifier="opiateaddiction" suitability="4" />
+    <SuitableTreatment identifier="drunk" suitability="4" />
+    <SuitableTreatment identifier="huskinfection" suitability="4" />
+    <SuitableTreatment identifier="full" suitability="-10" />
+    <SuitableTreatment identifier="foodpoison" suitability="-30" />
+    <InventoryIcon texture="%ModDir%/Images/canteen1.png" sourcerect="896,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/canteen1s.png" sourcerect="410,71,24,66" depth="0.55" origin="0.5,0.5" />
+    <Body width="30" height="55" density="20" />
+    <Holdable canbecombined="true" slots="Any,RightHand,LeftHand" holdpos="30,-15" handle1="0,5" msg="ItemMsgPickUpSelect">
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="InWater" target="This" Condition="100" setvalue="true" />
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+      <StatusEffect type="OnUse" target="Character" disabledeltatime="true">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        <Affliction identifier="hydrated" amount="75" />
+        <Affliction identifier="full" amount="10" />
+        <Affliction identifier="foodpoison" amount="30.0" probability="0.3" />
+      </StatusEffect>
+      <StatusEffect type="OnFire" target="This" Condition="-10.0" tags="onfire" duration="1" stackable="false" />
+      <StatusEffect type="OnBroken" target="This" delay="1" stackable="false">
+        <Conditional HasStatusTag="onfire" />
+        <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" range="5000" selectionmode="All" />
+        <sound file="Content/Items/Weapons/ExplosionDebris3.ogg" range="5000" />
+        <Explosion range="250.0" structuredamage="30" force="3.0" ignorefireeffectsfortags="oxygensource,weldingtoolfuel">
+          <Affliction identifier="burn" strength="25" />
+          <Affliction identifier="stun" strength="4" />
+        </Explosion>
+      </StatusEffect>
+      <!-- Poison effects -->
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="morbusine" type="Contained" />
+        <Affliction identifier="morbusinepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="chloralhydrate" type="Contained" />
+        <Affliction identifier="incrementalstun" amount="50" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="cyanide" type="Contained" />
+        <Affliction identifier="cyanidepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="radiotoxin" type="Contained" />
+        <Affliction identifier="radiationsickness" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sufforin" type="Contained" />
+        <Affliction identifier="sufforinpoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="deliriumine" type="Contained" />
+        <Affliction identifier="deliriuminepoisoning" amount="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyxis" type="Contained" />
+        <Affliction identifier="slowparalysis" amount="1.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="paralyzant" type="Contained" />
+        <Affliction identifier="paralysis" amount="3" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="hallucinogenicbufotoxin" type="Contained" />
+        <ReduceAffliction identifier="paralysis" amount="6" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" targetlimb="Torso" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="sulphuricacid" type="Contained" />
+        <Affliction identifier="acidburn" amount="3.5" />
+        <Affliction identifier="organdamage" amount="5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" delay="20">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="ethanol" type="Contained" />
+        <Affliction identifier="drunk" amount="1" />
+        <ReduceAffliction identifier="psychosis" amount="1" />
+        <ReduceAffliction identifier="hallucinating" amount="1" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggsbasic" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.01" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" interval="1">
+        <Conditional InWater="false" />
+        <RequiredItem identifier="huskeggs" type="Contained" />
+        <Affliction identifier="huskinfection" amount="1" probability="0.25" />
+      </StatusEffect>
+    </Holdable>
+    <ItemContainer capacity="11" maxstacksize="1" hideitems="true" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="false" ShowContainedStateIndicator="false" removecontaineditemsondeconstruct="true">
+      <Containable items="poison,ethanol,huskeggsbasic,huskeggs,paralyxis" />
+    </ItemContainer>
+  </Item>
+  <!-- Canteen with purified water -->
+  <Item name="Purified Canteen" identifier="purecanteen" category="Medical,Material" maxstacksize="1" cargocontaineridentifier="chemicalcrate" description="A canteen of purified water." Tags="smallitem,chem,medical" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    <PreferredContainer primary="crewcab" />
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="10" condition="0">
+      <RequiredItem identifier="impurecanteen" condition="100" />
+    </Fabricate>
+    <Deconstruct time="5">
+      <Item identifier="aluminium" />
+    </Deconstruct>
+    <SuitableTreatment type="damage" suitability="4" />
+    <SuitableTreatment identifier="burn" suitability="4" />
+    <SuitableTreatment identifier="bleeding" suitability="4" />
+    <SuitableTreatment identifier="nausea" suitability="4" />
+    <SuitableTreatment identifier="opiatewithdrawal" suitability="4" />
+    <SuitableTreatment identifier="opiateaddiction" suitability="4" />
+    <SuitableTreatment identifier="drunk" suitability="4" />
+    <SuitableTreatment identifier="huskinfection" suitability="4" />
+    <SuitableTreatment identifier="full" suitability="-10" />
+    <InventoryIcon texture="%ModDir%/Images/canteen2.png" sourcerect="896,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Images/canteen2s.png" sourcerect="410,71,24,66" depth="0.55" origin="0.5,0.5" />
+    <Body width="30" height="55" density="20" />
+    <Holdable canbecombined="true" slots="Any,RightHand,LeftHand" holdpos="30,-15" handle1="0,5" msg="ItemMsgPickUpSelect">
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+      <StatusEffect type="OnUse" target="Character" disabledeltatime="true">
+        <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        <Affliction identifier="hydrated" amount="75" />
+        <Affliction identifier="full" amount="10" />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <SpawnItem identifier="impurecanteen" condition="0" spawnposition="This" />
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnFire" target="This" Condition="-10.0" tags="onfire" duration="1" stackable="false" />
+      <StatusEffect type="OnBroken" target="This" delay="1" stackable="false">
+        <Conditional HasStatusTag="onfire" />
+        <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" range="5000" selectionmode="All" />
+        <sound file="Content/Items/Weapons/ExplosionDebris3.ogg" range="5000" />
+        <Explosion range="250.0" structuredamage="30" force="3.0" ignorefireeffectsfortags="oxygensource,weldingtoolfuel">
+          <Affliction identifier="burn" strength="25" />
+          <Affliction identifier="stun" strength="4" />
+        </Explosion>
+      </StatusEffect>
+    </Holdable>
+    <ItemContainer capacity="11" maxstacksize="1" hideitems="true" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="false" ShowContainedStateIndicator="false" removecontaineditemsondeconstruct="true">
+      <Containable items="poison,ethanol,huskeggsbasic,huskeggs,paralyxis" />
+    </ItemContainer>
+  </Item>
+  <!-- Convert raw meat into genetic material -->
+  <!-- Crawler -->
+  <Item name="" identifier="food_geneticmaterial_crawler" nameidentifier="unidentifiedgeneticmaterial" category="Material" maxstacksize="32" maxstacksizecharacterinventory="8" tags="smallitem,unidentifiedgeneticmaterial,blackmarketgenes" cargocontaineridentifier="mediccrate" description="Unidentified genetic material from a Crawler." scale="0.5" impactsoundtag="impact_soft" hideinmenus="true">
+    <PreferredContainer primary="medfabcab" spawnprobability="0" />
+    <Price baseprice="300" sold="false" requiresunlock="true">
+      <Price storeidentifier="merchantresearch" sold="false" multiplier="1.2" />
+    </Price>
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="10">
+      <RequiredSkill identifier="medical" level="50" />
+      <RequiredItem identifier="rawcrawlermeat" />
+    </Fabricate>
+    <Deconstruct time="5" chooserandom="true" amount="1" requireddeconstructor="geneticresearchstation">
+      <Item identifier="alienblood" commonness="10" requiredotheritem="stabilozine" activatebuttontext="researchstation.research" infotext="researchstation.research.infotext" infotextonotheritemmissing="researchstation.combine.missingitem" />
+      <Item identifier="geneticmaterialcrawler" commonness="3" requiredotheritem="stabilozine" outconditionmin="0.1" outconditionmax="0.2" activatebuttontext="researchstation.research" infotext="researchstation.research.infotext" infotextonotheritemmissing="researchstation.combine.missingitem" />
+      <Item identifier="geneticmaterialcrawler" commonness="2" requiredotheritem="stabilozine" outconditionmin="0.2" outconditionmax="0.4" activatebuttontext="researchstation.research" infotext="researchstation.research.infotext" infotextonotheritemmissing="researchstation.combine.missingitem" />
+      <Item identifier="geneticmaterialcrawler" commonness="1" requiredotheritem="stabilozine" outconditionmin="0.4" outconditionmax="0.6" activatebuttontext="researchstation.research" infotext="researchstation.research.infotext" infotextonotheritemmissing="researchstation.combine.missingitem" />
+    </Deconstruct>
+    <Sprite texture="Content/Items/Genetic/Genetic.png" sourcerect="0,79,58,40" depth="0.6" origin="0.5,0.5" />
+    <Body width="15" radius="15" density="20" />
+    <Pickable slots="Any" />
+  </Item>
+  <!-- Mudraptor -->
+  <Item name="" identifier="food_geneticmaterial_mudraptor" nameidentifier="unidentifiedgeneticmaterial" category="Material" maxstacksize="32" maxstacksizecharacterinventory="8" tags="smallitem,unidentifiedgeneticmaterial,blackmarketgenes" cargocontaineridentifier="mediccrate" description="Unidentified genetic material from a Mudraptor." scale="0.5" impactsoundtag="impact_soft" hideinmenus="true">
+    <PreferredContainer primary="medfabcab" spawnprobability="0" />
+    <Price baseprice="300" sold="false" requiresunlock="true">
+      <Price storeidentifier="merchantresearch" sold="false" multiplier="1.2" />
+    </Price>
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="10">
+      <RequiredSkill identifier="medical" level="50" />
+      <RequiredItem identifier="rawmudraptormeat" />
+    </Fabricate>
+    <Deconstruct time="5" chooserandom="true" amount="1" requireddeconstructor="geneticresearchstation">
+      <Item identifier="alienblood" commonness="10" requiredotheritem="stabilozine" activatebuttontext="researchstation.research" infotext="researchstation.research.infotext" infotextonotheritemmissing="researchstation.combine.missingitem" />
+      <Item identifier="geneticmaterialmudraptor" commonness="3" requiredotheritem="stabilozine" outconditionmin="0.1" outconditionmax="0.2" activatebuttontext="researchstation.research" infotext="researchstation.research.infotext" infotextonotheritemmissing="researchstation.combine.missingitem" />
+      <Item identifier="geneticmaterialmudraptor" commonness="2" requiredotheritem="stabilozine" outconditionmin="0.2" outconditionmax="0.4" activatebuttontext="researchstation.research" infotext="researchstation.research.infotext" infotextonotheritemmissing="researchstation.combine.missingitem" />
+      <Item identifier="geneticmaterialmudraptor" commonness="1" requiredotheritem="stabilozine" outconditionmin="0.4" outconditionmax="0.6" activatebuttontext="researchstation.research" infotext="researchstation.research.infotext" infotextonotheritemmissing="researchstation.combine.missingitem" />
+    </Deconstruct>
+    <Sprite texture="Content/Items/Genetic/Genetic.png" sourcerect="0,79,58,40" depth="0.6" origin="0.5,0.5" />
+    <Body width="15" radius="15" density="20" />
+    <Pickable slots="Any" />
+  </Item>
+  <!-- Watcher -->
+  <Item name="" identifier="food_geneticmaterial_watcher" nameidentifier="unidentifiedgeneticmaterial" category="Material" maxstacksize="32" maxstacksizecharacterinventory="8" tags="smallitem,unidentifiedgeneticmaterial,blackmarketgenes" cargocontaineridentifier="mediccrate" description="Unidentified genetic material from a Watcher." scale="0.5" impactsoundtag="impact_soft" hideinmenus="true">
+    <PreferredContainer primary="medfabcab" spawnprobability="0" />
+    <Price baseprice="300" sold="false" requiresunlock="true">
+      <Price storeidentifier="merchantresearch" sold="false" multiplier="1.2" />
+    </Price>
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="10">
+      <RequiredSkill identifier="medical" level="50" />
+      <RequiredItem identifier="rawmudraptormeat" />
+    </Fabricate>
+    <Deconstruct time="5" amount="2" requireddeconstructor="geneticresearchstation">
+      <Item identifier="antipsychosis" commonness="10" requiredotheritem="stabilozine" activatebuttontext="researchstation.research" infotext="researchstation.research.infotext" infotextonotheritemmissing="researchstation.combine.missingitem" />
+    </Deconstruct>
+    <Sprite texture="Content/Items/Genetic/Genetic.png" sourcerect="0,79,58,40" depth="0.6" origin="0.5,0.5" />
+    <Body width="15" radius="15" density="20" />
+    <Pickable slots="Any" />
+  </Item>
+  <!-- Thresher -->
+  <Item name="" identifier="food_geneticmaterial_thresher" nameidentifier="unidentifiedgeneticmaterial" category="Material" maxstacksize="32" maxstacksizecharacterinventory="8" tags="smallitem,unidentifiedgeneticmaterial,blackmarketgenes" cargocontaineridentifier="mediccrate" description="Unidentified genetic material from a Thresher." scale="0.5" impactsoundtag="impact_soft" hideinmenus="true">
+    <PreferredContainer primary="medfabcab" spawnprobability="0" />
+    <Price baseprice="300" sold="false" requiresunlock="true">
+      <Price storeidentifier="merchantresearch" sold="false" multiplier="1.2" />
+    </Price>
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="10">
+      <RequiredSkill identifier="medical" level="50" />
+      <RequiredItem identifier="rawmudraptormeat" />
+    </Fabricate>
+    <Deconstruct time="5" chooserandom="true" amount="1" requireddeconstructor="geneticresearchstation">
+      <Item identifier="alienblood" commonness="10" requiredotheritem="stabilozine" activatebuttontext="researchstation.research" infotext="researchstation.research.infotext" infotextonotheritemmissing="researchstation.combine.missingitem" />
+      <Item identifier="geneticmaterialthresher" commonness="3" requiredotheritem="stabilozine" outconditionmin="0.1" outconditionmax="0.2" activatebuttontext="researchstation.research" infotext="researchstation.research.infotext" infotextonotheritemmissing="researchstation.combine.missingitem" />
+      <Item identifier="geneticmaterialthresher" commonness="2" requiredotheritem="stabilozine" outconditionmin="0.2" outconditionmax="0.4" activatebuttontext="researchstation.research" infotext="researchstation.research.infotext" infotextonotheritemmissing="researchstation.combine.missingitem" />
+      <Item identifier="geneticmaterialthresher" commonness="1" requiredotheritem="stabilozine" outconditionmin="0.4" outconditionmax="0.6" activatebuttontext="researchstation.research" infotext="researchstation.research.infotext" infotextonotheritemmissing="researchstation.combine.missingitem" />
+    </Deconstruct>
+    <Sprite texture="Content/Items/Genetic/Genetic.png" sourcerect="0,79,58,40" depth="0.6" origin="0.5,0.5" />
+    <Body width="15" radius="15" density="20" />
+    <Pickable slots="Any" />
+  </Item>
+  <!-- Hammerhead -->
+  <Item name="" identifier="food_geneticmaterial_hammerhead" nameidentifier="unidentifiedgeneticmaterial" category="Material" maxstacksize="32" maxstacksizecharacterinventory="8" tags="smallitem,unidentifiedgeneticmaterial,blackmarketgenes" cargocontaineridentifier="mediccrate" description="Unidentified genetic material from a Hammerhead." scale="0.5" impactsoundtag="impact_soft" hideinmenus="true">
+    <PreferredContainer primary="medfabcab" spawnprobability="0" />
+    <Price baseprice="300" sold="false" requiresunlock="true">
+      <Price storeidentifier="merchantresearch" sold="false" multiplier="1.2" />
+    </Price>
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="10">
+      <RequiredSkill identifier="medical" level="50" />
+      <RequiredItem identifier="hammerheadribs" />
+    </Fabricate>
+    <Deconstruct time="5" chooserandom="true" amount="1" requireddeconstructor="geneticresearchstation">
+      <Item identifier="alienblood" commonness="10" requiredotheritem="stabilozine" activatebuttontext="researchstation.research" infotext="researchstation.research.infotext" infotextonotheritemmissing="researchstation.combine.missingitem" />
+      <Item identifier="geneticmaterialhammerhead" commonness="3" requiredotheritem="stabilozine" outconditionmin="0.1" outconditionmax="0.2" activatebuttontext="researchstation.research" infotext="researchstation.research.infotext" infotextonotheritemmissing="researchstation.combine.missingitem" />
+      <Item identifier="geneticmaterialhammerhead" commonness="2" requiredotheritem="stabilozine" outconditionmin="0.2" outconditionmax="0.4" activatebuttontext="researchstation.research" infotext="researchstation.research.infotext" infotextonotheritemmissing="researchstation.combine.missingitem" />
+      <Item identifier="geneticmaterialhammerhead" commonness="1" requiredotheritem="stabilozine" outconditionmin="0.4" outconditionmax="0.6" activatebuttontext="researchstation.research" infotext="researchstation.research.infotext" infotextonotheritemmissing="researchstation.combine.missingitem" />
+      <Item identifier="geneticmaterialhammerheadmatriarch" commonness="2.5" requiredotheritem="stabilozine" outconditionmin="0.1" outconditionmax="0.2" activatebuttontext="researchstation.research" infotext="researchstation.research.infotext" infotextonotheritemmissing="researchstation.combine.missingitem" />
+      <Item identifier="geneticmaterialhammerheadmatriarch" commonness="1.5" requiredotheritem="stabilozine" outconditionmin="0.2" outconditionmax="0.4" activatebuttontext="researchstation.research" infotext="researchstation.research.infotext" infotextonotheritemmissing="researchstation.combine.missingitem" />
+      <Item identifier="geneticmaterialhammerheadmatriarch" commonness="0.5" requiredotheritem="stabilozine" outconditionmin="0.4" outconditionmax="0.6" activatebuttontext="researchstation.research" infotext="researchstation.research.infotext" infotextonotheritemmissing="researchstation.combine.missingitem" />
+    </Deconstruct>
+    <Sprite texture="Content/Items/Genetic/Genetic.png" sourcerect="0,79,58,40" depth="0.6" origin="0.5,0.5" />
+    <Body width="15" radius="15" density="20" />
+    <Pickable slots="Any" />
+  </Item>
+  <!-- Spineling -->
+  <Item name="" identifier="food_geneticmaterial_spineling" nameidentifier="unidentifiedgeneticmaterial" category="Material" maxstacksize="32" maxstacksizecharacterinventory="8" tags="smallitem,unidentifiedgeneticmaterial,blackmarketgenes" cargocontaineridentifier="mediccrate" description="Unidentified genetic material from a Spineling." scale="0.5" impactsoundtag="impact_soft" hideinmenus="true">
+    <PreferredContainer primary="medfabcab" spawnprobability="0" />
+    <Price baseprice="300" sold="false" requiresunlock="true">
+      <Price storeidentifier="merchantresearch" sold="false" multiplier="1.2" />
+    </Price>
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="10">
+      <RequiredSkill identifier="medical" level="50" />
+      <RequiredItem identifier="rawspinelingmeat" />
+    </Fabricate>
+    <Deconstruct time="5" chooserandom="true" amount="1" requireddeconstructor="geneticresearchstation">
+      <Item identifier="alienblood" commonness="10" requiredotheritem="stabilozine" activatebuttontext="researchstation.research" infotext="researchstation.research.infotext" infotextonotheritemmissing="researchstation.combine.missingitem" />
+      <Item identifier="geneticmaterialspineling" commonness="1" requiredotheritem="stabilozine" outconditionmin="1.0" outconditionmax="1.0" activatebuttontext="researchstation.research" infotext="researchstation.research.infotext" infotextonotheritemmissing="researchstation.combine.missingitem" />
+    </Deconstruct>
+    <Sprite texture="Content/Items/Genetic/Genetic.png" sourcerect="0,79,58,40" depth="0.6" origin="0.5,0.5" />
+    <Body width="15" radius="15" density="20" />
+    <Pickable slots="Any" />
+  </Item>
+  <!-- Moloch -->
+  <Item name="" identifier="food_geneticmaterial_moloch" nameidentifier="unidentifiedgeneticmaterial" category="Material" maxstacksize="32" maxstacksizecharacterinventory="8" tags="smallitem,unidentifiedgeneticmaterial,blackmarketgenes" cargocontaineridentifier="mediccrate" description="Unidentified genetic material from a Moloch." scale="0.5" impactsoundtag="impact_soft" hideinmenus="true">
+    <PreferredContainer primary="medfabcab" spawnprobability="0" />
+    <Price baseprice="300" sold="false" requiresunlock="true">
+      <Price storeidentifier="merchantresearch" sold="false" multiplier="1.2" />
+    </Price>
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="10">
+      <RequiredSkill identifier="medical" level="50" />
+      <RequiredItem identifier="rawmolochmeat" />
+    </Fabricate>
+    <Deconstruct time="5" chooserandom="true" amount="1" requireddeconstructor="geneticresearchstation">
+      <Item identifier="alienblood" commonness="10" requiredotheritem="stabilozine" activatebuttontext="researchstation.research" infotext="researchstation.research.infotext" infotextonotheritemmissing="researchstation.combine.missingitem" />
+      <Item identifier="geneticmaterialmoloch" commonness="3" requiredotheritem="stabilozine" outconditionmin="0.1" outconditionmax="0.2" activatebuttontext="researchstation.research" infotext="researchstation.research.infotext" infotextonotheritemmissing="researchstation.combine.missingitem" />
+      <Item identifier="geneticmaterialmoloch" commonness="2" requiredotheritem="stabilozine" outconditionmin="0.2" outconditionmax="0.4" activatebuttontext="researchstation.research" infotext="researchstation.research.infotext" infotextonotheritemmissing="researchstation.combine.missingitem" />
+      <Item identifier="geneticmaterialmoloch" commonness="1" requiredotheritem="stabilozine" outconditionmin="0.4" outconditionmax="0.6" activatebuttontext="researchstation.research" infotext="researchstation.research.infotext" infotextonotheritemmissing="researchstation.combine.missingitem" />
+    </Deconstruct>
+    <Sprite texture="Content/Items/Genetic/Genetic.png" sourcerect="0,79,58,40" depth="0.6" origin="0.5,0.5" />
+    <Body width="15" radius="15" density="20" />
+    <Pickable slots="Any" />
+  </Item>
+  <!-- Husk -->
+  <Item name="" identifier="food_geneticmaterial_husk" nameidentifier="unidentifiedgeneticmaterial" category="Material" maxstacksize="32" maxstacksizecharacterinventory="8" tags="smallitem,unidentifiedgeneticmaterial,blackmarketgenes" cargocontaineridentifier="mediccrate" description="Unidentified genetic material from Husks." scale="0.5" impactsoundtag="impact_soft" hideinmenus="true">
+    <PreferredContainer primary="medfabcab" spawnprobability="0" />
+    <Price baseprice="300" sold="false" requiresunlock="true">
+      <Price storeidentifier="merchantresearch" sold="false" multiplier="1.2" />
+    </Price>
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="10">
+      <RequiredSkill identifier="medical" level="100" />
+      <RequiredItem identifier="huskeggsbasic" />
+    </Fabricate>
+    <Deconstruct time="5" chooserandom="true" amount="1" requireddeconstructor="geneticresearchstation">
+      <Item identifier="alienblood" commonness="10" requiredotheritem="stabilozine" activatebuttontext="researchstation.research" infotext="researchstation.research.infotext" infotextonotheritemmissing="researchstation.combine.missingitem" />
+      <Item identifier="calyxanide" commonness="5" requiredotheritem="stabilozine" activatebuttontext="researchstation.research" infotext="researchstation.research.infotext" infotextonotheritemmissing="researchstation.combine.missingitem" />
+      <Item identifier="geneticmaterialhusk" commonness="1" requiredotheritem="stabilozine" outconditionmin="1.0" outconditionmax="1.0" activatebuttontext="researchstation.research" infotext="researchstation.research.infotext" infotextonotheritemmissing="researchstation.combine.missingitem" />
+    </Deconstruct>
+    <Sprite texture="Content/Items/Genetic/Genetic.png" sourcerect="0,79,58,40" depth="0.6" origin="0.5,0.5" />
+    <Body width="15" radius="15" density="20" />
+    <Pickable slots="Any" />
+  </Item>
+  <!-- Genetics End -->
+</Items>

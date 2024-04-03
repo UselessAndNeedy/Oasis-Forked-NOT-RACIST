@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!--                           GHOST MOD RANDOM EVENTS                              -->
+<!--    YES I AM COPYING HUSKMOD'S HOMEWORK. THANKS.    -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<Randomevents>
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <!--                              All Difficulties                         -->
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <EventSet identifier="OASIS Spawns" minleveldifficulty="25" maxleveldifficulty="100" chooserandom="false" allowatstart="true" additive="true" campaign="false">
+    <!-- populate the ruins -->
+    <EventSet identifier="ruins" chooserandom="false" allowatstart="true" perruin="true" triggereventcooldown="false">
+      <MonsterEvent characterfile="Fractalguardian9" amount="1" spawntype="ruin" probability="0.5" spawnpointtag="swarmfeeder" />
+    </EventSet>
+    <EventSet identifier="ruin_encounters" chooserandom="true" triggereventcooldown="false" allowatstart="true">
+      <EventSet identifier="entrance1" chooserandom="false" triggereventcooldown="false" allowatstart="true">
+        <MonsterEvent characterfile="Fractalguardian9" amount="1" spawntype="ruin" spawnpointtag="encounter_entrance1" />
+      </EventSet>
+      <EventSet identifier="entrance2" chooserandom="false" triggereventcooldown="false" allowatstart="true">
+        <MonsterEvent characterfile="Fractalguardian9" amount="1" spawntype="ruin" spawnpointtag="encounter_entrance2" spawndistance="1000" />
+      </EventSet>
+      <EventSet identifier="entrance3" chooserandom="false" triggereventcooldown="false" allowatstart="true">
+        <MonsterEvent characterfile="Fractalguardian9" amount="1" spawntype="ruin" spawnpointtag="encounter_entrance3" />
+      </EventSet>
+      <EventSet identifier="chambers1" chooserandom="false" triggereventcooldown="false" allowatstart="true">
+        <MonsterEvent characterfile="Fractalguardian9" amount="1" spawntype="ruin" spawnpointtag="encounter_chambers1" />
+      </EventSet>
+    </EventSet>
+    <!-- populate the caves -->
+    <EventSet identifier="caves" chooserandom="true" allowatstart="true" percave="true" triggereventcooldown="false">
+      <MonsterEvent characterfile="phantom" minamount="0" maxamount="1" spawntype="cave" />
+      <MonsterEvent characterfile="huskhardsuit" minamount="0" maxamount="1" spawntype="cave" />
+      <MonsterEvent characterfile="huskcaustic" minamount="0" maxamount="1" spawntype="cave" />
+      <MonsterEvent characterfile="huskvolatile" minamount="0" maxamount="1" spawntype="cave" />
+    </EventSet>
+    <!-- Populate the wrecks. -->
+    <EventSet identifier="wreck" chooserandom="true" allowatstart="true" perwreck="true" triggereventcooldown="false">
+      <EventSet identifier="wreck" chooserandom="true" allowatstart="true" perwreck="true" triggereventcooldown="false" commonness="10">
+        <MonsterEvent characterfile="static" minamount="0" maxamount="1" spawntype="wreck" probability="0.1" />
+        <MonsterEvent characterfile="malevolence" minamount="0" maxamount="1" spawntype="wreck" probability="0.1" />
+      </EventSet>
+      <EventSet chooserandom="true" commonness="5" perwreck="true" allowatstart="true" triggereventcooldown="false">
+        <MonsterEvent characterfile="huskhardsuit" minamount="0" maxamount="1" spawntype="wreck" probability="0.2" />
+        <MonsterEvent characterfile="huskcaustic" minamount="0" maxamount="1" spawntype="wreck" probability="0.1" />
+        <MonsterEvent characterfile="huskvolatile" minamount="0" maxamount="1" spawntype="wreck" probability="0.1" />
+      </EventSet>
+    </EventSet>
+    <!-- Timed events -->
+    <!-- Trigger at 300 seconds -->
+    <EventSet identifier="first" chooserandom="true" mindistancetraveled="1.0" minmissiontime="300" minintensity="0.0" maxintensity="1.0" allowatstart="false">
+      <EventSet chooserandom="true" commonness="15">
+        <MonsterEvent characterfile="malevolence" minamount="0" maxamount="1" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet chooserandom="true" commonness="10">
+        <MonsterEvent characterfile="phantom" minamount="1" maxamount="1" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet chooserandom="true" commonness="5">
+        <MonsterEvent characterfile="huskhardsuit" minamount="0" maxamount="1" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="huskcaustic" minamount="0" maxamount="1" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="huskvolatile" minamount="0" maxamount="1" spawntype="mainpath,sidepath" />
+      </EventSet>
+    </EventSet>
+    <!-- Trigger at 1000 seconds -->
+    <EventSet identifier="second" chooserandom="true" mindistancetraveled="1.0" minmissiontime="1000" minintensity="0.0" maxintensity="1.0" allowatstart="false">
+      <EventSet chooserandom="true" commonness="10">
+        <MonsterEvent characterfile="static" minamount="0" maxamount="1" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="malevolence" minamount="1" maxamount="2" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet chooserandom="true" commonness="5">
+        <MonsterEvent characterfile="huskhardsuit" minamount="0" maxamount="1" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="huskcaustic" minamount="0" maxamount="1" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="huskvolatile" minamount="0" maxamount="1" spawntype="mainpath,sidepath" />
+      </EventSet>
+    </EventSet>
+    <!-- Trigger at 1500 seconds -->
+    <EventSet identifier="third" chooserandom="true" mindistancetraveled="1.0" minmissiontime="1500" minintensity="0.0" maxintensity="1.0" allowatstart="false">
+      <EventSet chooserandom="true" commonness="20">
+        <MonsterEvent characterfile="malevolence" minamount="1" maxamount="1" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet chooserandom="false" commonness="10">
+        <MonsterEvent characterfile="static" minamount="1" maxamount="1" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet chooserandom="true" commonness="5">
+        <MonsterEvent characterfile="huskhardsuit" minamount="0" maxamount="1" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="huskcaustic" minamount="0" maxamount="1" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="huskvolatile" minamount="0" maxamount="1" spawntype="mainpath,sidepath" />
+      </EventSet>
+    </EventSet>
+    <!-- Trigger at 2500 seconds -->
+    <EventSet identifier="fourth" chooserandom="true" mindistancetraveled="1.0" minmissiontime="2500" minintensity="0.0" maxintensity="1.0" allowatstart="false">
+      <EventSet chooserandom="true" commonness="20">
+        <MonsterEvent characterfile="malevolence" minamount="1" maxamount="1" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet chooserandom="false" commonness="10">
+        <MonsterEvent characterfile="static" minamount="1" maxamount="1" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet chooserandom="true" commonness="5">
+        <MonsterEvent characterfile="huskhardsuit" minamount="0" maxamount="1" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="huskcaustic" minamount="0" maxamount="1" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="huskvolatile" minamount="0" maxamount="1" spawntype="mainpath,sidepath" />
+      </EventSet>
+    </EventSet>
+  </EventSet>
+</Randomevents>

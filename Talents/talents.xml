@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Talents>
+  <Talent identifier="encroachingterror">
+    <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="7,5" sheetelementsize="128,128" />
+    <Description tag="talentdescription.encroachingterror">
+      <Replace tag="[afflictionname]" value="afflictionname.killerinstinct" color="gui.orange" />
+      <Replace tag="[maxattackspeed]" value="25" color="gui.green" />
+    </Description>
+    <AbilityGroupInterval>
+      <Conditions>
+        <AbilityConditionHasAffliction afflictionidentifier="killerinstinct" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyFlag flagtype="MustWalk" />
+      </Abilities>
+    </AbilityGroupInterval>
+    <AbilityGroupInterval>
+      <Conditions>
+        <AbilityConditionHasItem tags="killermask" requireall="true" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyStat stattype="MeleeAttackSpeed" value="0.25" />
+        <CharacterAbilityModifyStat stattype="RangedAttackSpeed" value="-0.99" />
+      </Abilities>
+    </AbilityGroupInterval>
+    <AbilityGroupInterval>
+      <Conditions>
+        <AbilityConditionHasItem tags="deepdiving" requireall="true" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyStat stattype="WalkingSpeed" value="1.0" />
+        <CharacterAbilityModifyStat stattype="SwimmingSpeed" value="1.0" />
+        <CharacterAbilityModifyStat stattype="MeleeAttackSpeed" value="-0.99" />
+      </Abilities>
+    </AbilityGroupInterval>
+  </Talent>
+  <Talent identifier="cleanliness">
+    <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="1,2" sheetelementsize="128,128" />
+    <Description tag="talentdescription.cleanliness" />
+    <Description tag="talentdescription.unlockrecipe">
+      <Replace tag="[itemname]" value="entityname.dirtybomb" color="gui.orange" />
+    </Description>
+    <Description tag="talentdescription.gainalltalentsintree" />
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <!-- <CharacterAbilityUnlockTree/> -->
+      </Abilities>
+    </AbilityGroupEffect>
+    <AddedRecipe itemidentifier="dirtybomb" />
+  </Talent>
+  <Talent identifier="slaughter">
+    <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="1,2" sheetelementsize="128,128" />
+    <Description tag="talentdescription.slaughter" />
+    <Description tag="talentdescription.gainalltalentsintree" />
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityUnlockTree />
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <Talent identifier="truebeliever">
+    <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="7,5" sheetelementsize="128,128" />
+    <Description tag="talentdescription.truebeliever" />
+    <AbilityGroupInterval interval="0.9">
+      <Conditions>
+        <AbilityConditionHasItem tags="cultrobe,culthood" requireall="true" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character" disabledeltatime="true" multiplyafflictionsbymaxvitality="true">
+              <Affliction identifier="cultistimmunity" amount="1.0" setvalue="true" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupInterval>
+    <AddedRecipe itemidentifier="cultdoc" />
+  </Talent>
+  <!-- You Are Nothing: Based on Kromer's evasion skill, dodges the enemy and drains their sanity -->
+  <Talent identifier="youarenothing">
+    <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="5,4" sheetelementsize="128,128" />
+    <Description tag="talentdescription.youarenothing">
+      <Replace tag="[seconds]" value="10" color="gui.green" />
+      <Replace tag="[powerreduction]" value="100" color="gui.green" />
+    </Description>
+    <AbilityGroupInterval interval="1">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="This" multiplyafflictionsbymaxvitality="true" disabledeltatime="true">
+              <Affliction identifier="evade" amount="1.0" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupInterval>
+    <AbilityGroupEffect abilityeffecttype="OnAttacked">
+      <Conditions>
+        <AbilityConditionHasAffliction afflictionidentifier="evade" minimumpercentage="1.0" />
+        <AbilityConditionAttackData ignorenonharmfulattacks="true" weapontype="NoWeapon,Melee" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyAttackData addeddamagemultiplier="-1.0" />
+        <CharacterAbilityApplyStatusEffectsToAttacker>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character">
+              <Affliction identifier="penance" amount="20.0" />
+              <Affliction identifier="fanaticdetection" amount="60" />
+              <ParticleEmitter particle="cult_rune" distancemin="0" distancemax="50" particleamount="5" anglemin="0" anglemax="360" scalemin="0.1" scalemax="0.2" />
+              <sound file="%ModDir%/Sounds/fiendattackhit.ogg" range="500" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffectsToAttacker>
+      </Abilities>
+    </AbilityGroupEffect>
+    <AbilityGroupEffect abilityeffecttype="OnAttackedResult">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="This">
+              <ReduceAffliction identifier="evade" strength="10.0" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <!-- Counter: Based on the Limbus "Counter" skill, hits the enemy back with some bleed and lacerations when you are hit. Activates every 5 seconds but only grants a 10% resist. -->
+  <Talent identifier="counter">
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="7,5" sheetelementsize="128,128" />
+    <Description tag="talentdescription.counter">
+      <Replace tag="[seconds]" value="5" color="gui.green" />
+      <Replace tag="[powerreduction]" value="10" color="gui.green" />
+    </Description>
+    <AbilityGroupInterval interval="1">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="This" multiplyafflictionsbymaxvitality="true" disabledeltatime="true">
+              <Affliction identifier="guarded" amount="1.0" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupInterval>
+    <AbilityGroupEffect abilityeffecttype="OnAttacked">
+      <Conditions>
+        <AbilityConditionHasAffliction afflictionidentifier="guarded" minimumpercentage="1.0" />
+        <AbilityConditionAttackData ignorenonharmfulattacks="true" weapontype="NoWeapon,Melee" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyAttackData addeddamagemultiplier="-0.1" />
+        <CharacterAbilityApplyStatusEffectsToAttacker>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character">
+              <Affliction identifier="bleeding" amount="15.0" />
+              <Affliction identifier="lacerations" amount="15.0" />
+              <Affliction identifier="fanaticdetection" amount="60" />
+              <ParticleEmitter particle="cult_rune" distancemin="0" distancemax="50" particleamount="5" anglemin="0" anglemax="360" scalemin="0.1" scalemax="0.2" />
+              <sound file="%ModDir%/Sounds/fiendattackhit.ogg" range="500" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffectsToAttacker>
+      </Abilities>
+    </AbilityGroupEffect>
+    <AbilityGroupEffect abilityeffecttype="OnAttackedResult">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="This">
+              <ReduceAffliction identifier="guarded" strength="10.0" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <Talent identifier="whistles">
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="3,3" sheetelementsize="128,128" />
+    <Description tag="talentdescription.whistles">
+      <Replace tag="[meters]" value="10" color="gui.green" />
+      <Replace tag="[fanatic]" value="10" color="gui.green" />
+    </Description>
+    <AbilityGroupInterval interval="0.9">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffectsToAllies maxdistance="1000" jobs="purifier" allowself="false">
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character" disabledeltatime="true">
+              <Conditional fanatic="lt 9" />
+              <Affliction identifier="fanatic" strength="10.0" setvalue="true" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffectsToAllies>
+      </Abilities>
+    </AbilityGroupInterval>
+  </Talent>
+  <Talent identifier="inquisition">
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="3,3" sheetelementsize="128,128" />
+    <Description tag="talentdescription.inquisition" />
+    <AbilityGroupInterval interval="0.9">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="Always" target="Character" delay="1" stackable="false">
+              <Affliction identifier="fanaticmanager" amount="1.0" setvalue="true" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupInterval>
+  </Talent>
+  <Talent identifier="supersoldier">
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="6,2" sheetelementsize="128,128" />
+    <Description tag="talentdescription.additionalstattypeself">
+      <Replace tag="[amount]" value="100" color="gui.green" />
+      <Replace tag="[stattype]" value="stattypenames.maximumhealthmultiplier" color="gui.orange" />
+    </Description>
+    <Description tag="talentdescription.additionalstattypeself">
+      <Replace tag="[amount]" value="50" color="gui.green" />
+      <Replace tag="[stattype]" value="stattypenames.meleeattackmultiplier" color="gui.orange" />
+    </Description>
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityGiveStat stattype="MaximumHealthMultiplier" value="2" />
+        <CharacterAbilityGiveStat stattype="MeleeAttackMultiplier" value="0.5" />
+        <CharacterAbilityModifyResistance resistanceid="damage" multiplier="0.5" />
+        <CharacterAbilityGiveStat stattype="WeaponsSkillBonus" value="1000" />
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <Talent identifier="superdupersoldier">
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="6,2" sheetelementsize="128,128" />
+    <Description tag="talentdescription.additionalstattypeself">
+      <Replace tag="[amount]" value="400" color="gui.green" />
+      <Replace tag="[stattype]" value="stattypenames.maximumhealthmultiplier" color="gui.orange" />
+    </Description>
+    <Description tag="talentdescription.additionalstattypeself">
+      <Replace tag="[amount]" value="50" color="gui.green" />
+      <Replace tag="[stattype]" value="stattypenames.meleeattackmultiplier" color="gui.orange" />
+    </Description>
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityGiveStat stattype="MaximumHealthMultiplier" value="10" />
+        <CharacterAbilityGiveStat stattype="MeleeAttackMultiplier" value="1" />
+        <CharacterAbilityModifyResistance resistanceid="damage" multiplier="0.5" />
+        <CharacterAbilityGiveStat stattype="WeaponsSkillBonus" value="1000" />
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character">
+              <!-- currently 10x bleeding recovery compared to normal -->
+              <ReduceAffliction identifier="bleeding" strength="1.0" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <Talent identifier="vip">
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="0,5" sheetelementsize="128,128" />
+    <Description tag="talentdescription.vip" />
+    <AbilityGroupEffect abilityeffecttype="OnDieToCharacter">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffectsToAllies jobs="securityofficer, deputy" requiresalive="false">
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character">
+              <Affliction identifier="crippledmorale" amount="90" />
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffectsToAllies>
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <!-- Captain Talents Start-->
+  <!-- Left Path "Stand-Up Captain"-->
+  <Talent identifier="gloryanddiscipline">
+    <Icon texture="%ModDir%/Images/TalentIconsWarden2.png" sheetindex="1,2" sheetelementsize="128,128"/>
+    <Description tag="talentdescription.gloryanddiscipline" >
+	  <Replace tag="[repairspeed%]" value="20%" color="gui.orange"/>
+	  <Replace tag="[percent%]" value="10%" color="gui.orange"/>
+	</Description>
+    <AbilityGroupInterval interval="0.9">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffectsToAllies allowself="true" requiresalive="true" allowclientsimulation="false">
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character" disabledeltatime="true">
+              <Affliction identifier="gloryanddiscipline" amount="10.0"/>
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffectsToAllies>
+      </Abilities>
+    </AbilityGroupInterval>
+  </Talent>
+  <Talent identifier="capcrewmedtraining">
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="0,2" sheetelementsize="128,128"/>
+    <Description tag="talentdescription.deputy">
+      <Replace tag="[medskill]" value="+20 Medical Skill" color="gui.green"/>
+	  <Replace tag="[cprtext]" value="25% more effective CPR." color="gui.green"/>
+    </Description>
+    <AbilityGroupInterval interval="0.9">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffectsToAllies allowself="false" jobs="assistant,mechanic,engineer,deputy,securityofficer">
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character" disabledeltatime="true">
+              <Affliction identifier="capcrewmedtraining" strength="1.0"/>
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffectsToAllies>
+      </Abilities>
+    </AbilityGroupInterval>
+  </Talent>
+    <Talent identifier="capcrewweaptraining">
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="7,3" sheetelementsize="128,128"/>
+    <Description tag="talentdescription.deputy">
+      <Replace tag="[skillbonus1]" value="+10 Weapons to all non-security personnel." color="gui.green"/>
+    </Description>
+    <AbilityGroupInterval interval="0.9">
+      <Abilities>
+        <CharacterAbilityApplyStatusEffectsToAllies allowself="false" jobs="assistant,medicaldoctor,mechanic,engineer">
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character" disabledeltatime="true">
+              <Affliction identifier="capcrewweaptraining" strength="1.0"/>
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffectsToAllies>
+      </Abilities>
+    </AbilityGroupInterval>
+  </Talent>
+  <!-- Middle Path "Black Baron"-->
+  <!-- Right Path "Glorious Figurehead"-->
+  <!-- Captain Talents End -->
+  <!-- Electrician Talents Start-->
+  <!-- Middle Path "Experimentalist"-->
+  <Talent identifier="prototyping">
+    <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="7,2" sheetelementsize="128,128"/>
+    <Description tag="talentdescription.prototyping">
+      <Replace tag="[burnresist%]" value="15%" color="gui.green"/>
+	  <Replace tag="[burndam%]" value="25%" color="gui.green"/>
+    </Description>
+    <Description tag="talentdescription.unlockrecipe">
+      <Replace tag="[itemname]" value="entityname.flamer" color="gui.orange"/>
+    </Description>
+    <AbilityGroupEffect abilityeffecttype="OnAddDamageAffliction">
+      <Abilities>
+        <CharacterAbilityModifyAffliction afflictionidentifiers="burn" addedmultiplier="0.25" />
+      </Abilities>
+    </AbilityGroupEffect>
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityGiveStat stattype="BallastFloraDamageMultiplier" value="0.5"/>
+		<CharacterAbilityGiveResistance resistanceid="burn" multiplier="0.85"/>
+      </Abilities>
+    </AbilityGroupEffect>
+    <AddedRecipe itemidentifier="flamer"/>
+  </Talent>
+  <Talent identifier="plasisteelhands">
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="3,5" sheetelementsize="128,128"/>
+    <Description tag="talentdescription.plasisteelhands">
+      <Replace tag="[burnresist%]" value="20%" color="gui.green"/>
+    </Description>
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityGiveResistance resistanceid="burn" multiplier="0.8"/>
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <Talent identifier="rubbernerves">
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="1,7" sheetelementsize="128,128"/>
+    <Description tag="talentdescription.rubbernerves">
+      <Replace tag="[stunresist%]" value="20%" color="gui.green"/>
+    </Description>
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityGiveResistance resistanceid="stun" multiplier="0.8"/>
+		<CharacterAbilityGiveResistance resistanceid="incrementalstun" multiplier="0.8"/>
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <Talent identifier="experimentalwelder">
+    <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="0,2" sheetelementsize="128,128"/>
+    <Description tag="talentdescription.experimentalwelder">
+      <Replace tag="[fixspeed%]" value="50%" color="gui.green"/>
+    </Description>
+    <Description tag="talentdescription.unlockrecipe">
+      <Replace tag="[itemname]" value="Experimental Welding Tool,Experimental Welding Tank" color="gui.orange"/>
+    </Description>
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityGiveStat stattype="RepairToolStructureRepairMultiplier" value="0.50"/>
+      </Abilities>
+    </AbilityGroupEffect>
+    <AddedRecipe itemidentifier="experimentalweldingtool"/>
+	<AddedRecipe itemidentifier="purpletank"/>
+  </Talent>
+  <Talent identifier="experimentaltools">
+    <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="5,3" sheetelementsize="128,128"/>
+	<Description tag="talentdescription.experimentaltools">
+      <Replace tag="[fixspeed%]" value="50%" color="gui.green"/>
+    </Description>
+    <Description tag="talentdescription.unlockrecipe">
+      <Replace tag="[itemname]" value="Pure Titanium Screwdriver,Pure Titanium Wrench,Pure Titanium Crowbar" color="gui.orange"/>
+    </Description>
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityModifyStat stattype="RepairSpeed" value="0.5"/>
+      </Abilities>
+    </AbilityGroupEffect>
+    <AddedRecipe itemidentifier="titaniumscrewdriver"/>
+	<AddedRecipe itemidentifier="titaniumwrench"/>
+	<AddedRecipe itemidentifier="titaniumcrowbar"/>
+  </Talent>
+  <!-- Electrician Talents End -->
+  <!-- JANITOR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+  <Talent identifier="Alchemy">
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="5,6" sheetelementsize="128,128"/>
+    <Description tag="talentdescription.alchemy"/>
+    <AddedRecipe itemidentifier="ethanol"/>
+  </Talent>
+  <Talent identifier="ElusiveMan" nameidentifier= "talent.ElusiveMan">
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="2,1" sheetelementsize="128,128"/>
+    <Description tag="talentdescription.veteran">
+      <Replace tag="[helmbonus]" value="10" color="gui.green"/>
+      <Replace tag="[otherbonus]" value="10" color="gui.green"/>
+    </Description>
+    <Description tag="talentdescription.additionalstattype">
+      <Replace tag="[amount]" value="10" color="gui.green"/>
+      <Replace tag="[stattype]" value="stattypenames.repairspeed" color="gui.orange"/>
+    </Description>
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityGiveStat stattype="HelmSkillBonus" value="10"/>
+        <CharacterAbilityGiveStat stattype="ElectricalSkillBonus" value="10"/>
+        <CharacterAbilityGiveStat stattype="MechanicalSkillBonus" value="10"/>
+        <CharacterAbilityGiveStat stattype="MedicalSkillBonus" value="10"/>
+        <CharacterAbilityGiveStat stattype="WeaponsSkillBonus" value="10"/>
+        <CharacterAbilityGiveStat stattype="RepairSpeed" value="0.1"/>
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <Talent identifier="VeteranOfTheOldWar" nameidentifier="talent.VeteranOfTheOldWar">
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="1,5" sheetelementsize="128,128"/>
+    <Description tag="talentdescription.VeteranOfTheOldWar"/>
+    <Description tag="talentdescription.additionalstattype">
+      <Replace tag="[amount]" value="50" color="gui.green"/>
+      <Replace tag="[stattype]" value="stattypenames.physicalresistance" color="gui.orange"/>
+    </Description>
+    <Description tag="talentdescription.additionalstattype">
+      <Replace tag="[amount]" value="50" color="gui.green"/>
+      <Replace tag="[stattype]" value="stattypenames.stunresistance" color="gui.orange"/>
+    </Description>
+    <Description tag="talentdescription.additionalstattype">
+      <Replace tag="[amount]" value="-80" color="gui.green"/>
+      <Replace tag="[stattype]" value="stattypenames.AttackMultiplier" color="gui.orange"/>
+    </Description>
+    <AbilityGroupInterval interval="0.9">
+      <Conditions>
+        <AbilityConditionAllyNearby distance="0" truthywhen="NoCharacterMatches"/>
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityApplyStatusEffects>
+          <StatusEffects>
+            <StatusEffect type="OnAbility" target="Character" disabledeltatime="true" multiplyafflictionsbymaxvitality="true">
+              <Affliction identifier="VigorOfTheOldWar" amount="1.0"/>
+            </StatusEffect>
+          </StatusEffects>
+        </CharacterAbilityApplyStatusEffects>
+      </Abilities>
+    </AbilityGroupInterval>
+  </Talent>
+  <Talent identifier="fastdiver" nameidentifier="talent.fastdiver">
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="5,2" sheetelementsize="128,128"/>
+    <Description tag="talentdescription.additionalstattypeself">
+      <Replace tag="[amount]" value="75" color="gui.green"/>
+      <Replace tag="[stattype]" value="stattypenames.swimmingspeed" color="gui.orange"/>
+    </Description>
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityGiveStat stattype="SwimmingSpeed" value="0.75"/>
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <Talent identifier="olddiver" nameidentifier="talent.olddiver">
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="5,2" sheetelementsize="128,128"/>
+    <Description tag="talentdescription.additionalstattypeself">
+      <Replace tag="[amount]" value="100" color="gui.green"/>
+      <Replace tag="[stattype]" value="stattypenames.flowresistance" color="gui.orange"/>
+    </Description>
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityGiveStat stattype="FlowResistance" value="1"/>
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <Talent identifier="Spectator">
+    <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="6,4" sheetelementsize="128,128"/>
+    <Description tag="talentdescription.feigndeath">
+      <Replace tag="[seconds]" value="0.1" color="gui.green"/>
+    </Description>
+    <AbilityGroupInterval effectdelay="0.1" >
+      <Conditions>
+        <AbilityConditionRagdolled/>
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyFlag flagtype="IgnoredByEnemyAI"/>
+      </Abilities>
+    </AbilityGroupInterval>
+  </Talent>
+  <Talent identifier="d_day" nameidentifier="talent.dday">
+    <Icon texture="Content/UI/TalentsIcons3.png" sheetindex="7,3" sheetelementsize="128,128"/>
+    <Description tag="talentdescription.dday">
+      <Replace tag="[amount]" value="150" color="gui.green"/>
+    </Description>
+    <Description tag="talentdescription.unlockrecipe">
+      <Replace tag="[itemname]" value="entityname.rifle,entityname.riflebullet" color="gui.orange"/>
+    </Description>
+    <AbilityGroupEffect abilityeffecttype="OnAttack">
+      <Conditions>
+        <AbilityConditionAttackData tags="riflemanbonus"/>
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityModifyAttackData addeddamagemultiplier="15"/>
+      </Abilities>
+    </AbilityGroupEffect>
+    <AddedRecipe itemidentifier="rifle"/>
+    <AddedRecipe itemidentifier="riflebullet"/>
+  </Talent>
+  <Talent identifier="wakeup" nameidentifier="talent.wakeup">
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="5,5" sheetelementsize="128,128"/>
+    <Description tag="talentdescription.dontdieonme"/>
+    <AbilityGroupEffect abilityeffecttype="None" >
+      <Abilities>
+        <CharacterAbilityGiveStat stattype="CPRBoost" value="10"/>
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <!-- JANITOR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! end-->
+</Talents>
