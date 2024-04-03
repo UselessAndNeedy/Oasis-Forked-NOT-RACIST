@@ -20,8 +20,8 @@
     <Deconstruct time="10">
       <Item identifier="steel" />
     </Deconstruct>
-    <InventoryIcon texture="%ModDir%/rattlegun.png" sourcerect="0,0,140,60" origin="0.5,0.38" />
-    <Sprite texture="%ModDir%/rattlegun.png" sourcerect="0,0,140,60" depth="0.55" origin="0.5,0.5" />
+    <InventoryIcon texture="rattlegun.png" sourcerect="0,0,140,60" origin="0.5,0.38" />
+    <Sprite texture="rattlegun.png" sourcerect="0,0,140,60" depth="0.55" origin="0.5,0.5" />
     <Body width="140" height="60" density="25" />
     <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="42,-10" aimpos="52,-10" handle1="-35,-15" handle2="26,5" holdangle="-35" msg="ItemMsgPickUpSelect" />
     <RangedWeapon reload="0.26" holdtrigger="true" barrelpos="55,30" spread="3.5" weapondamagemodifier=".9" unskilledspread="15" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
@@ -74,8 +74,8 @@
     <Fabricate suitablefabricators="fabricator" requiredtime="30" requiresrecipe="false">
       <RequiredItem identifier="iron" amount="2" />
     </Fabricate>
-    <Sprite texture="%ModDir%/flintlock.png" sourcerect="0,0,76,40" depth="0.55" origin=".52,0.4" />
-    <BrokenSprite texture="%ModDir%/flintlock_shoot.png" sourcerect="0,0,76,40" depth="0.55" origin=".52,0.4" />
+    <Sprite texture="flintlock.png" sourcerect="0,0,76,40" depth="0.55" origin=".52,0.4" />
+    <BrokenSprite texture="flintlock_shoot.png" sourcerect="0,0,76,40" depth="0.55" origin=".52,0.4" />
     <Body width="76" height="40" density="20" />
     <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="62,3" handle1="-25,-9" msg="ItemMsgPickUpSelect" />
     <RangedWeapon reload="3.2" barrelpos="30,20" spread="3" unskilledspread="10" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
@@ -150,8 +150,8 @@
       <RequiredItem identifier="organicfiber" amount="1" />
       <RequiredSkill identifier="weapons" level="35" />
     </Fabricate>
-    <InventoryIcon texture="%ModDir%/handgrenade.png" sourcerect="0,0,50,64" origin="0.5,0.5" />
-    <sprite texture="%ModDir%/handgrenade.png" sourcerect="0,0,50,64" depth="0.55" origin="0.5,0.5" />
+    <InventoryIcon texture="handgrenade.png" sourcerect="0,0,50,64" origin="0.5,0.5" />
+    <sprite texture="handgrenade.png" sourcerect="0,0,50,64" depth="0.55" origin="0.5,0.5" />
     <Body radius="25" density="20" />
     <Throwable slots="Any,RightHand,LeftHand" holdpos="0,0" handle1="0,0" throwforce="4.0" aimpos="35,-10" msg="ItemMsgPickUpSelect" />
     <LightComponent LightColor="255,100,50,255" Flicker="0.5" range="600" IsOn="false">
@@ -216,8 +216,8 @@
     <Fabricate suitablefabricators="fabricator" requiredtime="5" requiresrecipe="false" amount="10">
       <RequiredItem identifier="steel" amount="1" />
     </Fabricate>
-    <InventoryIcon texture="%ModDir%/clustershot.png" sourcerect="0,0,32,23" />
-    <Sprite texture="%ModDir%/clustershot.png" depth="0.54" sourcerect="0,0,32,23" origin="0.5,0.5" />
+    <InventoryIcon texture="clustershot.png" sourcerect="0,0,32,23" />
+    <Sprite texture="clustershot.png" depth="0.54" sourcerect="0,0,32,23" origin="0.5,0.5" />
     <Body width="32" height="23" density="15" />
     <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
     <!--When fired, spawns 6 projectiles.-->
@@ -258,8 +258,8 @@
     <Fabricate suitablefabricators="fabricator" requiredtime="5" requiresrecipe="false" amount="10">
       <RequiredItem identifier="steel" amount="1" />
     </Fabricate>
-    <InventoryIcon texture="%ModDir%/slugshot.png" sourcerect="0,0,32,32" />
-    <Sprite texture="%ModDir%/slugshot.png" depth="0.54" sourcerect="0,0,32,32" scale=".5" origin="0.5,0.5" />
+    <InventoryIcon texture="slugshot.png" sourcerect="0,0,32,32" />
+    <Sprite texture="slugshot.png" depth="0.54" sourcerect="0,0,32,32" scale=".5" origin="0.5,0.5" />
     <Body width="32" height="32" density="15" />
     <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
     <!--When fired, spawns 1 projectile.-->
@@ -301,12 +301,12 @@
     <Fabricate suitablefabricators="fabricator" requiredtime="30" requiresrecipe="false">
       <RequiredItem identifier="iron" amount="3" />
     </Fabricate>
-    <Sprite texture="%ModDir%/blunderbuss.png" sourcerect="0,0,150,50" depth="0.55" origin=".52,0.4" />
-    <BrokenSprite texture="%ModDir%/blunderbuss_shoot.png" sourcerect="0,0,150,50" depth="0.55" origin=".52,0.4" />
+    <Sprite texture="blunderbuss.png" sourcerect="0,0,150,50" depth="0.55" origin=".52,0.4" />
+    <BrokenSprite texture="blunderbuss_shoot.png" sourcerect="0,0,150,50" depth="0.55" origin=".52,0.4" />
     <Body width="150" height="50" density="25" />
     <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="27,-15" aimpos="70,4" handle1="-50,-10" handle2="10,-3" holdangle="-25" />
     <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
-      <sprite name="Blunderbuss Worn" texture="%ModDir%/blunderbuss.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,150,50" limb="Torso" scale="0.5" origin="0.5,1.0" />
+      <sprite name="Blunderbuss Worn" texture="blunderbuss.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,150,50" limb="Torso" scale="0.5" origin="0.5,1.0" />
     </Wearable>
     <RangedWeapon reload="4.2" barrelpos="70,25" spread="2.2" unskilledspread="6" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
@@ -362,7 +362,7 @@
       <RequiredItem identifier="titaniumaluminiumalloy" amount="1" />
       <Item identifier="plastic" />
     </Deconstruct>
-    <Sprite texture="%ModDir%/assaultshotgun.png" sourcerect="0,0,190,52" depth="0.55" origin="0.55,0.3" />
+    <Sprite texture="assaultshotgun.png" sourcerect="0,0,190,52" depth="0.55" origin="0.55,0.3" />
     <Body width="190" height="52" density="25" />
     <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="40,-10" aimpos="55,5" handle1="-25,-16" handle2="26,0" holdangle="-40" msg="ItemMsgPickUpSelect">
       <!--semi-auto tag-->
@@ -371,7 +371,7 @@
       </StatusEffect>
     </Holdable>
     <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
-      <sprite name="Assault Shotgun Worn" texture="%ModDir%/assaultshotgun.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,200,52" limb="Torso" scale="0.5" origin="0.5,0.8" />
+      <sprite name="Assault Shotgun Worn" texture="assaultshotgun.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,200,52" limb="Torso" scale="0.5" origin="0.5,0.8" />
     </Wearable>
     <RangedWeapon barrelpos="85,29" weapondamagemodifier=".9" spread="0.2" unskilledspread="4.5" combatPriority="80" reload=".6" reloadnoskill=".85" reloadskillrequirement="60" drawhudwhenequipped="true" crosshairscale="0.15">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
@@ -429,9 +429,9 @@
       <Item identifier="steel" />
       <Item identifier="rubber" />
     </Deconstruct>
-    <InventoryIcon texture="%ModDir%/obreznew.png" sourcerect="0,0,84,44" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/obreznew.png" sourcerect="0,0,84,44" depth="0.55" origin="0.5,0.5" />
-    <BrokenSprite texture="%ModDir%/obreznew_shoot.png" sourcerect="0,0,84,44" depth="0.55" origin="0.5,0.5" />
+    <InventoryIcon texture="obreznew.png" sourcerect="0,0,84,44" origin="0.5,0.5" />
+    <Sprite texture="obreznew.png" sourcerect="0,0,84,44" depth="0.55" origin="0.5,0.5" />
+    <BrokenSprite texture="obreznew_shoot.png" sourcerect="0,0,84,44" depth="0.55" origin="0.5,0.5" />
     <Body width="84" height="30" density="25" />
     <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="65,-6" handle1="-25,-7" handle2="-28,10" msg="ItemMsgPickUpSelect"></Holdable>
     <RangedWeapon barrelpos="35,23" spread="5" unskilledspread="20" weapondamagemodifier=".9" combatPriority="60" drawhudwhenequipped="true" crosshairscale="0.2" reload="1.25" reloadnoskill="3">
@@ -483,8 +483,8 @@
       <Item identifier="steel" />
       <Item identifier="rubber" />
     </Deconstruct>
-    <InventoryIcon texture="%ModDir%/sawedoff.png" sourcerect="0,0,84,44" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/sawedoff.png" sourcerect="0,0,84,44" depth="0.55" origin="0.5,0.5" />
+    <InventoryIcon texture="sawedoff.png" sourcerect="0,0,84,44" origin="0.5,0.5" />
+    <Sprite texture="sawedoff.png" sourcerect="0,0,84,44" depth="0.55" origin="0.5,0.5" />
     <Body width="84" height="30" density="25" />
     <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="65,-6" handle1="-25,-7" handle2="-16,2" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnUse" target="This" ReloadTimer=".25" setvalue="true">
@@ -564,9 +564,9 @@
     <Deconstruct time="6">
       <Item identifier="steel" />
     </Deconstruct>
-    <InventoryIcon texture="%ModDir%/multicalderringer.png" sourcerect="0,0,64,41" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/multicalderringer.png" sourcerect="0,0,64,41" depth="0.55" origin="0.5,0.5" />
-    <BrokenSprite texture="%ModDir%/multicalderringer_shoot.png" sourcerect="0,0,64,41" depth="0.55" origin="0.5,0.5" />
+    <InventoryIcon texture="multicalderringer.png" sourcerect="0,0,64,41" origin="0.5,0.5" />
+    <Sprite texture="multicalderringer.png" sourcerect="0,0,64,41" depth="0.55" origin="0.5,0.5" />
+    <BrokenSprite texture="multicalderringer_shoot.png" sourcerect="0,0,64,41" depth="0.55" origin="0.5,0.5" />
     <Body width="50" height="30" density="25" />
     <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="70,5" handle1="-18,-7" msg="ItemMsgPickUpSelect" />
     <RangedWeapon barrelpos="20,21" spread="8" reload="1.65" unskilledspread="22" weapondamagemodifier=".75" combatPriority="60" drawhudwhenequipped="true" crosshairscale="0.2">
@@ -626,9 +626,9 @@
       <Item identifier="steel" />
       <Item identifier="plastic" />
     </Deconstruct>
-    <InventoryIcon texture="%ModDir%/autopistolicon.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/autopistol.png" sourcerect="0,0,84,44" depth="0.55" origin="0.5,0.5" />
-    <BrokenSprite texture="%ModDir%/autopistol_shoot.png" sourcerect="0,0,84,44" depth="0.55" origin="0.5,0.5" maxcondition="0" />
+    <InventoryIcon texture="autopistolicon.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="autopistol.png" sourcerect="0,0,84,44" depth="0.55" origin="0.5,0.5" />
+    <BrokenSprite texture="autopistol_shoot.png" sourcerect="0,0,84,44" depth="0.55" origin="0.5,0.5" maxcondition="0" />
     <Body width="88" height="44" density="25" />
     <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="70,5" handle1="-18,-7" msg="ItemMsgPickUpSelect" />
     <RangedWeapon reload="0.47" holdtrigger="false" weapondamagemodifier="1.25" barrelpos="45,23" spread="2" unskilledspread="15" combatPriority="65" drawhudwhenequipped="true" crosshairscale="0.2">
@@ -686,8 +686,8 @@
     <Deconstruct time="10">
       <Item identifier="steel" />
     </Deconstruct>
-    <InventoryIcon texture="%ModDir%/bullpupautopistol_icon.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/bullpupautopistol.png" sourcerect="0,0,90,50" depth="0.55" origin="0.5,0.5" />
+    <InventoryIcon texture="bullpupautopistol_icon.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="bullpupautopistol.png" sourcerect="0,0,90,50" depth="0.55" origin="0.5,0.5" />
     <Body width="90" height="50" density="30" />
     <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="82,5" handle1="-13,-7" msg="ItemMsgPickUpSelect" />
     <RangedWeapon reload="0.65" holdtrigger="false" weapondamagemodifier="1" barrelpos="45,26" spread="6.5" unskilledspread="20" combatPriority="65" drawhudwhenequipped="true" crosshairscale="0.2">
@@ -739,9 +739,9 @@
     <Deconstruct time="10">
       <Item identifier="steel" />
     </Deconstruct>
-    <InventoryIcon texture="%ModDir%/vintageautopistolicon.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/vintageautopistol.png" sourcerect="0,0,84,44" depth="0.55" origin="0.5,0.5" />
-    <BrokenSprite texture="%ModDir%/vintageautopistol_shoot.png" sourcerect="0,0,84,44" depth="0.55" origin="0.5,0.5" maxcondition="0" />
+    <InventoryIcon texture="vintageautopistolicon.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="vintageautopistol.png" sourcerect="0,0,84,44" depth="0.55" origin="0.5,0.5" />
+    <BrokenSprite texture="vintageautopistol_shoot.png" sourcerect="0,0,84,44" depth="0.55" origin="0.5,0.5" maxcondition="0" />
     <Body width="88" height="44" density="28" />
     <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="70,5" handle1="-18,-7" msg="ItemMsgPickUpSelect" />
     <RangedWeapon reload="0.6" holdtrigger="false" weapondamagemodifier="1.4" barrelpos="45,23" spread="1" unskilledspread="20" combatPriority="65" drawhudwhenequipped="true" crosshairscale="0.2">
@@ -793,9 +793,9 @@
     <Deconstruct time="10">
       <Item identifier="steel" />
     </Deconstruct>
-    <InventoryIcon texture="%ModDir%/vintagemp.png" sourcerect="0,0,105,50" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/vintagemp.png" sourcerect="0,0,105,50" depth="0.55" origin="0.5,0.5" />
-    <BrokenSprite texture="%ModDir%/vintagemp_shoot.png" sourcerect="0,0,105,50" depth="0.55" origin="0.5,0.5" />
+    <InventoryIcon texture="vintagemp.png" sourcerect="0,0,105,50" origin="0.5,0.5" />
+    <Sprite texture="vintagemp.png" sourcerect="0,0,105,50" depth="0.55" origin="0.5,0.5" />
+    <BrokenSprite texture="vintagemp_shoot.png" sourcerect="0,0,105,50" depth="0.55" origin="0.5,0.5" />
     <Body width="105" height="50" density="28" />
     <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="70,5" handle1="-18,-7" msg="ItemMsgPickUpSelect" />
     <RangedWeapon reload="0.07" holdtrigger="true" weapondamagemodifier=".67" barrelpos="45,27" spread="12" unskilledspread="40" combatPriority="65" drawhudwhenequipped="true" crosshairscale="0.2">
@@ -866,8 +866,8 @@
       <Item identifier="lead" mincondition="0.95" />
       <Item identifier="steel" />
     </Deconstruct>
-    <InventoryIcon texture="%ModDir%/compactSMGmagIcon.png" sourcerect="0,0,64,64" />
-    <Sprite texture="%ModDir%/compactSMGmag.png" depth="0.54" sourcerect="0,0,21,32" origin="0.5,0.6" />
+    <InventoryIcon texture="compactSMGmagIcon.png" sourcerect="0,0,64,64" />
+    <Sprite texture="compactSMGmag.png" depth="0.54" sourcerect="0,0,21,32" origin="0.5,0.6" />
     <Body width="14" height="30" density="25" />
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="smground" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
       <Containable items="smground" />
@@ -899,9 +899,9 @@
       <Item identifier="titaniumaluminiumalloy" />
       <Item identifier="rubber" />
     </Deconstruct>
-    <InventoryIcon texture="%ModDir%/multicalrevolver.png" sourcerect="0,0,64,41" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/multicalrevolver.png" sourcerect="0,0,64,41" depth="0.55" origin="0.5,0.5" />
-    <BrokenSprite texture="%ModDir%/multicalrevolver_shoot.png" sourcerect="0,0,64,41" depth="0.55" origin="0.5,0.5" />
+    <InventoryIcon texture="multicalrevolver.png" sourcerect="0,0,64,41" origin="0.5,0.5" />
+    <Sprite texture="multicalrevolver.png" sourcerect="0,0,64,41" depth="0.55" origin="0.5,0.5" />
+    <BrokenSprite texture="multicalrevolver_shoot.png" sourcerect="0,0,64,41" depth="0.55" origin="0.5,0.5" />
     <Body width="56" height="38" density="25" />
     <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="70,5" handle1="-18,-7" msg="ItemMsgPickUpSelect" />
     <RangedWeapon barrelpos="28,14" spread="3" unskilledspread="6" weapondamagemodifier=".78" combatPriority="60" drawhudwhenequipped="true" crosshairscale="0.2" reload=".9">
@@ -948,9 +948,9 @@
       <Item identifier="titaniumaluminiumalloy" />
       <Item identifier="rubber" />
     </Deconstruct>
-    <InventoryIcon texture="%ModDir%/highcalrevolver.png" sourcerect="0,0,64,41" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/highcalrevolver.png" sourcerect="0,0,64,41" depth="0.55" origin="0.5,0.5" />
-    <BrokenSprite texture="%ModDir%/highcalrevolver_shoot.png" sourcerect="0,0,64,41" depth="0.55" origin="0.5,0.5" />
+    <InventoryIcon texture="highcalrevolver.png" sourcerect="0,0,64,41" origin="0.5,0.5" />
+    <Sprite texture="highcalrevolver.png" sourcerect="0,0,64,41" depth="0.55" origin="0.5,0.5" />
+    <BrokenSprite texture="highcalrevolver_shoot.png" sourcerect="0,0,64,41" depth="0.55" origin="0.5,0.5" />
     <Body width="56" height="38" density="25" />
     <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="70,5" handle1="-18,-7" msg="ItemMsgPickUpSelect" />
     <RangedWeapon barrelpos="28,14" spread="2" unskilledspread="7" weapondamagemodifier=".8" combatPriority="60" drawhudwhenequipped="true" crosshairscale="0.2" reload="1.05">
@@ -996,7 +996,7 @@
       <Item identifier="titaniumaluminiumalloy" />
       <Item identifier="plastic" />
     </Deconstruct>
-    <Sprite texture="%ModDir%/riflecarbine.png" sourcerect="0,0,168,50" depth="0.55" origin="0.5,0.25" />
+    <Sprite texture="riflecarbine.png" sourcerect="0,0,168,50" depth="0.55" origin="0.5,0.25" />
     <Body width="168" height="50" density="25" />
     <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-10" aimpos="55,5" handle1="-25,-16" handle2="26,0" holdangle="-40" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnUse" target="This" ReloadTimer="1" setvalue="true">
@@ -1072,15 +1072,15 @@
       <Item identifier="steel" />
       <Item identifier="titaniumaluminiumalloy" />
     </Deconstruct>
-    <InventoryIcon texture="%ModDir%/rotaryglicon.png" sourcerect="0,0,72,72" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/rotarygl.png" sourcerect="0,0,135,50" depth="0.55" origin="0.5,0.5" />
-    <BrokenSprite texture="%ModDir%/rotarygl_shoot.png" sourcerect="0,0,135,50" depth="0.55" origin="0.5,0.5" />
+    <InventoryIcon texture="rotaryglicon.png" sourcerect="0,0,72,72" origin="0.5,0.5" />
+    <Sprite texture="rotarygl.png" sourcerect="0,0,135,50" depth="0.55" origin="0.5,0.5" />
+    <BrokenSprite texture="rotarygl_shoot.png" sourcerect="0,0,135,50" depth="0.55" origin="0.5,0.5" />
     <Body width="135" height="50" density="30" />
     <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="40,-32" aimpos="45,-10" handle1="-33,-15" handle2="26,5" holdangle="-25">
       <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.72" setvalue="true" />
     </Holdable>
     <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
-      <sprite name="Grenade Launcher Worn" texture="%ModDir%/rotarygl.png" canbehiddenbyotherwearables="false" sourcerect="0,0,135,50" rotation="90" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.5" origin="0.5,0.8" />
+      <sprite name="Grenade Launcher Worn" texture="rotarygl.png" canbehiddenbyotherwearables="false" sourcerect="0,0,135,50" rotation="90" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.5" origin="0.5,0.8" />
     </Wearable>
     <RangedWeapon barrelpos="70,7" spread="2.5" unskilledspread="15" combatPriority="75" drawhudwhenequipped="true" crosshairscale="0.2">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
@@ -1137,8 +1137,8 @@
       <Item identifier="plastic" />
       <Item identifier="copper" />
     </Deconstruct>
-    <InventoryIcon texture="%ModDir%/railriflenewicon.png" sourcerect="0,0,72,72" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/railriflenew.png" sourcerect="0,0,214,66" depth="0.55" origin="0.5,0.5" />
+    <InventoryIcon texture="railriflenewicon.png" sourcerect="0,0,72,72" origin="0.5,0.5" />
+    <Sprite texture="railriflenew.png" sourcerect="0,0,214,66" depth="0.55" origin="0.5,0.5" />
     <Body width="214" height="66" density="25" />
     <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="40,-8" aimpos="42,5" handle1="-25,-12" handle2="26,5" holdangle="-40" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.7" setvalue="true" />
@@ -1179,7 +1179,7 @@
       <RequiredItems items="railgunammo" type="Contained" />
     </Propulsion>
     <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
-      <sprite name="Rail Rifle Worn" texture="%ModDir%/railriflenew.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,179,49" limb="Torso" scale="0.6" origin="0.5,0.8" />
+      <sprite name="Rail Rifle Worn" texture="railriflenew.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,179,49" limb="Torso" scale="0.6" origin="0.5,0.8" />
     </Wearable>
     <ItemContainer capacity="1" maxstacksize="1" slotsperrow="2" hideitems="false" iteminterval="0,-4" itempos="45 ,0" containedstateindicatorstyle="ammo" containedstateindicatorslot="0" containedspritedepth="0.56">
       <Containable items="railgunammo" hide="false" />
@@ -1224,11 +1224,11 @@
       <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
       <RequiredItem identifier="fulgurium" amount="3" />
     </Fabricate>
-    <Sprite texture="%ModDir%/portapulser.png" sourcerect="0,0,265,89" depth="0.55" origin="0.5,0.5" />
+    <Sprite texture="portapulser.png" sourcerect="0,0,265,89" depth="0.55" origin="0.5,0.5" />
     <Body width="238" height="63" density="25" />
     <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="60,-15" aimpos="70,4" handle1="-50,-10" handle2="10,-3" holdangle="-25" />
     <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
-      <sprite name="Porta Pulser Worn" texture="%ModDir%/portapulser.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,265,89" limb="Torso" scale="0.5" origin="0.5,0.8" />
+      <sprite name="Porta Pulser Worn" texture="portapulser.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,265,89" limb="Torso" scale="0.5" origin="0.5,0.8" />
     </Wearable>
     <RangedWeapon reload="0.4" holdtrigger="true" barrelpos="118,14" spread="0" weapondamagemodifier=".45" unskilledspread="15" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2" maxchargetime="0.5">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
@@ -1292,8 +1292,8 @@
       <Item identifier="titaniumaluminiumalloy" amount="2" />
       <Item identifier="rubber" />
     </Deconstruct>
-    <InventoryIcon texture="%ModDir%/sportsmanrifle.png" sourcerect="0,0,216,62" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/sportsmanrifle.png" sourcerect="0,0,216,62" depth="0.55" origin="0.5,0.5" />
+    <InventoryIcon texture="sportsmanrifle.png" sourcerect="0,0,216,62" origin="0.5,0.5" />
+    <Sprite texture="sportsmanrifle.png" sourcerect="0,0,216,62" depth="0.55" origin="0.5,0.5" />
     <Body width="216" height="50" density="25" />
     <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="45,-20" aimpos="57,-5" handle1="-35,-10" handle2="26,10" holdangle="-30">
       <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.9" setvalue="true" />
@@ -1302,7 +1302,7 @@
       </StatusEffect>
     </Holdable>
     <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
-      <sprite name="Sportsman Rifle Worn" texture="%ModDir%/sportsmanrifle.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,233,62" limb="Torso" scale="0.5" origin="0.5,0.8" />
+      <sprite name="Sportsman Rifle Worn" texture="sportsmanrifle.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,233,62" limb="Torso" scale="0.5" origin="0.5,0.8" />
     </Wearable>
     <RangedWeapon holdtrigger="false" barrelpos="100,20" spread="2" unskilledspread="12" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
@@ -1363,9 +1363,9 @@
     <Deconstruct time="10">
       <Item identifier="steel" amount="3" />
     </Deconstruct>
-    <InventoryIcon texture="%ModDir%/VintageSMGicon.png" sourcerect="0,0,62,39" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/VintageSubgun.png" sourcerect="0,0,144,80" depth="0.55" origin="0.5,0.5" />
-    <BrokenSprite texture="%ModDir%/VintageSubgun_shoot.png" sourcerect="0,0,144,80" depth="0.55" origin="0.5,0.5" />
+    <InventoryIcon texture="VintageSMGicon.png" sourcerect="0,0,62,39" origin="0.5,0.5" />
+    <Sprite texture="VintageSubgun.png" sourcerect="0,0,144,80" depth="0.55" origin="0.5,0.5" />
+    <BrokenSprite texture="VintageSubgun_shoot.png" sourcerect="0,0,144,80" depth="0.55" origin="0.5,0.5" />
     <Body width="140" height="60" density="35" />
     <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-10" aimpos="45,-10" handle1="-30,-15" handle2="26,5" holdangle="-35" msg="ItemMsgPickUpSelect" />
     <RangedWeapon reload="0.3" weapondamagemodifier="1.35" penetration="0.1" holdtrigger="true" barrelpos="64,37" spread="6" unskilledspread="12" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
@@ -1417,8 +1417,8 @@
       <Item identifier="steel" />
       <Item identifier="titaniumaluminiumalloy" />
     </Deconstruct>
-    <InventoryIcon texture="%ModDir%/rhinorifle.png" sourcerect="0,0,184,51" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/rhinorifle.png" sourcerect="0,0,184,51" depth="0.63" origin="0.62,0.3" />
+    <InventoryIcon texture="rhinorifle.png" sourcerect="0,0,184,51" origin="0.5,0.5" />
+    <Sprite texture="rhinorifle.png" sourcerect="0,0,184,51" depth="0.63" origin="0.62,0.3" />
     <Body width="180" height="30" density="25" />
     <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-8" aimpos="42,5" handle1="-25,-12" handle2="26,5" holdangle="-40" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.9" setvalue="true" />
@@ -1477,8 +1477,8 @@
       <Item identifier="plastic" />
       <Item identifier="titaniumaluminiumalloy" />
     </Deconstruct>
-    <InventoryIcon texture="%ModDir%/AssaultCarbine.png" sourcerect="0,0,140,60" origin="0.5,0.38" />
-    <Sprite texture="%ModDir%/AssaultCarbine.png" sourcerect="0,0,140 ,60" depth="0.55" origin="0.5,0.5" />
+    <InventoryIcon texture="AssaultCarbine.png" sourcerect="0,0,140,60" origin="0.5,0.38" />
+    <Sprite texture="AssaultCarbine.png" sourcerect="0,0,140 ,60" depth="0.55" origin="0.5,0.5" />
     <Body width="140" height="60" density="25" />
     <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-10" aimpos="45,-10" handle1="-35,-15" handle2="26,5" holdangle="-35" msg="ItemMsgPickUpSelect" />
     <RangedWeapon reload="0.21" holdtrigger="true" barrelpos="55,20" spread="6" weapondamagemodifier=".88" unskilledspread="18" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
@@ -1533,10 +1533,10 @@
       <Item identifier="titaniumaluminiumalloy" />
     </Deconstruct>
     <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
-      <sprite name="Levergun Worn" texture="%ModDir%/CQCrifle.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,155,59" limb="Torso" scale="0.5" origin="0.5,0.8" />
+      <sprite name="Levergun Worn" texture="CQCrifle.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,155,59" limb="Torso" scale="0.5" origin="0.5,0.8" />
     </Wearable>
-    <InventoryIcon texture="%ModDir%/CQCrifle.png" sourcerect="0,0,155,59" origin="0.5,0.38" />
-    <Sprite texture="%ModDir%/CQCrifle.png" sourcerect="0,0,155,59" depth="0.55" origin="0.5,0.5" />
+    <InventoryIcon texture="CQCrifle.png" sourcerect="0,0,155,59" origin="0.5,0.38" />
+    <Sprite texture="CQCrifle.png" sourcerect="0,0,155,59" depth="0.55" origin="0.5,0.5" />
     <Body width="140" height="60" density="25" />
     <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="40,-10" aimpos="45,-10" handle1="-25,-15" handle2="26,5" holdangle="-35" msg="ItemMsgPickUpSelect" />
     <ItemComponent characterusable="true">
@@ -1600,9 +1600,9 @@
     <Deconstruct time="10">
       <Item identifier="steel" />
     </Deconstruct>
-    <InventoryIcon texture="%ModDir%/wheelgun.png" sourcerect="0,0,76,41" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/wheelgun.png" sourcerect="0,0,76,41" depth="0.55" origin="0.5,0.5" />
-    <BrokenSprite texture="%ModDir%/wheelgun_shoot.png" sourcerect="0,0,76,41" depth="0.55" origin="0.5,0.5" />
+    <InventoryIcon texture="wheelgun.png" sourcerect="0,0,76,41" origin="0.5,0.5" />
+    <Sprite texture="wheelgun.png" sourcerect="0,0,76,41" depth="0.55" origin="0.5,0.5" />
+    <BrokenSprite texture="wheelgun_shoot.png" sourcerect="0,0,76,41" depth="0.55" origin="0.5,0.5" />
     <Body width="56" height="38" density="25" />
     <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="65,-6" handle1="-25,-7" handle2="-28,10" msg="ItemMsgPickUpSelect">
       <!--semi-auto tag-->
@@ -1673,14 +1673,14 @@
       <RequiredItem identifier="titanium" amount="2" />
       <RequiredItem identifier="plastic" amount="2" />
     </Fabricate>
-    <Sprite texture="%ModDir%/levergun.png" sourcerect="0,0,185,50" depth="0.55" origin="0.44,0.25" />
-    <BrokenSprite texture="%ModDir%/levergun_shoot.png" sourcerect="0,0,185,54" depth="0.55" origin="0.44,0.25" maxcondition="0" />
+    <Sprite texture="levergun.png" sourcerect="0,0,185,50" depth="0.55" origin="0.44,0.25" />
+    <BrokenSprite texture="levergun_shoot.png" sourcerect="0,0,185,54" depth="0.55" origin="0.44,0.25" maxcondition="0" />
     <Body width="185" height="50" density="25" />
     <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="40,-10" aimpos="55,5" handle1="-25,-16" handle2="26,0" holdangle="-40" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.9" setvalue="true" />
     </Holdable>
     <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
-      <sprite name="Levergun Worn" texture="%ModDir%/levergun.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,185,62" limb="Torso" scale="0.5" origin="0.5,0.8" />
+      <sprite name="Levergun Worn" texture="levergun.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,185,62" limb="Torso" scale="0.5" origin="0.5,0.8" />
     </Wearable>
     <RangedWeapon barrelpos="74,16" weapondamagemodifier="1.35" penetration=".15" spread="0" unskilledspread="3" combatPriority="70" reload=".7" reloadnoskill=".9" reloadskillrequirement="55" drawhudwhenequipped="true" crosshairscale="0.15">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
@@ -1731,14 +1731,14 @@
       <Item identifier="steel" amount="2" />
       <Item identifier="carbon" />
     </Deconstruct>
-    <Sprite texture="%ModDir%/vintagerifle.png" sourcerect="0,0,220,54" depth="0.55" origin="0.44,0.25" />
-    <BrokenSprite texture="%ModDir%/vintagerifle_shoot.png" sourcerect="0,0,220,54" depth="0.55" origin="0.5,0.25" maxcondition="0" />
+    <Sprite texture="vintagerifle.png" sourcerect="0,0,220,54" depth="0.55" origin="0.44,0.25" />
+    <BrokenSprite texture="vintagerifle_shoot.png" sourcerect="0,0,220,54" depth="0.55" origin="0.5,0.25" maxcondition="0" />
     <Body width="220" height="54" density="25" />
     <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="40,-10" aimpos="60,13" handle1="-43,-16" handle2="20,0" holdangle="-40" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.9" setvalue="true" />
     </Holdable>
     <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
-      <sprite name="Vintage Rifle Worn" texture="%ModDir%/vintagerifle.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,220,62" limb="Torso" scale="0.5" origin="0.5,0.8" />
+      <sprite name="Vintage Rifle Worn" texture="vintagerifle.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,220,62" limb="Torso" scale="0.5" origin="0.5,0.8" />
     </Wearable>
     <RangedWeapon barrelpos="110,20" weapondamagemodifier="1.2" penetration=".25" spread="0" unskilledspread="5" combatPriority="70" reload="1.5" reloadnoskill="3.15" reloadskillrequirement="55" drawhudwhenequipped="true" crosshairscale="0.15">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
@@ -1789,14 +1789,14 @@
       <RequiredItem identifier="steel" amount="2" />
       <RequiredItem identifier="plastic" amount="1" />
     </Fabricate>
-    <Sprite texture="%ModDir%/makeshiftrifle.png" sourcerect="0,0,150,38" depth="0.55" origin="0.5,0.5" />
-    <BrokenSprite texture="%ModDir%/makeshiftrifle_shoot.png" sourcerect="0,0,150,38" depth="0.55" origin="0.5,0.5" />
+    <Sprite texture="makeshiftrifle.png" sourcerect="0,0,150,38" depth="0.55" origin="0.5,0.5" />
+    <BrokenSprite texture="makeshiftrifle_shoot.png" sourcerect="0,0,150,38" depth="0.55" origin="0.5,0.5" />
     <Body width="150" height="50" density="25" />
     <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="43,-7" aimpos="55,1" handle1="-25,-16" handle2="26,0" holdangle="-40" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.9" setvalue="true" />
     </Holdable>
     <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
-      <sprite name="Levergun Makeshift Worn" texture="%ModDir%/levergun.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,150,50" limb="Torso" scale="0.5" origin="0.5,0.5" />
+      <sprite name="Levergun Makeshift Worn" texture="levergun.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,150,50" limb="Torso" scale="0.5" origin="0.5,0.5" />
     </Wearable>
     <RangedWeapon barrelpos="74,10" weapondamagemodifier=".9" penetration=".1" spread="3" unskilledspread="8.5" combatPriority="70" reload="1.5" reloadnoskill="2.55" reloadskillrequirement="50" drawhudwhenequipped="true" crosshairscale="0.15">
       <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
@@ -1843,14 +1843,14 @@
       <RequiredSkill identifier="weapons" level="20" />
       <RequiredItem identifier="steel" amount="1" />
     </Fabricate>
-    <Sprite texture="%ModDir%/makeshiftshotgun.png" sourcerect="0,0,150,38" depth="0.55" origin="0.5,0.5" />
-    <BrokenSprite texture="%ModDir%/makeshiftshotgun_shoot.png" sourcerect="0,0,150,38" depth="0.55" origin="0.5,0.5" />
+    <Sprite texture="makeshiftshotgun.png" sourcerect="0,0,150,38" depth="0.55" origin="0.5,0.5" />
+    <BrokenSprite texture="makeshiftshotgun_shoot.png" sourcerect="0,0,150,38" depth="0.55" origin="0.5,0.5" />
     <Body width="150" height="50" density="25" />
     <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="43,-7" aimpos="55,1" handle1="-25,-16" handle2="26,0" holdangle="-40" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.9" setvalue="true" />
     </Holdable>
     <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
-      <sprite name="Levergun Makeshift Worn" texture="%ModDir%/levergun.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,150,50" limb="Torso" scale="0.5" origin="0.5,0.5" />
+      <sprite name="Levergun Makeshift Worn" texture="levergun.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,150,50" limb="Torso" scale="0.5" origin="0.5,0.5" />
     </Wearable>
     <RangedWeapon barrelpos="74,12" weapondamagemodifier=".9" spread="4" unskilledspread="10" combatPriority="70" reload="1.5" reloadnoskill="2.75" reloadskillrequirement="40" drawhudwhenequipped="true" crosshairscale="0.15">
       <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
@@ -1896,8 +1896,8 @@
     <Deconstruct time="10">
       <Item identifier="steel" />
     </Deconstruct>
-    <InventoryIcon texture="%ModDir%/makeshiftpistol.png" sourcerect="0,0,58,41" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/makeshiftpistol.png" sourcerect="0,0,58,41" depth="0.55" origin="0.5,0.5" />
+    <InventoryIcon texture="makeshiftpistol.png" sourcerect="0,0,58,41" origin="0.5,0.5" />
+    <Sprite texture="makeshiftpistol.png" sourcerect="0,0,58,41" depth="0.55" origin="0.5,0.5" />
     <Body width="56" height="38" density="25" />
     <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="65,-6" handle1="-25,-7" handle2="-28,10" msg="ItemMsgPickUpSelect">
       <!--semi-auto tag-->
@@ -1957,15 +1957,15 @@
       <RequiredItem identifier="plastic" amount="2" />
       <RequiredItem identifier="steel" amount="2" />
     </Fabricate>
-    <InventoryIcon texture="%ModDir%/micromgicon.png" sourcerect="0,0,72,72" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/micromg.png" sourcerect="0,0,216,56" depth="0.55" origin="0.5,0.5" />
-    <BrokenSprite texture="%ModDir%/micromg_shoot.png" sourcerect="0,0,216,56" depth="0.55" origin="0.5,0.5" />
+    <InventoryIcon texture="micromgicon.png" sourcerect="0,0,72,72" origin="0.5,0.5" />
+    <Sprite texture="micromg.png" sourcerect="0,0,216,56" depth="0.55" origin="0.5,0.5" />
+    <BrokenSprite texture="micromg_shoot.png" sourcerect="0,0,216,56" depth="0.55" origin="0.5,0.5" />
     <Body width="244" height="68" density="70" />
     <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="60,-30" holdangle="-10" aimpos="60,-30" handle1="-112,12" handle2="24,8">
       <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.7" setvalue="true" />
     </Holdable>
     <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
-      <sprite name="Micro Machinegun Worn" texture="%ModDir%/micromg.png" sourcerect="0,0,244,68" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.5" origin="0.4,1.2" />
+      <sprite name="Micro Machinegun Worn" texture="micromg.png" sourcerect="0,0,244,68" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.5" origin="0.4,1.2" />
     </Wearable>
     <RangedWeapon reload="0.08" holdtrigger="true" barrelpos="110,40" spread="6.5" unskilledspread="30" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
@@ -2048,14 +2048,14 @@
       <Item identifier="steel" />
       <Item identifier="titaniumaluminiumalloy" />
     </Deconstruct>
-    <InventoryIcon texture="%ModDir%/micromgicon.png" sourcerect="0,0,72,72" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/micromg.png" sourcerect="0,0,216,56" depth="0.55" origin="0.5,0.5" />
+    <InventoryIcon texture="micromgicon.png" sourcerect="0,0,72,72" origin="0.5,0.5" />
+    <Sprite texture="micromg.png" sourcerect="0,0,216,56" depth="0.55" origin="0.5,0.5" />
     <Body width="244" height="68" density="70" />
     <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="60,-30" holdangle="-10" aimpos="60,-30" handle1="-112,12" handle2="24,8">
       <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.7" setvalue="true" />
     </Holdable>
     <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
-      <sprite name="Micro Machinegun Worn" texture="%ModDir%/micromg.png" sourcerect="0,0,244,68" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.5" origin="0.4,1.2" />
+      <sprite name="Micro Machinegun Worn" texture="micromg.png" sourcerect="0,0,244,68" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.5" origin="0.4,1.2" />
     </Wearable>
     <RangedWeapon reload="0" delay=".1" maxchargetime="0.75" holdtrigger="true" barrelpos="110,33" spread="6" unskilledspread="30" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
@@ -2113,14 +2113,14 @@
       <Item identifier="plastic" />
       <Item identifier="titanium" />
     </Deconstruct>
-    <InventoryIcon texture="%ModDir%/mobilecoilericon.png" sourcerect="0,0,72,72" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/mobilecoiler.png" sourcerect="0,0,245,56" depth="0.55" origin="0.5,0.5" />
+    <InventoryIcon texture="mobilecoilericon.png" sourcerect="0,0,72,72" origin="0.5,0.5" />
+    <Sprite texture="mobilecoiler.png" sourcerect="0,0,245,56" depth="0.55" origin="0.5,0.5" />
     <Body width="245" height="68" density="70" />
     <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="60,-30" holdangle="-10" aimpos="60,-30" handle1="-112,12" handle2="24,8">
       <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.66" setvalue="true" />
     </Holdable>
     <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
-      <sprite name="Mobile Coil Machinegun Worn" texture="%ModDir%/mobilecoiler.png" sourcerect="0,0,245,68" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.5" origin="0.4,1.2" />
+      <sprite name="Mobile Coil Machinegun Worn" texture="mobilecoiler.png" sourcerect="0,0,245,68" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.5" origin="0.4,1.2" />
     </Wearable>
     <RangedWeapon reload="0.28" weapondamagemodifier=".85" launchimpulse="70.0" holdtrigger="true" barrelpos="40,5" spread="1.5" unskilledspread="20" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
@@ -2192,14 +2192,14 @@
       <Item identifier="copper" />
       <Item identifier="flamer" />
     </Deconstruct>
-    <InventoryIcon texture="%ModDir%/ghmgicon.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/ghmg.png" sourcerect="0,0,216,56" depth="0.55" origin="0.5,0.5" />
+    <InventoryIcon texture="ghmgicon.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="ghmg.png" sourcerect="0,0,216,56" depth="0.55" origin="0.5,0.5" />
     <Body width="216" height="56" density="70" />
     <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="60,-30" holdangle="-10" aimpos="60,-30" handle1="-112,12" handle2="24,8">
       <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.7" setvalue="true" />
     </Holdable>
     <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
-      <sprite name="Macro Machinegun Worn" texture="%ModDir%/micromg.png" sourcerect="0,0,244,68" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.5" origin="0.4,1.2" />
+      <sprite name="Macro Machinegun Worn" texture="micromg.png" sourcerect="0,0,244,68" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.5" origin="0.4,1.2" />
     </Wearable>
     <RepairTool firedamage="30.0" launchimpulse="12.0" structurefixamount="0.0" usablein="Air" range="1350" barrelpos="110,-18" fireprobability="0.55" repairmultiple="true" repairthroughwalls="false" repairthroughholes="true" combatpriority="90" drawhudwhenequipped="true" crosshairscale="0.2" spread="25" unskilledspread="25">
       <!-- the item must contain a welding fuel tank for it to work -->
@@ -2281,8 +2281,8 @@
       <Item identifier="steel" />
       <Item identifier="titaniumaluminiumalloy" />
     </Deconstruct>
-    <InventoryIcon texture="%ModDir%/rhinoweaponsystemicon.png" sourcerect="0,0,72,72" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/rhinoweaponsystem.png" sourcerect="0,0,245,66" depth="0.55" origin="0.5,0.5" />
+    <InventoryIcon texture="rhinoweaponsystemicon.png" sourcerect="0,0,72,72" origin="0.5,0.5" />
+    <Sprite texture="rhinoweaponsystem.png" sourcerect="0,0,245,66" depth="0.55" origin="0.5,0.5" />
     <Body width="180" height="30" density="25" />
     <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="40,-8" aimpos="42,5" handle1="-25,-12" handle2="26,5" holdangle="-40" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.7" setvalue="true" />
@@ -2396,8 +2396,8 @@
       <Item identifier="steel" amount="1" />
       <Item identifier="plastic" amount="1" />
     </Deconstruct>
-    <InventoryIcon texture="%ModDir%/subcarbine.png" sourcerect="0,0,216,62" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/subcarbine.png" sourcerect="0,0,216,62" depth="0.55" origin="0.5,0.5" />
+    <InventoryIcon texture="subcarbine.png" sourcerect="0,0,216,62" origin="0.5,0.5" />
+    <Sprite texture="subcarbine.png" sourcerect="0,0,216,62" depth="0.55" origin="0.5,0.5" />
     <Body width="216" height="50" density="25" />
     <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="45,-20" aimpos="57,-5" handle1="-35,-10" handle2="26,10" holdangle="-30">
       <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.9" setvalue="true" />
@@ -2406,7 +2406,7 @@
       </StatusEffect>
     </Holdable>
     <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
-      <sprite name="Sportsman Sub Rifle Worn" texture="%ModDir%/subcarbine.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,233,62" limb="Torso" scale="0.5" origin="0.5,0.8" />
+      <sprite name="Sportsman Sub Rifle Worn" texture="subcarbine.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,233,62" limb="Torso" scale="0.5" origin="0.5,0.8" />
     </Wearable>
     <RangedWeapon holdtrigger="false" barrelpos="100,20" weapondamagemodifier="1.3" penetration="0.2" spread="8" unskilledspread="15" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
@@ -2471,14 +2471,14 @@
       <RequiredItem identifier="titaniumaluminiumalloy" amount="1" />
       <Item identifier="plastic" />
     </Deconstruct>
-    <Sprite texture="%ModDir%/shortyshotgun.png" sourcerect="0,0,110,52" depth="0.55" origin="0.55,0.3" />
-    <BrokenSprite texture="%ModDir%/shortyshotgun_shoot.png" sourcerect="0,0,110,52" depth="0.55" origin="0.55,0.3" />
+    <Sprite texture="shortyshotgun.png" sourcerect="0,0,110,52" depth="0.55" origin="0.55,0.3" />
+    <BrokenSprite texture="shortyshotgun_shoot.png" sourcerect="0,0,110,52" depth="0.55" origin="0.55,0.3" />
     <Body width="110" height="52" density="25" />
     <Holdable slots="RightHand+LeftHand,Any" controlpose="true" holdpos="40,-10" aimpos="55,5" handle1="-25,-16" handle2="26,0" holdangle="-40" msg="ItemMsgPickUpSelect">
       <!--semi-auto tag-->
     </Holdable>
     <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
-      <sprite name="Boarding Shotgun Worn" texture="%ModDir%/shortyshotgun.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,200,52" limb="Torso" scale="0.5" origin="0.5,0.8" />
+      <sprite name="Boarding Shotgun Worn" texture="shortyshotgun.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,200,52" limb="Torso" scale="0.5" origin="0.5,0.8" />
     </Wearable>
     <RangedWeapon barrelpos="55,29" weapondamagemodifier=".88" spread="1" unskilledspread="6.5" combatPriority="80" reload="1.2" reloadnoskill="2" reloadskillrequirement="60" drawhudwhenequipped="true" crosshairscale="0.15">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
@@ -2492,11 +2492,11 @@
         <Explosion range="150.0" force="3.5" shockwave="false" smoke="false" flash="true" sparks="false" flames="false" underwaterbubble="false" camerashake="15.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" delay=".45" target="This" condition="-100000">
-        <Sound file="%ModDir%/ShotgunOpen.ogg" type="OnUse" range="500" />
+        <Sound file="ShotgunOpen.ogg" type="OnUse" range="500" />
         <ParticleEmitter particle="shotgunshell" emitinterval="0.5" particleamount="1" particlespersecond="50" anglemin="90" anglemax="115" velocitymin="300" velocitymax="450" copyentityangle="true" scalemin="0.5" scalemax="0.5" />
       </StatusEffect>
       <StatusEffect delay=".45" type="OnBroken" target="This" condition="100000">
-        <Sound file="%ModDir%/ShotgunClose.ogg" type="OnUse" range="500" />
+        <Sound file="ShotgunClose.ogg" type="OnUse" range="500" />
       </StatusEffect>
       <RequiredItems items="shotgunammo" type="Contained" msg="ItemMsgAmmoRequired" />
       <RequiredSkill identifier="weapons" level="70" />
@@ -2529,14 +2529,14 @@
       <Item identifier="steel" amount="2" />
       <RequiredItem identifier="carbon" amount="1" />
     </Deconstruct>
-    <Sprite texture="%ModDir%/vintageshotgun.png" sourcerect="0,0,190,52" depth="0.55" origin="0.55,0.3" />
-    <BrokenSprite texture="%ModDir%/vintageshotgun_shoot.png" sourcerect="0,0,190,52" depth="0.55" origin="0.55,0.3" />
+    <Sprite texture="vintageshotgun.png" sourcerect="0,0,190,52" depth="0.55" origin="0.55,0.3" />
+    <BrokenSprite texture="vintageshotgun_shoot.png" sourcerect="0,0,190,52" depth="0.55" origin="0.55,0.3" />
     <Body width="190" height="52" density="25" />
     <Holdable slots="RightHand+LeftHand,Any" controlpose="true" holdpos="40,-10" aimpos="55,5" handle1="-25,-16" handle2="26,0" holdangle="-40" msg="ItemMsgPickUpSelect">
       <!--semi-auto tag-->
     </Holdable>
     <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
-      <sprite name="Vintage Shotgun Worn" texture="%ModDir%/vintageshotgun.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,200,52" limb="Torso" scale="0.5" origin="0.5,0.8" />
+      <sprite name="Vintage Shotgun Worn" texture="vintageshotgun.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,200,52" limb="Torso" scale="0.5" origin="0.5,0.8" />
     </Wearable>
     <RangedWeapon barrelpos="85,29" weapondamagemodifier="1.1" spread="0" unskilledspread="5" combatPriority="80" reload=".7" reloadnoskill="2.5" reloadskillrequirement="75" drawhudwhenequipped="true" crosshairscale="0.15">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
@@ -2550,11 +2550,11 @@
         <Explosion range="150.0" force="3.5" shockwave="false" smoke="false" flash="true" sparks="false" flames="false" underwaterbubble="false" camerashake="15.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" delay=".15" target="This" condition="-100000">
-        <Sound file="%ModDir%/ShotgunOpen.ogg" type="OnUse" range="500" />
+        <Sound file="ShotgunOpen.ogg" type="OnUse" range="500" />
         <ParticleEmitter particle="shotgunshell" emitinterval="0.5" particleamount="1" particlespersecond="50" anglemin="90" anglemax="115" velocitymin="300" velocitymax="450" copyentityangle="true" scalemin="0.5" scalemax="0.5" />
       </StatusEffect>
       <StatusEffect delay=".55" type="OnBroken" target="This" condition="100000">
-        <Sound file="%ModDir%/ShotgunClose.ogg" type="OnUse" range="500" />
+        <Sound file="ShotgunClose.ogg" type="OnUse" range="500" />
       </StatusEffect>
       <RequiredItems items="shotgunammo" type="Contained" msg="ItemMsgAmmoRequired" />
       <RequiredSkill identifier="weapons" level="70" />
@@ -2590,7 +2590,7 @@
       <RequiredItem identifier="carbon" />
     </Fabricate>
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="320,968,55,55" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/moderncrossbowbolt.png" sourcerect="0,0,120,16" depth="0.55" origin="0.5,0.5" />
+    <Sprite texture="moderncrossbowbolt.png" sourcerect="0,0,120,16" depth="0.55" origin="0.5,0.5" />
     <Body width="120" height="16" density="30" />
     <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
     <Projectile characterusable="false" launchimpulse="12" sticktocharacters="true" sticktoitems="true" sticktostructures="true" sticktodoors="false">
@@ -2629,7 +2629,7 @@
       <RequiredItem identifier="aluminium" amount="1" />
       <RequiredItem identifier="carbon" amount="2" />
     </Fabricate>
-    <Sprite texture="%ModDir%/CompoundCrossbow.png" sourcerect="0,0,180,39" depth="0.55" origin="0.5,0.5" />
+    <Sprite texture="CompoundCrossbow.png" sourcerect="0,0,180,39" depth="0.55" origin="0.5,0.5" />
     <Body width="180" height="39" density="25" />
     <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="35,-10" aimpos="45,2" handle1="-20,-6" handle2="30,10" holdangle="-40" msg="ItemMsgPickUpSelect" />
     <RangedWeapon reload="3.15" launchimpulse="25.0" barrelpos="85,17" penetration=".25" spread="0" unskilledspread="10" combatPriority="60" drawhudwhenequipped="true" crosshairscale="0.2">
@@ -2680,9 +2680,9 @@
       <Item identifier="steel" amount="2" />
       <Item identifier="plastic" />
     </Deconstruct>
-    <InventoryIcon texture="%ModDir%/magnum_icon.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/magnum.png" sourcerect="0,0,84,44" depth="0.55" origin="0.5,0.5" />
-    <BrokenSprite texture="%ModDir%/magnum_shoot.png" sourcerect="0,0,84,44" depth="0.55" origin="0.5,0.5" maxcondition="0" />
+    <InventoryIcon texture="magnum_icon.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="magnum.png" sourcerect="0,0,84,44" depth="0.55" origin="0.5,0.5" />
+    <BrokenSprite texture="magnum_shoot.png" sourcerect="0,0,84,44" depth="0.55" origin="0.5,0.5" maxcondition="0" />
     <Body width="88" height="44" density="25" />
     <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="70,5" handle1="-18,-7" handle2="-20,-8" msg="ItemMsgPickUpSelect" />
     <RangedWeapon reload="0.5" holdtrigger="false" weapondamagemodifier=".95" barrelpos="45,23" spread="1.5" unskilledspread="20" combatPriority="65" drawhudwhenequipped="true" crosshairscale="0.2">
