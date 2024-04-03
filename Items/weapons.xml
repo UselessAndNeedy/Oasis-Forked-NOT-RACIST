@@ -6337,7 +6337,7 @@
     </Quality>
     <SkillRequirementHint identifier="weapons" level="65" />
   </Item>
-  <Item name="Antique Lead Ball" identifier="iron_flintlockammo" description="A simple ball of lead along with propellant. A simple but powerful ammunition." category="Weapon" subcategory="OASIS" maxstacksize="48" maxstacksizecharacterinventory="12" MaxStackSizeHoldableOrWearableInventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.5" tags="smallitem,flintlockammo,pistolammoitem" impactsoundtag="impact_metal_light">
+  <Item name="Antique Lead Ball" identifier="iron_flintlockammo" description="A simple ball of lead along with propellant. A simple but powerful ammunition." category="Weapon" subcategory="OASIS" maxstacksize="48" maxstacksizecharacterinventory="12" MaxStackSizeHoldableOrWearableInventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.5" tags="smallitem,flintlockammo,blunderbussammo,pistolammoitem" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="oasisflintlockpistol" amount="1" spawnprobability="1" />
     <PreferredContainer primary="armcab" amount="6" spawnprobability="1" />
     <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" minamount="1" maxamount="6" spawnprobability="0.2" />
@@ -6390,7 +6390,7 @@
     </Projectile>
     <Upgrade gameversion="0.10.0.0" scale="0.5" />
   </Item>
-  <Item name="Antique Nitro Ball" identifier="nitro_flintlockammo" inventoryiconcolor="255,0,0,255" description="A volatile ball of nitroglycerin which uses stabilozine as a one-time shock absorber to endure being fired." category="Weapon" subcategory="OASIS" maxstacksize="48" maxstacksizecharacterinventory="12" MaxStackSizeHoldableOrWearableInventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.5" tags="smallitem,flintlockammo,pistolammoitem" impactsoundtag="impact_metal_light">
+  <Item name="Antique Nitro Ball" identifier="nitro_flintlockammo" inventoryiconcolor="255,0,0,255" description="A volatile ball of nitroglycerin which uses stabilozine as a one-time shock absorber to endure being fired." category="Weapon" subcategory="OASIS" maxstacksize="48" maxstacksizecharacterinventory="12" MaxStackSizeHoldableOrWearableInventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.5" tags="smallitem,flintlockammo,blunderbussammo,pistolammoitem" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="oasisflintlockpistol" amount="1" spawnprobability="1" />
     <PreferredContainer primary="armcab" amount="6" spawnprobability="1" />
     <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" minamount="1" maxamount="6" spawnprobability="0.2" />
@@ -6449,7 +6449,7 @@
     </Projectile>
     <Upgrade gameversion="0.10.0.0" scale="0.5" />
   </Item>
-  <Item name="Antique Physicorium Ball" identifier="physicorium_flintlockammo" inventoryiconcolor="255,200,100,255" description="A simple ball of physicorium plus some propellant. Makes for a cheap but devastating projectile." category="Weapon" subcategory="OASIS" maxstacksize="48" maxstacksizecharacterinventory="12" MaxStackSizeHoldableOrWearableInventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.5" tags="smallitem,flintlockammo,pistolammoitem" impactsoundtag="impact_metal_light">
+  <Item name="Antique Physicorium Ball" identifier="physicorium_flintlockammo" inventoryiconcolor="255,200,100,255" description="A simple ball of physicorium plus some propellant. Makes for a cheap but devastating projectile." category="Weapon" subcategory="OASIS" maxstacksize="48" maxstacksizecharacterinventory="12" MaxStackSizeHoldableOrWearableInventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" Scale="0.5" tags="smallitem,flintlockammo,blunderbussammo,pistolammoitem" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="oasisflintlockpistol" amount="1" spawnprobability="1" />
     <PreferredContainer primary="armcab" amount="6" spawnprobability="1" />
     <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" minamount="1" maxamount="6" spawnprobability="0.2" />
