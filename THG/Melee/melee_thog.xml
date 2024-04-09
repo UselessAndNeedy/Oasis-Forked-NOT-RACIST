@@ -1,0 +1,940 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="Johnny Knocker's Blackout Label" identifier="thgboozecruiserspecial" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" description="After the days of the archiac truncheon, yet before the infamous stun baton, came the humble Tonfa. It strikes a fine line between splitting skulls and seeing stars, but it needs all of one's strength to do so.">
+    <PreferredContainer primary="secarmcab" amount="1" spawnprobability="0" notcampaign="true" />
+    <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.005" />
+    <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" amount="1" spawnprobability="0.005" />
+    <PreferredContainer secondary="armcab,weaponholder" />
+    <Price baseprice="150" sold="true">
+      <Price storeidentifier="merchantclown" minavailable="0" maxavailable="3">
+        <Reputation faction="clowns" min="25" />
+      </Price>
+      <Price storeidentifier="merchantoutpost" minavailable="0" maxavailable="5">
+        <Reputation faction="separatists" min="10" />
+      </Price>
+    </Price>
+    <Deconstruct time="3">
+      <Item identifier="ethanol" />
+      <Item identifier="lead" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredItem identifier="lead" amount="1" />
+      <RequiredItem identifier="rum" amount="1" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/jonnyknockerblackoutlabel.png" sourcerect="0,0,80,30" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/jonnyknockerblackoutlabel.png" sourcerect="0,0,80,30" depth="0.55" origin="0.65,0.5" />
+    <Body width="80" height="30" density="30" />
+    <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="40, 20" handle1="-10 ,5" holdangle="40" aimangle="45" reload="0.95" range="50" combatPriority="5" msg="ItemMsgPickUpSelect">
+      <Attack structuredamage="0" itemdamage="0" targetimpulse="10">
+        <Affliction identifier="blunttrauma" strength="7" />
+        <Affliction identifier="bleeding" strength="10" />
+        <Affliction identifier="stun" strength="5.5" />
+        <StatusEffect type="OnUse" target="UseTarget" Condition="-100.0">
+          <Sound file="Content/Items/Weapons/Smack1.ogg" selectionmode="random" range="500" />
+          <Sound file="Content/Items/Weapons/Smack2.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget" disabledeltatime="true">
+          <ReduceAffliction identifier="huskinfection" strength="45" />
+          <ReduceAffliction identifier="psychosis" strength="35" />
+          <ReduceAffliction identifier="hallucinating" strength="35" />
+          <Affliction identifier="drunk" strength="30" />
+          <Explosion range="35.0" force="0.5" size=".5" shockwave="false" flames="false" smoke="false" underwaterbubble="false" camerashake="10.0" />
+          <Conditional mass="lt 95" />
+        </StatusEffect>
+      </Attack>
+      <StatusEffect type="OnUse" target="This">
+        <Remove />
+        <sound file="Content/Sounds/Damage/GlassImpact2.ogg" selectionmode="All" range="500" />
+      </StatusEffect>
+    </MeleeWeapon>
+    <aitarget sightrange="1000" soundrange="500" fadeouttime="1" />
+    <Quality>
+      <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+    </Quality>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="Tonfa" identifier="thgtonfa" category="Weapon" Tags="mediumitem,weapon,gunsmith,mountableweapon" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" description="After the days of the archiac truncheon, yet before the infamous stun baton, came the humble Tonfa. It strikes a fine line between splitting skulls and seeing stars, but it needs all of one's strength to do so.">
+    <PreferredContainer primary="secarmcab" amount="1" spawnprobability="0" notcampaign="true" />
+    <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.01" />
+    <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" amount="1" spawnprobability="0.01" />
+    <PreferredContainer secondary="armcab,weaponholder" />
+    <Price baseprice="115" sold="true"></Price>
+    <Deconstruct time="10">
+      <Item identifier="titaniumaluminiumalloy" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredSkill identifier="weapons" level="25" />
+      <RequiredItem identifier="aluminium" amount="1" />
+      <RequiredItem identifier="rubber" amount="1" />
+      <RequiredSkill identifier="weapons" level="25" />
+      <RequiredItem identifier="aluminium" amount="1" />
+      <RequiredItem identifier="rubber" amount="1" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/tonfaicon.png" sourcerect="0,0,56,63" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/tonfa.png" sourcerect="0,0,184,63" depth="0.55" origin="0.4954025,0.7936202" />
+    <Body width="184" height="63" density="30" />
+    <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="40,20" handle1="-30,15" holdangle="20" aimangle="30" reload="0.75" range="100" combatPriority="49" msg="ItemMsgPickUpSelect">
+      <Attack structuredamage="0" itemdamage="0" targetimpulse="10">
+        <Affliction identifier="blunttrauma" strength="5" />
+        <Affliction identifier="stun" strength="1" />
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Sound file="Content/Items/Weapons/Smack1.ogg" selectionmode="random" range="500" />
+          <Sound file="Content/Items/Weapons/Smack2.ogg" range="500" />
+        </StatusEffect>
+      </Attack>
+    </MeleeWeapon>
+    <aitarget sightrange="1000" soundrange="500" fadeouttime="1" />
+    <Quality>
+      <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+    </Quality>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="Truncheon" identifier="thgtruncheon" category="Weapon" Tags="mediumitem,weapon,gunsmith,mountableweapon" cargocontaineridentifier="metalcrate" Scale="0.6" impactsoundtag="impact_metal_light" RequireAimToUse="True" description="A simple, heavy club with a hard iron core and head. At one point in time, this was considered a less-than-lethal weapon. Nowadays, people just kind of accept it for the skull-splitter that it is.">
+    <PreferredContainer primary="secarmcab" amount="1" spawnprobability="0" notcampaign="true" />
+    <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.01" />
+    <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" amount="1" spawnprobability="0.01" />
+    <PreferredContainer secondary="armcab,weaponholder" />
+    <Price baseprice="85" sold="false"></Price>
+    <Deconstruct time="10">
+      <Item identifier="iron" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredItem identifier="iron" amount="2" />
+    </Fabricate>
+    <InventoryIcon texture="truncheonicon.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="truncheon.png" sourcerect="0,0,120,30" depth="0.55" origin="0.5,0.5" />
+    <Body width="120" height="18" density="30" />
+    <MeleeWeapon slots="RightHand,LeftHand,Any" controlpose="true" Scale="0.6" aimpos="45,10" handle1="-20,4" holdangle="40" reload="1.4" range="110" combatpriority="20" msg="ItemMsgPickUpSelect">
+      <Attack structuredamage="2" itemdamage="2" targetimpulse="16">
+        <Affliction identifier="blunttrauma" strength="20" />
+        <Affliction identifier="stun" strength="1.15" />
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Sound file="Content/Items/Weapons/Smack1.ogg" selectionmode="random" range="500" />
+          <Sound file="Content/Items/Weapons/Smack2.ogg" range="500" />
+        </StatusEffect>
+      </Attack>
+    </MeleeWeapon>
+    <aitarget sightrange="1000" soundrange="500" fadeouttime="1" />
+    <Quality>
+      <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+    </Quality>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="Cutlass" identifier="thgcutlass" category="Weapon" Tags="mediumitem,weapon,gunsmith,mountableweapon" cargocontaineridentifier="metalcrate" Scale="0.67" impactsoundtag="impact_metal_light" RequireAimToUse="True" description="A classic swept, broad-bladed sword with a fist guard, in vogue among the Coalition's upper echelons of command.">
+    <PreferredContainer primary="secarmcab" amount="1" spawnprobability="0" notcampaign="true" />
+    <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.01" />
+    <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" amount="1" spawnprobability="0.01" />
+    <PreferredContainer secondary="armcab,weaponholder" />
+    <Price baseprice="480" sold="false" minleveldifficulty="20">
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="1" maxavailable="1" sold="true">
+        <Reputation faction="coalition" min="50" />
+      </Price>
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <Item identifier="copper" />
+    </Deconstruct>
+    <InventoryIcon texture="cutlassicon.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="cutlass.png" sourcerect="0,0,120,30" depth="0.55" origin="0.5,0.5" />
+    <Body width="130" height="18" density="30" />
+    <MeleeWeapon slots="RightHand,LeftHand,Any" controlpose="true" Scale="0.6" aimpos="45,10" handle1="-20,4" holdangle="40" reload=".98" range="146" combatpriority="20" msg="ItemMsgPickUpSelect">
+      <Attack structuredamage="5" severlimbsprobability="0.5" structuresoundtype="StructureSlash" itemdamage="5" targetimpulse="10">
+        <Affliction identifier="lacerations" strength="25" />
+        <Affliction identifier="bleeding" strength="20" />
+        <Affliction identifier="stun" strength="0.3" />
+        <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+      </Attack>
+    </MeleeWeapon>
+    <aitarget sightrange="1000" soundrange="500" fadeouttime="1" />
+    <Quality>
+      <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+    </Quality>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="Katana" identifier="thgkatana" category="Weapon" Tags="mediumitem,weapon,gunsmith,mountableweapon" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" description="A razor sharp, deceptively light long sword with a curved blade, popular among Seperatists, for whatever reason.">
+    <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
+    <PreferredContainer secondary="wrecksecarmcab" spawnprobability="0.02" />
+    <PreferredContainer secondary="abandonedsecarmcab" spawnprobability="0.02" />
+    <Price baseprice="650" sold="false" minleveldifficulty="20">
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="1" maxavailable="1" sold="true">
+        <Reputation faction="separatists" min="50" />
+      </Price>
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="aluminum" />
+    </Deconstruct>
+    <InventoryIcon texture="katanaicon.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="katana.png" sourcerect="0,0,215,30" depth="0.55" origin="0.42,0.5" />
+    <Body width="215" height="25" density="40" />
+    <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="Katana Worn" texture="katana.png" canbehiddenbyotherwearables="false" rotation="-90" inheritlimbdepth="false" depth="0.51" sourcerect="0,0,215,30" limb="Torso" scale="0.5" origin="0.5,-.22" />
+    </Wearable>
+    <MeleeWeapon slots="RightHand+LeftHand" aimpos="50,10" handle1="-33,0" handle2="-36,4" holdangle="35" reload=".75" range="210" combatPriority="70" msg="ItemMsgPickUpSelect">
+      <Attack targetimpulse="5" severlimbsprobability="0.65" itemdamage="5" structuredamage="5" structuresoundtype="StructureSlash">
+        <Affliction identifier="lacerations" strength="24" />
+        <Affliction identifier="bleeding" strength="35" />
+        <Affliction identifier="stun" strength="0.2" />
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Character" SpeedMultiplier="1.1" setvalue="true" />
+      </Attack>
+    </MeleeWeapon>
+    <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+    <Quality>
+      <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+    </Quality>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="Sledgehammer" identifier="thgsledge" category="Weapon" Tags="mediumitem,weapon,gunsmith,mountableweapon" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" description="A heavy hammer head on a long stick, making for a hell of a weighty tool, which does just as well at demolishing walls as it does skulls.">
+    <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
+    <PreferredContainer secondary="wrecksecarmcab" spawnprobability="0.02" />
+    <PreferredContainer secondary="abandonedsecarmcab" spawnprobability="0.02" />
+    <Price baseprice="210" minavailable="0" minleveldifficulty="25">
+      <Price storeidentifier="merchantoutpost" multiplier="1.2 " />
+      <Price storeidentifier="merchantcity" multiplier="1.1" minavailable="15" />
+      <Price storeidentifier="merchantresearch" multiplier="1.35" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.35" />
+      <Price storeidentifier="merchantmine" multiplier=".9" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="iron" />
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <RequiredSkill identifier="mechanical" level="40" />
+      <RequiredItem identifier="iron" amount="2" />
+      <RequiredItem identifier="steel" amount="2" />
+    </Fabricate>
+    <InventoryIcon texture="sledgehammericon.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="sledgehammer.png" sourcerect="0,0,215,55" depth="0.55" origin="0.42,0.5" />
+    <Body width="215" height="55" density="50" />
+    <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="Sledge Worn" texture="sledgehammer.png" canbehiddenbyotherwearables="false" rotation="-90" inheritlimbdepth="false" depth="0.51" sourcerect="0,0,215,55" limb="Torso" scale="0.5" origin="0.5,-.15" />
+    </Wearable>
+    <MeleeWeapon slots="RightHand+LeftHand" aimpos="50,10" penetration="0.25" handle1="-33,0" handle2="-36,12" holdangle="40" reload="3" range="235" combatPriority="70" msg="ItemMsgPickUpSelect">
+      <Attack targetimpulse="25" severlimbsprobability="0.35" itemdamage="40" structuredamage="25" structuresoundtype="impact_metal_heavy">
+        <Affliction identifier="blunttrauma" strength="50" />
+        <Affliction identifier="stun" strength="2.1" />
+        <Affliction identifier="concussion" strength="2" />
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Sound file="Content/Items/Weapons/Smack1.ogg" selectionmode="random" range="500" />
+          <Sound file="Content/Items/Weapons/Smack2.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.85" setvalue="true" />
+      </Attack>
+    </MeleeWeapon>
+    <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+    <Quality>
+      <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+    </Quality>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="Shock Sledge" identifier="thgshocksledge" category="Weapon" Tags="mediumitem,weapon,gunsmith,stunner,mountableweapon" cargocontaineridentifier="metalcrate" scale="0.58" impactsoundtag="impact_metal_light" RequireAimToUse="True" description="A heavy hammer head on a long stick, making for a hell of a weighty tool, which does just as well at demolishing walls as it does skulls. Augmented with a shorter handle and capacitor discharge system, it packs a little less blunt force oomph, but is still plenty capable of cracking skulls and laying out all but the largest creatures with electric voltage.">
+    <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
+    <PreferredContainer secondary="wrecksecarmcab" spawnprobability="0.02" />
+    <PreferredContainer secondary="abandonedsecarmcab" spawnprobability="0.02" />
+    <Price baseprice="550" minleveldifficulty="50">
+      <Price storeidentifier="merchantresearch" multiplier="1.15" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.35" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="copper" />
+      <Item identifier="steel" />
+      <Item identifier="fulgurium" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="60">
+      <RequiredSkill identifier="mechanical" level="55" />
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredSkill identifier="electrical" level="35" />
+      <RequiredItem identifier="fulgurium" amount="2" />
+      <RequiredItem identifier="copper" amount="2" />
+      <RequiredItem identifier="steel" amount="2" />
+    </Fabricate>
+    <InventoryIcon texture="sledgehammericon.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="shocksledge.png" sourcerect="0,0,168,55" depth="0.55" origin="0.42,0.5" />
+    <Body width="168" height="55" density="50" />
+    <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="Sledge Worn" texture="shocksledge.png" canbehiddenbyotherwearables="false" rotation="-90" inheritlimbdepth="false" depth="0.51" sourcerect="0,0,168,55" limb="Torso" scale="0.55" origin="0.5,-.15" />
+    </Wearable>
+    <MeleeWeapon slots="RightHand+LeftHand" aimpos="50,10" penetration="0.25" handle1="-33,0" handle2="-36,12" holdangle="40" reload="3" range="170" combatPriority="49" msg="ItemMsgPickUpSelect" preferredcontaineditems="mobilebattery">
+      <Attack targetimpulse="30" severlimbsprobability="0.35" itemdamage="30" structuredamage="18" structuresoundtype="impact_metal_heavy">
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Conditional entitytype="eq Character" />
+          <Sound file="Content/Items/Weapons/Smack1.ogg" selectionmode="random" range="500" />
+          <Sound file="Content/Items/Weapons/Smack2.ogg" range="500" />
+        </StatusEffect>
+        <Affliction identifier="blunttrauma" strength="30" />
+        <Affliction identifier="concussion" strength="2" />
+        <Affliction identifier="stun" strength="2" />
+      </Attack>
+      <!-- changed to use incremental stun: normal batteries cause 40 points of incremental stun -> full stun in three consecutive hits -->
+      <!-- keep weight check in place for now (affect targets with mass < 60) -->
+      <StatusEffect type="OnUse" target="UseTarget" disabledeltatime="true">
+        <Affliction identifier="stun" strength="1.5" />
+        <Affliction identifier="incrementalstun" strength="40" />
+        <sound file="Content/Items/Weapons/StunBaton1.ogg" selectionmode="random" range="500" />
+        <sound file="Content/Items/Weapons/StunBaton2.ogg" range="500" />
+        <sound file="Content/Items/Weapons/StunBaton3.ogg" range="500" />
+        <sound file="Content/Items/Weapons/StunBaton4.ogg" range="500" />
+        <RequiredItem items="batterycell" type="Contained" msg="ItemMsgBatteryCellRequired" />
+        <Explosion range="125.0" force="0.5" size=".5" shockwave="true" flames="false" smoke="false" underwaterbubble="false" camerashake="15.0" />
+        <Conditional mass="lt 95" />
+      </StatusEffect>
+      <!-- changed to use incremental stun: fulgurium batteries cause 55 points of incremental stun -> full stun in two consecutive hits -->
+      <!-- keep weight check in place for now (affect targets with mass < 150) -->
+      <StatusEffect type="OnUse" target="UseTarget" disabledeltatime="true">
+        <Affliction identifier="stun" strength="2" />
+        <Affliction identifier="incrementalstun" strength="55" />
+        <sound file="Content/Items/Weapons/StunBaton1.ogg" selectionmode="random" range="500" />
+        <sound file="Content/Items/Weapons/StunBaton2.ogg" range="500" />
+        <sound file="Content/Items/Weapons/StunBaton3.ogg" range="500" />
+        <sound file="Content/Items/Weapons/StunBaton4.ogg" range="500" />
+        <RequiredItem items="fulguriumbatterycell" type="Contained" msg="ItemMsgBatteryCellRequired" />
+        <Explosion range="135.0" force="1" size=".55" shockwave="true" flames="false" smoke="true" underwaterbubble="false" camerashake="20.0" />
+        <Conditional mass="lt 250" />
+      </StatusEffect>
+      <!-- 4 usages with normal battery -->
+      <StatusEffect type="OnUse" target="Contained,UseTarget" Condition="-25.0" disabledeltatime="true">
+        <RequiredItem items="mobilebattery" type="Contained" msg="ItemMsgBatteryCellRequired" />
+        <Conditional entitytype="eq Character" />
+      </StatusEffect>
+    </MeleeWeapon>
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+      <Containable items="mobilebattery" />
+    </ItemContainer>
+    <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+    <Quality>
+      <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+    </Quality>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="Fireax" identifier="thgfireax" category="Weapon" Tags="mediumitem,weapon,mountableweapon,dooropeningtool,crowbaritem,crowbar" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" description="A heavy, hardened steel axe head on a sturdy handle with a prying hook. Very useful for breaching hulls and doors in emergency situations, though it's bulk and heavy head make it less utilitous, though still viable, as a weapon.">
+    <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
+    <PreferredContainer secondary="wrecksecarmcab" spawnprobability="0.02" />
+    <PreferredContainer secondary="abandonedsecarmcab" spawnprobability="0.02" />
+    <Price baseprice="250" maxavailable="3" minleveldifficulty="35">
+      <Price storeidentifier="merchantoutpost" multiplier="1.2 " />
+      <Price storeidentifier="merchantcity" multiplier="1.1" minavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.35" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.35" />
+      <Price storeidentifier="merchantmine" multiplier=".9" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="plastic" />
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <RequiredSkill identifier="mechanical" level="40" />
+      <RequiredSkill identifier="weapons" level="25" />
+      <RequiredItem identifier="plastic" amount="2" />
+      <RequiredItem identifier="steel" amount="2" />
+    </Fabricate>
+    <InventoryIcon texture="fireaxicon.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="fireax.png" sourcerect="0,0,185,55  " depth="0.55" origin="0.6,0.5" />
+    <Body width="185" height="55" density="40" />
+    <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="Fireax Worn" texture="fireax.png" canbehiddenbyotherwearables="false" rotation="-90" inheritlimbdepth="false" depth="0.51" sourcerect="0,0,185,55" limb="Torso" scale="0.5" origin="0.5,-.15" />
+    </Wearable>
+    <MeleeWeapon slots="RightHand+LeftHand" aimpos="50,10" penetration="0.3" handle1="-33,0" handle2="-36,12" holdangle="40" reload="1.85" range="135" combatPriority="70" msg="ItemMsgPickUpSelect">
+      <Attack targetimpulse="15" severlimbsprobability="0.95" itemdamage="15" structuredamage="18" structuresoundtype="impact_metal_heavy">
+        <Affliction identifier="lacerations" strength="32" />
+        <Affliction identifier="blunttrauma" strength="10" />
+        <Affliction identifier="bleeding" strength="18" />
+        <Affliction identifier="stun" strength="1.25" />
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Sound file="Content/Items/Weapons/Smack1.ogg" selectionmode="random" range="500" />
+          <Sound file="Content/Items/Weapons/Smack2.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.85" setvalue="true" />
+      </Attack>
+    </MeleeWeapon>
+    <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+    <Quality>
+      <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+    </Quality>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="Pickaxe" identifier="thgpick" category="Weapon" Tags="mediumitem,weapon,cuttingequipment,mountableweapon" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" description="A heavy, hardened steel sharp pick head on a sturdy handle. Akin to a spiked sledgehammer, it delivers extremely heavy impacts, designed for breaking up clumps of hardened ore, though it works just as well against softer, fleshier targets.">
+    <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
+    <PreferredContainer secondary="wrecksecarmcab" spawnprobability="0.02" />
+    <PreferredContainer secondary="abandonedsecarmcab" spawnprobability="0.02" />
+    <Price baseprice="210" minavailable="0" minleveldifficulty="10" sold="false">
+      <Price storeidentifier="merchantoutpost" multiplier="1.2 " sold="true" />
+      <Price storeidentifier="merchantmine" multiplier=".9" sold="true" minavailable="2" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="plastic" />
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <RequiredSkill identifier="mechanical" level="50" />
+      <RequiredItem identifier="plastic" amount="3" />
+      <RequiredItem identifier="steel" amount="3" />
+    </Fabricate>
+    <InventoryIcon texture="pickaxeicon.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="pickaxe.png" sourcerect="0,0,180,130" depth="0.55" origin="0.42,0.5" />
+    <Body width="180" height="130" density="50" />
+    <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="Pick Worn" texture="pickaxe.png" canbehiddenbyotherwearables="false" rotation="-90" inheritlimbdepth="false" depth="0.51" sourcerect="0,0,215,55" limb="Torso" scale="0.5" origin="0.5,-.15" />
+    </Wearable>
+    <MeleeWeapon slots="RightHand+LeftHand" aimpos="50,10" penetration="0.5" structurefixamount="-12.5" handle1="-33,0" handle2="-36,12" holdangle="40" reload="2.35" range="190" combatPriority="70" msg="ItemMsgPickUpSelect">
+      <Attack targetimpulse="20" severlimbsprobability="0.65" itemdamage="35" structuredamage="25" structuresoundtype="impact_metal_heavy">
+        <Affliction identifier="lacerations" strength="25" />
+        <Affliction identifier="blunttrauma" strength="12" />
+        <Affliction identifier="explosiondamage" strength="10" />
+        <Affliction identifier="stun" strength="1.5" />
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Sound file="Content/Items/Weapons/Smack1.ogg" selectionmode="random" range="500" />
+          <Sound file="Content/Items/Weapons/Smack2.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.85" setvalue="true" />
+      </Attack>
+    </MeleeWeapon>
+    <RepairTool firedamage="10.0" structurefixamount="-10" range="150" barrelpos="55,10" combatpriority="10" repairmultiple="true" repairthroughwalls="false" maxoverlappingwalldist="0.0" repairthroughholes="true" levelwallfixamount="-0" targetforce="15">
+      <StatusEffect type="OnUse" targettype="Contained" targets="oxygensource" Condition="-1.0" />
+      <StatusEffect type="OnSuccess" targettype="UseTarget" targets="door,ductblock,aliendoor" Stuck="-20.0" />
+      <StatusEffect type="OnSuccess" targettype="UseTarget" Condition="-15.0" />
+      <StatusEffect type="OnSuccess" targettype="Limb" severlimbsprobability="0.005">
+        <Affliction identifier="burn" amount="4.0" />
+      </StatusEffect>
+      <ParticleEmitterHitStructure particle="spark" particlespersecond="10" anglemin="-40" anglemax="40" velocitymin="100" velocitymax="800" size=".5" />
+      <ParticleEmitterHitItem identifiers="door,hatch,ductblock" particle="plasmaspark" particlespersecond="10" anglemin="-40" anglemax="40" velocitymin="100" velocitymax="800" size=".5" />
+      <ParticleEmitterHitItem identifiers="ore" particle="iceshards" particlespersecond="5" anglemin="-40" anglemax="40" velocitymin="10" velocitymax="300" scalemin="0.5" scalemax="1.0" />
+      <ParticleEmitterHitCharacter particle="fleshsmoke" particlespersecond="3" anglemin="-5" anglemax="5" velocitymin="10" velocitymax="100" />
+      <sound file="Content/Items/Tools/PlasmaCutterLoop.ogg" type="OnUse" range="750.0" loop="true" />
+      <Fixable identifier="structure" />
+    </RepairTool>
+    <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+    <Quality>
+      <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+    </Quality>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="Escoba" identifier="thgbroom" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" description="A classic weapon of ass destruction, oft employed by angry aunties on Europa and Terra alike.">
+    <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
+    <PreferredContainer secondary="wrecksecarmcab" spawnprobability="0.02" />
+    <PreferredContainer secondary="abandonedsecarmcab" spawnprobability="0.02" />
+    <Price baseprice="25" minavailable="1">
+      <Price storeidentifier="merchantoutpost" multiplier="1.2 " />
+      <Price storeidentifier="merchantcity" multiplier="1.1" minavailable="15" />
+      <Price storeidentifier="merchantresearch" multiplier="1.35" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.35" />
+      <Price storeidentifier="merchantmine" multiplier=".9" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <RequiredItem identifier="plastic" amount="2" />
+    </Fabricate>
+    <InventoryIcon texture="broomicon.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="broom.png" sourcerect="0,0,215,55" depth="0.55" origin="0.42,0.5" />
+    <Body width="215" height="55" density="50" />
+    <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="Escoba Worn" texture="broom.png" canbehiddenbyotherwearables="false" rotation="-90" inheritlimbdepth="false" depth="0.51" sourcerect="0,0,215,55" limb="Torso" scale="0.5" origin=".5,-.15" />
+    </Wearable>
+    <MeleeWeapon slots="RightHand+LeftHand,Any" aimpos="50,10" penetration="0.25" handle1="-33,0" handle2="-36,12" holdangle="40" reload=".86" range="235" combatPriority="70" msg="ItemMsgPickUpSelect">
+      <Attack targetimpulse="12" severlimbsprobability="0" itemdamage="0" structuredamage="0" structuresoundtype="">
+        <Affliction identifier="blunttrauma" strength="3" />
+        <Affliction identifier="stun" strength=".95" />
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Sound file="Content/Items/Weapons/Smack1.ogg" selectionmode="random" range="500" />
+          <Sound file="Content/Items/Weapons/Smack2.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.85" setvalue="true" />
+      </Attack>
+    </MeleeWeapon>
+    <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+    <Quality>
+      <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+    </Quality>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="Flamberge" identifier="thgflamberge" category="Weapon" Tags="mediumitem,weapon,gunsmith,mountableweapon" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" description="A huge, wavy-bladed greatsword of impeccable quality. Something like this is almost entirely ceremonial and very difficult to swing around in the confines of a submarine, but can chop a man in half nonetheless.">
+    <PreferredContainer primary="wrecksecarmcab" spawnprobability="0.015" />
+    <PreferredContainer secondary="abandonedsecarmcab" spawnprobability="0.01" />
+    <Price baseprice="800">
+      <Price storeidentifier="merchantoutpost" multiplier="1.2" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.4" minavailable="0" sold="false" maxavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.35" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.2" maxavailable="1" sold="false" />
+      <Price storeidentifier="merchantmine" multiplier=".9" sold="false" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="steel" />
+    </Deconstruct>
+    <InventoryIcon texture="greatswordicon.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="greatsword.png" sourcerect="0,0,280,55" depth="0.55" origin="0.42,0.5" />
+    <Body width="280" height="55" density="50" />
+    <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="Greatsword Worn" texture="greatsword.png" canbehiddenbyotherwearables="false" rotation="-90" inheritlimbdepth="false" depth="0.51" sourcerect="0,0,280,55" limb="Torso" scale="0.5" origin="0.5,-.15" />
+    </Wearable>
+    <MeleeWeapon slots="RightHand+LeftHand" aimpos="50,15" penetration="0.25" handle1="-33,0" handle2="-36,12" holdangle="40" reload="2.15" range="285" combatPriority="60" msg="ItemMsgPickUpSelect">
+      <Attack targetimpulse="15" severlimbsprobability="0.9" itemdamage="25" structuredamage="10" structuresoundtype="impact_metal_heavy">
+        <Affliction identifier="lacerations" strength="60" />
+        <Affliction identifier="stun" strength="1.7" />
+        <Affliction identifier="bleeding" strength="50" />
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.85" setvalue="true" />
+      </Attack>
+    </MeleeWeapon>
+    <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+    <Quality>
+      <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+    </Quality>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="Greatsword" identifier="thggreatsword" category="Weapon" Tags="mediumitem,weapon,gunsmith,mountableweapon" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" description="A huge, two-handed sword. Likely forged by some mechanic with spare welding fuel and way too much time on their hands and weirdly knightly aspirations.">
+    <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
+    <PreferredContainer secondary="wrecksecarmcab" spawnprobability="0.02" />
+    <PreferredContainer secondary="abandonedsecarmcab" spawnprobability="0.02" />
+    <Price baseprice="360" minleveldifficulty="60">
+      <Price storeidentifier="merchantoutpost" multiplier="1.2" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.4" minavailable="0" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.35" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.2" maxavailable="1" sold="true" />
+      <Price storeidentifier="merchantmine" multiplier=".9" sold="false" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <RequiredSkill identifier="weapons" level="70" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+      <RequiredItem identifier="steel" amount="4" />
+    </Fabricate>
+    <InventoryIcon texture="straightswordicon.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="straightsword.png" sourcerect="0,0,280,55" depth="0.55" origin="0.42,0.5" />
+    <Body width="280" height="55" density="50" />
+    <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="Great Worn" texture="straightsword.png" canbehiddenbyotherwearables="false" rotation="-90" inheritlimbdepth="false" depth="0.51" sourcerect="0,0,280,55" limb="Torso" scale="0.5" origin="0.55,-.15" />
+    </Wearable>
+    <MeleeWeapon slots="RightHand+LeftHand" aimpos="50,15" penetration="0.2" handle1="-33,0" handle2="-36,12" holdangle="40" reload="2" range="275" combatPriority="60" msg="ItemMsgPickUpSelect">
+      <Attack targetimpulse="12" severlimbsprobability="0.75" itemdamage="20" structuredamage="5" structuresoundtype="impact_metal_heavy">
+        <Affliction identifier="lacerations" strength="50" />
+        <Affliction identifier="stun" strength="1.55" />
+        <Affliction identifier="bleeding" strength="35" />
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.85" setvalue="true" />
+      </Attack>
+    </MeleeWeapon>
+    <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+    <Quality>
+      <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+    </Quality>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="Crisis Hatchet" identifier="thgemergencyaxe" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,dooropeningtool,crowbaritem,crowbar" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" description="A lightweight, one-handed axe with a prying head, for popping doors, hulls, and skulls alike.">
+    <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
+    <PreferredContainer secondary="wrecksecarmcab" spawnprobability="0.02" />
+    <PreferredContainer secondary="abandonedsecarmcab" spawnprobability="0.02" />
+    <Price baseprice="210" minavailable="0" minleveldifficulty="10">
+      <Price storeidentifier="merchantoutpost" multiplier="1.2 " />
+      <Price storeidentifier="merchantcity" multiplier="1.1" minavailable="15" />
+      <Price storeidentifier="merchantresearch" multiplier="1.35" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.35" />
+      <Price storeidentifier="merchantmine" multiplier=".9" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="iron" />
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <RequiredSkill identifier="mechanical" level="40" />
+      <RequiredItem identifier="iron" amount="2" />
+      <RequiredItem identifier="steel" amount="2" />
+    </Fabricate>
+    <InventoryIcon texture="emergencyaxeicon.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="emergencyaxe.png" sourcerect="0,0,125,55" depth="0.55" origin="0.5,0.5" />
+    <Body width="125" height="55" density="50" />
+    <MeleeWeapon slots="RightHand,LeftHand,Any" penetration="0.2" controlpose="true" Scale="0.6" aimpos="45,10" handle1="-20,4" holdangle="45" reload="1.3" range="105" combatPriority="70" msg="ItemMsgPickUpSelect">
+      <Attack targetimpulse="25" severlimbsprobability="0.7" itemdamage="20" structuredamage="20" structuresoundtype="impact_metal_heavy">
+        <Affliction identifier="bleeding" strength="10" />
+        <Affliction identifier="blunttrauma" strength="5" />
+        <Affliction identifier="lacerations" strength="18" />
+        <Affliction identifier="stun" strength=".9" />
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.85" setvalue="true" />
+      </Attack>
+    </MeleeWeapon>
+    <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+    <Quality>
+      <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+    </Quality>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <!--    <sprite name="Exosuit Helmet Wearable" texture="Content/Items/Jobgear/Mechanic/Exosuit.png" limb="Head" hidelimb="true" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.65" hideotherwearables="true" hidewearablesoftype="" sourcerect="0,0,1,1" origin="0.5,0.5" />
+      <sprite name="Exosuit Torso" texture="Content/Items/Jobgear/Mechanic/Exosuit.png" limb="Torso" scale="1.2" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" origin="0.5,0.8" inheritlimbdepth="true" inheritsourcerect="false" sourcerect="167,1,203,193">
+        <LightComponent range="200.0" lightcolor="250,224,165,255" powerconsumption="10" IsOn="true" allowingameediting="false" offset="-50,-50">
+          <LightTexture texture="Content/Lights/divinghelmetlight.png" origin="0.05, 0.5" size="1.0,1.0" />
+        </LightComponent>
+      </sprite>
+      <sprite name="Exosuit Right Hand" texture="Content/Items/Jobgear/Mechanic/Exosuit.png" limb="RightHand" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="false" inheritlimbdepth="true" SourceRect="383,160,64,48" />
+      <sprite name="Exosuit Left Hand" texture="Content/Items/Jobgear/Mechanic/Exosuit.png" limb="LeftHand" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="false" SourceRect="447,160,64,48" />
+      <sprite name="Exosuit Right Upper Arm" texture="Content/Items/Jobgear/Mechanic/Exosuit.png" limb="RightArm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="false" inheritlimbdepth="true" SourceRect="383,0,64,96" />
+      <sprite name="Exosuit Left Upper Arm" texture="Content/Items/Jobgear/Mechanic/Exosuit.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="false" SourceRect="447,0,64,96" />
+      <sprite name="Exosuit Right Forearm" texture="Content/Items/Jobgear/Mechanic/Exosuit.png" limb="RightForearm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="false" inheritlimbdepth="true" SourceRect="383,96,64,64" />
+      <sprite name="Exosuit Left Forearm" texture="Content/Items/Jobgear/Mechanic/Exosuit.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="false" SourceRect="447,96,64,64"  />
+      <sprite name="Exosuit Waist" texture="Content/Items/Jobgear/Mechanic/Exosuit.png" limb="Waist" hidelimb="true" scale="1.2" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" origin="0.5,0.5" inheritsourcerect="false" inheritlimbdepth="true" sourcerect="182,196,178,53" />
+      <sprite name="Exosuit Right Thigh" texture="Content/Items/Jobgear/Mechanic/Exosuit.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" origin="0.5,0.5" inheritsourcerect="false" inheritlimbdepth="true" sourcerect="0,0,96,112" />
+      <sprite name="Exosuit Left Thigh" texture="Content/Items/Jobgear/Mechanic/Exosuit.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" origin="0.5,0.5" inheritsourcerect="false" sourcerect="0,0,96,112" />
+      <sprite name="Exosuit Right Leg" texture="Content/Items/Jobgear/Mechanic/Exosuit.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritlimbdepth="true" inheritsourcerect="true" />
+      <sprite name="Exosuit Left Leg" texture="Content/Items/Jobgear/Mechanic/Exosuit.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Exosuit Left Shoe" texture="Content/Items/Jobgear/Mechanic/Exosuit.png" limb="LeftFoot" sound="footstep_armor_heavy" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" origin="0.2,0.5" inheritsourcerect="false" sourcerect="371,211,133,37" />
+      <sprite name="Exosuit Right Shoe" texture="Content/Items/Jobgear/Mechanic/Exosuit.png" limb="RightFoot" sound="footstep_armor_heavy" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" origin="0.2,0.5" inheritsourcerect="false" sourcerect="371,211,133,37" />
+     !-->
+  <Item name="Hammerhunter Harpoon" identifier="thghandheldspear1" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,mountableweapon" Scale="0.225" description="A huge, sharp, pronged harpoon designed for masochists who think that fighting a hammerhead with a harpoon is a good idea. It's far too large to be fired from a harpoon gun, but is instead meant to be thrust like a spear." impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="spaericon.png" sourcerect="0,0,64,64" />
+    <Sprite texture="spaer.png" sourcerect="2,713,932,45" depth="0.55" origin="0.5,0.5" />
+    <BrokenSprite texture="spaer.png" sourcerect="2,762,932,45" depth="0.55" maxcondition="0.01" fadein="False" />
+    <Body width="900" height="40" density="25" />
+    <Price baseprice="250" minavailable="0" minleveldifficulty="35">
+      <Price storeidentifier="merchantoutpost" multiplier="1.2 " />
+      <Price storeidentifier="merchantcity" multiplier="1.1" minavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.35" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.35" />
+      <Price storeidentifier="merchantmine" multiplier=".9" />
+    </Price>
+    <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="-20,-15" aimpos="40,-40" handle1="-200,0" handle2="100,-10" holdangle="120" aimangle="15" msg="ItemMsgPickUpSelect" />
+    <RangedWeapon reload=".85" weapondamagemodifier="1" penetration="0.45" holdtrigger="false" barrelpos="60,15" spread="0" unskilledspread="0" combatPriority="-1" drawhudwhenequipped="false" crosshairscale="0.2">
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true" />
+      <StatusEffect type="OnUse" target="Contained">
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This">
+        <Spawnitem identifiers="thgspear1damagevolume" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </RangedWeapon>
+    <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="Simple Spear Worn" texture="spaer.png" canbehiddenbyotherwearables="false" sourcerect="2,713,932,45" rotation="270" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.21" origin="0.55,-1.3" />
+    </Wearable>
+    <ItemContainer capacity="1" maxstacksize="1" SpawnWithId="thgspear1thruster,thgspear1damagevolume" hideitems="false" drawinventory="false" canbeselected="false" removecontaineditemsondeconstruct="true" ShowConditionInContainedStateIndicator="true" containedspritedepth="0.56">
+      <Containable items="thgspear1thruster" hide="false" itempos="-65,0" />
+      <SubContainer capacity="1" maxstacksize="1" drawinventory="false" canbeselected="false">
+        <Containable items="thgspear1damagevolume" hide="false" itempos="85,0" />
+      </SubContainer>
+    </ItemContainer>
+    <aitarget sightrange="2000" soundrange="4000" fadeouttime="5" />
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <!-- Spear Thruster -->
+  <Item name="ཀSpear Thruster" identifier="thgspear1thruster" hideinmenus="true" category="Material" Tags="smallitem" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.35" impactsoundtag="impact_metal_light" spritecolor="0,0,0,0" inventoryiconcolor="0,0,0,0">
+    <InventoryIcon texture="spaericon.png" sourcerect="0,0,69,69" />
+    <Sprite texture="tantoicon.png" sourcerect="512,217,61,31" depth="0.55" origin="0.5,0.5" />
+    <Body width="45" height="30" density="30" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnUse" target="this">
+        <Explosion range="100.0" force="8" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" flash="false" camerashake="0" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <!-- Spear Damage Volume -->
+  <Item name="ཀSpear Damage Volume" identifier="thgspear1damagevolume" hideinmenus="true" category="Material" Tags="smallitem" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.35" spritecolor="0,0,0,0" inventoryiconcolor="0,0,0,0">
+    <InventoryIcon texture="tantoicon.png" sourcerect="512,217,61,31" />
+    <Sprite texture="tantoicon.png" sourcerect="512,217,61,31" depth="0.55" origin="0.5,0.5" />
+    <Body width="45" height="30" density="0" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" launchimpulse="10" hitscan="false" removeonhit="true">
+      <Attack structuredamage="10" itemdamage="20" targetforce="20" severlimbsprobability="0.15">
+        <Affliction identifier="lacerations" strength="36" />
+        <Affliction identifier="bleeding" strength="8" />
+        <Affliction identifier="explosiondamage" strength="10" probability="0.1" />
+        <Affliction identifier="stun" strength="1" />
+        <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+      </Attack>
+      <StatusEffect type="OnUse" target="This" delay="0.15">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <Item name="Lunge Bomb" identifier="thghandheldspear2" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,mountableweapon" Scale="0.225" description="A simple, yet extremely dangerous weapon- for both the user and the target. Essentially a long spear which has had it's head replaced with a modified 40mm grenade, which detonates via kinetic detonator when thrust forward quickly." impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="boomspaericon.png" sourcerect="0,0,64,64" />
+    <Sprite texture="boomspaer.png" sourcerect="2,713,932,45" depth="0.55" origin="0.5,0.5" />
+    <BrokenSprite texture="boomspaer.png" sourcerect="2,762,932,45" depth="0.55" maxcondition="0.01" fadein="False" />
+    <Body width="900" height="40" density="25" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <RequiredSkill identifier="mechanical" level="40" />
+      <RequiredSkill identifier="weapons" level="25" />
+      <RequiredItem identifier="plastic" amount="2" />
+      <RequiredItem identifier="steel" amount="1" />
+      <RequiredItem identifier="40mmgrenade" amount="1" />
+    </Fabricate>
+    <Fabricate suitablefabricators="fabricator" requiredtime="5">
+      <RequiredSkill identifier="mechanical" level="25" />
+      <RequiredSkill identifier="weapons" level="20" />
+      <RequiredItem identifier="40mmgrenade" amount="1" />
+      <RequiredItem identifier="thghandheldspear2" maxcondition="0" usecondition="false" />
+    </Fabricate>
+    <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="-20,-15" aimpos="40,-40" handle1="-200,0" handle2="100,-10" holdangle="120" aimangle="15" msg="ItemMsgPickUpSelect" />
+    <RangedWeapon reload="1.0" weapondamagemodifier="1.3" penetration="0.15" holdtrigger="false" barrelpos="270,0" spread="0" unskilledspread="0" combatPriority="-1" drawhudwhenequipped="false" crosshairscale="0.2">
+      <StatusEffect type="OnUse" target="This" Condition="-100" disabledeltatime="true" />
+      <!-- 150 uses -->
+      <StatusEffect type="OnUse" target="Contained">
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This">
+        <Spawnitem identifiers="thgspear2damagevolume" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </RangedWeapon>
+    <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="Simple Spear Worn" texture="boomspaer.png" canbehiddenbyotherwearables="false" sourcerect="2,713,932,45" rotation="270" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.21" origin="0.55,-1.3" />
+    </Wearable>
+    <ItemContainer capacity="1" maxstacksize="1" SpawnWithId="thgspear2thruster,thgspear2damagevolume" hideitems="false" drawinventory="false" canbeselected="false" removecontaineditemsondeconstruct="true" ShowConditionInContainedStateIndicator="true" containedspritedepth="0.56">
+      <Containable items="thgspear2thruster" hide="false" itempos="-65,0" />
+      <SubContainer capacity="1" maxstacksize="1" drawinventory="false" canbeselected="false">
+        <Containable items="thgspear2damagevolume" hide="false" itempos="85,0" />
+      </SubContainer>
+    </ItemContainer>
+    <aitarget sightrange="2000" soundrange="4000" fadeouttime="5" />
+    <Quality>
+      <QualityStat stattype="ExplosionDamage" value="0.15" />
+    </Quality>
+  </Item>
+  <!-- Spear Thruster -->
+  <Item name="ཀThg Spear 2 Thruster" identifier="thgspear2thruster" hideinmenus="true" category="Material" Tags="smallitem" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.35" impactsoundtag="impact_metal_light" spritecolor="0,0,0,0" inventoryiconcolor="0,0,0,0">
+    <InventoryIcon texture="boomspaericon.png" sourcerect="0,0,69,69" />
+    <Sprite texture="boomspaer.png" sourcerect="2,713,932,45" depth="0.55" origin="0.5,0.5" />
+    <Body width="45" height="30" density="30" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnUse" target="this">
+        <Explosion range="100.0" force="8" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" flash="false" camerashake="0" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <!-- Spear Damage Volume -->
+  <Item name="ཀThg Spear 2 Damage Volume" identifier="thgspear2damagevolume" hideinmenus="true" category="Material" Tags="smallitem" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.35" spritecolor="0,0,0,0" inventoryiconcolor="0,0,0,0">
+    <InventoryIcon texture="boomspaericon.png" sourcerect="0,0,69,69" />
+    <Sprite texture="boomspaer.png" sourcerect="2,713,932,45" depth="0.55" origin="0.5,0.5" />
+    <Body width="45" height="30" density="0" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" launchimpulse="10" hitscan="false" removeonhit="true">
+      <Attack structuredamage="25" itemdamage="20" targetforce="20" severlimbsprobability="0.1">
+        <Affliction identifier="lacerations" strength="18" />
+        <Affliction identifier="bleeding" strength="10" />
+        <Affliction identifier="stun" strength="0.25" />
+        <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+      </Attack>
+      <StatusEffect type="OnImpact" target="This">
+        <sound file="Content/Items/Weapons/ExplosionMedium1.ogg" range="3000" />
+        <sound file="Content/Items/Weapons/ExplosionMedium2.ogg" range="3000" />
+        <sound file="Content/Items/Weapons/ExplosionMedium3.ogg" range="3000" />
+        <Explosion range="85.0" ballastfloradamage="125" structuredamage="90" itemdamage="300" force="25" penetration=".6" severlimbsprobability="0.5" decal="explosion" decalsize="0.37">
+          <Affliction identifier="explosiondamage" strength="75" dividebylimbcount="true" />
+          <Affliction identifier="burn" strength="100" probability="1" dividebylimbcount="true" />
+          <Affliction identifier="bleeding" strength="50" probability=".75" dividebylimbcount="false" />
+          <Affliction identifier="bleeding" strength="150" probability="0.5" dividebylimbcount="false" />
+          <Affliction identifier="stun" strength="5" />
+        </Explosion>
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" delay="0.15">
+        <sound file="Content/Items/Weapons/ExplosionMedium1.ogg" range="3000" />
+        <sound file="Content/Items/Weapons/ExplosionMedium2.ogg" range="3000" />
+        <sound file="Content/Items/Weapons/ExplosionMedium3.ogg" range="3000" />
+        <Explosion range="125.0" ballastfloradamage="125" structuredamage="90" itemdamage="300" force="25" penetration=".6" severlimbsprobability="0.5" decal="explosion" decalsize="0.37">
+          <Affliction identifier="explosiondamage" strength="50" dividebylimbcount="true" />
+          <Affliction identifier="burn" strength="100" probability="1" dividebylimbcount="true" />
+          <Affliction identifier="bleeding" strength="50" probability=".75" dividebylimbcount="false" />
+          <Affliction identifier="bleeding" strength="150" probability="0.5" dividebylimbcount="false" />
+          <Affliction identifier="stun" strength="5" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" delay="0.17">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <Item name="Kitchen Knife" identifier="thgkitchenknife" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,mountableweapon" Scale="0.5" description="A lightweight, cheap steel kitchen knife. It's an extremely common utensil for a variety of reasons, but it can double as a fairly decent stabbing weapon in a pinch, though it is very short." impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="kitchenknife_icon.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="kitchenknife.png" sourcerect="0,0,115,30" depth="0.55" origin="0.5,0.5" />
+    <Body width="115" height="30" density="25" />
+    <Price baseprice="250" minavailable="0" minleveldifficulty="35">
+      <Price storeidentifier="merchantoutpost" multiplier="1.2 " />
+      <Price storeidentifier="merchantcity" multiplier="1.1" minavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.35" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.35" />
+      <Price storeidentifier="merchantmine" multiplier=".9" />
+    </Price>
+    <Holdable slots="Any,RightHand,LeftHand" aimpos="50,10" aimangle="-20" handle1="-32,0" holdangle="45" msg="ItemMsgPickUpSelect" />
+    <RangedWeapon reload=".58" weapondamagemodifier="1" penetration="0.2" holdtrigger="false" barrelpos="5,5" spread="0" unskilledspread="0" combatPriority="-1" drawhudwhenequipped="false" crosshairscale="0.2">
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true" />
+      <StatusEffect type="OnUse" target="Contained">
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This">
+        <Spawnitem identifiers="thgkitchenknifedamagevolume" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </RangedWeapon>
+    <ItemContainer capacity="1" maxstacksize="1" SpawnWithId="thgkitchenknifethruster,thgkitchenknifedamagevolume" hideitems="false" drawinventory="false" canbeselected="false" removecontaineditemsondeconstruct="true" ShowConditionInContainedStateIndicator="true" containedspritedepth="0.56">
+      <Containable items="thgkitchenknifethruster" hide="false" itempos="-65,0" />
+      <SubContainer capacity="1" maxstacksize="1" drawinventory="false" canbeselected="false">
+        <Containable items="thgkitchenknifedamagevolume" hide="false" itempos="85,0" />
+      </SubContainer>
+    </ItemContainer>
+    <aitarget sightrange="2000" soundrange="4000" fadeouttime="5" />
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <!-- Spear Thruster -->
+  <Item name="ཀkitchenknife Thruster" identifier="thgkitchenknifethruster" hideinmenus="true" category="Material" Tags="smallitem" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.35" impactsoundtag="impact_metal_light" spritecolor="0,0,0,0" inventoryiconcolor="0,0,0,0">
+    <InventoryIcon texture="spaericon.png" sourcerect="0,0,69,69" />
+    <Sprite texture="tantoicon.png" sourcerect="512,217,31,31" depth="0.55" origin="0.5,0.5" />
+    <Body width="20" height="15" density="30" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnUse" target="this">
+        <Explosion range="100.0" force="8" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" flash="false" camerashake="0" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <!-- Spear Damage Volume -->
+  <Item name="ཀkitchenknife Damage Volume" identifier="thgkitchenknifedamagevolume" hideinmenus="true" category="Material" Tags="smallitem" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.35" spritecolor="0,0,0,0" inventoryiconcolor="0,0,0,0">
+    <InventoryIcon texture="tantoicon.png" sourcerect="512,217,61,31" />
+    <Sprite texture="tantoicon.png" sourcerect="512,217,15,15" depth="0.55" origin="0.5,0.5" />
+    <Body width="15" height="15" density="0" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" launchimpulse="12" hitscan="false" removeonhit="true">
+      <Attack structuredamage="1" itemdamage="2" targetforce="5" severlimbsprobability="0.15">
+        <Affliction identifier="lacerations" strength="12" />
+        <Affliction identifier="bleeding" strength="10" />
+        <Affliction identifier="bleeding" strength="30" probability="0.1" />
+        <Affliction identifier="stun" strength=".5" />
+        <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+      </Attack>
+      <StatusEffect type="OnUse" target="This" delay="0.075">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <Item name="Makeshift Spear" identifier="thghandheldspear3ms" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,mountableweapon" Scale="0.3" description="A huge, sharp, pronged harpoon designed for masochists who think that fighting a hammerhead with a harpoon is a good idea. It's far too large to be fired from a harpoon gun, but is instead meant to be thrust like a spear." impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="spaericon.png" sourcerect="0,0,64,64" />
+    <Sprite texture="makeshiftspaer.png" sourcerect="2,713,600,45" depth="0.55" origin="0.5,0.5" />
+    <BrokenSprite texture="makeshiftspaer.png" sourcerect="2,762,600,45" depth="0.55" maxcondition="0.01" fadein="False" />
+    <Body width="600" height="40" density="25" />
+    <Price baseprice="250" minavailable="0" minleveldifficulty="35">
+      <Price storeidentifier="merchantoutpost" multiplier="1.2 " />
+      <Price storeidentifier="merchantcity" multiplier="1.1" minavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.35" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.35" />
+      <Price storeidentifier="merchantmine" multiplier=".9" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <RequiredSkill identifier="weapons" level="25" />
+      <RequiredItem identifier="thgbroom" amount="1" />
+      <RequiredItem identifier="organicfiber" amount="1" />
+      <RequiredItem identifier="thgkitchenknife" amount="1" />
+    </Fabricate>
+    <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="-20,-15" aimpos="40,-40" handle1="-200,0" handle2="100,-10" holdangle="120" aimangle="15" msg="ItemMsgPickUpSelect" />
+    <RangedWeapon reload=".85" weapondamagemodifier="1" penetration="0.45" holdtrigger="false" barrelpos="60,15" spread="0" unskilledspread="0" combatPriority="-1" drawhudwhenequipped="false" crosshairscale="0.2">
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true" />
+      <StatusEffect type="OnUse" target="Contained">
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This">
+        <Spawnitem identifiers="thgspear3msdamagevolume" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </RangedWeapon>
+    <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="Simple Spear Worn" texture="makeshiftspaer.png" canbehiddenbyotherwearables="false" sourcerect="2,713,560,45" rotation="270" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.21" origin="0.55,-1.3" />
+    </Wearable>
+    <ItemContainer capacity="1" maxstacksize="1" SpawnWithId="thgspear3msthruster,thgspear3msdamagevolume" hideitems="false" drawinventory="false" canbeselected="false" removecontaineditemsondeconstruct="true" ShowConditionInContainedStateIndicator="true" containedspritedepth="0.56">
+      <Containable items="thgspear3msthruster" hide="false" itempos="-65,0" />
+      <SubContainer capacity="1" maxstacksize="1" drawinventory="false" canbeselected="false">
+        <Containable items="thgspear3msdamagevolume" hide="false" itempos="85,0" />
+      </SubContainer>
+    </ItemContainer>
+    <aitarget sightrange="2000" soundrange="4000" fadeouttime="5" />
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <!-- Spear Thruster -->
+  <Item name="ཀSpear Thruster" identifier="thgspear3msthruster" hideinmenus="true" category="Material" Tags="smallitem" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.35" impactsoundtag="impact_metal_light" spritecolor="0,0,0,0" inventoryiconcolor="0,0,0,0">
+    <InventoryIcon texture="spaericon.png" sourcerect="0,0,69,69" />
+    <Sprite texture="tantoicon.png" sourcerect="512,217,61,31" depth="0.55" origin="0.5,0.5" />
+    <Body width="45" height="30" density="30" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnUse" target="this">
+        <Explosion range="100.0" force="8" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" flash="false" camerashake="0" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <!-- Spear Damage Volume -->
+  <Item name="ཀSpear Damage Volume" identifier="thgspear3msdamagevolume" hideinmenus="true" category="Material" Tags="smallitem" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.35" spritecolor="0,0,0,0" inventoryiconcolor="0,0,0,0">
+    <InventoryIcon texture="tantoicon.png" sourcerect="512,217,61,31" />
+    <Sprite texture="tantoicon.png" sourcerect="512,217,61,31" depth="0.55" origin="0.5,0.5" />
+    <Body width="45" height="30" density="0" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" launchimpulse="10" hitscan="false" removeonhit="true">
+      <Attack structuredamage="5" itemdamage="10" targetforce="20" severlimbsprobability="0.15">
+        <Affliction identifier="lacerations" strength="25" />
+        <Affliction identifier="bleeding" strength="10" />
+        <Affliction identifier="bleeding" strength="20" probability="0.1" />
+        <Affliction identifier="stun" strength=".6" />
+        <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+      </Attack>
+      <StatusEffect type="OnUse" target="This" delay="0.125">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+</Items>

@@ -20,17 +20,11 @@ Thalassophobia
 Functional Necrosis (INSPIRATION ONLY)
 Improved Husks / Huskmod
 Husk Church Mod (?)
+THG Armory
 
 CREDIT:
-Laserman (Sprites)
-Sir doge that hovers 2900 (Ideas & Testing)
-Starempire42 (Bug Testing)
-
-DONATORS:
-Bulletsite
-Tony Salisbury
-whitegote
-CPO Chuckles || KD
-Mr. Vollidiot
+C. Tenance (Original mod)
+Arkadi (Spritework)
+funnycat101 (Moral Support)
 
 ===================================DISCLAIMER===================================

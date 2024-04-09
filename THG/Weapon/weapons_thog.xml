@@ -304,7 +304,7 @@
     <Sprite texture="blunderbuss.png" sourcerect="0,0,150,50" depth="0.55" origin=".52,0.4" />
     <BrokenSprite texture="blunderbuss_shoot.png" sourcerect="0,0,150,50" depth="0.55" origin=".52,0.4" />
     <Body width="150" height="50" density="25" />
-    <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="27,-15" aimpos="70,4" handle1="-50,-10" handle2="10,-3" holdangle="-25" />
+    <Holdable slots="RightHand+LeftHand,Any" controlpose="true" holdpos="27,-15" aimpos="70,4" handle1="-50,-10" handle2="10,-3" holdangle="-25" />
     <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
       <sprite name="Blunderbuss Worn" texture="blunderbuss.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,150,50" limb="Torso" scale="0.5" origin="0.5,1.0" />
     </Wearable>
@@ -364,7 +364,7 @@
     </Deconstruct>
     <Sprite texture="assaultshotgun.png" sourcerect="0,0,190,52" depth="0.55" origin="0.55,0.3" />
     <Body width="190" height="52" density="25" />
-    <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="40,-10" aimpos="55,5" handle1="-25,-16" handle2="26,0" holdangle="-40" msg="ItemMsgPickUpSelect">
+    <Holdable slots="RightHand+LeftHand,Any" controlpose="true" holdpos="40,-10" aimpos="55,5" handle1="-25,-16" handle2="26,0" holdangle="-40" msg="ItemMsgPickUpSelect">
       <!--semi-auto tag-->
       <StatusEffect type="OnUse" target="This" ReloadTimer="1" setvalue="true">
         <Conditional HasTag="eq used" />
@@ -601,7 +601,7 @@
     </Quality>
     <Upgrade gameversion="0.10.0.0" scale="0.55" />
   </Item>
-  <Item name="Autopistol" identifier="thgautopistol" aliases="autopistol" requireaimtouse="false" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light" description="A compact .45 caliber pistol. Relatively easy to handle thanks to its light weight, and packs a decent punch against light targets. It can only load compact .45 magazines - others are too bulky to fit in it's frame. Also unlike a revolver, it includes a rail for mounting and underbarrel flashlight.">
+  <Item name="Autopistol" identifier="thgautopistol" aliases="autopistol" requireaimtouse="false" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light" description="A compact civilian .45 caliber pistol. Easy to handle thanks to its light weight packing a decent punch against light targets. Only fits compact .45 magazines, and includes a rail for mounting and underbarrel flashlight.">
     <PreferredContainer primary="secarmcab" amount="1" spawnprobability="0" notcampaign="true" />
     <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.1" />
     <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" amount="1" spawnprobability="0.1" />
@@ -831,7 +831,7 @@
     </Quality>
     <Upgrade gameversion="0.10.0.0" scale="0.5" />
   </Item>
-  <Item name="Compact .45 Magazine" identifier="compactsmgmagazine" maxstacksize="3" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,smgammo,compactsmgammo" impactsoundtag="impact_metal_light" description="A limited-capacity .45 magazine, most often traded in coalition territories due to it's lessened regulations on the legal market.">
+  <Item name="Compact .45 Magazine" identifier="compactsmgmagazine" maxstacksize="3" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,smgammo,compactsmgammo" impactsoundtag="impact_metal_light" description="A limited-capacity .45 magazine, most often traded to avoid Coalition regulations on civilian firearms.">
     <PreferredContainer primary="autopistol" amount="1" spawnprobability="1" />
     <PreferredContainer primary="vintageautopistol" amount="1" spawnprobability="1" />
     <PreferredContainer primary="armcab" amount="1" spawnprobability="1" notcampaign="true" />
@@ -851,13 +851,13 @@
       <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="4" />
     </Price>
     <Fabricate suitablefabricators="fabricator" requiredtime="30" requiresrecipe="false">
-      <RequiredSkill identifier="weapons" level="30" />
+      <RequiredSkill identifier="weapons" level="20" />
       <RequiredItem identifier="lead" />
       <RequiredItem identifier="magnesium" />
       <RequiredItem identifier="steel" />
     </Fabricate>
     <Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="false" displayname="recycleitem">
-      <RequiredSkill identifier="weapons" level="30" />
+      <RequiredSkill identifier="weapons" level="20" />
       <RequiredItem identifier="lead" />
       <RequiredItem identifier="magnesium" />
       <RequiredItem identifier="compactsmgmagazine" mincondition="0.0" maxcondition="0.1" usecondition="false" />
@@ -1798,7 +1798,7 @@
     <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
       <sprite name="Levergun Makeshift Worn" texture="levergun.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,150,50" limb="Torso" scale="0.5" origin="0.5,0.5" />
     </Wearable>
-    <RangedWeapon barrelpos="74,10" weapondamagemodifier=".9" penetration=".1" spread="3" unskilledspread="8.5" combatPriority="70" reload="1.5" reloadnoskill="2.55" reloadskillrequirement="50" drawhudwhenequipped="true" crosshairscale="0.15">
+    <RangedWeapon barrelpos="74,10" weapondamagemodifier=".9" penetration=".1" spread="3" unskilledspread="8.5" combatPriority="70" reload="1.2" reloadnoskill="1.75" reloadskillrequirement="50" drawhudwhenequipped="true" crosshairscale="0.15">
       <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="Content/Items/Weapons/Revolver1.ogg" type="OnUse" range="3000" selectionmode="Random" />
       <Sound file="Content/Items/Weapons/Revolver2.ogg" type="OnUse" range="3000" />
@@ -1852,7 +1852,7 @@
     <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
       <sprite name="Levergun Makeshift Worn" texture="levergun.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="0,0,150,50" limb="Torso" scale="0.5" origin="0.5,0.5" />
     </Wearable>
-    <RangedWeapon barrelpos="74,12" weapondamagemodifier=".9" spread="4" unskilledspread="10" combatPriority="70" reload="1.5" reloadnoskill="2.75" reloadskillrequirement="40" drawhudwhenequipped="true" crosshairscale="0.15">
+    <RangedWeapon barrelpos="74,12" weapondamagemodifier=".9" spread="4" unskilledspread="10" combatPriority="70" reload="1.2" reloadnoskill="1.75" reloadskillrequirement="40" drawhudwhenequipped="true" crosshairscale="0.15">
       <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
       <Sound file="Content/Items/Weapons/ShotgunShot1.ogg" type="OnUse" range="3000" selectionmode="Random" />
       <Sound file="Content/Items/Weapons/ShotgunShot2.ogg" type="OnUse" range="3000" />
@@ -1902,7 +1902,7 @@
     <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="65,-6" handle1="-25,-7" handle2="-28,10" msg="ItemMsgPickUpSelect">
       <!--semi-auto tag-->
     </Holdable>
-    <RangedWeapon barrelpos="29,11" spread="3" unskilledspread="8" reload=".9" weapondamagemodifier=".9" combatPriority="60" drawhudwhenequipped="true" crosshairscale="0.2" description="An old-school, six-shooter single-action revolver. Compared to more modern alternatives, it is slightly less powerful due to the poor fitting of the chamber and a little more difficult to use for a novice, but it can be fan-fired near as quickly as you can cock the hammer and hold the trigger.">
+    <RangedWeapon barrelpos="29,11" spread="3" unskilledspread="8" reload=".6" weapondamagemodifier=".9" combatPriority="60" drawhudwhenequipped="true" crosshairscale="0.2" description="An old-school, six-shooter single-action revolver. Compared to more modern alternatives, it is slightly less powerful due to the poor fitting of the chamber and a little more difficult to use for a novice, but it can be fan-fired near as quickly as you can cock the hammer and hold the trigger.">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
       <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
       <Sound file="Content/Items/Weapons/Revolver1.ogg" type="OnUse" range="3000" selectionmode="Random" />

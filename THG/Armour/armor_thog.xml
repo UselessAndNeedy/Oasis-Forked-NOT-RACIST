@@ -23,7 +23,8 @@
     <Sprite name="Hard Helmet" texture="helmethardhat.png" sourcerect="0,0,110,100" depth="0.6" origin="0.5,0.5" />
     <Body radius="30" density="25" />
     <Wearable slots="Any,Head" armorvalue="12.0" msg="ItemMsgPickUpSelect">
-      <damagemodifier afflictionidentifiers="lacerations, bitewounds,explosiondamage" armorsector="0.0,360.0" damagemultiplier="0.7" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier afflictionidentifiers="bitewounds, explosiondamage" armorsector="0.0,360.0" damagemultiplier="0.7" damagesound="LimbArmor" deflectprojectiles="true" />
+	  <damagemodifier afflictionidentifiers="lacerations" armorsector="0.0,360.0" damagemultiplier="0.45" damagesound="LimbArmor" deflectprojectiles="true" />
       <damagemodifier afflictionidentifiers="blunttrauma" armorsector="0.0,360.0" damagemultiplier="0.1" damagesound="LimbArmor" deflectprojectiles="true" />
       <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun" probabilitymultiplier="0.25" damagesound="LimbArmor" />
       <damagemodifier afflictionidentifiers="concussion" armorsector="0.0,360.0" probabilitymultiplier="0.0" damagesound="" deflectprojectiles="true" />
@@ -69,7 +70,7 @@
       <StatusEffect type="OnWearing" target="Character" ObstructVision="true" SpeedMultiplier=".85" HideFace="true" setvalue="true" disabledeltatime="true" />
     </Wearable>
   </Item>
-  <Item name="Veteran's Helmet" identifier="thghelmet3" aliases="spikeyhelmet" category="Equipment" tags="smallitem,clothing" cargocontaineridentifier="metalcrate" description="A very, very old spiked metal helmet from Terra, embellsihed with well-worn ornamentations and wrought in an archaic style from hard iron. Feels like something like this belongs in a museum moreso than on your head." impactsoundtag="impact_metal_heavy" scale="0.325">
+  <Item name="Veteran's Helmet" identifier="thghelmet3" aliases="spikeyhelmet" category="Equipment" tags="smallitem,clothing" cargocontaineridentifier="metalcrate" description="A very, very old spiked metal helmet from Earth, embellsihed with well-worn ornamentations and wrought in an archaic style from heavy, hard iron. Feels like something like this belongs in a museum moreso than on your head." impactsoundtag="impact_metal_heavy" scale="0.325">
     <Upgrade gameversion="0.9.6.0" scale="0.325" />
     <PreferredContainer primary="wreckarmcab,abandonedarmcab" amount="1" spawnprobability="0.08" />
     <Price baseprice="350">
@@ -86,15 +87,15 @@
     </Deconstruct>
     <Sprite name="Pickelhaube" texture="helmetspikey.png" sourcerect="0,0,100,100" depth="0.6" origin="0.5,0.5" />
     <Body radius="30" density="25" />
-    <Wearable slots="Any,Head" armorvalue="25.0" msg="ItemMsgPickUpSelect">
+    <Wearable slots="Any,Head" armorvalue="50.0" msg="ItemMsgPickUpSelect">
       <damagemodifier afflictionidentifiers="gunshotwound" armorsector="0.0,360.0" damagemultiplier="0.75" damagesound="LimbArmor" deflectprojectiles="true" />
       <damagemodifier afflictionidentifiers="stun" armorsector="0.0,360.0" probabilitymultiplier="0.25" damagesound="" deflectprojectiles="true" />
-      <damagemodifier afflictionidentifiers="lacerations, bitewounds" armorsector="0.0,360.0" damagemultiplier="0.6" damagesound="LimbArmor" deflectprojectiles="true" />
-      <damagemodifier afflictionidentifiers="blunttrauma" armorsector="0.0,360.0" damagemultiplier="0.5" damagesound="LimbArmor" deflectprojectiles="true" />
-      <damagemodifier afflictiontypes="bleeding" armorsector="0.0,360.0" damagemultiplier="0.5" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier afflictionidentifiers="lacerations, bitewounds" armorsector="0.0,360.0" damagemultiplier="0.4" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier afflictionidentifiers="blunttrauma" armorsector="0.0,360.0" damagemultiplier="0.2" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier afflictiontypes="bleeding" armorsector="0.0,360.0" damagemultiplier="0.3" damagesound="LimbArmor" deflectprojectiles="true" />
       <damagemodifier afflictionidentifiers="concussion" armorsector="0.0,360.0" probabilitymultiplier="0.5" damagesound="" deflectprojectiles="true" />
       <SkillModifier skillidentifier="helm" skillvalue="5" />
-      <SkillModifier skillidentifier="weapons" skillvalue="10" />
+      <SkillModifier skillidentifier="weapons" skillvalue="15" />
       <sprite name="Pickelhaube Wearable" texture="helmetspikey.png" limb="Head" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.65" hidewearablesoftype="Hair" sourcerect="0,0,100,100" origin="0.5,0.78" />
     </Wearable>
   </Item>
@@ -122,7 +123,7 @@
     <Body radius="30" density="25" />
     <Wearable slots="Any,Head" armorvalue="12.0" msg="ItemMsgPickUpSelect">
       <damagemodifier afflictionidentifiers="gunshotwound" armorsector="0.0,360.0" damagemultiplier="0.5" damagesound="LimbArmor" deflectprojectiles="true" />
-      <damagemodifier afflictionidentifiers="lacerations, bitewounds" armorsector="0.0,360.0" damagemultiplier="0.4" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier afflictionidentifiers="lacerations, bitewounds" armorsector="0.0,360.0" damagemultiplier="0.25" damagesound="LimbArmor" deflectprojectiles="true" />
       <damagemodifier afflictionidentifiers="blunttrauma" armorsector="0.0,360.0" damagemultiplier="0.6" damagesound="LimbArmor" deflectprojectiles="true" />
       <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun" probabilitymultiplier="0.75" damagesound="LimbArmor" />
       <damagemodifier afflictiontypes="bleeding" armorsector="0.0,360.0" damagemultiplier="0.25" damagesound="LimbArmor" deflectprojectiles="true" />
@@ -130,7 +131,7 @@
       <sprite name="Skid Lid Wearable" texture="helmetskid.png" limb="Head" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.65" hidewearablesoftype="Hair" sourcerect="0,0,100,100" origin="0.5,0.56" />
     </Wearable>
   </Item>
-  <Item name="Rhino Assault Helmet" identifier="thghelmet2" aliases="rhinohelmet" category="Equipment" tags="smallitem,clothing" cargocontaineridentifier="metalcrate" description="A heavy-duty, full-head helmet with an integrated automatic rebreather system as well as a litany of protective elements, designed to give the upmost protection in the most dire of circumstances." impactsoundtag="impact_metal_heavy" scale="0.325">
+  <Item name="R.H.I.N.O. Assault Helmet" identifier="thghelmet2" aliases="rhinohelmet" category="Equipment" tags="smallitem,clothing" cargocontaineridentifier="metalcrate" description="A heavy-duty, full-head helmet with an integrated automatic rebreather system as well as a litany of protective elements, designed for Coalition deathsquads to provide the upmost protection in the most dire of circumstances." impactsoundtag="impact_metal_heavy" scale="0.325">
     <Upgrade gameversion="0.9.6.0" scale="0.325" />
     <PreferredContainer primary="secarmcab" notcampaign="true" />
     <PreferredContainer secondary="wreckarmcab,abandonedarmcab,outpostarmcab" amount="1" spawnprobability="0.05" />
@@ -237,7 +238,7 @@
       <sprite name="Assault Shield Worn" texture="assaultshield.png" canbehiddenbyotherwearables="false" sourcerect="0,0,17,50" rotation="180" inheritlimbdepth="true" depth="0.6" limb="Torso" ignorelimbscale="true" scale="1" origin="-0.2,0.5" />
     </Wearable>
   </Item>
-  <Item name="Rhino Assault Suit" identifier="rhinoassaultsuit" category="Equipment" tags="mediumitem,clothing" cargocontaineridentifier="metalcrate" scale="0.45" fireproof="true" description="A heavy-duty, fully armored combat suit designed for war and atmospheric combat, not for deep-sea diving. Still, it provides a modicum of pressure resistance suitable enough for shallow water diving, though it lacks any integral life support systems. Includes a wide number of tactical drop pouches and bits of room for equipment, and makes you practically bulletproof." allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy">
+  <Item name="R.H.I.N.O. Assault Suit" identifier="rhinoassaultsuit" category="Equipment" tags="mediumitem,clothing" cargocontaineridentifier="metalcrate" scale="0.45" fireproof="true" description="A heavy-duty, fully armored combat suit designed and made for Coalition land trooper deathsquads, not for deep-sea diving. Still, it provides some mild pressure resistance suitable for shallow water diving, though it lacks most integral life support systems. Includes a wide number of tactical drop pouches and bits of room for equipment, and makes you practically bulletproof." allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy">
     <Price baseprice="885" sold="false" minleveldifficulty="50">
       <Price storeidentifier="merchantoutpost" />
       <Price storeidentifier="merchantmilitary" minavailable="0" maxavailable="2" sold="true">
@@ -300,7 +301,7 @@
     </ItemContainer>
   </Item>
   <Item name="Lynx Exoskeleton Suit" identifier="lynxexoskeletonsuitsuit" category="Equipment" tags="mediumitem,clothing" cargocontaineridentifier="metalcrate" scale="0.45" fireproof="true" description="A relatively slim, lightweight minimally-powered exoskeleton, greatly increasing it's wearer's speed, strength and stability. While it fails to offer the protection of full-body diving suits or body armor, it makes the wearer much more agile, though it does absolutely nothing for the water." allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy" botpriority="4">
-    <Price baseprice="700" sold="false" minleveldifficulty="25">
+    <Price baseprice="2700" sold="false" minleveldifficulty="25">
       <Price storeidentifier="merchantoutpost" />
       <Price storeidentifier="merchantresearch" minavailable="0" maxavailable="1" sold="true">
         <Reputation faction="coalition" min="55" />
@@ -346,7 +347,7 @@
       <sprite name="exoskeletonLeft Leg" texture="exoskeleton.png" limb="LeftLeg" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
       <StatValue stattype="FlowResistance" value="0.75" />
       <StatusEffect type="OnWearing" target="Character" SpeedMultiplier="1.2" UseHullOxygen="true" PropulsionSpeedMultiplier="0.9" setvalue="true" disabledeltatime="true"></StatusEffect>
-      <!-- no HMG stun -->
+      <!-- No HMG stun -->
       <StatusEffect type="OnWearing" target="Character" interval="0.9" disabledeltatime="true">
         <Affliction identifier="recoilstabilized" amount="1" />
       </StatusEffect>
@@ -356,15 +357,15 @@
       <StatusEffect type="OnWearing" target="This,Character" MeleeAttackMultiplier=".9" setvalue="true" disabledeltatime="true">
         <Conditional Voltage="lte 0.5" />
       </StatusEffect>
-      <!-- slow movement -->
-      <StatusEffect type="OnWearing" target="This,Character" SpeedMultiplier="1.3" setvalue="true" disabledeltatime="true">
+      <!-- Fast movement -->
+      <StatusEffect type="OnWearing" target="This,Character" SpeedMultiplier="1.5" setvalue="true" disabledeltatime="true">
         <Conditional Voltage="gt 0.5" />
       </StatusEffect>
       <StatusEffect type="OnWearing" target="Contained,Character" Condition="-.25" interval="1" disabledeltatime="true" targetslot="0" comparison="Or">
         <Conditional IsDead="false" />
         <RequiredItem items="mobilebattery" type="Contained" />
       </StatusEffect>
-      <!-- 0 movement speed when out of fuel-->
+      <!-- Worse movement w/ no bat% -->
       <StatusEffect type="OnWearing" target="This,Character" SpeedMultiplier=".7" setvalue="true" disabledeltatime="true">
         <Conditional Voltage="lte 0.5" />
       </StatusEffect>
@@ -373,7 +374,7 @@
       <damagemodifier armorsector="0.0,360.0" afflictiontypes="blunttrauma,burn" damagemultiplier="0.75" damagesound="" deflectprojectiles="true" />
       <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="radiationsickness" damagemultiplier="1" damagesound="LimbArmor" />
       <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="huskinfection" probabilitymultiplier="0.75" damagesound="LimbArmor" />
-      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun" probabilitymultiplier="0.6" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun" probabilitymultiplier="0.4" damagesound="LimbArmor" />
     </Wearable>
     <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="0,-50" handle1="-10,-20" handle2="10,-20" holdangle="45" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Use" />
     <ItemContainer capacity="0" hideitems="true" containedstateindicatorstyle="" containedstateindicatorslot="0">
@@ -491,12 +492,12 @@
       <Item identifier="ballisticfiber" />
     </Deconstruct>
     <Fabricate suitablefabricators="fabricator" requiredtime="100" requiresrecipe="false">
-      <RequiredSkill identifier="weapons" level="40" />
-      <RequiredSkill identifier="mechanical" level="20" />
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredSkill identifier="mechanical" level="35" />
       <RequiredItem identifier="rubber" amount="3" />
       <RequiredItem identifier="ballisticfiber" amount="2" />
     </Fabricate>
-    <InventoryIcon texture="riotgear_icon.png" sourcerect="0,0,96,96" origin="0.5,0.5" />
+    <InventoryIcon texture="lightvest_icon.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
     <Sprite name="Riot Gear Item" texture="riotgear_items.png" sourcerect="0,0,157,121" depth="0.55" origin="0.5,0.5" />
     <Body radius="45" width="34" density="20" />
     <Wearable slots="OuterClothes" msg="ItemMsgEquipSelect" displaycontainedstatus="true" canbeselected="false" canbepicked="true" pickkey="Select" allowusewhenworn="true">
@@ -514,12 +515,13 @@
       <sprite name="riot Left Leg" texture="riotgear.png" limb="LeftLeg" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
       <sprite name="riot Left Shoe" texture="riotgear.png" limb="LeftFoot" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
       <sprite name="riot Right Shoe" texture="riotgear.png" limb="RightFoot" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
-      <StatusEffect type="OnWearing" target="Character" SpeedMultiplier=".85" UseHullOxygen="true" PropulsionSpeedMultiplier="0.9" setvalue="true" disabledeltatime="true"></StatusEffect>
-      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="gunshotwound,bleeding" damagemultiplier="0.75" damagesound="LimbArmor" deflectprojectiles="true" />
+      <StatusEffect type="OnWearing" target="Character" SpeedMultiplier=".9" UseHullOxygen="true" PropulsionSpeedMultiplier="0.9" setvalue="true" disabledeltatime="true"></StatusEffect>
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="gunshotwound" damagemultiplier="0.75" damagesound="LimbArmor" deflectprojectiles="true" />
       <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bitewounds,lacerations" damagemultiplier="0.45" damagesound="LimbArmor" deflectprojectiles="true" />
-      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma" damagemultiplier="0.2" damagesound="" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma" damagemultiplier="0.15" damagesound="LimbArmor" deflectprojectiles="true" />
+	  <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bleeding" damagemultiplier="0.25" damagesound="LimbArmor" deflectprojectiles="true" />
       <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="huskinfection" probabilitymultiplier="0.75" damagesound="LimbArmor" />
-      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun" probabilitymultiplier="0.5" damagemultiplier="0.5" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun" probabilitymultiplier="0.2" damagemultiplier="0.35" damagesound="LimbArmor" />
     </Wearable>
     <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="0,-50" handle1="-10,-20" handle2="10,-20" holdangle="45" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Use" />
     <ItemContainer capacity="3" depth="0.5">
@@ -574,7 +576,7 @@
       <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="gunshotwound,blunttrauma" damagemultiplier="0.65" damagesound="LimbArmor" deflectprojectiles="true" />
       <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="burn" damagemultiplier="0.2" damagesound="LimbArmor" deflectprojectiles="true" />
       <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bleeding,explosiondamage" damagemultiplier="0.05" damagesound="LimbArmor" deflectprojectiles="true" />
-      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun" damagemultiplier="0.5" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun" damagemultiplier="0.45" damagesound="LimbArmor" />
     </Wearable>
     <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="0,-50" handle1="-10,-20" handle2="10,-20" holdangle="45" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Use" />
     <ItemContainer capacity="2" depth="0.5">

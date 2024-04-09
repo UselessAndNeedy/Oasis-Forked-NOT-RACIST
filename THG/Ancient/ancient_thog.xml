@@ -1,0 +1,1186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="Vintage Oni Helmet" identifier="thghelmet7" aliases="samuraihelmet" category="Equipment" tags="smallitem,clothing" cargocontaineridentifier="metalcrate" description="A fearsome, ancient helmet in immaculate condition, made by a long-gone craftsman. Not as protective as any modern armor, but it inspires great courage in the wearer." impactsoundtag="impact_metal_heavy" scale="0.325">
+    <Upgrade gameversion="0.9.6.0" scale="0.325" />
+    <PreferredContainer primary="secarmcab" notcampaign="true" />
+    <PreferredContainer secondary="wreckarmcab,abandonedarmcab,outpostarmcab" amount="1" spawnprobability="0.05" />
+    <PreferredContainer secondary="armcab" />
+    <Price baseprice="850" sold="false">
+      <Price storeidentifier="merchantmilitary" minavailable="0" maxavailable="1" sold="true">
+        <Reputation faction="separatists" min="90" />
+      </Price>
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Sprite name="Sammy Helm" texture="helmetsamurai.png" sourcerect="0,0,120,160" depth="0.6" origin="0.5,0.6" />
+    <Body radius="30" density="25" />
+    <Wearable slots="Any,Head" armorvalue="12.0" msg="ItemMsgPickUpSelect">
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bleeding" damagemultiplier="0.2" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bitewounds,lacerations,burn" damagemultiplier="0.5" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="explosiondamage" damagemultiplier=".6" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun" probabilitymultiplier="0.5" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun" damagemultiplier="0.5" damagesound="LimbArmor" />
+      <damagemodifier afflictionidentifiers="concussion" armorsector="0.0,360.0" probabilitymultiplier="0.5" damagesound="" deflectprojectiles="true" />
+      <sprite name="Samurai Helmet Wearable" texture="helmetsamurai.png" limb="Head" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.65" hidewearablesoftype="Hair" sourcerect="0,0,120,160" origin="0.5,0.56" />
+      <StatusEffect type="OnWearing" target="Character" UseHullOxygen="true" SpeedMultiplier="1.05" setvalue="true" disabledeltatime="true"></StatusEffect>
+      <StatusEffect type="OnWearing" target="Character" ObstructVision="true" HideFace="true" setvalue="true" disabledeltatime="true" />
+    </Wearable>
+  </Item>
+  <Item name="Vintage Oni Suit" identifier="thgvintageoniassaultsuit" category="Equipment" tags="mediumitem,clothing" cargocontaineridentifier="metalcrate" scale="0.45" fireproof="true" description="A vintage, yet almost pristine suit of carefully crafted armor, made by an ancient craftsman. It's not quite as protective as modern armors, but bolsters the wearer's will greatly, making them move with - reportedly - demonic fury." allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy">
+    <Price baseprice="1550" sold="false">
+      <Price storeidentifier="merchantmilitary" minavailable="0" maxavailable="1" sold="true">
+        <Reputation faction="separatists" min="90" />
+      </Price>
+    </Price>
+    <Deconstruct time="45">
+      <Item identifier="organicfiber" />
+      <Item identifier="steel" />
+      <Item identifier="steel" />
+      <Item identifier="copper" />
+    </Deconstruct>
+    <InventoryIcon texture="samuraisuit_icon.png" sourcerect="0,0,96,96" origin="0.5,0.5" />
+    <Sprite name="samurai Suit Item" texture="samuraisuit_items.png" sourcerect="0,0,157,121" depth="0.55" origin="0.5,0.5" />
+    <ContainedSprite name="samurai Suit In Vertical Locker" allowedcontainertags="divingsuitcontainervertical" texture="samuraisuit_items.png" sourcerect="164,0,87,190" depth="0.55" origin="0.5,0.5" />
+    <ContainedSprite name="samurai Suit Behind Window" allowedcontainertags="divingsuitcontainerwindow" texture="samuraisuit.png" sourcerect="430,0,80,207" depth="0.55" origin="-0.12,-0.14" />
+    <ContainedSprite name="samurai Suit In Horizontal Locker" allowedcontainertags="divingsuitcontainerhorizontal" texture="samuraisuit_items.png" sourcerect="0,191,225,66" depth="0.55" origin="0.6,0.5" />
+    <Body radius="45" width="34" density="20" />
+    <Wearable slots="OuterClothes" msg="ItemMsgEquipSelect" displaycontainedstatus="true" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="samurai Torso" texture="samuraisuit.png" limb="Torso" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="samurai Right Hand" texture="samuraisuit.png" limb="RightHand" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="samurai Left Hand" texture="samuraisuit.png" limb="LeftHand" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="samurai Right Lower Arm" texture="samuraisuit.png" limb="RightArm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="samurai Left Lower Arm" texture="samuraisuit.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="samurai Right Upper Arm" texture="samuraisuit.png" limb="RightForearm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="samurai Left Upper Arm" texture="samuraisuit.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="samurai Waist" texture="samuraisuit.png" limb="Waist" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="samurai Right Thigh" texture="samuraisuit.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="samurai Left Thigh" texture="samuraisuit.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="samurai Right Leg" texture="samuraisuit.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="samurai Left Leg" texture="samuraisuit.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="samurai Left Shoe" texture="samuraisuit.png" limb="LeftFoot" sound="footstep_armor_heavy" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="samurai Right Shoe" texture="samuraisuit.png" limb="RightFoot" sound="footstep_armor_heavy" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <StatusEffect type="OnWearing" target="Character" UseHullOxygen="true" PressureProtection="1000.0" SpeedMultiplier="1.08" PropulsionSpeedMultiplier="0.6" setvalue="true" disabledeltatime="true"></StatusEffect>
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bleeding" damagemultiplier="0.2" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bitewounds,lacerations,burn" damagemultiplier="0.5" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="explosiondamage" damagemultiplier=".6" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun" probabilitymultiplier="0.5" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun" damagemultiplier="0.5" damagesound="LimbArmor" />
+    </Wearable>
+    <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="0,-50" handle1="-10,-20" handle2="10,-20" holdangle="45" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Use" />
+  </Item>
+  <Item name="Vintage Oni Helmet" identifier="thghelmet15" aliases="helmetsamurai2" category="Equipment" tags="smallitem,clothing" cargocontaineridentifier="metalcrate" description="A fearsome, ancient helmet in immaculate condition, made by a long-gone craftsman. Not as protective as any modern armor, but it inspires great courage in the wearer." impactsoundtag="impact_metal_heavy" scale="0.325">
+    <Upgrade gameversion="0.9.6.0" scale="0.325" />
+    <PreferredContainer primary="secarmcab" notcampaign="true" />
+    <PreferredContainer secondary="wreckarmcab,abandonedarmcab,outpostarmcab" amount="1" spawnprobability="0.05" />
+    <PreferredContainer secondary="armcab" />
+    <Price baseprice="850" sold="false">
+      <Price storeidentifier="merchantmilitary" minavailable="0" maxavailable="1" sold="true">
+        <Reputation faction="separatists" min="90" />
+      </Price>
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Sprite name="Sammy Helm" texture="helmetsamurai2.png" sourcerect="0,0,120,160" depth="0.6" origin="0.5,0.6" />
+    <Body radius="30" density="25" />
+    <Wearable slots="Any,Head" armorvalue="12.0" msg="ItemMsgPickUpSelect">
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bleeding" damagemultiplier="0.2" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bitewounds,lacerations,burn" damagemultiplier="0.5" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="explosiondamage" damagemultiplier=".6" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun" probabilitymultiplier="0.5" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun" damagemultiplier="0.5" damagesound="LimbArmor" />
+      <damagemodifier afflictionidentifiers="concussion" armorsector="0.0,360.0" probabilitymultiplier="0.5" damagesound="" deflectprojectiles="true" />
+      <sprite name="Samurai Helmet Wearable" texture="helmetsamurai2.png" limb="Head" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.65" hidewearablesoftype="Hair" sourcerect="0,0,120,160" origin="0.5,0.56" />
+      <StatusEffect type="OnWearing" target="Character" UseHullOxygen="true" SpeedMultiplier="1.05" setvalue="true" disabledeltatime="true"></StatusEffect>
+      <StatusEffect type="OnWearing" target="Character" ObstructVision="true" HideFace="true" setvalue="true" disabledeltatime="true" />
+    </Wearable>
+  </Item>
+  <Item name="Vintage Oni Suit" identifier="thgvintageoniassaultsuit2" category="Equipment" tags="mediumitem,clothing" cargocontaineridentifier="metalcrate" scale="0.45" fireproof="true" description="A vintage, yet almost pristine suit of carefully crafted armor, made by an ancient craftsman. It's not quite as protective as modern armors, but bolsters the wearer's will greatly, making them move with - reportedly - demonic fury." allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy">
+    <Price baseprice="1550" sold="false">
+      <Price storeidentifier="merchantmilitary" minavailable="0" maxavailable="1" sold="true">
+        <Reputation faction="separatists" min="90" />
+      </Price>
+    </Price>
+    <Deconstruct time="45">
+      <Item identifier="organicfiber" />
+      <Item identifier="steel" />
+      <Item identifier="steel" />
+      <Item identifier="copper" />
+    </Deconstruct>
+    <InventoryIcon texture="bluesamuraisuit_icon.png" sourcerect="0,0,96,96" origin="0.5,0.5" />
+    <Sprite name="samurai Suit Item" texture="bluesamuraisuit_items.png" sourcerect="0,0,157,121" depth="0.55" origin="0.5,0.5" />
+    <ContainedSprite name="samurai Suit In Vertical Locker" allowedcontainertags="divingsuitcontainervertical" texture="bluesamuraisuit_items.png" sourcerect="164,0,87,190" depth="0.55" origin="0.5,0.5" />
+    <ContainedSprite name="samurai Suit Behind Window" allowedcontainertags="divingsuitcontainerwindow" texture="bluesamuraisuit.png" sourcerect="430,0,80,207" depth="0.55" origin="-0.12,-0.14" />
+    <ContainedSprite name="samurai Suit In Horizontal Locker" allowedcontainertags="divingsuitcontainerhorizontal" texture="bluesamuraisuit_items.png" sourcerect="0,191,225,66" depth="0.55" origin="0.6,0.5" />
+    <Body radius="45" width="34" density="20" />
+    <Wearable slots="OuterClothes" msg="ItemMsgEquipSelect" displaycontainedstatus="true" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="samurai Torso" texture="bluesamuraisuit.png" limb="Torso" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="samurai Right Hand" texture="bluesamuraisuit.png" limb="RightHand" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="samurai Left Hand" texture="bluesamuraisuit.png" limb="LeftHand" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="samurai Right Lower Arm" texture="bluesamuraisuit.png" limb="RightArm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="samurai Left Lower Arm" texture="bluesamuraisuit.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="samurai Right Upper Arm" texture="bluesamuraisuit.png" limb="RightForearm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="samurai Left Upper Arm" texture="bluesamuraisuit.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="samurai Waist" texture="bluesamuraisuit.png" limb="Waist" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="samurai Right Thigh" texture="bluesamuraisuit.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="samurai Left Thigh" texture="bluesamuraisuit.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="samurai Right Leg" texture="bluesamuraisuit.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="samurai Left Leg" texture="bluesamuraisuit.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="samurai Left Shoe" texture="bluesamuraisuit.png" limb="LeftFoot" sound="footstep_armor_heavy" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="samurai Right Shoe" texture="bluesamuraisuit.png" limb="RightFoot" sound="footstep_armor_heavy" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <StatusEffect type="OnWearing" target="Character" UseHullOxygen="true" PressureProtection="1000.0" SpeedMultiplier="1.08" PropulsionSpeedMultiplier="0.6" setvalue="true" disabledeltatime="true"></StatusEffect>
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bleeding" damagemultiplier="0.2" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bitewounds,lacerations,burn" damagemultiplier="0.5" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="explosiondamage" damagemultiplier=".6" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun" probabilitymultiplier="0.5" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun" damagemultiplier="0.5" damagesound="LimbArmor" />
+    </Wearable>
+    <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="0,-50" handle1="-10,-20" handle2="10,-20" holdangle="45" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Use" />
+  </Item>
+  <Item name="Visored Brass Helmet" identifier="thghelmet9" aliases="brasshat1" category="Equipment" tags="smallitem,clothing" cargocontaineridentifier="metalcrate" description="An ancient style of brass helmet from Terra, with a short visor to protect the eyes and face. An odd thing to wear in the modern day, but protective nonetheless." impactsoundtag="impact_metal_heavy" scale="0.325">
+    <Upgrade gameversion="0.9.6.0" scale="0.325" />
+    <PreferredContainer primary="secarmcab" notcampaign="true" />
+    <PreferredContainer secondary="wreckarmcab,abandonedarmcab,outpostarmcab" amount="1" spawnprobability="0.05" />
+    <PreferredContainer secondary="armcab" />
+    <Price baseprice="120">
+      <Price storeidentifier="merchantoutpost" sold="true" multiplier="1.3" />
+      <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" sold="true" />
+      <Price storeidentifier="merchantresearch" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.75" />
+      <Price storeidentifier="merchantmine" sold="true" />
+      <Price storeidentifier="merchantarmory" multiplier="0.9" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="copper" />
+    </Deconstruct>
+    <Sprite name="Brass Helmet" texture="helmetbrass1.png" sourcerect="0,0,100,100" depth="0.6" origin="0.5,0.5" />
+    <Body radius="30" density="25" />
+    <Wearable slots="Any,Head" armorvalue="12.0" msg="ItemMsgPickUpSelect">
+      <damagemodifier afflictionidentifiers="gunshotwound" armorsector="0.0,360.0" damagemultiplier="1" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier afflictionidentifiers="lacerations, bitewounds" armorsector="0.0,360.0" damagemultiplier="0.35" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier afflictionidentifiers="blunttrauma" armorsector="0.0,360.0" damagemultiplier="0.6" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun" probabilitymultiplier="0.5" damagesound="LimbArmor" />
+      <damagemodifier afflictiontypes="bleeding" armorsector="0.0,360.0" damagemultiplier="0.25" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier afflictionidentifiers="concussion" armorsector="0.0,360.0" probabilitymultiplier="0.5" damagesound="" deflectprojectiles="true" />
+      <sprite name="Brass Helmet Wearable" texture="helmetbrass1.png" limb="Head" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.65" hidewearablesoftype="Hair" sourcerect="0,0,100,100" origin="0.5,0.56" />
+    </Wearable>
+  </Item>
+  <Item name="Sallet Helmet" identifier="thghelmet18" category="Equipment" tags="smallitem,clothing" cargocontaineridentifier="metalcrate" description="An ancient steel helmet." impactsoundtag="impact_metal_heavy" scale="0.325">
+    <Upgrade gameversion="0.9.6.0" scale="0.325" />
+    <PreferredContainer primary="secarmcab" notcampaign="true" />
+    <PreferredContainer secondary="wreckarmcab,abandonedarmcab,outpostarmcab" amount="1" spawnprobability="0.05" />
+    <PreferredContainer secondary="armcab" />
+    <Price baseprice="120">
+      <Price storeidentifier="merchantoutpost" sold="true" multiplier="1.3" />
+      <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" sold="true" />
+      <Price storeidentifier="merchantresearch" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.75" />
+      <Price storeidentifier="merchantmine" sold="true" />
+      <Price storeidentifier="merchantarmory" multiplier="0.9" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Sprite name="Brass Helmet" texture="helmetsallet.png" sourcerect="0,0,100,100" depth="0.6" origin="0.5,0.5" />
+    <Body radius="30" density="25" />
+    <Wearable slots="Any,Head" armorvalue="12.0" msg="ItemMsgPickUpSelect">
+      <damagemodifier afflictionidentifiers="gunshotwound" armorsector="0.0,360.0" damagemultiplier="1" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier afflictionidentifiers="lacerations, bitewounds" armorsector="0.0,360.0" damagemultiplier="0.3" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier afflictionidentifiers="blunttrauma" armorsector="0.0,360.0" damagemultiplier="0.5" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun" probabilitymultiplier="0.5" damagesound="LimbArmor" />
+      <damagemodifier afflictiontypes="bleeding" armorsector="0.0,360.0" damagemultiplier="0.15" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier afflictionidentifiers="concussion" armorsector="0.0,360.0" probabilitymultiplier="0" damagesound="" deflectprojectiles="true" />
+      <sprite name="Steel Helmet Wearable" texture="helmetsallet.png" limb="Head" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.65" hidewearablesoftype="Hair" sourcerect="0,0,100,100" origin="0.5,0.56" />
+    </Wearable>
+  </Item>
+  <Item name="Horned Brass Helmet" identifier="thghelmet10" aliases="brasshat1" category="Equipment" tags="smallitem,clothing" cargocontaineridentifier="metalcrate" description="A large, ancient horned brass helmet from Terra. Quite an odd thing to wear in a submarine, but protective nonetheless." impactsoundtag="impact_metal_heavy" scale="0.325">
+    <Upgrade gameversion="0.9.6.0" scale="0.325" />
+    <PreferredContainer primary="secarmcab" notcampaign="true" />
+    <PreferredContainer secondary="wreckarmcab,abandonedarmcab,outpostarmcab" amount="1" spawnprobability="0.05" />
+    <PreferredContainer secondary="armcab" />
+    <Price baseprice="120">
+      <Price storeidentifier="merchantoutpost" sold="true" multiplier="1.3" />
+      <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" sold="true" />
+      <Price storeidentifier="merchantresearch" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.75" />
+      <Price storeidentifier="merchantmine" sold="true" />
+      <Price storeidentifier="merchantarmory" multiplier="0.9" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="copper" />
+    </Deconstruct>
+    <Sprite name="Brass Helmet" texture="helmetbrass2.png" sourcerect="0,0,120,160" depth="0.6" origin="0.5,0.5" />
+    <Body radius="30" density="25" />
+    <Wearable slots="Any,Head" armorvalue="12.0" msg="ItemMsgPickUpSelect">
+      <damagemodifier afflictionidentifiers="gunshotwound" armorsector="0.0,360.0" damagemultiplier="1" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier afflictionidentifiers="lacerations, bitewounds" armorsector="0.0,360.0" damagemultiplier="0.35" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier afflictionidentifiers="blunttrauma" armorsector="0.0,360.0" damagemultiplier="0.6" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun" probabilitymultiplier="0.5" damagesound="LimbArmor" />
+      <damagemodifier afflictiontypes="bleeding" armorsector="0.0,360.0" damagemultiplier="0.25" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier afflictionidentifiers="concussion" armorsector="0.0,360.0" probabilitymultiplier="0.75" damagesound="" deflectprojectiles="true" />
+      <sprite name="Brass Helmet Wearable" texture="helmetbrass2.png" limb="Head" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.65" hidewearablesoftype="Hair" sourcerect="0,0,120,160" origin="0.5,0.63" />
+    </Wearable>
+  </Item>
+  <Item name="Ornate Brass Helmet" identifier="thghelmet11" aliases="brasshat1" category="Equipment" tags="smallitem,clothing" cargocontaineridentifier="metalcrate" description="An extremely ornate ancient steel-brass helmet, from Terra. Very impressive, but odd, to wear." impactsoundtag="impact_metal_heavy" scale="0.325">
+    <Upgrade gameversion="0.9.6.0" scale="0.325" />
+    <PreferredContainer primary="secarmcab" notcampaign="true" />
+    <PreferredContainer secondary="wreckarmcab,abandonedarmcab,outpostarmcab" amount="1" spawnprobability="0.05" />
+    <PreferredContainer secondary="armcab" />
+    <Price baseprice="650" sold="false">
+      <Price storeidentifier="merchantmilitary" minavailable="0" maxavailable="1" sold="true">
+        <Reputation faction="coalition" min="100" />
+      </Price>
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="copper" />
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Sprite name="Brass Helmet" texture="helmetbrass3.png" sourcerect="0,0,180,180" depth="0.6" origin="0.5,0.5" />
+    <Body radius="30" density="25" />
+    <Wearable slots="Any,Head" armorvalue="12.0" msg="ItemMsgPickUpSelect">
+      <damagemodifier afflictionidentifiers="gunshotwound" armorsector="0.0,360.0" damagemultiplier="1" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier afflictionidentifiers="lacerations, bitewounds" armorsector="0.0,360.0" damagemultiplier="0.35" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier afflictionidentifiers="blunttrauma" armorsector="0.0,360.0" damagemultiplier="0.6" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun" probabilitymultiplier="0.5" damagesound="LimbArmor" />
+      <damagemodifier afflictiontypes="bleeding" armorsector="0.0,360.0" damagemultiplier="0.25" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier afflictionidentifiers="concussion" armorsector="0.0,360.0" probabilitymultiplier="0.5" damagesound="" deflectprojectiles="true" />
+      <sprite name="Brass Helmet Wearable" texture="helmetbrass3.png" limb="Head" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.65" hidewearablesoftype="Hair" sourcerect="0,0,180,180" origin="0.5,0.7" />
+      <StatusEffect type="OnWearing" target="Character" ObstructVision="true" HideFace="true" setvalue="true" disabledeltatime="true" />
+    </Wearable>
+  </Item>
+  <Item name="Masked Brass Helmet" identifier="thghelmet16" aliases="brasshat1" category="Equipment" tags="smallitem,clothing" cargocontaineridentifier="metalcrate" description="An ancient style of brass helmet from Terra, with a short visor to protect the eyes and face. An odd thing to wear in the modern day, but protective nonetheless." impactsoundtag="impact_metal_heavy" scale="0.325">
+    <Upgrade gameversion="0.9.6.0" scale="0.325" />
+    <PreferredContainer primary="secarmcab" notcampaign="true" />
+    <PreferredContainer secondary="wreckarmcab,abandonedarmcab,outpostarmcab" amount="1" spawnprobability="0.05" />
+    <PreferredContainer secondary="armcab" />
+    <Price baseprice="120">
+      <Price storeidentifier="merchantoutpost" sold="true" multiplier="1.3" />
+      <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" sold="true" />
+      <Price storeidentifier="merchantresearch" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.75" />
+      <Price storeidentifier="merchantmine" sold="true" />
+      <Price storeidentifier="merchantarmory" multiplier="0.9" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="copper" />
+    </Deconstruct>
+    <Sprite name="Brass Helmet" texture="helmetbrass4.png" sourcerect="0,0,100,100" depth="0.6" origin="0.5,0.5" />
+    <Body radius="30" density="25" />
+    <Wearable slots="Any,Head" armorvalue="12.0" msg="ItemMsgPickUpSelect">
+      <damagemodifier afflictionidentifiers="gunshotwound" armorsector="0.0,360.0" damagemultiplier="1" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier afflictionidentifiers="lacerations, bitewounds" armorsector="0.0,360.0" damagemultiplier="0.35" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier afflictionidentifiers="blunttrauma" armorsector="0.0,360.0" damagemultiplier="0.6" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun" probabilitymultiplier="0.5" damagesound="LimbArmor" />
+      <damagemodifier afflictiontypes="bleeding" armorsector="0.0,360.0" damagemultiplier="0.25" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier afflictionidentifiers="concussion" armorsector="0.0,360.0" probabilitymultiplier="0.5" damagesound="" deflectprojectiles="true" />
+      <sprite name="Brass Helmet Wearable" texture="helmetbrass4.png" limb="Head" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.65" hidewearablesoftype="Hair" sourcerect="0,0,100,100" origin="0.55,0.56" />
+      <StatusEffect type="OnWearing" target="Character" ObstructVision="true" setvalue="true" disabledeltatime="true" />
+    </Wearable>
+  </Item>
+  <Item name="Brass Armor" identifier="thglightbrassarmor" category="Equipment" tags="smallitem,clothing" scale="0.35" cargocontaineridentifier="metalcrate" description="An ancient chestplate made of rust-resistant brass, still quite protective of the vitals against the beasts of the sea, but an odd sight to behold in casual wear." impactsoundtag="impact_soft">
+    <Upgrade gameversion="0.9.3.0" scale="0.35" />
+    <PreferredContainer primary="secarmcab" amount="3" notcampaign="true" />
+    <PreferredContainer secondary="wreckarmcab,abandonedarmcab,outpostarmcab" amount="1" spawnprobability="0.05" />
+    <PreferredContainer secondary="armcab" />
+    <Price baseprice="420" sold="false">
+      <Price storeidentifier="merchantmilitary" minavailable="0" maxavailable="2" sold="true">
+        <Reputation faction="coalition" min="100" />
+      </Price>
+    </Price>
+    <Deconstruct time="30">
+      <Item identifier="copper" amount="2" />
+    </Deconstruct>
+    <InventoryIcon texture="brasscuirass_icon.png" sourcerect="0,0,72,72" origin="0.5,0.5" />
+    <Sprite name="Light Thoggy Vest Item" texture="brasscuirass.png" sourcerect="4,32,126,183" depth="0.6" origin="0.5,0.35" />
+    <Body width="85" height="90" density="25" />
+    <Wearable slots="OuterClothes" msg="ItemMsgEquipSelect" displaycontainedstatus="true" canbeselected="false" canbepicked="true" pickkey="Select">
+      <damagemodifier afflictionidentifiers="gunshotwound" armorsector="0.0,360.0" damagemultiplier="1" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier afflictionidentifiers="lacerations, bitewounds" armorsector="0.0,360.0" damagemultiplier="0.35" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier afflictionidentifiers="blunttrauma" armorsector="0.0,360.0" damagemultiplier="0.6" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun" probabilitymultiplier="0.5" damagesound="LimbArmor" />
+      <damagemodifier afflictiontypes="bleeding" armorsector="0.0,360.0" damagemultiplier="0.25" damagesound="LimbArmor" deflectprojectiles="true" />
+      <sprite name="Light Thoggy Vest Wearable" texture="brasscuirass.png" limb="Torso" hidelimb="false" inheritscale="true" scale="0.65" inheritorigin="false" origin="0.5,0.5" inheritsourcerect="false" sourcerect="4,32,126,183" />
+    </Wearable>
+  </Item>
+  <Item name="Cuirass" identifier="thgcuirass" category="Equipment" tags="smallitem,clothing" scale="0.35" cargocontaineridentifier="metalcrate" description="An ancient chestplate made of rust-resistant brass, still quite protective of the vitals against the beasts of the sea, but an odd sight to behold in casual wear." impactsoundtag="impact_soft">
+    <Upgrade gameversion="0.9.3.0" scale="0.35" />
+    <PreferredContainer primary="secarmcab" amount="3" notcampaign="true" />
+    <PreferredContainer secondary="wreckarmcab,abandonedarmcab,outpostarmcab" amount="1" spawnprobability="0.05" />
+    <PreferredContainer secondary="armcab" />
+    <Price baseprice="420" sold="false">
+      <Price storeidentifier="merchantmilitary" minavailable="0" maxavailable="2" sold="true">
+        <Reputation faction="coalition" min="100" />
+      </Price>
+    </Price>
+    <Deconstruct time="30">
+      <Item identifier="copper" amount="2" />
+    </Deconstruct>
+    <InventoryIcon texture="cuirass_icon.png" sourcerect="0,0,72,72" origin="0.5,0.5" />
+    <Sprite name="Light Thoggy Vest Item" texture="cuirass.png" sourcerect="4,32,126,183" depth="0.6" origin="0.5,0.35" />
+    <Body width="85" height="90" density="25" />
+    <Wearable slots="OuterClothes" msg="ItemMsgEquipSelect" displaycontainedstatus="true" canbeselected="false" canbepicked="true" pickkey="Select">
+      <damagemodifier afflictionidentifiers="gunshotwound" armorsector="0.0,360.0" damagemultiplier="1" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier afflictionidentifiers="lacerations, bitewounds" armorsector="0.0,360.0" damagemultiplier="0.35" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier afflictionidentifiers="blunttrauma" armorsector="0.0,360.0" damagemultiplier="0.6" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun" probabilitymultiplier="0.5" damagesound="LimbArmor" />
+      <damagemodifier afflictiontypes="bleeding" armorsector="0.0,360.0" damagemultiplier="0.25" damagesound="LimbArmor" deflectprojectiles="true" />
+      <sprite name="Light Thoggy Vest Wearable" texture="cuirass.png" limb="Torso" hidelimb="false" inheritscale="true" scale="0.65" inheritorigin="false" origin="0.5,0.5" inheritsourcerect="false" sourcerect="4,32,126,183" />
+    </Wearable>
+  </Item>
+  <Item name="Ornate Brass Armor" identifier="thgornatebrassarmor" category="Equipment" tags="mediumitem,clothing" cargocontaineridentifier="metalcrate" scale="0.45" fireproof="true" description="An extremely ornate, ancient set of decorated brass-steel armor. Still rather quite protective, but more often a sight in theatre than in practical use." allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy">
+    <Price baseprice="885" sold="false">
+      <Price storeidentifier="merchantmilitary" minavailable="0" maxavailable="1" sold="true">
+        <Reputation faction="coalition" min="100" />
+      </Price>
+    </Price>
+    <Deconstruct time="45">
+      <Item identifier="copper" />
+      <Item identifier="steel" />
+    </Deconstruct>
+    <InventoryIcon texture="ornatebrasscuirass_icon.png" sourcerect="0,0,72,72" origin="0.5,0.5" />
+    <Sprite name="Rhino Suit Item" texture="brasscuirassornate_items.png" sourcerect="0,0,157,121" depth="0.55" origin="0.5,0.5" />
+    <ContainedSprite name="Rhino Suit In Vertical Locker" allowedcontainertags="divingsuitcontainervertical" texture="armoredsuit_items.png" sourcerect="164,0,87,190" depth="0.55" origin="0.5,0.5" />
+    <ContainedSprite name="Rhino Suit Behind Window" allowedcontainertags="divingsuitcontainerwindow" texture="armoredsuit.png" sourcerect="430,0,80,207" depth="0.55" origin="-0.12,-0.14" />
+    <ContainedSprite name="Rhino Suit In Horizontal Locker" allowedcontainertags="divingsuitcontainerhorizontal" texture="armoredsuit_items.png" sourcerect="0,191,225,66" depth="0.55" origin="0.6,0.5" />
+    <Body radius="45" width="34" density="20" />
+    <Wearable slots="OuterClothes" msg="ItemMsgEquipSelect" displaycontainedstatus="true" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="rhino Torso" texture="brasscuirassornate.png" limb="Torso" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="rhino Right Upper Arm" texture="brasscuirassornate.png" limb="RightArm" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="rhino Left Upper Arm" texture="brasscuirassornate.png" limb="LeftArm" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="rhino Right Leg" texture="brasscuirassornate.png" limb="RightLeg" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="rhino Left Leg" texture="brasscuirassornate.png" limb="LeftLeg" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <StatusEffect type="OnWearing" target="Character" UseHullOxygen="true" PressureProtection="1000.0" SpeedMultiplier="0.9" PropulsionSpeedMultiplier="0.9" setvalue="true" disabledeltatime="true"></StatusEffect>
+      <damagemodifier afflictionidentifiers="gunshotwound" armorsector="0.0,360.0" damagemultiplier=".9" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier afflictionidentifiers="lacerations, bitewounds" armorsector="0.0,360.0" damagemultiplier="0.25" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier afflictionidentifiers="blunttrauma" armorsector="0.0,360.0" damagemultiplier="0.5" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun" probabilitymultiplier="0.5" damagesound="LimbArmor" />
+      <damagemodifier afflictiontypes="bleeding" armorsector="0.0,360.0" damagemultiplier="0.25" damagesound="LimbArmor" deflectprojectiles="true" />
+    </Wearable>
+    <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="0,-50" handle1="-10,-20" handle2="10,-20" holdangle="45" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Use" />
+  </Item>
+  <Item name="Ninja Outfit" identifier="thgninjaclothes" category="Equipment" cargocontaineridentifier="metalcrate" tags="smallitem,clothing,separatists" scale="0.5" impactsoundtag="impact_soft" description="A dark, sneaky suit worn by ninja-wannabes. The lightweight fabric is deceptively strong, and also allows one to move swiftly due to its light weight, but it sogs badly and slows one down in water..">
+    <Price baseprice="225" sold="false">
+      <Price storeidentifier="merchantoutpost" minavailable="0" maxavailable="1" sold="true">
+        <Reputation faction="separatists" min="45" />
+      </Price>
+      <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="0" maxavailable="1" sold="true">
+        <Reputation faction="separatists" min="45" />
+      </Price>
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="organicfiber" />
+    </Deconstruct>
+    <Sprite name="ninjer" texture="Content/Items/Jobgear/MiscJobGear.png" sourcerect="767,233,122,58" depth="0.6" origin="0.5,0.5" />
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sheetindex="1,10" sheetelementsize="64,64" />
+    <Body width="180" height="50" density="15" friction="0.8" restitution="0.01" />
+    <Wearable slots="Any,InnerClothes" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnWearing" target="Character" SpeedMultiplier="1.25" PropulsionSpeedMultiplier=".85" setvalue="true" disabledeltatime="true"></StatusEffect>
+      <sprite name="Ninja Torso" texture="ninjagarb.png" limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Ninja Right Hand" texture="ninjagarb.png" limb="RightHand" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Ninja Left Hand" texture="ninjagarb.png" limb="LeftHand" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Ninja Right Lower Arm" texture="ninjagarb.png" limb="RightArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Ninja Left Lower Arm" texture="ninjagarb.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Ninja Right Upper Arm" texture="ninjagarb.png" limb="RightForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Ninja Left Upper Arm" texture="ninjagarb.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Ninja Waist" texture="ninjagarb.png" limb="Waist" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Ninja Right Thigh" texture="ninjagarb.png" limb="RightThigh" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Ninja Left Thigh" texture="ninjagarb.png" limb="LeftThigh" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Ninja Right Leg" texture="ninjagarb.png" limb="RightLeg" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Ninja Left Leg" texture="ninjagarb.png" limb="LeftLeg" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Ninja Left Shoe" texture="ninjagarb.png" limb="LeftFoot" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Ninja Right Shoe" texture="ninjagarb.png" limb="RightFoot" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="lacerations,bleeding" damagemultiplier="0.95" />
+    </Wearable>
+  </Item>
+  <Item name="Heavy Brass Armor" identifier="thgheavybrassarmor" category="Equipment" tags="mediumitem,clothing" cargocontaineridentifier="metalcrate" scale="0.45" fireproof="true" description="An extremely ornate, ancient set of decorated brass-steel armor. Still rather quite protective, but more often a sight in theatre than in practical use." allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy">
+    <Price baseprice="885" sold="false">
+      <Price storeidentifier="merchantmilitary" minavailable="0" maxavailable="1" sold="true">
+        <Reputation faction="coalition" min="100" />
+      </Price>
+    </Price>
+    <Deconstruct time="45">
+      <Item identifier="copper" />
+      <Item identifier="steel" />
+    </Deconstruct>
+    <InventoryIcon texture="brasscuirass_icon.png" sourcerect="0,0,72,72" origin="0.5,0.5" />
+    <Sprite name="Rhino Suit Item" texture="heavybrassarmor_items.png" sourcerect="0,0,157,121" depth="0.55" origin="0.5,0.5" />
+    <ContainedSprite name="Rhino Suit In Vertical Locker" allowedcontainertags="divingsuitcontainervertical" texture="armoredsuit_items.png" sourcerect="164,0,87,190" depth="0.55" origin="0.5,0.5" />
+    <ContainedSprite name="Rhino Suit Behind Window" allowedcontainertags="divingsuitcontainerwindow" texture="armoredsuit.png" sourcerect="430,0,80,207" depth="0.55" origin="-0.12,-0.14" />
+    <ContainedSprite name="Rhino Suit In Horizontal Locker" allowedcontainertags="divingsuitcontainerhorizontal" texture="armoredsuit_items.png" sourcerect="0,191,225,66" depth="0.55" origin="0.6,0.5" />
+    <Body radius="45" width="34" density="20" />
+    <Wearable slots="OuterClothes" msg="ItemMsgEquipSelect" displaycontainedstatus="true" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="rhino Torso" texture="heavybrassarmor.png" limb="Torso" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="rhino Right Upper Arm" texture="heavybrassarmor.png" limb="RightArm" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="rhino Left Upper Arm" texture="heavybrassarmor.png" limb="LeftArm" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="rhino Right Leg" texture="heavybrassarmor.png" limb="RightLeg" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="rhino Left Leg" texture="heavybrassarmor.png" limb="LeftLeg" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <StatusEffect type="OnWearing" target="Character" UseHullOxygen="true" PressureProtection="1000.0" SpeedMultiplier="0.9" PropulsionSpeedMultiplier="0.9" setvalue="true" disabledeltatime="true"></StatusEffect>
+      <damagemodifier afflictionidentifiers="gunshotwound" armorsector="0.0,360.0" damagemultiplier=".9" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier afflictionidentifiers="lacerations, bitewounds" armorsector="0.0,360.0" damagemultiplier="0.25" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier afflictionidentifiers="blunttrauma" armorsector="0.0,360.0" damagemultiplier="0.5" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="stun" probabilitymultiplier="0.5" damagesound="LimbArmor" />
+      <damagemodifier afflictiontypes="bleeding" armorsector="0.0,360.0" damagemultiplier="0.25" damagesound="LimbArmor" deflectprojectiles="true" />
+    </Wearable>
+    <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="0,-50" handle1="-10,-20" handle2="10,-20" holdangle="45" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Use" />
+  </Item>
+  <Item name="Ninja Mask" identifier="thghelmet17" category="Equipment" tags="smallitem,clothing" cargocontaineridentifier="metalcrate" description="A lightweight, wrapped dark cloth mask for sneaky assholes." impactsoundtag="impact_metal_heavy" scale="0.325">
+    <Upgrade gameversion="0.9.6.0" scale="0.325" />
+    <PreferredContainer primary="secarmcab" notcampaign="true" />
+    <PreferredContainer secondary="wreckarmcab,abandonedarmcab,outpostarmcab" amount="1" spawnprobability="0.05" />
+    <PreferredContainer secondary="armcab" />
+    <Price baseprice="720" sold="false"></Price>
+    <Deconstruct time="10">
+      <Item identifier="organicfiber" />
+    </Deconstruct>
+    <Sprite name="Ninja Mask" texture="ninjamask.png" sourcerect="0,0,110,100" depth="0.6" origin="0.5,0.5" />
+    <Body radius="30" density="25" />
+    <Wearable slots="Any,Head" armorvalue="12.0" msg="ItemMsgPickUpSelect">
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="lacerations,bleeding" damagemultiplier="0.8" />
+      <sprite name="Ninjamask Wearable" texture="ninjamask.png" limb="Head" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.65" hidewearablesoftype="Hair" sourcerect="0,0,110,100" origin="0.55,0.57" />
+      <StatusEffect type="OnWearing" target="Character" HideFace="true" setvalue="true" disabledeltatime="true" />
+      <SkillModifier skillidentifier="weapons" skillvalue="5" />
+    </Wearable>
+  </Item>
+  <Item name="Tanto" identifier="thgtanto" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,mountableweapon" Scale="0.5" description="A lightweight, relatively straight ancient single-edged dagger. Used to stab extremely quickly, rather than for slashing strikes." impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="tantoicon.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="tanto.png" sourcerect="0,0,115,30" depth="0.55" origin="0.5,0.5" />
+    <Body width="115" height="30" density="25" />
+    <Price baseprice="250" minavailable="0" minleveldifficulty="35">
+      <Price storeidentifier="merchantoutpost" multiplier="1.2 " />
+      <Price storeidentifier="merchantcity" multiplier="1.1" minavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.35" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.35" />
+      <Price storeidentifier="merchantmine" multiplier=".9" />
+    </Price>
+    <Holdable slots="Any,RightHand,LeftHand" aimpos="50,10" aimangle="-20" handle1="-32,0" holdangle="45" msg="ItemMsgPickUpSelect" />
+    <RangedWeapon reload=".54" weapondamagemodifier="1" penetration="0.35" holdtrigger="false" barrelpos="5,5" spread="0" unskilledspread="0" combatPriority="-1" drawhudwhenequipped="false" crosshairscale="0.2">
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true" />
+      <StatusEffect type="OnUse" target="Contained">
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This">
+        <Spawnitem identifiers="thgtantodamagevolume" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </RangedWeapon>
+    <ItemContainer capacity="1" maxstacksize="1" SpawnWithId="thgtantothruster,thgtantodamagevolume" hideitems="false" drawinventory="false" canbeselected="false" removecontaineditemsondeconstruct="true" ShowConditionInContainedStateIndicator="true" containedspritedepth="0.56">
+      <Containable items="thgtantothruster" hide="false" itempos="-65,0" />
+      <SubContainer capacity="1" maxstacksize="1" drawinventory="false" canbeselected="false">
+        <Containable items="thgtantodamagevolume" hide="false" itempos="85,0" />
+      </SubContainer>
+    </ItemContainer>
+    <aitarget sightrange="2000" soundrange="4000" fadeouttime="5" />
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <!-- Spear Thruster -->
+  <Item name="ཀTanto Thruster" identifier="thgtantothruster" hideinmenus="true" category="Material" Tags="smallitem" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.35" impactsoundtag="impact_metal_light" spritecolor="0,0,0,0" inventoryiconcolor="0,0,0,0">
+    <InventoryIcon texture="spaericon.png" sourcerect="0,0,69,69" />
+    <Sprite texture="tantoicon.png" sourcerect="512,217,31,31" depth="0.55" origin="0.5,0.5" />
+    <Body width="20" height="15" density="30" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnUse" target="this">
+        <Explosion range="100.0" force="8" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" flash="false" camerashake="0" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <!-- Spear Damage Volume -->
+  <Item name="ཀTanto Damage Volume" identifier="thgtantodamagevolume" hideinmenus="true" category="Material" Tags="smallitem" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.35" spritecolor="0,0,0,0" inventoryiconcolor="0,0,0,0">
+    <InventoryIcon texture="tantoicon.png" sourcerect="512,217,61,31" />
+    <Sprite texture="tantoicon.png" sourcerect="512,217,15,15" depth="0.55" origin="0.5,0.5" />
+    <Body width="15" height="15" density="0" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" launchimpulse="13" hitscan="false" removeonhit="true">
+      <Attack structuredamage="10" itemdamage="20" targetforce="6" severlimbsprobability="0.15">
+        <Affliction identifier="lacerations" strength="18" />
+        <Affliction identifier="bleeding" strength="15" />
+        <Affliction identifier="explosiondamage" strength="15" probability="0.1" />
+        <Affliction identifier="stun" strength=".65" />
+        <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+      </Attack>
+      <StatusEffect type="OnUse" target="This" delay="0.075">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <Item name="Ancient Spear" identifier="thghandheldspear3" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,mountableweapon" Scale="0.225" description="A huge, sharp, ancient wood-shafted spear with a hooked bladed head, designed to impale targets from long reaches. It's a little impractically long for use aboard most watercraft, but it's thrusts allow it to be used even in confined spaces, so long as there's enough room between you and your target." impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="ancientspearicon.png" sourcerect="0,0,64,64" />
+    <Sprite texture="ancientspaer.png" sourcerect="2,713,1250,45" depth="0.55" origin="0.48,0.68" />
+    <BrokenSprite texture="ancientspaer.png" sourcerect="2,762,1250,45" depth="0.55" maxcondition="0.01" fadein="False" />
+    <Body width="1250" height="40" density="25" />
+    <Price baseprice="450" sold="False" minavailable="0" minleveldifficulty="65">
+      <Price storeidentifier="merchantcity" multiplier="1.1" sold="true" maxavailable="1" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <Item identifier="carbon" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="30" />
+      <RequiredItem identifier="steel" amount="2" />
+      <RequiredItem identifier="carbon" amount="1" />
+    </Fabricate>
+    <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="-20,-15" aimpos="40,-40" handle1="-200,0" handle2="100,-10" holdangle="120" aimangle="15" msg="ItemMsgPickUpSelect" />
+    <RangedWeapon reload="1.55" weapondamagemodifier="1" penetration="0.45" holdtrigger="false" barrelpos="110,15" spread="0" unskilledspread="0" combatPriority="-1" drawhudwhenequipped="false" crosshairscale="0.2">
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true" />
+      <StatusEffect type="OnUse" target="Contained">
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This">
+        <Spawnitem identifiers="thgspear3damagevolume" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </RangedWeapon>
+    <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="Simple Spear Worn" texture="ancientspaer.png" canbehiddenbyotherwearables="false" sourcerect="2,713,1250,45" rotation="270" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.21" origin="0.55,-1.3" />
+    </Wearable>
+    <ItemContainer capacity="1" maxstacksize="1" SpawnWithId="thgspear3thruster,thgspear3damagevolume" hideitems="false" drawinventory="false" canbeselected="false" removecontaineditemsondeconstruct="true" ShowConditionInContainedStateIndicator="true" containedspritedepth="0.56">
+      <Containable items="thgspear3thruster" hide="false" itempos="-65,0" />
+      <SubContainer capacity="1" maxstacksize="1" drawinventory="false" canbeselected="false">
+        <Containable items="thgspear3damagevolume" hide="false" itempos="85,0" />
+      </SubContainer>
+    </ItemContainer>
+    <aitarget sightrange="2000" soundrange="4000" fadeouttime="5" />
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <!-- Spear Thruster -->
+  <Item name="ཀSpear Thruster" identifier="thgspear3thruster" hideinmenus="true" category="Material" Tags="smallitem" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.35" impactsoundtag="impact_metal_light" spritecolor="0,0,0,0" inventoryiconcolor="0,0,0,0">
+    <InventoryIcon texture="spaericon.png" sourcerect="0,0,69,69" />
+    <Sprite texture="tantoicon.png" sourcerect="512,217,61,31" depth="0.55" origin="0.5,0.5" />
+    <Body width="45" height="30" density="30" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnUse" target="this">
+        <Explosion range="100.0" force="8" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" flash="false" camerashake="0" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <!-- Spear Damage Volume -->
+  <Item name="ཀSpear Damage Volume" identifier="thgspear3damagevolume" hideinmenus="true" category="Material" Tags="smallitem" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.35" spritecolor="0,0,0,0" inventoryiconcolor="0,0,0,0">
+    <InventoryIcon texture="tantoicon.png" sourcerect="512,217,61,31" />
+    <Sprite texture="tantoicon.png" sourcerect="512,217,61,31" depth="0.55" origin="0.5,0.5" />
+    <Body width="45" height="30" density="0" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" launchimpulse="10" hitscan="false" removeonhit="true">
+      <Attack structuredamage="7" itemdamage="25" targetforce="25" severlimbsprobability="0.35">
+        <Affliction identifier="lacerations" strength="35" />
+        <Affliction identifier="bleeding" strength="15" />
+        <Affliction identifier="explosiondamage" strength="15" probability="0.1" />
+        <Affliction identifier="stun" strength=".6" />
+        <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+      </Attack>
+      <StatusEffect type="OnUse" target="This" delay="0.21">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <Item name="Shortsword" identifier="thgpugio" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,mountableweapon" Scale="0.5" description="A heavy, broad-bladed yet short sword, designed to inflict great stabbing wounds against lightly armored targets rather than slash. Powerful and quick, but ineffective against heavy armor." impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="pugio_icon.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="pugio.png" sourcerect="0,0,155,40" depth="0.55" origin="0.45,0.5" />
+    <Body width="145" height="40" density="25" />
+    <Price baseprice="250" minavailable="0" minleveldifficulty="35">
+      <Price storeidentifier="merchantoutpost" multiplier="1.2 " />
+      <Price storeidentifier="merchantcity" multiplier="1.1" minavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.35" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.35" />
+      <Price storeidentifier="merchantmine" multiplier=".9" />
+    </Price>
+    <Holdable slots="Any,RightHand,LeftHand" aimpos="50,-25" aimangle="25" handle1="-35,0" holdangle="35" msg="ItemMsgPickUpSelect" />
+    <RangedWeapon reload=".89" weapondamagemodifier="1" penetration="0.15" holdtrigger="false" barrelpos="5,0" spread="0" unskilledspread="0" combatPriority="-1" drawhudwhenequipped="false" crosshairscale="0.2">
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true" />
+      <StatusEffect type="OnUse" target="Contained">
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This">
+        <Spawnitem identifiers="thgpugiodamagevolume" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </RangedWeapon>
+    <ItemContainer capacity="1" maxstacksize="1" SpawnWithId="thgpugiothruster,thgpugiodamagevolume" hideitems="false" drawinventory="false" canbeselected="false" removecontaineditemsondeconstruct="true" ShowConditionInContainedStateIndicator="true" containedspritedepth="0.56">
+      <Containable items="thgpugiothruster" hide="false" itempos="-65,0" />
+      <SubContainer capacity="1" maxstacksize="1" drawinventory="false" canbeselected="false">
+        <Containable items="thgpugiodamagevolume" hide="false" itempos="85,0" />
+      </SubContainer>
+    </ItemContainer>
+    <aitarget sightrange="2000" soundrange="4000" fadeouttime="5" />
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <!-- Spear Thruster -->
+  <Item name="ཀPugio Thruster" identifier="thgpugiothruster" hideinmenus="true" category="Material" Tags="smallitem" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.35" impactsoundtag="impact_metal_light" spritecolor="0,0,0,0" inventoryiconcolor="0,0,0,0">
+    <InventoryIcon texture="spaericon.png" sourcerect="0,0,69,69" />
+    <Sprite texture="tantoicon.png" sourcerect="512,217,31,31" depth="0.55" origin="0.5,0.5" />
+    <Body width="20" height="35" density="30" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnUse" target="this">
+        <Explosion range="100.0" force="7" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" flash="false" camerashake="0" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <!-- Spear Damage Volume -->
+  <Item name="ཀPugio Damage Volume" identifier="thgpugiodamagevolume" hideinmenus="true" category="Material" Tags="smallitem" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.35" spritecolor="0,0,0,0" inventoryiconcolor="0,0,0,0">
+    <InventoryIcon texture="pugio_icon.png" sourcerect="512,217,61,31" />
+    <Sprite texture="tantoicon.png" sourcerect="512,217,15,15" depth="0.55" origin="0.5,0.5" />
+    <Body width="30" height="30" density="0" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" launchimpulse="16" hitscan="false" removeonhit="true">
+      <Attack structuredamage="10" itemdamage="20" targetforce="6" severlimbsprobability="0.15">
+        <Affliction identifier="lacerations" strength="30" />
+        <Affliction identifier="bleeding" strength="15" />
+        <Affliction identifier="bleeding" strength="25" probability="0.1" />
+        <Affliction identifier="stun" strength=".7" />
+        <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+      </Attack>
+      <StatusEffect type="OnUse" target="This" delay="0.07">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <Item name="Gladius" identifier="thggladius" category="Weapon" Tags="mediumitem,weapon,gunsmith,mountableweapon" cargocontaineridentifier="metalcrate" Scale="0.7" impactsoundtag="impact_metal_light" RequireAimToUse="True" description="An ancient short sword, designed to be swung for use against minimally armored targets. It's short size makes it very handy in tight confines, such as aboard a submarine.">
+    <PreferredContainer primary="secarmcab" amount="1" spawnprobability="0" notcampaign="true" />
+    <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.01" />
+    <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" amount="1" spawnprobability="0.01" />
+    <PreferredContainer secondary="armcab,weaponholder" />
+    <Price baseprice="185" sold="false" minleveldifficulty="20">
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="1" maxavailable="1" sold="true"></Price>
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <Item identifier="copper" />
+    </Deconstruct>
+    <InventoryIcon texture="gladius_icon.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="gladius.png" sourcerect="0,0,120,15" depth="0.55" origin="0.5,0.5" />
+    <Body width="120" height="15" density="30" />
+    <MeleeWeapon slots="RightHand,LeftHand,Any" controlpose="true" Scale="0.6" penetration=".2" aimpos="45,10" handle1="-20,4" holdangle="40" reload=".9" range="115" combatpriority="20" msg="ItemMsgPickUpSelect">
+      <Attack structuredamage="5" severlimbsprobability="0.3" structuresoundtype="StructureSlash" itemdamage="5" targetimpulse="7.5">
+        <Affliction identifier="lacerations" strength="20" />
+        <Affliction identifier="bleeding" strength="10" />
+        <Affliction identifier="stun" strength="0.35" />
+        <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+      </Attack>
+    </MeleeWeapon>
+    <aitarget sightrange="1000" soundrange="500" fadeouttime="1" />
+    <Quality>
+      <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+    </Quality>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="Sai" identifier="thgsai" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,mountableweapon" Scale="0.5" description="A lightweight spiked weapon, designed to parry enemy's blades and deliver quick stabs to vital areas. It excels at penetrating armor, and can occasionally score a critical hit in vital locations." impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="sai_icon.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="sai.png" sourcerect="0,0,145,40" depth="0.55" origin="0.5,0.5" />
+    <Body width="145" height="40" density="25" />
+    <Price baseprice="250" minavailable="0" minleveldifficulty="35">
+      <Price storeidentifier="merchantoutpost" multiplier="1.2 " />
+      <Price storeidentifier="merchantcity" multiplier="1.1" minavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.35" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.35" />
+      <Price storeidentifier="merchantmine" multiplier=".9" />
+    </Price>
+    <Holdable slots="Any,RightHand,LeftHand" aimpos="50,-25" aimangle="25" handle1="-32,0" holdangle="35" msg="ItemMsgPickUpSelect" />
+    <RangedWeapon reload=".82" weapondamagemodifier="1" penetration="0.65" holdtrigger="false" barrelpos="5,0" spread="0" unskilledspread="0" combatPriority="-1" drawhudwhenequipped="false" crosshairscale="0.2">
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true" />
+      <StatusEffect type="OnUse" target="Contained">
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This">
+        <Spawnitem identifiers="thgsaidamagevolume" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </RangedWeapon>
+    <ItemContainer capacity="1" maxstacksize="1" SpawnWithId="thgsaithruster,thgsaidamagevolume" hideitems="false" drawinventory="false" canbeselected="false" removecontaineditemsondeconstruct="true" ShowConditionInContainedStateIndicator="true" containedspritedepth="0.56">
+      <Containable items="thgsaithruster" hide="false" itempos="-65,0" />
+      <SubContainer capacity="1" maxstacksize="1" drawinventory="false" canbeselected="false">
+        <Containable items="thgsaidamagevolume" hide="false" itempos="85,0" />
+      </SubContainer>
+    </ItemContainer>
+    <aitarget sightrange="2000" soundrange="4000" fadeouttime="5" />
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <!-- Spear Thruster -->
+  <Item name="ཀSai Thruster" identifier="thgsaithruster" hideinmenus="true" category="Material" Tags="smallitem" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.35" impactsoundtag="impact_metal_light" spritecolor="0,0,0,0" inventoryiconcolor="0,0,0,0">
+    <InventoryIcon texture="spaericon.png" sourcerect="0,0,69,69" />
+    <Sprite texture="tantoicon.png" sourcerect="512,217,31,31" depth="0.55" origin="0.5,0.5" />
+    <Body width="20" height="15" density="30" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnUse" target="this">
+        <Explosion range="100.0" force="8" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" flash="false" camerashake="0" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <!-- Spear Damage Volume -->
+  <Item name="ཀSai Damage Volume" identifier="thgsaidamagevolume" hideinmenus="true" category="Material" Tags="smallitem" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.35" spritecolor="0,0,0,0" inventoryiconcolor="0,0,0,0">
+    <InventoryIcon texture="Items/sai_icon.png" sourcerect="512,217,61,31" />
+    <Sprite texture="tantoicon.png" sourcerect="512,217,15,15" depth="0.55" origin="0.5,0.5" />
+    <Body width="15" height="15" density="0" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" launchimpulse="16" hitscan="false" removeonhit="true">
+      <Attack structuredamage="10" itemdamage="20" targetforce="6" severlimbsprobability="0.15">
+        <Affliction identifier="lacerations" strength="17" />
+        <Affliction identifier="bleeding" strength="14" />
+        <Affliction identifier="explosiondamage" strength="15" probability="0.1" />
+        <Affliction identifier="stun" strength=".65" />
+        <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+      </Attack>
+      <StatusEffect type="OnUse" target="This" delay="0.08">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <Item name="Wakizashi" identifier="thgwakizashi" category="Weapon" Tags="mediumitem,weapon,gunsmith,mountableweapon" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" description="An extremely light, yet short single-edged bladed sword of ancient design. Surpsisingly effective in the close confines of a submarine, and it's light weight lets it be swung exceptionally quickly, though it lacks any real blunt force to stun enemies.">
+    <PreferredContainer primary="secarmcab" amount="1" spawnprobability="0" notcampaign="true" />
+    <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.01" />
+    <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" amount="1" spawnprobability="0.01" />
+    <PreferredContainer secondary="armcab,weaponholder" />
+    <Price baseprice="270" sold="false" minleveldifficulty="10">
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="1" maxavailable="1" sold="true">
+        <Reputation faction="coalition" min="30" />
+      </Price>
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <Item identifier="copper" />
+    </Deconstruct>
+    <InventoryIcon texture="wakizashiicon.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="wakizashi.png" sourcerect="0,0,150,30" depth="0.55" origin="0.5,0.5" />
+    <Body width="150" height="30" density="30" />
+    <MeleeWeapon slots="RightHand,LeftHand,Any" controlpose="true" Scale="0.6" aimpos="45,10" handle1="-26,2" holdangle="40" reload=".78" range="146" combatpriority="20" msg="ItemMsgPickUpSelect">
+      <Attack structuredamage="1" severlimbsprobability="0.65" structuresoundtype="StructureSlash" itemdamage="5" targetimpulse="6">
+        <Affliction identifier="lacerations" strength="16" />
+        <Affliction identifier="bleeding" strength="25" />
+        <Affliction identifier="stun" strength="0.12" />
+        <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+      </Attack>
+    </MeleeWeapon>
+    <aitarget sightrange="1000" soundrange="500" fadeouttime="1" />
+    <Quality>
+      <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+    </Quality>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="Tachi" identifier="thgtachi" category="Weapon" Tags="mediumitem,weapon,gunsmith,mountableweapon" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" description="A razor sharp, deceptively light and extremely long sword with a curved blade, popular among Seperatists, for whatever reason. Rather impractical for the tight confines of a submarine, though this blade is easily capable of cleaving a man to bits in a rapid flurry if it's alloted proper room to do so.">
+    <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
+    <PreferredContainer secondary="wrecksecarmcab" spawnprobability="0.02" />
+    <PreferredContainer secondary="abandonedsecarmcab" spawnprobability="0.02" />
+    <Price baseprice="650" sold="false" minleveldifficulty="20">
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="1" maxavailable="1" sold="true">
+        <Reputation faction="separatists" min="50" />
+      </Price>
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="aluminum" />
+    </Deconstruct>
+    <InventoryIcon texture="tachiicon.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="tachi.png" sourcerect="0,0,270,30" depth="0.55" origin="0.52,0.5" />
+    <Body width="270" height="25" density="40" />
+    <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="Tachi Worn" texture="tachi.png" canbehiddenbyotherwearables="false" rotation="-90" inheritlimbdepth="false" depth="0.51" sourcerect="0,0,270,30" limb="Torso" scale="0.5" origin="0.5,-.1" />
+    </Wearable>
+    <MeleeWeapon slots="RightHand+LeftHand" aimpos="50,10" handle1="-46,0" handle2="-40,0" holdangle="35" reload="1.15" range="270" combatPriority="70" msg="ItemMsgPickUpSelect">
+      <Attack targetimpulse="5" severlimbsprobability="0.82" itemdamage="5" structuredamage="5" structuresoundtype="StructureSlash">
+        <Affliction identifier="lacerations" strength="31" />
+        <Affliction identifier="bleeding" strength="40" />
+        <Affliction identifier="stun" strength="0.55" />
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Character" SpeedMultiplier="1.1" setvalue="true" />
+      </Attack>
+    </MeleeWeapon>
+    <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+    <Quality>
+      <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+    </Quality>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="Arming Sword" identifier="thgarmingsword" category="Weapon" Tags="mediumitem,weapon,gunsmith,mountableweapon" cargocontaineridentifier="metalcrate" Scale="0.67" impactsoundtag="impact_metal_light" RequireAimToUse="True" description="A lightweight, relatively short one-handed double-edged sword deceptively well suited for the confines of a submarine. A relatively good choice for hacking through light armor and shells.">
+    <PreferredContainer primary="secarmcab" amount="1" spawnprobability="0" notcampaign="true" />
+    <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.01" />
+    <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" amount="1" spawnprobability="0.01" />
+    <PreferredContainer secondary="armcab,weaponholder" />
+    <Price baseprice="300" sold="false">
+      <Price storeidentifier="merchantcity" multiplier="1" minavailable="0" maxavailable="1" sold="true"></Price>
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <Item identifier="iron" />
+    </Deconstruct>
+    <InventoryIcon texture="armingswordicon.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="armingsword.png" sourcerect="0,0,130,30" depth="0.55" origin="0.5,0.5" />
+    <Body width="130" height="18" density="30" />
+    <MeleeWeapon slots="RightHand,LeftHand,Any" controlpose="true" penetration=".3" Scale="0.6" aimpos="45,10" handle1="-28,4" holdangle="45" reload="1" range="160" combatpriority="20" msg="ItemMsgPickUpSelect">
+      <Attack structuredamage="3" severlimbsprobability="0.35" structuresoundtype="StructureSlash" itemdamage="5" targetimpulse="10">
+        <Affliction identifier="lacerations" strength="22" />
+        <Affliction identifier="bleeding" strength="12" />
+        <Affliction identifier="stun" strength="0.35" />
+        <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+      </Attack>
+    </MeleeWeapon>
+    <aitarget sightrange="1000" soundrange="500" fadeouttime="1" />
+    <Quality>
+      <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+    </Quality>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="Mancatcher" identifier="thghandheldmancatcher" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,mountableweapon" Scale="0.25" description="A peculiar, hooked and spiked iron mechanism attached to a simple pole, designed to hold down troublemakers so that someone else can put them in shackles. It's also capable of holding down larger beasts, such as mudraptors, though only with great effort on the wielder's part, and the shallow spikes on the fragile mechanism are practically impossible to kill with." impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="mancatchericon.png" sourcerect="0,0,64,64" />
+    <Sprite texture="mancatcher.png" sourcerect="0,0,760,95" depth="0.55" origin="0.48,0.5" />
+    <BrokenSprite texture="mancatcherbroken.png" sourcerect="0,0,760,95" depth="0.55" maxcondition="0.01" fadein="False" />
+    <Body width="1250" height="40" density="25" />
+    <Price baseprice="250" minavailable="0" minleveldifficulty="35">
+      <Price storeidentifier="merchantoutpost" multiplier="1.2 " />
+      <Price storeidentifier="merchantcity" multiplier="1.1" minavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.35" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.35" />
+      <Price storeidentifier="merchantmine" multiplier=".9" />
+    </Price>
+    <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="-17,-15" aimpos="40,-40" handle1="-200,0" handle2="100,-10" holdangle="120" aimangle="15" msg="ItemMsgPickUpSelect" />
+    <RangedWeapon reload="1.65" weapondamagemodifier="1" penetration="0" holdtrigger="false" barrelpos="110,15" spread="0" unskilledspread="0" combatPriority="-1" drawhudwhenequipped="false" crosshairscale="0.2">
+      <StatusEffect type="OnUse" target="Contained">
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This">
+        <Spawnitem identifiers="thgmancatcherdamagevolume" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" Condition="-2" disabledeltatime="true" />
+    </RangedWeapon>
+    <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="Simple Spear Worn" texture="mancatcher.png" canbehiddenbyotherwearables="false" sourcerect="0,0,750,95" rotation="270" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.21" origin="0.55,-1.3" />
+    </Wearable>
+    <ItemContainer capacity="1" maxstacksize="1" SpawnWithId="thgmancatcherthruster,thgmancatcherdamagevolume" hideitems="false" drawinventory="false" canbeselected="false" removecontaineditemsondeconstruct="true" ShowConditionInContainedStateIndicator="true" containedspritedepth="0.56">
+      <Containable items="thgmancatcherthruster" hide="false" itempos="-65,0" />
+      <SubContainer capacity="1" maxstacksize="1" drawinventory="false" canbeselected="false">
+        <Containable items="thgmancatcherdamagevolume" hide="false" itempos="85,0" />
+      </SubContainer>
+    </ItemContainer>
+    <aitarget sightrange="2000" soundrange="4000" fadeouttime="5" />
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+  </Item>
+  <!-- Spear Thruster -->
+  <Item name="ཀSpear Thruster" identifier="thgmancatcherthruster" hideinmenus="true" category="Material" Tags="smallitem" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.35" impactsoundtag="impact_metal_light" spritecolor="0,0,0,0" inventoryiconcolor="0,0,0,0">
+    <InventoryIcon texture="tantoicon.png" sourcerect="0,0,69,69" />
+    <Sprite texture="tantoicon.png" sourcerect="512,217,61,31" depth="0.55" origin="0.5,0.5" />
+    <Body width="45" height="30" density="30" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnUse" target="this">
+        <Explosion range="100.0" force="8" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" flash="false" camerashake="0" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <!-- Spear Damage Volume -->
+  <Item name="ཀSpear Damage Volume" identifier="thgmancatcherdamagevolume" hideinmenus="true" category="Material" Tags="smallitem" canbepicked="true" description="" cargocontaineridentifier="metalcrate" scale="0.35" spritecolor="0,0,0,0" inventoryiconcolor="0,0,0,0">
+    <InventoryIcon texture="tantoicon.png" sourcerect="512,217,61,31" />
+    <Sprite texture="tantoicon.png" sourcerect="512,217,61,31" depth="0.55" origin="0.5,0.5" />
+    <Body width="45" height="30" density="0" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" launchimpulse="10" hitscan="false" removeonhit="true">
+      <Attack structuredamage="0" itemdamage="1" targetforce="-5" severlimbsprobability="0.05">
+        <Affliction identifier="lacerations" strength="1" />
+        <Affliction identifier="bleeding" strength="2" />
+        <Affliction identifier="lacerations" strength="5" probability="0.05" />
+        <Affliction identifier="bleeding" strength="10" probability="0.05" />
+        <Affliction identifier="stun" strength="2.1" />
+        <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+        <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+      </Attack>
+      <StatusEffect type="OnUse" target="This" delay="0.14">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <Item name="Longsword" identifier="thglongsword" category="Weapon" Tags="mediumitem,weapon,gunsmith,mountableweapon" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True" description="A long, well balanced double-edged sword, capable of cleaving through lightly armored men and creatures alike, though it's a bit unweildy for the confines of the average submarine.">
+    <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
+    <PreferredContainer secondary="wrecksecarmcab" spawnprobability="0.02" />
+    <PreferredContainer secondary="abandonedsecarmcab" spawnprobability="0.02" />
+    <Price baseprice="360" minleveldifficulty="45">
+      <Price storeidentifier="merchantoutpost" multiplier="1.2" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.4" minavailable="0" sold="true" maxavailable="1" />
+      <Price storeidentifier="merchantresearch" multiplier="1.35" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.2" maxavailable="1" sold="true" />
+      <Price storeidentifier="merchantmine" multiplier=".9" sold="false" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="titaniumaluminiumalloy" />
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <RequiredSkill identifier="weapon" level="45" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="1" />
+      <RequiredItem identifier="steel" amount="3" />
+    </Fabricate>
+    <InventoryIcon texture="longswordicon.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+    <Sprite texture="longsword.png" sourcerect="0,0,240,55" depth="0.55" origin="0.42,0.5" />
+    <Body width="240" height="55" density="50" />
+    <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="Long Worn" texture="longsword.png" canbehiddenbyotherwearables="false" rotation="-90" inheritlimbdepth="false" depth="0.51" sourcerect="0,0,280,55" limb="Torso" scale="0.5" origin="0.55,-.0" />
+    </Wearable>
+    <MeleeWeapon slots="RightHand+LeftHand" aimpos="50,15" handle1="-33,0" penetration=".3" handle2="-36,12" holdangle="40" reload="1.45" range="225" combatPriority="60" msg="ItemMsgPickUpSelect">
+      <Attack targetimpulse="8" severlimbsprobability="0.6" itemdamage="10" structuredamage="3" structuresoundtype="impact_metal_heavy">
+        <Affliction identifier="lacerations" strength="36" />
+        <Affliction identifier="stun" strength=".96" />
+        <Affliction identifier="bleeding" strength="20" />
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.85" setvalue="true" />
+      </Attack>
+    </MeleeWeapon>
+    <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+    <Quality>
+      <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+    </Quality>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="Medieval Crossbow" identifier="thgmedievalxbow" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gunsmith,mountableweapon" description="An archaic wood and iron crossbow, designed to propel small bolts modest distances with great force behind them. Equally effective underwater as on land, though not as much so in the prior as a harpoon gun." Scale="0.5" impactsoundtag="impact_metal_light">
+    <PreferredContainer secondary="wreckweaponholder" spawnprobability="0.05" />
+    <PreferredContainer secondary="wreckarmcab,abandonedarmcab" amount="1" spawnprobability="0.1" />
+    <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
+    <Price baseprice="170" minavailable="1">
+      <Price storeidentifier="merchantoutpost" multiplier="1.5" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" sold="false" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" />
+      <Price storeidentifier="merchantmine" multiplier="1.25" />
+      <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="3" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <Item identifier="carbon" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="30" />
+      <RequiredItem identifier="steel" amount="2" />
+      <RequiredItem identifier="carbon" amount="1" />
+    </Fabricate>
+    <Sprite texture="MedievalCrossbow.png" sourcerect="0,0,181,30" depth="0.55" origin="0.5,0.5" />
+    <Body width="180" height="30" density="25" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="35,-10" aimpos="45,2" handle1="-20,-6" handle2="30,10" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <RangedWeapon reload="2.75" launchimpulse="20.0" barrelpos="85,14" spread="1" unskilledspread="10" combatPriority="60" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <Sound file="Content/Items/Weapons/HarpoonGun1.ogg" type="OnUse" range="1000" />
+      <Sound file="Content/Items/Weapons/HarpoonGun2.ogg" type="OnUse" range="1000" />
+      <Sound file="Content/Items/Weapons/HarpoonGun3.ogg" type="OnUse" range="1000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="150.0" force="5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="6.0" />
+      </StatusEffect>
+      <RequiredItems items="thgxbowammo" type="Contained" msg="ItemMsgSpearRequired" />
+      <RequiredSkill identifier="weapons" level="30" />
+    </RangedWeapon>
+    <ItemContainer itempos="30,14" iteminterval="0,-4" hideitems="false" capacity="1" maxstacksize="1" containedstateindicatorslot="0" containedstateindicatorstyle="spear" containedspritedepths="0.551,0.552,0.553,0.554,0.555,0.556">
+      <Containable items="thgxbowammo" />
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="0,448,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
+    </ItemContainer>
+    <aitarget sightrange="0" soundrange="500" fadeouttime="2" />
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    <SkillRequirementHint identifier="weapons" level="30" />
+  </Item>
+  <Item name="Crossbow Bolt" identifier="thgxbowbolt" category="Weapon" maxstacksize="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="mediumitem,thgxbowammo" description="A light, sharp bolt designed to be fired from a crossbow. It travels roughly as well through water as in air, and stacks more easily than harpoons." Scale="0.5" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="harpoongun" amount="6" spawnprobability="1" />
+    <PreferredContainer primary="armcab" minamount="3" maxamount="6" spawnprobability="1" notcampaign="true" />
+    <PreferredContainer secondary="wreckarmcab,abandonedarmcab" minamount="1" maxamount="3" spawnprobability="0.2" />
+    <PreferredContainer primary="secarmcab" />
+    <Price baseprice="7">
+      <Price storeidentifier="merchantoutpost" minavailable="12" multiplier="1.5" />
+      <Price storeidentifier="merchantcity" minavailable="12" multiplier="1.25" />
+      <Price storeidentifier="merchantresearch" minavailable="6" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" minavailable="24" multiplier="0.9" />
+      <Price storeidentifier="merchantmine" minavailable="6" multiplier="1.25" />
+      <Price storeidentifier="merchantarmory" minavailable="24" multiplier="0.9" />
+    </Price>
+    <Deconstruct time="5" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="10" amount="6">
+      <RequiredSkill identifier="weapons" level="20" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="320,968,55,55" origin="0.5,0.5" />
+    <Sprite texture="crossbowbolt.png" sourcerect="0,0,120,16" depth="0.55" origin="0.5,0.5" />
+    <Body width="120" height="16" density="30" />
+    <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" launchimpulse="10" sticktocharacters="true" sticktoitems="true" sticktostructures="true" sticktodoors="false">
+      <Attack structuredamage="5" itemdamage="5" targetforce="14" severlimbsprobability="0.1">
+        <Affliction identifier="lacerations" strength="28" />
+        <Affliction identifier="bleeding" strength="20" />
+        <Affliction identifier="stun" strength="0.4" />
+      </Attack>
+      <StatusEffect type="OnActive" target="UseTarget,This" checkconditionalalways="true" comparison="And">
+        <Conditional Snapped="false" />
+        <Conditional mass="lt 30" />
+        <Affliction identifier="drag" strength="1" />
+      </StatusEffect>
+    </Projectile>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="Chitin Crossbow Bolt" identifier="thgxbowboltorange" category="Weapon" maxstacksize="12" interactthroughwalls="true" description="A lightweight, yet extremely sharp bolt crafted from a hard chunk of bright-orange chitin." cargocontaineridentifier="metalcrate" tags="mediumitem,thgxbowammo" Scale="0.5" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="harpoongun" amount="6" spawnprobability="1" />
+    <PreferredContainer primary="armcab" minamount="3" maxamount="6" spawnprobability="1" notcampaign="true" />
+    <PreferredContainer secondary="wreckarmcab,abandonedarmcab" minamount="1" maxamount="3" spawnprobability="0.2" />
+    <PreferredContainer primary="secarmcab" />
+    <Price baseprice="7">
+      <Price storeidentifier="merchantoutpost" minavailable="12" multiplier="1.5" />
+      <Price storeidentifier="merchantcity" minavailable="12" multiplier="1.25" />
+      <Price storeidentifier="merchantresearch" minavailable="6" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" minavailable="24" multiplier="0.9" />
+      <Price storeidentifier="merchantmine" minavailable="6" multiplier="1.25" />
+      <Price storeidentifier="merchantarmory" minavailable="24" multiplier="0.9" />
+    </Price>
+    <Deconstruct time="5" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="10" amount="6">
+      <RequiredSkill identifier="weapons" level="20" />
+      <RequiredItem identifier="chitin" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="320,968,55,55" origin="0.5,0.5" />
+    <Sprite texture="crossbowboltchitin.png" sourcerect="0,0,130,16" depth="0.55" origin="0.5,0.5" />
+    <Body width="130" height="16" density="10" />
+    <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" launchimpulse="11" sticktocharacters="true" sticktoitems="true" sticktostructures="true" sticktodoors="false">
+      <Attack structuredamage="5" itemdamage="5" targetforce="14" severlimbsprobability="0.1">
+        <Affliction identifier="lacerations" strength="32" />
+        <Affliction identifier="bleeding" strength="40" />
+        <Affliction identifier="stun" strength="0.55" />
+      </Attack>
+      <StatusEffect type="OnActive" target="UseTarget,This" checkconditionalalways="true" comparison="And">
+        <Conditional Snapped="false" />
+        <Conditional mass="lt 30" />
+        <Affliction identifier="drag" strength="1" />
+      </StatusEffect>
+    </Projectile>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="Explosive Crossbow Bolt" identifier="thgxbowboltexplosive" category="Weapon" maxstacksize="8" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="mediumitem,thgxbowammo" description="A rather heavy crossbow bolt tipped with a miniature explosive payload and impact detonator. Not superbly powerful, but cheaper than harpoons." Scale="0.5" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="harpoongun" amount="6" spawnprobability="1" />
+    <PreferredContainer primary="armcab" minamount="3" maxamount="6" spawnprobability="1" notcampaign="true" />
+    <PreferredContainer secondary="wreckarmcab,abandonedarmcab" minamount="1" maxamount="3" spawnprobability="0.2" />
+    <PreferredContainer primary="secarmcab" />
+    <Price baseprice="7">
+      <Price storeidentifier="merchantoutpost" minavailable="12" multiplier="1.5" />
+      <Price storeidentifier="merchantcity" minavailable="12" multiplier="1.25" />
+      <Price storeidentifier="merchantresearch" minavailable="6" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" minavailable="24" multiplier="0.9" />
+      <Price storeidentifier="merchantmine" minavailable="6" multiplier="1.25" />
+      <Price storeidentifier="merchantarmory" minavailable="24" multiplier="0.9" />
+    </Price>
+    <Deconstruct time="5" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="10" amount="4">
+      <RequiredSkill identifier="weapons" level="30" />
+      <RequiredItem identifier="thgxbowbolt" amount="4" />
+      <RequiredItem identifier="uex" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="320,968,55,55" origin="0.5,0.5" />
+    <Sprite texture="crossbowboltexplosive.png" sourcerect="0,0,130,16" depth="0.55" origin="0.5,0.5" />
+    <Body width="130" height="16" density="10" />
+    <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" launchimpulse="9">
+      <Attack structuredamage="5" targetforce="20">
+        <Affliction identifier="explosiondamage" strength="25" />
+      </Attack>
+      <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
+        <Explosion range="150.0" ballastfloradamage="40" structuredamage="7" levelwalldamage="35" itemdamage="150" force="5" severlimbsprobability="0.25">
+          <Affliction identifier="burn" strength="50" />
+          <Affliction identifier="stun" strength="1.35" />
+        </Explosion>
+        <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2400" />
+        <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" range="2400" />
+        <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" range="2400" />
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="UseTarget,This" checkconditionalalways="true" comparison="And">
+        <Conditional Snapped="false" />
+        <Conditional mass="lt 30" />
+        <Affliction identifier="drag" strength="1" />
+      </StatusEffect>
+    </Projectile>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="Chainmail Hauberk" identifier="thgchainmail" category="Equipment" cargocontaineridentifier="metalcrate" tags="smallitem,clothing,separatists" scale="0.5" impactsoundtag="impact_soft" description="A heavy, yet flexible suit of interlocked metal rings, forming a protective layer against stabs and bite wounds, making it - oddly - rather popular in Europa, though it slows one down notably both in water and on land.">
+    <Price baseprice="225" sold="false">
+      <Price storeidentifier="merchantoutpost" minavailable="0" maxavailable="1" sold="true">
+        <Reputation faction="coalition" min="45" />
+      </Price>
+      <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="0" maxavailable="1" sold="true">
+        <Reputation faction="coalition" min="45" />
+      </Price>
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Sprite name="ninjer" texture="Content/Items/Jobgear/MiscJobGear.png" sourcerect="767,233,122,58" depth="0.6" origin="0.5,0.5" />
+    <InventoryIcon texture="hauberk_icon.png" sheetindex="1,10" sheetelementsize="64,64" />
+    <Body width="180" height="50" density="15" friction="0.8" restitution="0.01" />
+    <Wearable slots="Any,InnerClothes" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnWearing" target="Character" SpeedMultiplier=".87" PropulsionSpeedMultiplier=".87" setvalue="true" disabledeltatime="true"></StatusEffect>
+      <sprite name="Chainmail Torso" texture="chainmail.png" limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Chainmail Right Hand" texture="chainmail.png" limb="RightHand" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Chainmail Left Hand" texture="chainmail.png" limb="LeftHand" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Chainmail Right Lower Arm" texture="chainmail.png" limb="RightArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Chainmail Left Lower Arm" texture="chainmail.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Chainmail Right Upper Arm" texture="chainmail.png" limb="RightForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Chainmail Left Upper Arm" texture="chainmail.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Chainmail Waist" texture="chainmail.png" limb="Waist" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Chainmail Right Thigh" texture="chainmail.png" limb="RightThigh" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Chainmail Left Thigh" texture="chainmail.png" limb="LeftThigh" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Chainmail Right Leg" texture="chainmail.png" limb="RightLeg" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Chainmail Left Leg" texture="chainmail.png" limb="LeftLeg" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Chainmail Left Shoe" texture="chainmail.png" limb="LeftFoot" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Chainmail Right Shoe" texture="chainmail.png" limb="RightFoot" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="lacerations,bitewounds" damagemultiplier="0.65" />
+    </Wearable>
+  </Item>
+</Items>
